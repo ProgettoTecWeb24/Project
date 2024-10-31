@@ -12,7 +12,7 @@ body {
 }
 
 .wrapper {
-  width: 60%;
+  width: 1200px;
   height: fit-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -39,6 +39,7 @@ body {
 }
 
 .navbar-items li a {
+  text-wrap: nowrap;
   text-decoration: none;
   color: white;
   padding: 10px 15px;
