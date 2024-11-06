@@ -1,8 +1,17 @@
-.small-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.cards {
+  grid-template-columns: 1fr;
 }
+
+.cards > :nth-child(1),
+.cards > :nth-child(2),
+.cards > :nth-child(3) {
+  grid-column: span 1;
+}
+
 .whoarewe-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+.navbar-items {
+  display: none;
 }
