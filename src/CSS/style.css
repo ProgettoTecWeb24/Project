@@ -6,7 +6,6 @@
 
 body {
   background-color: #7ca3cb;
-  margin-top: 10px;
   font-family: "Arial";
   display: flex;
   justify-content: center;
@@ -20,6 +19,7 @@ body {
   --color-3: #094074;
 }
 .wrapper {
+  margin-top: 10px;
   background-color: var(--main-bg-color);
   width: 80%;
   height: fit-content;
@@ -136,6 +136,12 @@ input:focus {
 .text-card {
   text-align: left;
   flex: 0.7;
+}
+
+.listcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 h2 {

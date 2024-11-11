@@ -8,6 +8,11 @@
   grid-column: span 1;
 }
 
+.listcards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .whoarewe-cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
