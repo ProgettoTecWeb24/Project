@@ -3,24 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+p {
+  color: var(--text-color);
+}
 body {
-  background-color: #7ca3cb;
+  background-color: var(--main-bg-color);
   font-family: "Arial";
   display: flex;
   justify-content: center;
 }
 
 :root {
-  --main-bg-color: #edf2f4;
-  --text-color: black;
-  --color-1: #fe9000;
-  --color-2: #ffbf00;
-  --color-3: #094074;
+  --main-bg-color: #a8dadc; /* Sfondo generale - Blu Chiaro Pastello */
+  --wrapper-bg-color: #f5f5f5; /* Sfondo del wrapper - Grigio Chiarissimo */
+  --navbar-bg-color: #264653; /* Navbar e footer - Blu Scuro */
+  --card-bg-color: #ffffff; /* Sfondo delle cards - Bianco Puro */
+  --btn-color: #2a9d8f; /* Pulsanti CTA - Verde Acqua Chiaro */
+  --label-feedback-color: #e76f51; /* Etichette di feedback e tasto like - Rosso Corallo */
+  --text-color: #333333; /* Testo principale - Grigio Scuro */
+  --card-border-color: #264653; /* Bordo delle cards - Blu Scuro */
 }
+
 .wrapper {
   margin-top: 10px;
-  background-color: var(--main-bg-color);
+  background-color: var(--wrapper-bg-color);
   width: 80%;
   height: fit-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,7 +35,7 @@ body {
 }
 
 .navbar {
-  background-color: var(--color-3);
+  background-color: var(--navbar-bg-color);
   border-radius: 8px;
   margin-bottom: 8px;
   padding: 5px 20px;
@@ -105,7 +111,7 @@ input:focus {
 }
 
 .card {
-  background-color: #f2f5f8;
+  background-color: var(--card-bg-color);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -140,6 +146,11 @@ input:focus {
   gap: 16px;
 }
 
+.listcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
 h2 {
   text-align: left;
   width: 100%;
