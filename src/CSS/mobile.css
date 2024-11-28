@@ -13,10 +13,24 @@
   grid-template-columns: repeat(1, 1fr);
 }
 
-.whoarewe-cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
 .navbar-items {
   display: none;
+}
+
+.whoarewe-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.img-whoarewe {
+  height: 100px;
+  width: 100px;
+}
+
+.azienda-descrizione{
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
