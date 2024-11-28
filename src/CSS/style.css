@@ -197,10 +197,10 @@ button {
   margin-top: 1rem;
 }
 
-
 /* PAGINA CHI SIAMO */
 
-.whoarewe-container { /*  Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti*/
+.whoarewe-container {
+  /*  Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti*/
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-left: 140px;
@@ -209,13 +209,14 @@ button {
   margin-bottom: 15px;
 }
 
-
-.us-div { /* contenitore della parte "il team" */
+.us-div {
+  /* contenitore della parte "il team" */
   border-radius: 10px;
   margin-top: 20px;
 }
 
-.whoarewe-div { /* comprende una foto e relativa descrizione */
+.whoarewe-div {
+  /* comprende una foto e relativa descrizione */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -224,12 +225,14 @@ button {
   margin-left: 10px;
 }
 
-.whoarewe-div:nth-child(odd) { /* specchia il contenuto dei whoarewe-div in posizioni pari */
+.whoarewe-div:nth-child(odd) {
+  /* specchia il contenuto dei whoarewe-div in posizioni pari */
   flex-direction: row-reverse;
   margin-right: 10px;
 }
 
-.whoarewe-desc {  /* nome e descrizione persona */
+.whoarewe-desc {
+  /* nome e descrizione persona */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -237,11 +240,13 @@ button {
   padding: 15px;
 }
 
-.whoarewe-div:nth-child(odd) .whoarewe-desc {  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
+.whoarewe-div:nth-child(odd) .whoarewe-desc {
+  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
   text-align: right;
 }
 
-.img-whoarewe { /* stile delle immagini di presentazione */
+.img-whoarewe {
+  /* stile delle immagini di presentazione */
   height: 160px;
   width: 160px;
   border-radius: 50%;
@@ -249,25 +254,72 @@ button {
   box-shadow: 0 0 5px var(--navbar-bg-color);
 }
 
-.page-title{ /* Titolo principale (h1) della pagina */
+.page-title {
+  /* Titolo principale (h1) della pagina */
   text-align: center;
   margin-bottom: 20px;
 }
 
-.azienda-title{ /* stile dei titoli, rimovibile in caso di stile uguale ai principali */
+.azienda-title {
+  /* stile dei titoli, rimovibile in caso di stile uguale ai principali */
   text-align: center;
   margin-bottom: 10px;
   margin-top: 10px;
-
 }
-.azienda-descrizione{ /* descrizione della storia aziendale */
+.azienda-descrizione {
+  /* descrizione della storia aziendale */
   text-align: center;
   margin-bottom: 10px;
 }
 
-
- h3 {
+h3 {
   font-weight: bold;
   color: var(--navbar-bg-color);
 }
 /* FINE PAGINA CHI SIAMO */
+
+/* INIZIO SINGLE PAGE */
+
+.singlepage-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.singlepage-content {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: center; /* Centra verticalmente la colonna immagine */
+}
+
+.product-details {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.product-details h1 {
+  font-size: 28px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.tab {
+  margin-bottom: 20px;
+}
+
+.product-image {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* FINE SINGLE PAGE */

@@ -23,7 +23,6 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-
 /* PAGINA CHI SIAMO */
 .whoarewe-container {
   margin-left: 50px;
@@ -37,5 +36,8 @@
   width: 140px;
 }
 
-
 /* FINE PAGINA CHI SIAMO */
+
+/* INIZIO SINGLE PAGE */
+
+/* FINE SINGLE PAGE */
