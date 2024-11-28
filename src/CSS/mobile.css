@@ -17,6 +17,62 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
+
+/*.navbar-item {
+  display: none;
+}
+.navbar-items li:nth-last-child(1) {
+  margin-left: auto;
+}
+
+.navbar a.icon {
+    float: right;
+    display: block;
+}
+
+.navbar.responsive {
+  position: relative;
+}
+
+.navbar.responsive .icon {
+  position: relative;
+}
+.navbar.responsive .navbar-item  {
+  float: none;
+  display: block;
+  text-align: left;
+}*/
+
 .navbar-items {
   display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 0; 
+  right: 0; 
+  background-color: var(--navbar-bg-color);
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.navbar-items.active {
+  display: flex;
+}
+
+.navbar-items li {
+  width: 100%; 
+}
+
+.navbar-items li a {
+  display: block; 
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.icon {
+  display: block; 
 }
