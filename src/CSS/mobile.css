@@ -17,6 +17,8 @@
   display: none;
 }
 
+
+/* PAGINA CHI SIAMO */
 .whoarewe-container {
   margin-left: 0px;
   margin-right: 0px;
@@ -29,8 +31,5 @@
   width: 100px;
 }
 
-.azienda-descrizione{
-  margin-bottom: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
+
+/* FINE PAGINA CHI SIAMO */

@@ -23,6 +23,8 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+
+/* PAGINA CHI SIAMO */
 .whoarewe-container {
   margin-left: 50px;
   margin-right: 50px;
@@ -35,8 +37,5 @@
   width: 140px;
 }
 
-.azienda-descrizione{
-  margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
+
+/* FINE PAGINA CHI SIAMO */

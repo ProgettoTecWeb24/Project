@@ -200,7 +200,7 @@ button {
 
 /* PAGINA CHI SIAMO */
 
-.whoarewe-container {
+.whoarewe-container { /*  Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti*/
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-left: 140px;
@@ -209,48 +209,65 @@ button {
   margin-bottom: 15px;
 }
 
-.whoarewe-div {
+
+.us-div { /* contenitore della parte "il team" */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.whoarewe-div { /* comprende una foto e relativa descrizione */
   display: flex;
   flex-direction: row;
   align-items: center;
   transition: transform 0.2s;
   gap: 2px;
+  margin-left: 10px;
 }
 
-.whoarewe-div:nth-child(even) {
+.whoarewe-div:nth-child(odd) { /* specchia il contenuto dei whoarewe-div in posizioni pari */
   flex-direction: row-reverse;
+  margin-right: 10px;
 }
 
-.whoarewe-desc {
+.whoarewe-desc {  /* nome e descrizione persona */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  padding: 5px;
+  padding: 15px;
 }
 
-.whoarewe-div:nth-child(even) .whoarewe-desc {
+.whoarewe-div:nth-child(odd) .whoarewe-desc {  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
   text-align: right;
 }
 
-.img-whoarewe {
+.img-whoarewe { /* stile delle immagini di presentazione */
   height: 160px;
   width: 160px;
   border-radius: 50%;
-  object-fit: cover;
-  overflow: hidden; 
-  border: 3px solid var(--navbar-bg-color);
+  float: left;
+  box-shadow: 0 0 5px var(--navbar-bg-color);
 }
 
-.azienda-title{
+.page-title{ /* Titolo principale (h1) della pagina */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.azienda-title{ /* stile dei titoli, rimovibile in caso di stile uguale ai principali */
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+.azienda-descrizione{ /* descrizione della storia aziendale */
   text-align: center;
   margin-bottom: 10px;
 }
-.azienda-descrizione{
-  text-align: left;
-  margin-bottom: 30px;
-  margin-left: 100px;
-  margin-right: 100px;
-}
 
+
+ h3 {
+  font-weight: bold;
+  color: var(--navbar-bg-color);
+}
 /* FINE PAGINA CHI SIAMO */
