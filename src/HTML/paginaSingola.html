@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
         <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
         <link rel="icon" href="../assets/logo.png" >
+        <script src="../JS/script.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -38,48 +39,43 @@
                 </ul>
             </nav>
             <div class="singlepage-wrapper">
-                <div class="singlepage-content">
-                    <div class="product-details">
-                    <h1>Nike Pegasus 39</h1>
-                
-                    <div class="tab">
-                        <h3>Descrizione</h3>
-                        <p>Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                    </div>
-                
-                    <div class="tab">
-                        <h3>Marca</h3>
-                        <p>Nike</p>
-                    </div>
-                
-                    <div class="tab">
-                        <h3>Modello</h3>
-                        <p>Pegasus 39</p>
-                    </div>
-                
-                    <div class="tab">
-                        <h3>Feedback</h3>
-                        <p>Buono</p>
-                    </div>
-                
-                    <div class="tab">
-                        <h3>Taglia e Vestibilità</h3>
-                        <p>Calzata regolare. Consigliamo la tua solita taglia.</p>
-                    </div>
-                
-                    <div class="tab">
-                        <h3>Colori Disponibili</h3>
-                        <div class="color-options">
-                        <span class="color" style="background-color: #FF5733;"></span>
-                        <span class="color" style="background-color: #2980B9;"></span>
-                        <span class="color" style="background-color: #27AE60;"></span>
-                        </div>
-                    </div>
-                
+                <div class="shoe-title">
+                    <h1>Nike Air Jordan 1 Elevate</h1>
+                    <h2>Modello: Women's Shoes</h2>
                 </div>
-            
-                <div class="product-image">
-                    <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
+        
+                <div class="shoe-image">
+                    <img src="../assets/nike.png" alt="">
+                </div>
+        
+                <div class="color-options">
+                    <h3>Colori Disponibili</h3>
+                    <div class="colors">
+                        <span class="color" style="background-color: orange;"></span>
+                        <span class="color" style="background-color: black;"></span>
+                        <span class="color" style="background-color: white;"></span>
+                    </div>
+                </div>
+        
+                <div class="review-section">
+                    <h3>Recensioni</h3>
+                    <p>Nessuna recensione disponibile.</p>
+                </div>
+        
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('description')">Descrizione</button>
+                    <button class="tab" onclick="showTab('details')">Dettagli</button>
+                    <button class="tab" onclick="showTab('feedback')">Feedback</button>
+                </div>
+        
+                <div class="tab-content" id="description">
+                    <p>Questa è la descrizione della scarpa...</p>
+                </div>
+                <div class="tab-content hidden" id="details">
+                    <p>Dettagli tecnici della scarpa...</p>
+                </div>
+                <div class="tab-content hidden" id="feedback">
+                    <p>Feedback degli utenti...</p>
                 </div>
             </div>
         </div>

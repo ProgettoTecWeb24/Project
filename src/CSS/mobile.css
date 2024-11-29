@@ -33,33 +33,57 @@
 /* FINE PAGINA CHI SIAMO */
 
 /* INIZIO SINGLE PAGE */
-
-.singlepage-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.singlepage-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
 }
 
-.product-image {
-  width: 100%;
-  text-align: center;
-  order: -1;
+.shoe-title h1 {
+  font-size: 32px;
 }
 
-.product-image img {
-  max-width: 80%;
-  height: auto;
-  margin-bottom: 20px;
+.shoe-title h2 {
+  font-size: 20px;
 }
 
-.product-details {
-  width: 100%;
-  padding: 0 20px;
+.shoe-image img {
+  width: 70%;
+  margin: 0 auto;
 }
 
-.product-details h1 {
-  font-size: 22px;
-  margin-bottom: 15px;
+.color-options {
+  margin-top: 24px;
+}
+
+.color-options h3,
+.review-section h3 {
+  font-size: 20px;
+}
+
+.colors {
+  gap: 16px;
+}
+
+.color {
+  width: 28px;
+  height: 28px;
+}
+
+.tabs {
+  //flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3px;
+}
+
+.tab {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.tab-content {
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 /* FINE SINGLE PAGE */

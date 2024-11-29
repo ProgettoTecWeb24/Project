@@ -279,47 +279,72 @@ h3 {
 /* FINE PAGINA CHI SIAMO */
 
 /* INIZIO SINGLE PAGE */
-
 .singlepage-wrapper {
+  padding: 16px;
+}
+
+.shoe-title h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.shoe-title h2 {
+  font-size: 14px;
+  color: #555;
+}
+
+.shoe-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.color-options h3,
+.review-section h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.review-section {
+  margin-top: 12px;
+}
+
+.tabs {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-.singlepage-content {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-  align-items: center; /* Centra verticalmente la colonna immagine */
-}
-
-.product-details {
-  flex: 1;
-  color: var(--text-color);
-}
-
-.product-details h1 {
-  font-size: 28px;
-  color: var(--text-color);
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin-top: 16px;
+  gap: 10px;
 }
 
 .tab {
-  margin-bottom: 20px;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  font-size: 12px;
 }
 
-.product-image {
-  flex: 0 0 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.tab.active {
+  background-color: #ffa500;
+  color: white;
 }
 
-.product-image img {
-  max-width: 80%;
-  height: auto;
+.tab-content {
+  margin-top: 12px;
+  font-size: 14px;
 }
 
+.hidden {
+  display: none;
+}
 /* FINE SINGLE PAGE */
