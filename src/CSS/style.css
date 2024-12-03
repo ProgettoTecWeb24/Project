@@ -205,6 +205,29 @@ button {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* SEZIONE TASTO LIKE */
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.heart-icon {
+  fill: #ccc; /* Grigio chiaro di default */
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s;
+}
+
+.like-button:hover .heart-icon,
+.like-button.active .heart-icon {
+  fill: var(--label-feedback-color); /* Rosso corallo */
+}
+
+
 /* SEZIONE FOOTER */
 
 footer {
