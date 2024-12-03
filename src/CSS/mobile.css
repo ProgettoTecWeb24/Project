@@ -13,8 +13,43 @@
   grid-template-columns: repeat(1, 1fr);
 }
 
+.whoarewe-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .navbar-items {
   display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: var(--navbar-bg-color);
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.navbar-items.active {
+  display: flex;
+}
+
+.navbar-items li {
+  width: 100%;
+}
+
+.navbar-items li a {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.icon {
+  display: block;
 }
 
 /* PAGINA CHI SIAMO */
@@ -29,7 +64,6 @@
   height: 100px;
   width: 100px;
 }
-
 /* FINE PAGINA CHI SIAMO */
 
 /* INIZIO SINGLE PAGE */
@@ -71,7 +105,6 @@
 }
 
 .tabs {
-  //flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 3px;
 }
@@ -85,5 +118,4 @@
   margin-top: 20px;
   font-size: 16px;
 }
-
 /* FINE SINGLE PAGE */
