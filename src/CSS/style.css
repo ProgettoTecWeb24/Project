@@ -38,12 +38,18 @@ body {
 }
 
 .navbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
   background-color: var(--navbar-bg-color);
   border-radius: 8px;
   margin-bottom: 8px;
   padding: 5px 20px;
 }
 
+.icon {
+  display: none;
+}
 .logo-navbar {
   width: 70px;
   height: auto;
@@ -63,7 +69,7 @@ body {
   padding: 10px 15px;
 }
 
-.navbar-items li:nth-last-child(2) {
+.navbar-items li:nth-last-child(0) {
   margin-left: auto;
 }
 
@@ -200,9 +206,155 @@ button {
   margin-top: 1rem;
 }
 
-.whoarewe-cards {
+/* PAGINA CHI SIAMO */
+
+.whoarewe-container {
+  /*  Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti*/
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.us-div {
+  /* contenitore della parte "il team" */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.whoarewe-div {
+  /* comprende una foto e relativa descrizione */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: transform 0.2s;
+  gap: 2px;
+  margin-left: 10px;
+}
+
+.whoarewe-div:nth-child(odd) {
+  /* specchia il contenuto dei whoarewe-div in posizioni pari */
+  flex-direction: row-reverse;
+  margin-right: 10px;
+}
+
+.whoarewe-desc {
+  /* nome e descrizione persona */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 15px;
+}
+
+.whoarewe-div:nth-child(odd) .whoarewe-desc {
+  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
+  text-align: right;
+}
+
+.img-whoarewe {
+  /* stile delle immagini di presentazione */
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  float: left;
+  box-shadow: 0 0 5px var(--navbar-bg-color);
+}
+
+.page-title {
+  /* Titolo principale (h1) della pagina */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.azienda-title {
+  /* stile dei titoli, rimovibile in caso di stile uguale ai principali */
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.azienda-descrizione {
+  /* descrizione della storia aziendale */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-weight: bold;
+  color: var(--navbar-bg-color);
+}
+/* FINE PAGINA CHI SIAMO */
+
+/* INIZIO SINGLE PAGE */
+.singlepage-wrapper {
+  padding: 16px;
+}
+
+.shoe-title h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.shoe-title h2 {
+  font-size: 14px;
+  color: #555;
+}
+
+.shoe-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.color-options h3,
+.review-section h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.review-section {
+  margin-top: 12px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.tab {
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.tab.active {
+  background-color: #ffa500;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* SEZIONE TASTO LIKE */
@@ -265,3 +417,5 @@ footer .imgValidCode {
   vertical-align: middle;
   width: 80px; /* Dimensioni immagini validazione */
 }
+
+/* FINE SINGLE PAGE */

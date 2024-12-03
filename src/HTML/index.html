@@ -13,29 +13,20 @@
    </head>
    <body>
       <div class="wrapper">
-         <nav class="navbar">
-            <ul class="navbar-items">
-               <li>
-                  <a href="index.html">
-                  <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito o un h1 poi vediamo">
-                  </a>
-               </li>
-               <li>
-                  <a href="index.html">Home</a>
-               </li>
-               <li>
-                  <a href="lista.html">Lista Scarpe</a>
-               </li>
-               <li>
-                  <a href="chisiamo.html">Chi siamo</a>
-               </li>
-               <li>
-                  <a href="accedi.html">Accedi</a>
-               </li>
-               <li>
-                  <a href="registrati.html">Registrati</a>
-               </li>
-            </ul>
+         <nav class="navbar" id="navbar-id">
+            <a href="index.html">
+               <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
+           </a>
+           <div class="icon" onclick="myFunction()" id="menu-toggle">
+               <img src="../assets/menu.png" alt="Menu Icon">
+           </div>
+           <ul class="navbar-items" id="navbar-menu">
+               <li class="navbar-item"><a href="index.html">Home</a></li>
+               <li class="navbar-item"><a href="lista.html">Lista Scarpe</a></li>
+               <li class="navbar-item"><a href="chisiamo.html">Chi siamo</a></li>
+               <li class="navbar-item"><a href="accedi.html">Accedi</a></li>
+               <li class="navbar-item"><a href="registrati.html">Registrati</a></li>
+           </ul>
          </nav>
          <div class="searchbar">
             <input class="search-input" type="text" placeholder="Cerca le scarpe..." />
@@ -181,3 +172,5 @@ per aggiungere/rimuovere la classe active al pulsante.-->
        
    </body>
 </html>
+
+<script src="../JS/script.js"></script>

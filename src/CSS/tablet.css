@@ -23,7 +23,63 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.whoarewe-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+/* PAGINA CHI SIAMO */
+.whoarewe-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
+
+.img-whoarewe {
+  height: 140px;
+  width: 140px;
+}
+
+/* FINE PAGINA CHI SIAMO */
+
+/* INIZIO SINGLE PAGE */
+.singlepage-wrapper {
+  padding: 24px;
+}
+
+.shoe-title h1 {
+  font-size: 26px;
+}
+
+.shoe-title h2 {
+  font-size: 18px;
+}
+
+.shoe-image img {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.color-options h3,
+.review-section h3 {
+  font-size: 18px;
+}
+
+.colors {
+  gap: 12px;
+}
+
+.color {
+  width: 24px;
+  height: 24px;
+}
+
+.tabs {
+  justify-content: space-around;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  gap: 5px;
+}
+
+/* FINE SINGLE PAGE */
