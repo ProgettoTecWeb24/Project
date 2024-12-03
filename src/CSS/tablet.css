@@ -23,7 +23,19 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.whoarewe-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+/* PAGINA CHI SIAMO */
+.whoarewe-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
+
+.img-whoarewe {
+  height: 140px;
+  width: 140px;
+}
+
+
+/* FINE PAGINA CHI SIAMO */
