@@ -11,6 +11,9 @@ body {
   font-family: "Arial";
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center; 
+
 }
 
 :root {
@@ -27,7 +30,7 @@ body {
 .wrapper {
   margin-top: 10px;
   background-color: var(--wrapper-bg-color);
-  width: 1024px;
+  width: 1200px;
   height: fit-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -353,4 +356,66 @@ h3 {
 .hidden {
   display: none;
 }
+
+/* SEZIONE TASTO LIKE */
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.heart-icon {
+  fill: #ccc; /* Grigio chiaro di default */
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s;
+}
+
+.like-button:hover .heart-icon,
+.like-button.active .heart-icon {
+  fill: var(--label-feedback-color); /* Rosso corallo */
+}
+
+
+/* SEZIONE FOOTER */
+
+footer {
+  background-color: var(--navbar-bg-color);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  display: flex; /* Flexbox per gestire il layout */
+  justify-content: center; /* Centrare il contenuto orizzontalmente */
+  align-items: center; /* Centrare il contenuto verticalmente */
+  gap: 20px; /* Spazio tra logo e testo */
+  width: 100%;
+}
+
+footer .logo {
+  display: flex;
+  align-items: center;
+}
+
+footer .footer-text {
+  color: white;
+  text-align: left; /* Allinea il testo a sinistra per le informazioni */
+}
+
+footer address, 
+footer a ,
+footer address p, 
+footer a p{
+  margin: 5px 0; /* Spazio verticale tra le righe */
+  text-decoration: none;
+  color: white;
+}
+
+footer .imgValidCode {
+  vertical-align: middle;
+  width: 80px; /* Dimensioni immagini validazione */
+}
+
 /* FINE SINGLE PAGE */
