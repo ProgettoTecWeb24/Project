@@ -6,9 +6,8 @@
 p {
   color: var(--text-color);
 }
-p.error_text{
-  color: red;
-  
+.error_text{
+  color:red;
 }
 body {
   background-color: var(--main-bg-color);
@@ -188,7 +187,7 @@ h2 {
   max-width: 400px;
 }
 
-input[type="username"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 0.8rem;
@@ -198,7 +197,7 @@ input[type="password"] {
   font-size: 1rem;
 }
 
-input[type="submit"], button{
+button {
   background-color: #007bff;
   color: #fff;
   padding: 0.8rem 1.2rem;
