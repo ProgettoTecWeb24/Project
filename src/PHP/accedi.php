@@ -34,6 +34,8 @@ if(isset($_POST["submit"])){
         
         $HTMLpage = str_replace("{error_text}", $error_text, $HTMLpage);
     }
+}else{
+    $HTMLpage = str_replace("{error_text}","",$HTMLpage);
 }
 
 echo $HTMLpage;
