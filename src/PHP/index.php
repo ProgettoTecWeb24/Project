@@ -13,7 +13,7 @@ if (!$connection->startDbConnection()) {
 
 $HTMLpage = file_get_contents('../HTML/index.html');
 
-$query = "SELECT * FROM SCARPE ORDER BY id LIMIT 5";
+$query = "SELECT * FROM SCARPE ORDER BY id DESC LIMIT 5";
 $result = $connection->query($query);
 
 $cardsHTML = "";
@@ -21,7 +21,7 @@ $cardsHTML = "";
 if ($result) {
     while ($row = $result->fetch_assoc()) {
         $cardsHTML .= '
-            <a href="paginaSingola.php" class="card-link">
+            <a href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
                 <div class="card">
                     <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
                     <div class="text-card">
