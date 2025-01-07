@@ -1,176 +1,49 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CorsaIdeale</title>
-      <link rel="stylesheet" href="../CSS/style.css" media="screen">
-      <link rel="stylesheet" href="../CSS/print.css" media="print">
-      <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
-      <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
-      <link rel="icon" href="../assets/logo.png" >
-   </head>
-   <body>
-      <div class="wrapper">
-         <nav class="navbar" id="navbar-id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorsaIdeale</title>
+    <link rel="stylesheet" href="../CSS/style.css" media="screen">
+    <link rel="stylesheet" href="../CSS/print.css" media="print">
+    <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
+    <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../JS/script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar" id="navbar-id">
             <a href="index.php">
-               <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
-           </a>
-           <div class="icon" onclick="myFunction()" id="menu-toggle">
-               <img src="../assets/menu.png" alt="Menu Icon">
-           </div>
-           <ul class="navbar-items" id="navbar-menu">
-               <li class="navbar-item"><a href="index.php">Home</a></li>
-               <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
-               <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
-               <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
-               <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
-           </ul>
-         </nav>
-         <div class="searchbar">
+                <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
+            </a>
+            <div class="icon" onclick="myFunction()" id="menu-toggle">
+                <img src="../assets/menu.png" alt="Menu Icon">
+            </div>
+            <ul class="navbar-items" id="navbar-menu">
+                <li class="navbar-item"><a href="index.php">Home</a></li>
+                <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
+                <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
+                <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
+                <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
+            </ul>
+        </nav>
+        <div class="searchbar">
             <input class="search-input" type="text" placeholder="Cerca le scarpe..." />
             <button type="submit" class="search-button">
-            <img src="../assets/search-icon.svg" alt="Cerca" />
+                <img src="../assets/search-icon.svg" alt="Cerca" />
             </button>
-         </div>
-         <h2>Ultime uscite</h2>
-         
-         <!-- CARDS SECTION -->
-         <!-- prime due in alto con stile diverso in automatico nel css -->
-         <div class="cards">
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
-<!--Per far sì che l'icona rimanga rossa al clic, puoi usare JavaScript 
-per aggiungere/rimuovere la classe active al pulsante.-->
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
+        </div>
+        <h2>Ultime uscite</h2>
+        <div class="cards">     
+            {last_released_shoes}
+        </div>
+    </div>
 
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
 
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
+</body>
 
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
-
-            <a href="paginaSingola.html" class="card-link">
-                <div class="card">
-                   <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                   <div class="text-card">
-                       <h3>Nike</h3>
-                       <p class="marca">Marca: Nike</p>
-                       <p class="modello">Modello: Pegasus 39</p>
-                       <p class="feedback">Feedback: Buono</p>
-                       <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                       <button class="like-button">
-                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                           </svg>
-                       </button>
-                   </div>
-               </div>
-             </a>
-
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                      <h3>Nike</h3>
-                      <p class="marca">Marca: Nike</p>
-                      <p class="modello">Modello: Pegasus 39</p>
-                      <p class="feedback">Feedback: Buono</p>
-                      <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                      <button class="like-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                          </svg>
-                      </button>
-                  </div>
-              </div>
-            </a>
-
-         </div>
-      </div>
-     
-       
-   </body>
 </html>
-
-<script src="../JS/script.js"></script>
