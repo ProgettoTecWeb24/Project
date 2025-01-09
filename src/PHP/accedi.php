@@ -11,7 +11,7 @@ $HTMLpage = file_get_contents('../HTML/accedi.html');
 
 if(isset($_POST["submit"])){
     $username = sanitizeInput($_POST["username"]);
-    $password = sanitizeInput($_POST["password"]);
+    $password = md5(sanitizeInput($_POST["password"]));
 
     if($connection->startDbConnection()){
         $userData = $connection->getUserData($username);
@@ -19,6 +19,7 @@ if(isset($_POST["submit"])){
         
         if($username && $password){
             if($userData && $userData['pw']==$password){
+                $_SESSION['username'] = $userData['username'];
                 if($userData['admin']==1){
                     header("Location: index.php");
                 }
@@ -33,6 +34,8 @@ if(isset($_POST["submit"])){
         }
         
         $HTMLpage = str_replace("{error_text}", $error_text, $HTMLpage);
+    }else {
+        header("Location: ../HTML/error500.html");
     }
 }else{
     $HTMLpage = str_replace("{error_text}","",$HTMLpage);
