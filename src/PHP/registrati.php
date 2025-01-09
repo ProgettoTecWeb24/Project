@@ -11,12 +11,13 @@ $HTMLpage = file_get_contents('../HTML/registrati.html');
 
 if(isset($_POST["submit"])){
     $username = sanitizeInput($_POST["username"]);
-    $password = md5(sanitizeInput($_POST["password"]));
-    $confirm_password = md5(sanitizeInput($_POST["confirm_password"]));
+    $password = sanitizeInput($_POST["password"]);
+    $confirm_password = sanitizeInput($_POST["confirm_password"]);
 
     if($connection->startDbConnection()){
         if($username && $password && $confirm_password){
             if($password==$confirm_password){
+                $password = password_hash($password, PASSWORD_BCRYPT);
                 $userCreated = $connection->insertNewUser($username, $password);
                 if(!$userCreated){
                     $error_text = '<p class="error_text" id="error_text" role="alert">lo <span lang="en">username</span> inserito è già esistente, scegliene un altro</p>';

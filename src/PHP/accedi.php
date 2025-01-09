@@ -11,14 +11,14 @@ $HTMLpage = file_get_contents('../HTML/accedi.html');
 
 if(isset($_POST["submit"])){
     $username = sanitizeInput($_POST["username"]);
-    $password = md5(sanitizeInput($_POST["password"]));
+    $password = sanitizeInput($_POST["password"]);
 
     if($connection->startDbConnection()){
         $userData = $connection->getUserData($username);
         $connection->endDbConnection();
         
         if($username && $password){
-            if($userData && $userData['pw']==$password){
+            if($userData && password_verify($password, $userData['pw'])){
                 $_SESSION['username'] = $userData['username'];
                 if($userData['admin']==1){
                     header("Location: index.php");
