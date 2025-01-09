@@ -55,5 +55,39 @@ Class DbConnection{
        
         return $userCreated;
     }
+
+    public function query($sql)
+    {
+        $result = mysqli_query($this->connection, $sql);
+        if (!$result) {
+            echo "Errore nell'esecuzione della query: " . mysqli_error($this->connection);
+            return false;
+        }
+        return $result;
+    }
+
+    public function prepareAndExecute($sql, ...$params)
+    {
+    $stmt = $this->connection->prepare($sql);
+    
+    if (!$stmt) {
+        die('Errore nella preparazione della query: ' . mysqli_error($this->connection));
+    }
+
+    if (!empty($params)) {
+        $types = $params[0]; 
+        $stmt->bind_param($types, ...array_slice($params, 1)); 
+    }
+    
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $result = $result->fetch_assoc();
+    
+    $stmt->close();
+
+    return $result;  
+}
 }
 ?>
