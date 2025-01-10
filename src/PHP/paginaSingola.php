@@ -15,7 +15,7 @@ $HTMLpage = file_get_contents('../HTML/paginaSingola.html');
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-$query = "SELECT * FROM SCARPE WHERE id = ?";
+$query = "SELECT * FROM SCARPA WHERE id = ?";
 
 $scarpa = $connection->prepareAndExecute($query, 'i', $id);  
 $content = "";

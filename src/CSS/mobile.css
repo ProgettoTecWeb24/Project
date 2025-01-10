@@ -1,121 +1,118 @@
 .cards {
-  grid-template-columns: 1fr;
-}
-
-.cards > :nth-child(1),
-.cards > :nth-child(2),
-.cards > :nth-child(3) {
-  grid-column: span 1;
-}
-
-.listcards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.whoarewe-cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.navbar-items {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background-color: var(--navbar-bg-color);
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  z-index: 1000;
-  border-radius: 5px;
-}
-
-.navbar-items.active {
-  display: flex;
-}
-
-.navbar-items li {
-  width: 100%;
-}
-
-.navbar-items li a {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  text-align: center;
-}
-
-.icon {
-  display: block;
-}
-
-/* PAGINA CHI SIAMO */
-.whoarewe-container {
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-.img-whoarewe {
-  height: 100px;
-  width: 100px;
-}
-/* FINE PAGINA CHI SIAMO */
-
-/* INIZIO SINGLE PAGE */
-.singlepage-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px;
-}
-
-.shoe-title h1 {
-  font-size: 32px;
-}
-
-.shoe-title h2 {
-  font-size: 20px;
-}
-
-.shoe-image img {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.color-options {
-  margin-top: 24px;
-}
-
-.color-options h3,
-.review-section h3 {
-  font-size: 20px;
-}
-
-.colors {
-  gap: 16px;
-}
-
-.color {
-  width: 28px;
-  height: 28px;
-}
-
-.tabs {
-  justify-content: space-evenly;
-  gap: 3px;
-}
-
-.tab {
-  padding: 12px 24px;
-  font-size: 16px;
-}
-
-.tab-content {
-  margin-top: 20px;
-  font-size: 16px;
-}
-/* FINE SINGLE PAGE */
+    grid-template-columns: repeat(4,1fr);
+  }
+  
+  
+  
+  .listcards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .whoarewe-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .navbar-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg-color);
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+  
+  .navbar-items.active {
+    display: flex;
+  }
+  
+  .navbar-items li {
+    width: 100%;
+  }
+  
+  .navbar-items li a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+  .icon {
+    display: block;
+  }
+  
+  /* PAGINA CHI SIAMO */
+  .whoarewe-container {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .img-whoarewe {
+    height: 100px;
+    width: 100px;
+  }
+  /* FINE PAGINA CHI SIAMO */
+  
+  /* INIZIO SINGLE PAGE */
+  .singlepage-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  
+  .shoe-title h1 {
+    font-size: 32px;
+  }
+  
+  .shoe-title h2 {
+    font-size: 20px;
+  }
+  
+  .shoe-image img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .color-options {
+    margin-top: 24px;
+  }
+  
+  .color-options h3,
+  .review-section h3 {
+    font-size: 20px;
+  }
+  
+  .colors {
+    gap: 16px;
+  }
+  
+  .color {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .tabs {
+    justify-content: space-evenly;
+    gap: 3px;
+  }
+  
+  .tab {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  .tab-content {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  /* FINE SINGLE PAGE */
+  
