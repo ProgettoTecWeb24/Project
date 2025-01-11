@@ -377,7 +377,22 @@
     fill: var(--label-feedback-color); /* Rosso corallo */
   }
   
-  
+  /* PAGINE ERRORI */
+
+  .error-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto
+  }
+
+  .error-image {
+    width: 30%;
+    height: auto;
+    margin: 2em;
+  }
+
   /* SEZIONE FOOTER */
   
   footer {
