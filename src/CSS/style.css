@@ -203,7 +203,64 @@
     width: 100%;
     margin-top: 1rem;
   }
-  
+
+/*HOME*/
+
+/* Singole sezioni */
+.content {
+  margin-bottom: 30px;
+}
+
+/* Stile per le cards (Ultime Uscite e Servizi Offerti) */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 15px);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Titoli delle cards */
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Contenuto delle cards */
+.card p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Titoli delle sezioni */
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragrafo (Chi Siamo) */
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #666;
+}
+
+
   /* PAGINA CHI SIAMO */
   
   .whoarewe-container {

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="CorsaIdeale - Recensioni di scarpe e servizi dedicati ai runner">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CorsaIdeale</title>
     <link rel="stylesheet" href="../CSS/style.css" media="screen">
@@ -15,35 +15,75 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <nav class="navbar" id="navbar-id">
-            <a href="index.php">
-                <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
-            </a>
-            <div class="icon" onclick="myFunction()" id="menu-toggle">
-                <img src="../assets/menu.png" alt="Menu Icon">
+    <main>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <header>
+                <nav class="navbar" id="navbar-id">
+                    <a href="index.php">
+                        <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
+                    </a>
+                    <div class="icon" onclick="myFunction()" id="menu-toggle">
+                        <img src="../assets/menu.png" alt="Menu Icon">
+                    </div>
+                    <ul class="navbar-items" id="navbar-menu">
+                        <li class="navbar-item"><a href="index.php">Home</a></li>
+                        <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
+                        <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
+                        <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
+                        <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
+                    </ul>
+                </nav>
+
+                <nav id="breadcrumb" aria-label="Percorso">
+                    <p>Ti trovi in: <span lang="en">Home</span></p>
+                  </nav>
+            </header>
+
+            <!-- Chi Siamo -->
+            <div class="content">
+                <h2>CorsaIdeale</h2>
+                <p>
+                    Benvenuto su <strong>CorsaIdeale</strong>, il sito dedicato alle recensioni delle migliori scarpe da corsa
+                    e ai servizi per aiutarti a migliorare la tua esperienza da runner. Qui troverai guide, consigli e 
+                    strumenti utili per scegliere la scarpa perfetta e monitorare le tue performance.
+                </p>
             </div>
-            <ul class="navbar-items" id="navbar-menu">
-                <li class="navbar-item"><a href="index.php">Home</a></li>
-                <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
-                <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
-                <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
-                <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
-            </ul>
-        </nav>
-        <div class="searchbar">
-            <input class="search-input" type="text" placeholder="Cerca le scarpe..." />
-            <button type="submit" class="search-button">
-                <img src="../assets/search-icon.svg" alt="Cerca" />
-            </button>
-        </div>
-        <h2>Ultime uscite</h2>
-        <div class="cards">     
-            {last_released_shoes}
-        </div>
-    </div>
 
+            <!-- Servizi Offerti -->
+            <div class="content">
+                <h2>Servizi Offerti</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Recensioni dettagliate</h3>
+                        <p>Esplora analisi approfondite delle ultime scarpe da corsa, condivise da appassionati da tutto il mondo.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Consigli personalizzati</h3>
+                        <p>Trova la scarpa perfetta in base al tuo stile di corsa, grazie al parere dei nostri esperti.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Gestione Scarpe</h3>
+                        <p>Salva le tue scarpe preferite nel tuo profilo e monitora il chilometraggio delle tue corse.</p>
+                    </div>
+                    
+                </div>
+            </div>
 
+            <!-- Ultime Uscite -->
+            <div class="content">
+                <h2>Ultime Uscite</h2>
+                <div class="cards">
+                    {last_released_shoes}
+                    <p>Consulta la nostra <a href="lista.php">Lista Scarpe</a> completa.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CorsaIdeale. Tutti i diritti riservati.</p>
+    </footer>
 </body>
 
 </html>
