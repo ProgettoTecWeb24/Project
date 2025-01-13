@@ -211,13 +211,6 @@
   margin-bottom: 30px;
 }
 
-/* Stile per le cards (Ultime Uscite e Servizi Offerti) */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
 .card {
   flex: 1 1 calc(33.33% - 15px);
   padding: 20px;
