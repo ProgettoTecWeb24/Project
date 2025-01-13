@@ -40,12 +40,21 @@
                   </nav>
             </header>
 
+            <!-- Ultime Uscite -->
+            <div class="content">
+                <h2>Ultime Uscite</h2>
+                <div class="cards">
+                    {last_released_shoes}
+                    <p>Consulta la nostra <a href="lista.php">Lista Scarpe</a> completa.</p>
+                </div>
+            </div>
+
             <!-- Chi Siamo -->
             <div class="content">
-                <h2>CorsaIdeale</h2>
+                <h2>Il nostro sito</h2>
                 <p>
                     Benvenuto su <strong>CorsaIdeale</strong>, il sito dedicato alle recensioni delle migliori scarpe da corsa
-                    e ai servizi per aiutarti a migliorare la tua esperienza da runner. Qui troverai guide, consigli e 
+                    e ai servizi per aiutarti a migliorare la tua esperienza da runner. Qui troverai pareri, consigli e 
                     strumenti utili per scegliere la scarpa perfetta e monitorare le tue performance.
                 </p>
             </div>
@@ -53,29 +62,51 @@
             <!-- Servizi Offerti -->
             <div class="content">
                 <h2>Servizi Offerti</h2>
-                <div class="cards">
-                    <div class="card">
+                <div class="new-cards">
+                    <div class="new-card">
                         <h3>Recensioni dettagliate</h3>
                         <p>Esplora analisi approfondite delle ultime scarpe da corsa, condivise da appassionati da tutto il mondo.</p>
                     </div>
-                    <div class="card">
+                    <div class="new-card">
                         <h3>Consigli personalizzati</h3>
                         <p>Trova la scarpa perfetta in base al tuo stile di corsa, grazie al parere dei nostri esperti.</p>
                     </div>
-                    <div class="card">
-                        <h3>Gestione Scarpe</h3>
+                    <div class="new-card">
+                        <h3>Gestione scarpe</h3>
                         <p>Salva le tue scarpe preferite nel tuo profilo e monitora il chilometraggio delle tue corse.</p>
                     </div>
-                    
                 </div>
             </div>
 
-            <!-- Ultime Uscite -->
+            <!-- Ruoli Animali -->
             <div class="content">
-                <h2>Ultime Uscite</h2>
-                <div class="cards">
-                    {last_released_shoes}
-                    <p>Consulta la nostra <a href="lista.php">Lista Scarpe</a> completa.</p>
+                <h2>E tu, che <span lang="en">runner</span> sei?</h2>
+                <p>Scopri quale animale rappresenta il tuo stile di corsa in base ai chilometri settimanali percorsi. Dal principiante alla leggenda, ogni ruolo celebra il tuo impegno e la tua crescita!</p>
+                <div class="animal-roles">
+                    <div class="animal-role">
+                        <h3>Tartaruga</h3>
+                        <img src="../assets/turtle.png" alt="Immagine di una tartaruga" class="animal-image">
+                        <p>Corridori principianti o occasionali.</p>
+                        <p><strong>Fino a 5 km/settimana</strong></p>
+                    </div>
+                    <div class="animal-role">
+                        <h3>Lepre</h3>
+                        <img src="../assets/rabbit.png" alt="Immagine di una lepre" class="animal-image">
+                        <p>Corridori moderati che amano mantenere un buon ritmo.</p>
+                        <p><strong>6-20 km/settimana</strong></p>
+                    </div>
+                    <div class="animal-role">
+                        <h3>Lupo</h3>
+                        <img src="../assets/wolf.png" alt="Immagine di un lupo" class="animal-image">
+                        <p>Corridori regolari con obiettivi di crescita continua.</p>
+                        <p><strong>21-50 km/settimana</strong></p>
+                    </div>
+                    <div class="animal-role">
+                        <h3>Ghepardo</h3>
+                        <img src="../assets/jaguar.png" alt="Immagine di un ghepardo" class="animal-image">
+                        <p>Atleti avanzati e competitivi.</p>
+                        <p><strong>Oltre 50 km/settimana</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,3 +118,4 @@
 </body>
 
 </html>
+

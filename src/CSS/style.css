@@ -5,6 +5,10 @@
   }
   p {
     color: var(--text-color);
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.2em;
+  
   }
   p.error_text{
     color: red;
@@ -19,6 +23,7 @@
     align-items: center; 
   
   }
+
   
   :root {
     --main-bg-color: #a8dadc; /* Sfondo generale - Blu Chiaro Pastello */
@@ -240,11 +245,14 @@
 }
 
 /* Titoli delle sezioni */
+/* Titoli delle sezioni */
 .content h2 {
-  font-size: 2em;
+  text-align: center;
+  font-size: 2.5em;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--navbar-bg-color);
 }
+
 
 /* Paragrafo (Chi Siamo) */
 .content p {
@@ -253,6 +261,113 @@
   color: #666;
 }
 
+/* Stile per il nuovo container delle cards servizi*/
+.new-cards {
+    
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.new-card {
+  background-color: var(--card-bg-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.new-card h3 {
+  font-size: 1.5em;
+  color: var(--navbar-bg-color);
+  margin-bottom: 10px;
+}
+
+.new-card p {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1024px) {
+  .new-cards {
+      flex-direction: column;
+  }
+
+  .new-card {
+      width: 100%;
+  }
+}
+/* Stile per le card dei ruoli animali */
+.animal-roles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.animal-role {
+  background-color: var(--card-bg-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animal-role p {
+  font-size: 1.2em;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.animal-role h3 {
+  font-size: 1.8em; /* Titoli animali leggermente più grandi */
+  color: var(--navbar-bg-color);
+  margin-bottom: 10px;
+}
+
+/* Immagine del ruolo */
+.animal-role .animal-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+/* Media Query per rendere le card responsive */
+@media screen and (max-width: 1024px) {
+  .animal-roles {
+    grid-template-columns: repeat(2, 1fr); /* 2 card per riga */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .animal-roles {
+    grid-template-columns: 1fr; /* 1 card per riga */
+  }
+}
+
+
+/* Stile specifico per le cards delle ultime uscite */
+.new-cards .card {
+    background-color: var(--card-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.new-cards .card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
 
   /* PAGINA CHI SIAMO */
   
@@ -482,4 +597,3 @@
   }
   
   /* FINE SINGLE PAGE */
-  
