@@ -22,6 +22,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  .new-cards {
+    flex-direction: column;
+}
+
+.new-card {
+    width: 100%;
+}
   
   /* PAGINA CHI SIAMO */
   .whoarewe-container {
@@ -39,48 +46,11 @@
   /* FINE PAGINA CHI SIAMO */
   
   /* INIZIO SINGLE PAGE */
-  .singlepage-wrapper {
-    padding: 24px;
-  }
-  
-  .shoe-title h1 {
-    font-size: 26px;
-  }
-  
-  .shoe-title h2 {
-    font-size: 18px;
-  }
-  
-  .shoe-image img {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    border-radius: 10px;
-  }
-  
-  .color-options h3,
-  .review-section h3 {
-    font-size: 18px;
-  }
-  
-  .colors {
-    gap: 12px;
-  }
-  
-  .color {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .tabs {
-    justify-content: space-around;
-  }
-  
-  .tab {
-    padding: 10px 20px;
-    font-size: 14px;
-    gap: 5px;
-  }
   
   /* FINE SINGLE PAGE */
   
+
+/* Immagine del ruolo */
+.animal-roles {
+    grid-template-columns: repeat(2, 1fr); /* 2 card per riga */
+}

@@ -1,7 +1,10 @@
 .cards {
-    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
   }
-  
+  .cards > :nth-child(1) {
+    grid-column: span 1;
+  }
   
   
   .listcards {
@@ -116,3 +119,8 @@
   }
   /* FINE SINGLE PAGE */
   
+
+/* Immagine del ruolo */
+.animal-roles {
+    grid-template-columns: 1fr; /* 1 card per riga */
+}

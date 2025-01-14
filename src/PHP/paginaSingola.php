@@ -20,47 +20,85 @@ $query = "SELECT * FROM SCARPA WHERE id = ?";
 $scarpa = $connection->prepareAndExecute($query, 'i', $id);  
 $content = "";
 $content .= '
-    <div class="shoe-title">
-        <h1>' . htmlspecialchars($scarpa['nome']) . '</h1>
-        <h2>Modello: ' . htmlspecialchars($scarpa['nome']) . '</h2>
-    </div>
+    <!-- Contenitore principale per immagine e dettagli -->
+    <div class="shoe-main">
+        <!-- Contenitore immagine -->
+        <div class="shoe-image">
+            <img src="../assets/nike.png" alt="Nike Air Max">
+        </div>
 
-    <div class="shoe-image">
-        <img src="../assets/nike.png" alt="">
-    </div>
+        <!-- Contenitore dettagli a destra -->
+        <div class="shoe-info">
+            <!-- Titolo e modello -->
+            <div class="shoe-title">
+                <h1>Nike Air Max</h1>
+                <h2>Modello: Nike Air Max</h2>
+            </div>
 
-    <div class="color-options">
-        <h3>Colori Disponibili</h3>
-        <div class="colors">
-            <!-- Puoi aggiungere un array o un ciclo per gestire i colori dinamicamente -->
-            <span class="color" style="background-color: orange;"></span>
-            <span class="color" style="background-color: black;"></span>
-            <span class="color" style="background-color: white;"></span>
+            <!-- Stelle esperti -->
+            <div class="rating">
+                <h3>Valutazione Esperti</h3>
+                <img class="stars" src="../assets/1.png"/>
+                <p>Nessun feedback disponibile.</p>
+            </div>
+            
+            <!-- Stelle utenti -->
+            <div class="rating">
+                <h3>Valutazione Utenti</h3>
+                <img class="stars" src="../assets/1.png"/>
+            </div>
+
+            <!-- Colori disponibili -->
+            <div class="color-options">
+                <h3>Colori Disponibili</h3>
+                <div class="colors">
+                    <span class="color" style="background-color: orange;"></span>
+                    <span class="color" style="background-color: black;"></span>
+                    <span class="color" style="background-color: white;"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="review-section">
-        <h3>Recensioni</h3>
-        <!-- Aggiungi logica per visualizzare recensioni reali dal database se presente -->
-        <p>' . ($scarpa['feedback'] ? htmlspecialchars($scarpa['feedback']) : 'Nessuna recensione disponibile.') . '</p>
+    <!-- Sezione Dettagli -->
+    <div class="details-section">
+        <h3>Dettagli</h3>
+        <p>Dettagli tecnici della scarpa...</p>
     </div>
 
-    <div class="tabs">
-        <button class="tab active" onclick="showTab(\'description\')">Descrizione</button>
-        <button class="tab" onclick="showTab(\'details\')">Dettagli</button>
-        <button class="tab" onclick="showTab(\'feedback\')">Feedback</button>
+    <!-- Sezione Descrizione -->
+    <div class="description-section">
+        <h3>Descrizione</h3>
+        <p>Scarpa comoda e versatile per ogni occasione.</p>
     </div>
 
-    <div class="tab-content" id="description">
-        <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
+    <div class="reviews-section">
+    <h3>Recensioni</h3>
+    <div class="review">
+    <!-- Icona Rabbit -->
+    <div class="review-icon">
+        <img src="../assets/user.png" alt="Rabbit">
     </div>
-    <div class="tab-content hidden" id="details">
-        <p>Dettagli tecnici della scarpa...</p> <!-- Aggiungi dettagli tecnici se necessari -->
+
+    <!-- Info utente -->
+    <div class="review-info">
+        <div class="review-header">
+            <div class="review-left">
+                <span class="review-user">Mario Rossi</span>
+                <img class="user-badge" src="../assets/rabbit.png" alt="User Icon">
+            </div>
+
+            <div class="review-stars">
+                <img class="stars" src="../assets/1.png" alt="Valutazione">
+            </div>
+        </div>
+        <div class="review-text">Ottime scarpe, molto comode per correre.</div>
     </div>
-    <div class="tab-content hidden" id="feedback">
-        <p>' . ($scarpa['feedback'] ? htmlspecialchars($scarpa['feedback']) : 'Nessun feedback disponibile.') . '</p>
-    </div>
+</div>
 ';
+
+
+
 
 $HTMLpage = str_replace("{singlePage_content}", $content, $HTMLpage);
 
