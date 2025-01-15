@@ -61,7 +61,19 @@
   /* FINE PAGINA CHI SIAMO */
   
   /* INIZIO SINGLE PAGE */
-  
+  .shoe-main{
+    flex-direction: column;
+  }
+  .reviews-section{
+    width: 100%;
+  }
+
+  .add-review-section{
+    padding: 0em;
+  }
+  .add-review-wrapper {
+    margin: 0em;
+  }
   /* FINE SINGLE PAGE */
   
 
