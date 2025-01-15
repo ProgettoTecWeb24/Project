@@ -704,40 +704,125 @@ h3 {
 
   /* SEZIONE FOOTER */
   
+/* SEZIONE FOOTER */
+/* SEZIONE FOOTER */
+footer {
+  background-color: var(--navbar-bg-color);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+footer .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+footer .logo img {
+  width: 70px;
+  height: auto;
+}
+
+footer .footer-text {
+  text-align: left;
+}
+
+footer .footer-text p, 
+footer .footer-text address {
+  color: white;
+  margin: 2px 0;
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
+/* Nuovo stile per i link nell'indirizzo */
+footer .footer-text a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+footer .footer-text a:hover {
+  color: var(--btn-color);
+  text-decoration: underline;
+}
+
+footer .valid-code {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .imgValidCode {
+  width: 5em;
+  height: auto;
+}
+
+#footer-links {
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#footer-links p {
+  color: white;
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+/* Nuovo stile per i link social */
+#footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 0.9em;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+#footer-links a:hover {
+  color: var(--btn-color);
+  text-decoration: underline;
+}
+
+footer .copyright {
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.85em;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/*
+@media (max-width: 768px) {
   footer {
-    background-color: var(--navbar-bg-color);
-    color: white;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  footer .logo-container {
+    flex-direction: column;
     text-align: center;
-    padding: 20px 10px;
-    display: flex; /* Flexbox per gestire il layout */
-    justify-content: center; /* Centrare il contenuto orizzontalmente */
-    align-items: center; /* Centrare il contenuto verticalmente */
-    gap: 20px; /* Spazio tra logo e testo */
-    width: 100%;
   }
-  
-  footer .logo {
-    display: flex;
-    align-items: center;
-  }
-  
+
   footer .footer-text {
-    color: white;
-    text-align: left; /* Allinea il testo a sinistra per le informazioni */
+    text-align: center;
+    margin: 10px 0;
   }
-  
-  footer address, 
-  footer a ,
-  footer address p, 
-  footer a p{
-    margin: 5px 0; /* Spazio verticale tra le righe */
-    text-decoration: none;
-    color: white;
+
+  footer .valid-code {
+    margin: 10px 0;
   }
-  
-  footer .imgValidCode {
-    vertical-align: middle;
-    width: 80px; /* Dimensioni immagini validazione */
-  }
-  
+}*/
+
   /* FINE SINGLE PAGE */
