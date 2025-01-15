@@ -1,0 +1,62 @@
+<div class="content">
+    <h1>Gestione profilo di {user}</h1>
+
+    <form action="profilo.php" method="POST">
+        <div class="settings-card">
+            <h1 class="white-text">Impostazioni</h1>
+            <div class="div-coloum">
+                <label for="newUser">Nuovo username:</label>
+                <input class="username-input" name="newUser" type="text" placeholder="Inserisci nuovo username..." />
+            </div>
+            <div class="div-coloum">
+                <label for="kmsett">Kilometri settimanali:</label>
+                <select name="kmsett" id="kmsett" class="select-settings">
+                    <option value="tartaruga">Fino a 5 km/sett</option>
+                    <option value="lepre">Da 6 a 20 km/sett</option>
+                    <option value="lupo">Da 21 a 50 km/sett</option>
+                    <option value="ghepardo">Oltre 50 km/sett</option>
+                </select>
+            </div>
+
+
+            <!-- Pulsante di ricerca -->
+            <div>
+                <button type="submit" class="submit-settings">
+                    <p>Salva impostazioni</p>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <form action="profilo.php" method="POST">
+        <div class="settings-card">
+            <h1 class="white-text">Scarpe con il like</h1>
+            <div>
+                <label for="ricercaLike">Nome scarpa:</label>
+                <input class="username-input" name="ricercaLike" type="text" placeholder="Inserisci nome..." />
+                <button type="submit" class="submit-ricerca">
+                    <p>Effettua ricerca</p>
+                </button>
+            </div>
+
+            <div class="cards">
+                {shoesliked}
+            </div>
+
+
+
+        </div>
+
+
+
+    </form>
+
+    <form action="profilo.php" method="POST" name="logout">
+        <div class="settings-card">
+            <button type="submit" class="submit-settings" name="logout">
+                <p>Logout</p>
+            </button>
+        </div>
+    </form>
+
+</div>
