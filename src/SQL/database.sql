@@ -71,3 +71,12 @@ INSERT INTO UTENTE (username, email, pw, ruolo, admin) VALUES
 ('marco', 'marco@example.com', '$2y$10$MarcoPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'lupo', FALSE),
 ('sara', 'sara@example.com', '$2y$10$SaraPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'tartaruga', FALSE),
 ('luca', 'luca@example.com', '$2y$10$LucaPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'ghepardo', FALSE);
+
+-- Dati per RECENSIONE
+INSERT INTO RECENSIONE (username, scarpa_id, voto, commento, data_aggiunta) VALUES
+('user', 1, 5, 'Scarpe fantastiche! Perfette per correre e molto comode.', '2025-01-10'),
+('admin', 2, 4, "Buone scarpe, ma la vestibilità è un po' stretta.", '2025-01-11'),
+('giulia', 1, 5, 'Le adoro! Design bellissimo e comodità incredibile.', '2025-01-12'),
+('marco', 3, 3, 'La qualità è buona, ma non giustifica il prezzo elevato.', '2025-01-13'),
+('sara', 2, 4, 'Molto belle, ma avrei preferito una suola più morbida.', '2025-01-13'),
+('luca', 1, 2, 'Non mi hanno convinto, troppo rigide per i miei gusti.', '2025-01-14');
