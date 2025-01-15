@@ -1,131 +1,56 @@
-<!DOCTYPE html>   
-<html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CorsaIdeale - Lista Scarpe</title>
-      <link rel="stylesheet" href="../CSS/style.css" media="screen">
-      <link rel="stylesheet" href="../CSS/print.css" media="print">
-      <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
-      <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
-      <link rel="icon" href="../assets/logo.png" >
-   </head>
-   <body>
-      <div class="wrapper">
-         <nav class="navbar">
-            <ul class="navbar-items">
-               <li>
-                  <a href="index.php">
-                  <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito o un h1 poi vediamo">
-                  </a>
-               </li>
-               <li>
-                  <a href="index.php">Home</a>
-               </li>
-               <li>
-                  <a href="lista.php">Lista Scarpe</a>
-               </li>
-               <li>
-                  <a href="chisiamo.php">Chi siamo</a>
-               </li>
-               <li>
-                  <a href="accedi.php">Accedi</a>
-               </li>
-               <li>
-                  <a href="registrati.php">Registrati</a>
-               </li>
-            </ul>
-         </nav>
-         <h1> Lista di tutte le scarpe </h1>
-         <div class="listcards">  <!--DA CAMBIARE CON ALTRO SENNò NON FUNZIONA-->
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                     <h3>Nike</h3>
-                     <p class="marca">Marca: Nike</p>
-                     <p class="modello">Modello: Pegasus 39</p>
-                     <p class="feedback">Feedback: Buono</p>
-                     <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                  </div>
-                  <button class="like-button">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                     </svg>
-                 </button>
-               </div>
-            </a>
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                     <h3>Nike</h3>
-                     <p class="marca">Marca: Nike</p>
-                     <p class="modello">Modello: Pegasus 39</p>
-                     <p class="feedback">Feedback: Buono</p>
-                     <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                  </div>
-                  <button class="like-button">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                     </svg>
-                 </button>
-               </div>
-            </a>
+<form action="lista.php" method="POST">
+    <div class="searchbar-acc">
+        <div>
+            <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..." />
+        </div>
 
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                     <h3>Nike</h3>
-                     <p class="marca">Marca: Nike</p>
-                     <p class="modello">Modello: Pegasus 39</p>
-                     <p class="feedback">Feedback: Buono</p>
-                     <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                  </div>
-                  <button class="like-button">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                     </svg>
-                 </button>
-               </div>
-            </a>
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                     <h3>Nike</h3>
-                     <p class="marca">Marca: Nike</p>
-                     <p class="modello">Modello: Pegasus 39</p>
-                     <p class="feedback">Feedback: Buono</p>
-                     <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                  </div>
-                  <button class="like-button">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                     </svg>
-                 </button>
-               </div>
-            </a>
-            <a href="paginaSingola.html" class="card-link">
-               <div class="card">
-                  <img class="img-card" src="../assets/nike.png" alt="Nike Pegasus 39">
-                  <div class="text-card">
-                     <h3>Nike</h3>
-                     <p class="marca">Marca: Nike</p>
-                     <p class="modello">Modello: Pegasus 39</p>
-                     <p class="feedback">Feedback: Buono</p>
-                     <p class="descrizione">Scarpa da corsa leggera e versatile, ideale per tutti i tipi di runner.</p>
-                  </div>
-                  <button class="like-button">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon">
-                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                     </svg>
-                 </button>
-               </div>
-            </a>
-         </div>
-      </div>
-   </body>
-</html>
+        <div>
+            <label for="ordina">Ordina:</label>
+            <select name="ordina" id="ordina" class="select-filter">
+                <option value="ordStand">Ordine standard</option>
+                <option value="nomeCres">Nome crescente</option>
+                <option value="nomeDesc">Nome descrescente</option>
+                <option value="votoCres">Voto crescente</option>
+                <option value="votoDesc">Voto decrescente</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="marca">Marca:</label>
+            <select name="marca" id="marca" class="select-filter">
+                <option value="all">Tutte le marche</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="asics">Asics</option>
+                <option value="hoka">Hoka</option>
+                <option value="altra">Altra</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="tipo" >Tipo:</label>
+            <select name="tipo" id="tipo" class="select-filter">
+                <option value="all">Tutti i tipi</option>
+                <option value="trail">Trail</option>
+                <option value="strada">Strada</option>
+                <option value="pista">Pista</option>
+            </select>
+        </div>
+
+
+        <!-- Pulsante di ricerca -->
+        <div>
+            <button type="submit" class="submit-filter">
+                <img src="../assets/search-icon.svg" alt="Cerca" />
+            </button>
+        </div>
+    </div>
+</form>
+<div class="content">
+    <h2>Risultato</h2>
+    <div class="cards">
+        {shoes}
+    </div>
+</div>
+</div>
+</main>

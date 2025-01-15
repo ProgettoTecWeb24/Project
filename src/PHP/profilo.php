@@ -10,36 +10,33 @@ if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
 
+if (isset($_POST['logout'])) {
+    session_destroy();
+    session_abort();
+    header("Location: index.php");
+    exit();
+}
+
+
+
 include "header.php";
-$HTMLpage = file_get_contents('../HTML/lista.html');
+$HTMLpage = file_get_contents('../HTML/profilo.html');
 
-$query = "SELECT * FROM scarpa WHERE nome LIKE '%'";
+$HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
 
-if(!empty($_POST['nomescarpa'])){
-    $query = "SELECT * FROM scarpa WHERE nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
+$query ="
+SELECT *
+FROM scarpa
+WHERE id IN ( SELECT scarpa_id FROM likes WHERE username = 'user')";
+
+//$query = "SELECT * FROM scarpa WHERE nome LIKE '%'";
+
+if(!empty($_POST['ricercaLike'])){
+    $query = "
+SELECT *
+FROM scarpa
+WHERE id IN ( SELECT scarpa_id FROM 'likes' WHERE username = 'user') AND nome LIKE '%" . $_POST['ricercaLike'] . "%' ";
 }
-
-if (!empty($_POST['marca']) AND $_POST['marca'] != 'all') {
-    $query = $query . "AND marca = '" . $_POST['marca']. "' ";
-}
-
-if (!empty($_POST['tipo']) AND $_POST['tipo'] != 'all') {
-    $query = $query . "AND tipo = '" . $_POST['tipo']. "' ";
-}
-
-if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
-    if($_POST['ordina'] == "nomeCres"){
-        $query = $query . "ORDER BY nome ASC ";
-    }elseif($_POST['ordina'] == "nomeDesc"){
-        $query = $query . "ORDER BY nome DESC ";
-    }elseif($_POST['ordina'] == "votoCres"){
-        $query = $query . "ORDER BY nome DESC ";
-    }elseif($_POST['ordina'] == "votoDesc"){
-        $query = $query . "ORDER BY nome DESC ";
-    }
-}
-//echo $query;
-
 $result = $connection->query($query);
 
 $cardsHTML = "";
@@ -49,7 +46,7 @@ if ($result) {
         $cardsHTML .= '
             <a href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
                 <div class="card">
-                    <img class="img-card" src="../assets/' . htmlspecialchars($row['immagine'])  . '" alt="' . htmlspecialchars($row['nome']) . '">
+                    <img class="img-card" src="../assets/nike.png' /*. htmlspecialchars($row['immagine']) */ . '" alt="' . htmlspecialchars($row['nome']) . '">
                     <div class="text-card">
                         <h3>' . htmlspecialchars($row['nome']) . '</h3>
                         <p class="marca">Marca: ' . htmlspecialchars($row['marca']) . '</p>
@@ -70,11 +67,12 @@ if ($result) {
     $cardsHTML = "Errore nell'esecuzione della query.";
 }
 
-$HTMLpage = str_replace("{shoes}", $cardsHTML, $HTMLpage);
+$HTMLpage = str_replace("{shoesliked}", $cardsHTML, $HTMLpage);
+
+
 
 echo $HTMLpage;
-
 $connection->endDbConnection();
-
 include "footer.php";
+
 ?>
