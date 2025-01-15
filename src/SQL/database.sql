@@ -7,6 +7,7 @@ CREATE TABLE SCARPA (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     marca VARCHAR(100) NOT NULL,
+    tipo ENUM('strada', 'trail', 'pista') NOT NULL,
     descrizione TEXT,
     dettagli TEXT,
     colori VARCHAR(100) NOT NULL,
