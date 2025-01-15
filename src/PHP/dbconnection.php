@@ -66,28 +66,35 @@ Class DbConnection{
         return $result;
     }
 
-    public function prepareAndExecute($sql, ...$params)
-    {
-    $stmt = $this->connection->prepare($sql);
+    public function prepareAndExecute($query, $types, ...$params) {
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            die("Errore nella preparazione della query: " . $this->connection->error);
+        }
     
-    if (!$stmt) {
-        die('Errore nella preparazione della query: ' . mysqli_error($this->connection));
+        if (!empty($params)) {
+            $stmt->bind_param($types, ...$params);
+        }
+    
+        if (!$stmt->execute()) {
+            die("Errore nell'esecuzione della query: " . $stmt->error);
+        }
+    
+        $result = $stmt->get_result();
+        if (!$result) {
+            die("Errore nell'ottenere il risultato: " . $stmt->error);
+        }
+    
+        $rows = [];
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+    
+        $stmt->close();
+    
+        return $rows;
     }
-
-    if (!empty($params)) {
-        $types = $params[0]; 
-        $stmt->bind_param($types, ...array_slice($params, 1)); 
-    }
     
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-
-    $result = $result->fetch_assoc();
     
-    $stmt->close();
-
-    return $result;  
-}
 }
 ?>

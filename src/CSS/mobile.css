@@ -6,7 +6,19 @@
     grid-column: span 1;
   }
   
-  
+   /* Responsività */
+   .navbar {
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.icon {
+    display: block; /* Mostra l'icona solo su schermi piccoli */
+}
+
+.navbar-items {
+    display: none; /* Nasconde gli item della navbar su schermi piccoli */
+}
   .listcards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -66,56 +78,9 @@
   /* FINE PAGINA CHI SIAMO */
   
   /* INIZIO SINGLE PAGE */
-  .singlepage-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 32px;
-  }
-  
-  .shoe-title h1 {
-    font-size: 32px;
-  }
-  
-  .shoe-title h2 {
-    font-size: 20px;
-  }
-  
-  .shoe-image img {
-    width: 70%;
-    margin: 0 auto;
-  }
-  
-  .color-options {
-    margin-top: 24px;
-  }
-  
-  .color-options h3,
-  .review-section h3 {
-    font-size: 20px;
-  }
-  
-  .colors {
-    gap: 16px;
-  }
-  
-  .color {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .tabs {
-    justify-content: space-evenly;
-    gap: 3px;
-  }
-  
-  .tab {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-  
-  .tab-content {
-    margin-top: 20px;
-    font-size: 16px;
+  .review {
+    display: flex;
+    gap: 0.5em;
   }
   /* FINE SINGLE PAGE */
   

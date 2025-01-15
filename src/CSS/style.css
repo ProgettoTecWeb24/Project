@@ -1,8 +1,185 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Arial";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+:root {
+  --main-bg-color: #a8dadc; /* General Background - Light Pastel Blue */
+  --wrapper-bg-color: #f5f5f5; /* Wrapper Background - Light Gray */
+  --navbar-bg-color: #264653; /* Navbar and Footer - Dark Blue */
+  --card-bg-color: #ffffff; /* Cards Background - Pure White */
+  --btn-color: #2a9d8f; /* CTA Buttons - Light Aqua Green */
+  --label-feedback-color: #e76f51; /* Feedback Labels and Like Button - Coral Red */
+  --text-color: #333333; /* Main Text - Dark Gray */
+  --card-border-color: #264653; /* Cards Border - Dark Blue */
+  --accent-color: #fcb52f; /* Accent Color - Ochre Yellow */
+}
+
+/* Wrapper */
+.wrapper {
+  margin-top: 10px;
+  background-color: var(--wrapper-bg-color);
+  width: 100%;
+  max-width: 1200px;
+  height: fit-content;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  flex-wrap: nowrap;
+}
+
+.logo-navbar {
+  width: 70px;
+  height: auto;
+  align-self: center;
+}
+
+.navbar-items {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-items li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.navbar-items li a:hover {
+  color: var(--btn-color);
+}
+
+/* Searchbar */
+.searchbar {
+  background-image: url("../assets/searchbar-background.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 55%;
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 5%;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.img-card {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  flex: 0.3;
+}
+
+  .text-card {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  .listcards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  
+  .login-signin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .login-signin-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+  
+  input[type="username"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .login-signin-container input[type="submit"], button{
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
 
 p {
   color: var(--text-color);
@@ -261,9 +438,21 @@ input:focus {
   width: 100%;
   transition: transform 0.2s;
 }
+/* Stile per le cards */
+.card {
+  flex: 1 1 calc(33.33% - 15px);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
 .card:hover {
-  transform: scale(1.01);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -286,6 +475,7 @@ input:focus {
   gap: 16px;
 }
 
+/* Titoli */
 h2 {
   text-align: left;
   width: 100%;
@@ -294,6 +484,41 @@ h2 {
   margin-bottom: 20px;
 }
 
+.shoe-title h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.shoe-title h2 {
+  font-size: 1.5em;
+  color: #777;
+  margin-bottom: 1.5em;
+}
+
+/* Layout principale */
+.shoe-main {
+  display: flex;
+  gap: 5%;
+  margin-bottom: 2em;
+}
+
+.shoe-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.shoe-image {
+  flex: 1;
+}
+
+.shoe-image img {
+  max-width: 100%;
+  border-radius: 0.5em;
+}
+
+/* Sezioni Login e Registrazione */
 .login-signin-wrapper {
   display: flex;
   justify-content: center;
@@ -333,35 +558,48 @@ button {
   margin-top: 1rem;
 }
 
-/*HOME*/
+/* Valutazioni */
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 
-/* Singole sezioni */
+.rating img.stars {
+  width: 7em;
+  height: auto;
+}
+
+.rating h3 {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+  color: #555;
+}
+
+/* Opzioni colore */
+.color-options h3 {
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+
+/* Contenuto generale */
 .content {
   margin-bottom: 30px;
 }
 
-/* Stile per le cards (Ultime Uscite e Servizi Offerti) */
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.card {
-  flex: 1 1 calc(33.33% - 15px);
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+.singlepage-wrapper {
+  padding: 2em;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 /* Titoli delle cards */
 .card h3 {
@@ -389,11 +627,10 @@ button {
   color: #666;
 }
 
-
 /* PAGINA CHI SIAMO */
 
 .whoarewe-container {
-  /*  Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti*/
+  /* Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-left: 140px;
@@ -447,46 +684,340 @@ button {
   box-shadow: 0 0 5px var(--navbar-bg-color);
 }
 
+.color {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 0.1em solid #aaa;
+}
+
+/* Sezioni dettagli e descrizione */
+.details-section,
+.description-section {
+  margin-top: 2em;
+}
+
+.details-section h3,
+.description-section h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #444;
+  border-bottom: 2px solid #ffa500;
+  padding-bottom: 0.2em;
+}
+
+.details-section p,
+.description-section p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Recensioni */
+
+.reviews-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.reviews-wrapper > h3 {
+  font-size: 1.8em;
+  color: #333;
+  border-bottom: 2px solid #ffa500;
+  display: inline-block;
+}
+
+/* Singola recensione */
+.review {
+  display: flex;
+  gap: 1em;
+  padding: 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  background-color: #f9f9f9;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.review-icon img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
 .page-title {
   /* Titolo principale (h1) della pagina */
   text-align: center;
   margin-bottom: 20px;
 }
 
-.azienda-title {
-  /* stile dei titoli, rimovibile in caso di stile uguale ai principali */
-  text-align: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.azienda-descrizione {
-  /* descrizione della storia aziendale */
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-weight: bold;
-  color: var(--navbar-bg-color);
-}
-
-/* FINE PAGINA CHI SIAMO */
-
-/* INIZIO SINGLE PAGE */
-.singlepage-wrapper {
-  padding: 16px;
-}
-
-.shoe-title h1 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.shoe-title h2 {
-  font-size: 14px;
+/* Contenuto delle cards */
+.card p {
+  font-size: 1.2em;
   color: #555;
 }
+
+/* Titoli delle sezioni */
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragrafo (Chi Siamo) */
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* PAGINA CHI SIAMO */
+
+.whoarewe-container {
+  /* Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.us-div {
+  /* contenitore della parte "il team" */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.whoarewe-div {
+  /* comprende una foto e relativa descrizione */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: transform 0.2s;
+  gap: 2px;
+  margin-left: 10px;
+}
+
+.whoarewe-div:nth-child(odd) {
+  /* specchia il contenuto dei whoarewe-div in posizioni pari */
+  flex-direction: row-reverse;
+  margin-right: 10px;
+}
+
+.whoarewe-desc {
+  /* nome e descrizione persona */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 15px;
+}
+
+.whoarewe-div:nth-child(odd) .whoarewe-desc {
+  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
+  text-align: right;
+}
+
+.img-whoarewe {
+  /* stile delle immagini di presentazione */
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  float: left;
+  box-shadow: 0 0 5px var(--navbar-bg-color);
+}
+
+.color {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 0.1em solid #aaa;
+}
+
+/* Sezioni dettagli e descrizione */
+.details-section,
+.description-section {
+  margin-top: 2em;
+}
+
+.details-section h3,
+.description-section h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #444;
+  border-bottom: 2px solid #ffa500;
+  padding-bottom: 0.2em;
+}
+
+.details-section p,
+.description-section p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Recensioni */
+
+.reviews-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.reviews-wrapper > h3 {
+  font-size: 1.8em;
+  color: #333;
+  border-bottom: 2px solid #ffa500;
+  display: inline-block;
+}
+
+/* Singola recensione */
+.review {
+  display: flex;
+  gap: 1em;
+  padding: 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  background-color: #f9f9f9;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.review-icon img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.review-user {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.review-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.review-stars img.stars {
+  width: 4em;
+}
+
+/* Pulsante per aggiungere recensioni */
+.add-review-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+/* Contenitore per il prompt e il pulsante */
+.add-review-wrapper {
+  display: flex;
+  max-width: 90%;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Scritta "Lascia la tua Recensione!" */
+.review-prompt {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Pulsante per aggiungere recensioni */
+#add-review-btn {
+  background-color: var(--label-feedback-color); /* Sostituisci con il colore che preferisci */
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Nascondi sezioni nascoste */
+.add-review-section.hidden {
+  display: none;
+}
+
+#add-review-form h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #444;
+  text-align: center;
+}
+
+#add-review-form .form-group {
+  margin-bottom: 1em;
+}
+
+#add-review-form label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+#add-review-form input,
+#add-review-form select,
+#add-review-form textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 0.3em;
+  font-size: 1em;
+}
+
+#add-review-form button {
+  padding: 0.8em 2em;
+  font-size: 1em;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#add-review-form button:hover {
+  background-color: #e69500;
+}
+
 
 .shoe-image img {
   width: 100%;
@@ -628,4 +1159,18 @@ footer .imgValidCode {
   /* Dimensioni immagini validazione */
 }
 
+
 /* FINE SINGLE PAGE */
+
+footer .copyright {
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.85em;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+  /* FINE SINGLE PAGE */
+
