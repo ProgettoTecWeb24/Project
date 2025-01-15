@@ -1,27 +1,134 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-  p {
-    color: var(--text-color);
-    line-height: 1.6;
-    font-size: 1.2em;
-  
-  }
-  p.error_text{
-    color: red;
-    
-  }
-  body {
-    background-color: var(--main-bg-color);
-    font-family: "Arial";
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center; 
-  
-  }
+/* Global Styles */
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Arial";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.2em;
+}
+
+:root {
+  --main-bg-color: #a8dadc; /* Sfondo generale - Blu Chiaro Pastello */
+  --wrapper-bg-color: #f5f5f5; /* Sfondo del wrapper - Grigio Chiarissimo */
+  --navbar-bg-color: #264653; /* Navbar e footer - Blu Scuro */
+  --card-bg-color: #ffffff; /* Sfondo delle cards - Bianco Puro */
+  --btn-color: #2a9d8f; /* Pulsanti CTA - Verde Acqua Chiaro */
+  --label-feedback-color: #e76f51; /* Etichette di feedback e tasto like - Rosso Corallo */
+  --text-color: #333333; /* Testo principale - Grigio Scuro */
+  --card-border-color: #264653; /* Bordo delle cards - Blu Scuro */
+  --accent-color: #FCB52F; /* Colore di accento - Giallo Ocra */
+}
+
+/* Wrapper */
+.wrapper {
+  margin-top: 10px;
+  background-color: var(--wrapper-bg-color);
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  flex-wrap: nowrap; /* Evita che gli elementi si impilino */
+}
+
+/* Logo */
+.logo-navbar {
+  width: 4em;
+  height: auto;
+  align-self: center;
+}
+
+/* Titolo "CorsaIdeale" */
+.navbar h1 {
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2.5em;
+  margin: 0 15px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+#title1 {
+  color: var(--wrapper-bg-color);
+}
+
+#title2 {
+  color: var(--accent-color);
+}
+
+/* Navbar Items */
+.navbar-items {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navbar-items li a {
+  text-wrap: nowrap;
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.navbar-items li a:hover {
+  color: var(--btn-color);
+}
+
+/* Hamburger Menu Icon */
+.icon {
+  display: none;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 2em;
+  height: auto;
+}
+
+/* Breadcrumb */
+#breadcrumb {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+#breadcrumb p {
+  margin: 0;
+  text-align: left;
+}
+
+
+
+
 
   
   :root {
@@ -81,6 +188,7 @@
     margin-left: auto;
   }
   
+
   .searchbar {
     background-image: url("../assets/searchbar-background.jpeg");
     background-size: cover;
@@ -803,26 +911,5 @@ footer .copyright {
   padding-top: 5px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/*
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  footer .logo-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  footer .footer-text {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  footer .valid-code {
-    margin: 10px 0;
-  }
-}*/
 
   /* FINE SINGLE PAGE */

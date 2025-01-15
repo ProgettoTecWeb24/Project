@@ -5,6 +5,21 @@
     height: 100%;
   }
   
+  /* Responsività */
+  .navbar {
+      justify-content: space-between;
+      padding: 10px;
+  }
+
+  .icon {
+      display: block; /* Mostra l'icona solo su schermi piccoli */
+  }
+
+  .navbar-items {
+      display: none; /* Nasconde gli item della navbar su schermi piccoli */
+  }
+
+
   .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
