@@ -412,13 +412,14 @@ input:focus {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
 .cards> :nth-child(1),
 .cards> :nth-child(2) {
-  grid-column: span 2;
+  grid-column: span 1;
+  
 }
 
 .card-link {
@@ -587,11 +588,6 @@ button {
   margin-bottom: 30px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
 
 .singlepage-wrapper {
   padding: 2em;

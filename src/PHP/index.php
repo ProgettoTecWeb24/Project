@@ -13,7 +13,7 @@ if (!$connection->startDbConnection()) {
 
 $HTMLpage = file_get_contents('../HTML/index.html');
 
-$query = "SELECT * FROM SCARPA ORDER BY data_aggiunta DESC LIMIT 5";
+$query = "SELECT * FROM SCARPA ORDER BY data_aggiunta DESC LIMIT 4";
 $result = $connection->query($query);
 
 $cardsHTML = "";
