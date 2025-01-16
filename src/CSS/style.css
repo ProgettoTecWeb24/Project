@@ -73,33 +73,23 @@ body {
   color: var(--btn-color);
 }
 
-/* Searchbar */
-.searchbar {
-  background-image: url("../assets/searchbar-background.jpeg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+.navbar-items {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+.navbar-items li a {
+    text-wrap: nowrap;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
 }
-
-.search-input {
-  width: 55%;
-  border-radius: 8px;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
+  
+.navbar-items li:nth-last-child(0) {
+    margin-left: auto;
 }
-
-.search-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  width: 5%;
-}
-
+  
 /* Cards */
 .cards {
   display: grid;
@@ -190,93 +180,10 @@ p.error_text {
 
 }
 
-body {
-  background-color: var(--main-bg-color);
-  font-family: "Arial";
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-:root {
-  --main-bg-color: #a8dadc;
-  /* Sfondo generale - Blu Chiaro Pastello */
-  --wrapper-bg-color: #f5f5f5;
-  /* Sfondo del wrapper - Grigio Chiarissimo */
-  --navbar-bg-color: #264653;
-  /* Navbar e footer - Blu Scuro */
-  --card-bg-color: #ffffff;
-  /* Sfondo delle cards - Bianco Puro */
-  --btn-color: #2a9d8f;
-  /* Pulsanti CTA - Verde Acqua Chiaro */
-  --label-feedback-color: #e76f51;
-  /* Etichette di feedback e tasto like - Rosso Corallo */
-  --text-color: #333333;
-  /* Testo principale - Grigio Scuro */
-  --card-border-color: #264653;
-  /* Bordo delle cards - Blu Scuro */
-}
-
-.wrapper {
-  margin-top: 10px;
-  background-color: var(--wrapper-bg-color);
-  width: 1200px;
-  height: fit-content;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--navbar-bg-color);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  padding: 5px 20px;
-}
-
 .icon {
   display: none;
 }
 
-.logo-navbar {
-  width: 70px;
-  height: auto;
-  align-self: center;
-}
-
-.navbar-items {
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-.navbar-items li a {
-  text-wrap: nowrap;
-  text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-}
-
-.navbar-items li:nth-last-child(0) {
-  margin-left: auto;
-}
-
-.searchbar {
-  background-image: url("../assets/searchbar-background.jpeg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
 
 .searchbar-acc {
   background-color: var(--navbar-bg-color);
@@ -410,6 +317,9 @@ input:focus {
   outline: none;
 }
 
+
+
+/* Stile per le cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,19 +337,6 @@ input:focus {
   color: inherit;
   width: 100%;
 }
-
-.card {
-  background-color: var(--card-bg-color);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  transition: transform 0.2s;
-}
-/* Stile per le cards */
 .card {
   flex: 1 1 calc(33.33% - 15px);
   padding: 20px;
@@ -519,74 +416,9 @@ h2 {
   border-radius: 0.5em;
 }
 
-/* Sezioni Login e Registrazione */
-.login-signin-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.login-signin-container {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-}
-
-input[type="username"],
-input[type="password"] {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-input[type="submit"],
-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-/* Valutazioni */
-.rating {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-
-.rating img.stars {
-  width: 7em;
-  height: auto;
-}
-
-.rating h3 {
-  font-size: 1.3em;
-  margin-bottom: 0.3em;
-  color: #555;
-}
-
-/* Opzioni colore */
-.color-options h3 {
-  font-size: 1.3em;
-  margin-bottom: 0.5em;
-}
+/
 
 /* Contenuto generale */
-.content {
-  margin-bottom: 30px;
-}
 
 
 .singlepage-wrapper {
@@ -624,135 +456,6 @@ button {
   line-height: 1.6;
   color: #666;
 }
-
-/* PAGINA CHI SIAMO */
-
-.whoarewe-container {
-  /* Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti */
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-left: 140px;
-  margin-right: 140px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-.us-div {
-  /* contenitore della parte "il team" */
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.whoarewe-div {
-  /* comprende una foto e relativa descrizione */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: transform 0.2s;
-  gap: 2px;
-  margin-left: 10px;
-}
-
-.whoarewe-div:nth-child(odd) {
-  /* specchia il contenuto dei whoarewe-div in posizioni pari */
-  flex-direction: row-reverse;
-  margin-right: 10px;
-}
-
-.whoarewe-desc {
-  /* nome e descrizione persona */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 15px;
-}
-
-.whoarewe-div:nth-child(odd) .whoarewe-desc {
-  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
-  text-align: right;
-}
-
-.img-whoarewe {
-  /* stile delle immagini di presentazione */
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  float: left;
-  box-shadow: 0 0 5px var(--navbar-bg-color);
-}
-
-.color {
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  border: 0.1em solid #aaa;
-}
-
-/* Sezioni dettagli e descrizione */
-.details-section,
-.description-section {
-  margin-top: 2em;
-}
-
-.details-section h3,
-.description-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #444;
-  border-bottom: 2px solid #ffa500;
-  padding-bottom: 0.2em;
-}
-
-.details-section p,
-.description-section p {
-  font-size: 1em;
-  color: #666;
-}
-
-/* Recensioni */
-
-.reviews-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.reviews-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1em;
-  width: 90%;
-}
-
-.reviews-wrapper > h3 {
-  font-size: 1.8em;
-  color: #333;
-  border-bottom: 2px solid #ffa500;
-  display: inline-block;
-}
-
-/* Singola recensione */
-.review {
-  display: flex;
-  gap: 1em;
-  padding: 1.5em;
-  border: 1px solid #ddd;
-  border-radius: 0.5em;
-  background-color: #f9f9f9;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.review-icon img {
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 
 .page-title {
   /* Titolo principale (h1) della pagina */
@@ -837,13 +540,29 @@ button {
   box-shadow: 0 0 5px var(--navbar-bg-color);
 }
 
-.color {
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  border: 0.1em solid #aaa;
-}
 
+.shoe-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  
+  .colors {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
 /* Sezioni dettagli e descrizione */
 .details-section,
 .description-section {
@@ -909,6 +628,7 @@ button {
 }
 
 .review-header {
+    width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -933,7 +653,24 @@ button {
 .review-stars img.stars {
   width: 4em;
 }
-
+/* Valutazioni */
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .rating img.stars {
+    width: 7em;
+    height: auto;
+  }
+  
+  .rating h3 {
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+    color: #555;
+  }
+  
 /* Pulsante per aggiungere recensioni */
 .add-review-section {
   display: flex;
@@ -1017,60 +754,6 @@ button {
 }
 
 
-.shoe-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.color-options h3,
-.review-section h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.colors {
-  display: flex;
-  gap: 8px;
-}
-
-.color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-}
-
-.review-section {
-  margin-top: 12px;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-  gap: 10px;
-}
-
-.tab {
-  padding: 8px 12px;
-  background-color: #e0e0e0;
-  border-radius: 15px;
-  font-size: 12px;
-}
-
-.tab.active {
-  background-color: #ffa500;
-  color: white;
-}
-
-.tab-content {
-  margin-top: 12px;
-  font-size: 14px;
-}
-
-.hidden {
-  display: none;
-}
 
 /* SEZIONE TASTO LIKE */
 
@@ -1084,7 +767,6 @@ button {
 
 .heart-icon {
   fill: #ccc;
-  /* Grigio chiaro di default */
   width: 24px;
   height: 24px;
   transition: fill 0.3s;
@@ -1093,7 +775,6 @@ button {
 .like-button:hover .heart-icon,
 .like-button.active .heart-icon {
   fill: var(--label-feedback-color);
-  /* Rosso corallo */
 }
 
 /* PAGINE ERRORI */
@@ -1116,97 +797,93 @@ button {
 footer {
     background-color: var(--navbar-bg-color);
     color: white;
-    padding: 5px 20px;
+    padding: 0.5em 2%;
     border-radius: 8px;
-    margin-top: 8px;
+    margin-top: 0.8em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-  footer .logo-container {
+}
+footer .logo-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-  }
-  footer .logo img {
-    width: 70px;
+    gap: 2em;
+}
+footer .logo img {
+    width: 7em;
     height: auto;
-  }
-  footer .footer-text {
+}
+footer .footer-text {
     text-align: left;
-  }
-  footer .footer-text p, 
-  footer .footer-text address {
+}
+footer .footer-text p, 
+footer .footer-text address {
     color: white;
-    margin: 2px 0;
+    margin: 0.2em 0;
     line-height: 1.4;
     font-size: 0.9em;
-  }
-  /* Nuovo stile per i link nell'indirizzo */
-  footer .footer-text a {
+}
+footer .footer-text a {
     color: white;
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s;
-  }
-  footer .footer-text a:hover {
+}
+footer .footer-text a:hover {
     color: var(--btn-color);
     text-decoration: underline;
-  }
-  footer .valid-code {
+}
+footer .valid-code {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  footer .imgValidCode {
+    gap: 1em;
+}
+footer .imgValidCode {
     width: 5em;
     height: auto;
-  }
-  #footer-links {
+}
+#footer-links {
     color: white;
     width: 100%;
     text-align: center;
-    margin-top: 10px;
-    padding-top: 5px;
+    margin-top: 1em;
+    padding-top: 0.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  #footer-links p {
+}
+#footer-links p {
     color: white;
-    margin: 5px 0;
+    margin: 0.5em 0;
     font-size: 0.9em;
-  }
-  /* Nuovo stile per i link social */
-  #footer-links a {
+}
+#footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 0.8em;
     font-size: 0.9em;
     transition: color 0.3s, text-decoration 0.3s;
-  }
-  #footer-links a:hover {
+}
+#footer-links a:hover {
     color: var(--btn-color);
     text-decoration: underline;
-  }
-  footer .copyright {
+}
+footer .copyright {
     color: white;
     width: 100%;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 0.5em;
     font-size: 0.85em;
-    padding-top: 5px;
+    padding-top: 0.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
+}
 
-/* Stile per il nuovo container delle cards servizi*/
+/* Home page parte animali*/
 .new-cards {
-    
+    display: flex;
+    justify-content: space-between;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  
 }
 .new-card {
   background-color: var(--card-bg-color);
@@ -1227,7 +904,6 @@ footer {
   line-height: 1.5;
 }
 
-/* Stile per le card dei ruoli animali */
 .animal-roles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1245,31 +921,17 @@ footer {
 }
 .animal-role p {
   font-size: 1.2em;
-  color: var(--text-color);
-  line-height: 1.5;
+color: var(--text-color);
+line-height: 1.5em;
 }
 .animal-role h3 {
-  font-size: 1.8em; /* Titoli animali leggermente più grandi */
-  color: var(--navbar-bg-color);
-  margin-bottom: 10px;
-}
-/* Immagine del ruolo */
-.animal-role .animal-image {
-  width: 100px;
-  height: 100px;
-  margin: 10px auto;
+font-size: 1.8em; 
+color: var(--navbar-bg-color);
+margin-bottom: 1em;
 }
 
-/* Stile specifico per le cards delle ultime uscite */
-.new-cards .card {
-    background-color: var(--card-bg-color);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s;
-}
-.new-cards .card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+.animal-role .animal-image {
+width: 10em;
+height: 10em;
+margin: 1em auto;
 }
