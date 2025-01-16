@@ -1,59 +1,20 @@
-<!DOCTYPE html>   
-<html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CorsaIdeale - Registrati</title>
-        <link rel="stylesheet" href="../CSS/style.css" media="screen">
-        <link rel="stylesheet" href="../CSS/print.css" media="print">
-        <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
-        <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
-        <link rel="icon" href="../assets/logo.png" >
-    </head>
-    <body>
-        <div class="wrapper">
-            <nav class="navbar">
-               <ul class="navbar-items">
-                  <li>
-                     <a href="index.php">
-                     <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito o un h1 poi vediamo">
-                     </a>
-                  </li>
-                  <li>
-                     <a href="index.php">Home</a>
-                  </li>
-                  <li>
-                     <a href="lista.php">Lista Scarpe</a>
-                  </li>
-                  <li>
-                     <a href="chisiamo.php">Chi siamo</a>
-                  </li>
-                  <li>
-                     <a href="accedi.php">Accedi</a>
-                  </li>
-                  <li>
-                     <a href="registrati.php">Registrati</a>
-                  </li>
-               </ul>
-            </nav>
-            <div class="login-signin-wrapper">
-               <div class="login-signin-container">
-                  <form action="registrati.php" class="form" method="post">
-                    <h1>Registrati</h1>
-                    <label for="username">Username</label>
-                    <input type="username" id="username" name="username" placeholder="Inserisci lo username" />
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la password" />
-                    <label for="password">Conferma Password</label>
-                    <input type="password" name="confirm_password" placeholder="Conferma la tua password"/>
-                    {error_text}
-                    <button type="submit" name="submit" >Registrati</button>
-                  </form>
-                    <h3>Hai già un account? <a href="accedi.php">Clicca qui</a></h3>
-               </div>
+         <div class="login-signin-wrapper">
+            <div class="login-signin-container">
+               <form action="registrati.php" class="form" method="post">
+                  <h1>Registrati</h1>
+                  <label for="username">Username</label>
+                  <input type="username" id="username" name="username" placeholder="Inserisci lo username" />
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" placeholder="Inserisci la password" />
+                  <label for="password">Conferma Password</label>
+                  <input type="password" name="confirm_password" placeholder="Conferma la tua password"/>
+                  {error_text}
+                  <button type="submit" name="submit" >Registrati</button>
+               </form>
+                  <h3>Hai già un account? <a href="accedi.php">Clicca qui</a></h3>
             </div>
-        </div>
-    </body>
+         </div>
+      </main>
+   </body>
     
 </html>

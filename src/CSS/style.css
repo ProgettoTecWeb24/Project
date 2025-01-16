@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,16 +14,15 @@ body {
   height: 100%;
 }
 
+/*Variabili colori*/
 :root {
-  --main-bg-color: #a8dadc; /* General Background - Light Pastel Blue */
-  --wrapper-bg-color: #f5f5f5; /* Wrapper Background - Light Gray */
-  --navbar-bg-color: #264653; /* Navbar and Footer - Dark Blue */
-  --card-bg-color: #ffffff; /* Cards Background - Pure White */
-  --btn-color: #2a9d8f; /* CTA Buttons - Light Aqua Green */
-  --label-feedback-color: #e76f51; /* Feedback Labels and Like Button - Coral Red */
-  --text-color: #333333; /* Main Text - Dark Gray */
-  --card-border-color: #264653; /* Cards Border - Dark Blue */
+  --main-bg-color: #4297D0; /* Main Background - Light Blue */
   --accent-color: #fcb52f; /* Accent Color - Ochre Yellow */
+  --wrapper-bg-color: #F2F2F2; /* Wrapper Background - Light Gray */
+  --navbar-bg-color: #264653; /* Navbar Background - Dark Blue */
+  --card-bg-color: #ffffff; /* Cards Background - White */
+  --red-heart: #ff3300; /* Like Button -Red Heart */
+  --text-color: #1f1f1f; /* Main Text - Dark Gray */
 }
 
 /* Wrapper */
@@ -39,7 +37,10 @@ body {
   padding: 10px;
 }
 
-/* Navbar */
+/*---------------------------------------- 
+              SEZIONE NAVBAR 
+----------------------------------------*/
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -64,119 +65,243 @@ body {
 
 .navbar-items li a {
   text-decoration: none;
-  color: white;
+  color: var(--card-bg-color);
   padding: 10px 15px;
   transition: color 0.3s;
 }
 
 .navbar-items li a:hover {
-  color: var(--btn-color);
+  color: var(--accent-color);
 }
 
 .navbar-items {
     display: flex;
     list-style: none;
     align-items: center;
-  }
-  
-.navbar-items li a {
-    text-wrap: nowrap;
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
 }
-  
-.navbar-items li:nth-last-child(0) {
-    margin-left: auto;
+
+/* Titolo "CorsaIdeale" */
+.navbar h1 {
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2.5em;
+  white-space: nowrap;
+  display: flex;
 }
-  
+
+#title1 {
+  color: var(--wrapper-bg-color);
+}
+
+#title2 {
+  color: var(--accent-color);
+}
+
+/*---------------------------------------- 
+              SEZIONE HOME 
+----------------------------------------*/
+
 /* Cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
 .card {
-  background-color: var(--card-bg-color);
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
+  background-color: var(--card-bg-color);
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
 .card:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
 .img-card {
-  width: 100%;
+  width: 40%;
   height: auto;
   border-radius: 10px;
   flex: 0.3;
 }
+  
+.listcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
 
-  .text-card {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-  }
-  
-  .listcards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
+/* SEZIONE TASTO LIKE */
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
 
-  
-  .login-signin-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .login-signin-container {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-  }
-  
-  input[type="username"],
-  input[type="password"] {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .login-signin-container input[type="submit"], button{
-    background-color: #007bff;
-    color: #fff;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
+.heart-icon {
+  fill: #ccc;
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s;
+}
 
-p {
+.like-button:hover .heart-icon,
+.like-button.active .heart-icon {
+  fill: var(--red-heart);
+}
+
+/* Titoli delle cards */
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Contenuto delle cards */
+.card p {
+  font-size: 1.2em;
+  color:var(--text-color);
+}
+
+/* Titoli delle sezioni */
+.content h2 {
+  font-size: 2.5em;
+  margin: 0.8em;
+  text-align: center;
+  color:var(--navbar-bg-color);
+}
+
+/* Paragrafo (Chi Siamo) */
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
   color: var(--text-color);
+  text-align: center;
+}
+
+.new-cards {
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.new-card {
+background-color: var(--card-bg-color);
+border: 2px solid var(--navbar-bg-color);
+border-radius: 10px;
+padding: 20px;
+text-align: center;
+flex: 1;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.new-card h3 {
+font-size: 1.5em;
+color: var(--navbar-bg-color);
+margin-bottom: 10px;
+}
+
+.new-card p {
+color: var(--text-color);
+line-height: 1.5;
+}
+
+.animal-roles {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+justify-content: center;
+margin-top: 20px;
+}
+
+.animal-role {
+background-color: var(--card-bg-color);
+border: 2px solid var(--navbar-bg-color);
+border-radius: 10px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animal-role p {
+font-size: 1.2em;
+color: var(--text-color);
+line-height: 1.5em;
+}
+
+.animal-role h3 {
+font-size: 1.8em; 
+color: var(--navbar-bg-color);
+margin-bottom: 1em;
+}
+
+.animal-role .animal-image {
+width: 10em;
+height: 10em;
+margin: 1em auto;
+}
+
+/*---------------------------------------- 
+              SEZIONE LOGIN/SIGNIN 
+----------------------------------------*/
+
+.login-signin-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+}
+
+.login-signin-container {
+  background-color: var(--card-bg-color);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 40em;
+}
+  
+input[type="username"],
+input[type="password"] {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid var(--navbar-bg-color);
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.login-signin-container input[type="submit"], button{
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  padding: 1em;
 }
 
 p.error_text {
-  color: red;
+  color: var(--red-heart);
 
 }
 
@@ -184,6 +309,9 @@ p.error_text {
   display: none;
 }
 
+/*---------------------------------------- 
+              SEZIONE LISTA SCARPE 
+----------------------------------------*/
 
 .searchbar-acc {
   background-color: var(--navbar-bg-color);
@@ -191,7 +319,6 @@ p.error_text {
   background-position: center;
   border-radius: 8px;
   padding: 10px;
-  /*height: 70%;*/
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -206,7 +333,6 @@ p.error_text {
   height: 3em;
   border-radius: 8px;
   padding: 10px;
-  border: 1px solid #ccc;
 }
 
 .select-filter {
@@ -214,7 +340,6 @@ p.error_text {
   height: 3em;
   border-radius: 8px;
   padding: 10px;
-  border: 1px solid #ccc;
 }
 
 .submit-filter {
@@ -223,7 +348,6 @@ p.error_text {
   height: 3em;
   margin-top: 0rem;
   border-radius: 8px;
-  background-color: white;
   cursor: pointer;
   font-size: revert;
 }
@@ -238,34 +362,30 @@ p.error_text {
   cursor: pointer;
   width: 5%;
 }
-.white-text{
-  color: white;
-}
 
-.black-text{
-  color: black;
-}
+/*---------------------------------------- 
+              SEZIONE GESTIONE PROFILO 
+----------------------------------------*/
 
 label{
-  color: white;
+  color: var(--text-color);
 }
 
-.div-coloum{
+.div-column{
   display: flex;
   flex-direction: column;
 }
 .settings-card {
-  background-color: var(--navbar-bg-color);
+  background-color: var(--card-bg-color);
+  border: 2px solid var(--navbar-bg-color);
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   padding: 10px;
-  /*height: 70%;*/
   width: 100%;
   display: flex;
   gap: 1em;
   flex-direction: column;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -288,14 +408,14 @@ label{
 }
 
 .submit-settings {
-  padding: 7px;
-  width: 29em;
-  height: 3em;
-  margin-top: 0rem;
-  border-radius: 8px;
-  background-color: white;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 1em;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: revert;
+  font-size: 1em;
 }
 
 .submit-ricerca {
@@ -317,70 +437,22 @@ input:focus {
   outline: none;
 }
 
+/*---------------------------------------- 
+              SEZIONE SINGLE PAGE 
+----------------------------------------*/
 
-
-/* Stile per le cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.cards> :nth-child(1),
-.cards> :nth-child(2) {
-  grid-column: span 1;
-  
-}
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-}
-.card {
-  flex: 1 1 calc(33.33% - 15px);
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.img-card {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  flex: 0.3;
-  max-width: 180px;
-}
-
-.text-card {
-  text-align: left;
-  flex: 0.7;
-}
-
-.listcards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-/* Titoli */
-h2 {
-  text-align: left;
-  width: 100%;
-  font-size: 24px;
-  padding-left: 10px;
-  margin-bottom: 20px;
-}
+/*DA SISTEMARE EDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+(cancella commento*/
 
 .shoe-title h1 {
   font-size: 2em;
@@ -393,7 +465,6 @@ h2 {
   margin-bottom: 1.5em;
 }
 
-/* Layout principale */
 .shoe-main {
   display: flex;
   gap: 5%;
@@ -416,77 +487,220 @@ h2 {
   border-radius: 0.5em;
 }
 
-/
-
-/* Contenuto generale */
-
-
-.singlepage-wrapper {
-  padding: 2em;
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.6;
+.shoe-image img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 
-/* Titoli delle cards */
-.card h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.colors {
+  display: flex;
+  gap: 8px;
 }
 
-/* Contenuto delle cards */
-.card p {
-  font-size: 1.2em;
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+
+.hidden {
+  display: none;
+}
+/* Sezioni dettagli e descrizione */
+.details-section,
+.description-section {
+margin-top: 2em;
+}
+
+.details-section h3,
+
+
+.details-section p,
+.description-section p {
+font-size: 1em;
+color: #666;
+}
+
+/* Recensioni */
+
+.reviews-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.reviews-section {
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-top: 1em;
+width: 90%;
+}
+
+.reviews-wrapper > h3 {
+font-size: 1.8em;
+color: #333;
+border-bottom: 2px solid #ffa500;
+display: inline-block;
+}
+
+/* Singola recensione */
+.review {
+display: flex;
+gap: 1em;
+padding: 1.5em;
+border: 1px solid #ddd;
+border-radius: 0.5em;
+background-color: #f9f9f9;
+align-items: flex-start;
+text-align: left;
+}
+
+.review-info{
+  width: 100%;
+}
+.review-icon img {
+width: 3em;
+height: 3em;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.review-header {
+  width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.review-left {
+display: flex;
+align-items: center;
+gap: 0.5em;
+}
+
+.review-user {
+font-weight: bold;
+font-size: 1.2em;
+}
+
+.review-text {
+font-size: 1em;
+color: #555;
+}
+
+.review-stars img.stars {
+width: 4em;
+}
+/* Valutazioni */
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.rating img.stars {
+  width: 7em;
+  height: auto;
+}
+
+.rating h3 {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
   color: #555;
 }
 
-/* Titoli delle sezioni */
-.content h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 2.5em;
-  color: #333;
+/* Pulsante per aggiungere recensioni */
+.add-review-section {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em;
 }
 
-/* Paragrafo (Chi Siamo) */
-.content p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #666;
+/* Contenitore per il prompt e il pulsante */
+.add-review-wrapper {
+display: flex;
+max-width: 90%;
+align-items: center;
+justify-content: center;
+text-align: left;
 }
 
-.page-title {
-  /* Titolo principale (h1) della pagina */
-  text-align: center;
-  margin-bottom: 20px;
+/* Scritta "Lascia la tua Recensione!" */
+.review-prompt {
+font-size: 1.2em;
+font-weight: bold;
+color: #333;
 }
 
-/* Contenuto delle cards */
-.card p {
-  font-size: 1.2em;
-  color: #555;
+/* Pulsante per aggiungere recensioni */
+#add-review-btn {
+background-color: var(--accent-color);
+border: 1px solid #ddd;
+border-radius: 0.5em;
+font-size: 1.2em;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
-/* Titoli delle sezioni */
-.content h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #333;
+/* Nascondi sezioni nascoste */
+.add-review-section.hidden {
+display: none;
 }
 
-/* Paragrafo (Chi Siamo) */
-.content p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #666;
+#add-review-form h3 {
+font-size: 1.5em;
+margin-bottom: 1em;
+color: #444;
+text-align: center;
 }
 
-/* PAGINA CHI SIAMO */
+#add-review-form .form-group {
+margin-bottom: 1em;
+}
+
+#add-review-form label {
+display: block;
+font-size: 1em;
+margin-bottom: 0.5em;
+}
+
+#add-review-form input,
+#add-review-form select,
+#add-review-form textarea {
+width: 100%;
+padding: 0.8em;
+border: 1px solid #ddd;
+border-radius: 0.3em;
+font-size: 1em;
+}
+
+#add-review-form button {
+padding: 0.8em 2em;
+font-size: 1em;
+background-color: #ffa500;
+color: white;
+border: none;
+border-radius: 0.3em;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+#add-review-form button:hover {
+background-color: #e69500;
+}
+
+/*---------------------------------------- 
+              SEZIONE CHI SIAMO 
+----------------------------------------*/
 
 .whoarewe-container {
-  /* Racchiude tutti tioli, descrizioni dell'azienda e le foto e descrizioni dei componenti */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-left: 140px;
@@ -540,247 +754,9 @@ h2 {
   box-shadow: 0 0 5px var(--navbar-bg-color);
 }
 
-
-.shoe-image img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  
-  .colors {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .color {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-  }
-  
-  
-  .hidden {
-    display: none;
-  }
-/* Sezioni dettagli e descrizione */
-.details-section,
-.description-section {
-  margin-top: 2em;
-}
-
-.details-section h3,
-.description-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #444;
-  border-bottom: 2px solid #ffa500;
-  padding-bottom: 0.2em;
-}
-
-.details-section p,
-.description-section p {
-  font-size: 1em;
-  color: #666;
-}
-
-/* Recensioni */
-
-.reviews-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.reviews-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1em;
-  width: 90%;
-}
-
-.reviews-wrapper > h3 {
-  font-size: 1.8em;
-  color: #333;
-  border-bottom: 2px solid #ffa500;
-  display: inline-block;
-}
-
-/* Singola recensione */
-.review {
-  display: flex;
-  gap: 1em;
-  padding: 1.5em;
-  border: 1px solid #ddd;
-  border-radius: 0.5em;
-  background-color: #f9f9f9;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.review-info{
-    width: 100%;
-}
-.review-icon img {
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.review-header {
-    width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.review-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.review-user {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.review-text {
-  font-size: 1em;
-  color: #555;
-}
-
-.review-stars img.stars {
-  width: 4em;
-}
-/* Valutazioni */
-.rating {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  
-  .rating img.stars {
-    width: 7em;
-    height: auto;
-  }
-  
-  .rating h3 {
-    font-size: 1.3em;
-    margin-bottom: 0.3em;
-    color: #555;
-  }
-  
-/* Pulsante per aggiungere recensioni */
-.add-review-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-}
-
-/* Contenitore per il prompt e il pulsante */
-.add-review-wrapper {
-  display: flex;
-  max-width: 90%;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-}
-
-/* Scritta "Lascia la tua Recensione!" */
-.review-prompt {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Pulsante per aggiungere recensioni */
-#add-review-btn {
-  background-color: var(--label-feedback-color); /* Sostituisci con il colore che preferisci */
-  border: 1px solid #ddd;
-  border-radius: 0.5em;
-  font-size: 1.2em;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Nascondi sezioni nascoste */
-.add-review-section.hidden {
-  display: none;
-}
-
-#add-review-form h3 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #444;
-  text-align: center;
-}
-
-#add-review-form .form-group {
-  margin-bottom: 1em;
-}
-
-#add-review-form label {
-  display: block;
-  font-size: 1em;
-  margin-bottom: 0.5em;
-}
-
-#add-review-form input,
-#add-review-form select,
-#add-review-form textarea {
-  width: 100%;
-  padding: 0.8em;
-  border: 1px solid #ddd;
-  border-radius: 0.3em;
-  font-size: 1em;
-}
-
-#add-review-form button {
-  padding: 0.8em 2em;
-  font-size: 1em;
-  background-color: #ffa500;
-  color: white;
-  border: none;
-  border-radius: 0.3em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#add-review-form button:hover {
-  background-color: #e69500;
-}
-
-
-
-/* SEZIONE TASTO LIKE */
-
-.like-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-  padding: 0;
-}
-
-.heart-icon {
-  fill: #ccc;
-  width: 24px;
-  height: 24px;
-  transition: fill 0.3s;
-}
-
-.like-button:hover .heart-icon,
-.like-button.active .heart-icon {
-  fill: var(--label-feedback-color);
-}
-
-/* PAGINE ERRORI */
+/*---------------------------------------- 
+              SEZIONE PAGINE ERRORI 
+----------------------------------------*/
 
 .error-content {
   flex-direction: column;
@@ -796,10 +772,13 @@ h2 {
   margin: 2em;
 }
 
-/* SEZIONE FOOTER */
+/*---------------------------------------- 
+              SEZIONE FOOTER 
+----------------------------------------*/
+
 footer {
     background-color: var(--navbar-bg-color);
-    color: white;
+    color: var(--card-bg-color);
     padding: 0.5em 2%;
     border-radius: 8px;
     margin-top: 0.8em;
@@ -809,132 +788,86 @@ footer {
     align-items: center;
     width: 100%;
 }
+
 footer .logo-container {
     display: flex;
     align-items: center;
     gap: 2em;
 }
+
 footer .logo img {
     width: 7em;
     height: auto;
 }
+
 footer .footer-text {
     text-align: left;
 }
+
 footer .footer-text p, 
 footer .footer-text address {
-    color: white;
+    color: var(--card-bg-color);
     margin: 0.2em 0;
     line-height: 1.4;
     font-size: 0.9em;
 }
+
 footer .footer-text a {
-    color: white;
+    color: var(--card-bg-color);
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s;
 }
+
 footer .footer-text a:hover {
-    color: var(--btn-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
+
 footer .valid-code {
     display: flex;
     align-items: center;
     gap: 1em;
 }
+
 footer .imgValidCode {
     width: 5em;
     height: auto;
 }
+
 #footer-links {
-    color: white;
+    color: var(--card-bg-color);
     width: 100%;
     text-align: center;
     margin-top: 1em;
     padding-top: 0.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 #footer-links p {
-    color: white;
+    color: var(--card-bg-color);
     margin: 0.5em 0;
     font-size: 0.9em;
 }
+
 #footer-links a {
-    color: white;
+    color: var(--card-bg-color);
     text-decoration: none;
     margin: 0 0.8em;
     font-size: 0.9em;
     transition: color 0.3s, text-decoration 0.3s;
 }
+
 #footer-links a:hover {
-    color: var(--btn-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
+
 footer .copyright {
-    color: white;
+    color: var(--card-bg-color);
     width: 100%;
     text-align: center;
     margin-top: 0.5em;
     font-size: 0.85em;
     padding-top: 0.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Home page parte animali*/
-.new-cards {
-    display: flex;
-    justify-content: space-between;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-}
-.new-card {
-  background-color: var(--card-bg-color);
-  border: 2px solid var(--card-border-color);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  flex: 1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.new-card h3 {
-  font-size: 1.5em;
-  color: var(--navbar-bg-color);
-  margin-bottom: 10px;
-}
-.new-card p {
-  color: var(--text-color);
-  line-height: 1.5;
-}
-
-.animal-roles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.animal-role {
-  background-color: var(--card-bg-color);
-  border: 2px solid var(--card-border-color);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.animal-role p {
-  font-size: 1.2em;
-color: var(--text-color);
-line-height: 1.5em;
-}
-.animal-role h3 {
-font-size: 1.8em; 
-color: var(--navbar-bg-color);
-margin-bottom: 1em;
-}
-
-.animal-role .animal-image {
-width: 10em;
-height: 10em;
-margin: 1em auto;
 }

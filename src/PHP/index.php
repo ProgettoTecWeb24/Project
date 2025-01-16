@@ -11,6 +11,7 @@ if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
 
+include "header.php";
 $HTMLpage = file_get_contents('../HTML/index.html');
 
 $query = "SELECT * FROM SCARPA ORDER BY data_aggiunta DESC LIMIT 4";
@@ -47,6 +48,6 @@ if ($result) {
 $HTMLpage = str_replace("{last_released_shoes}", $cardsHTML, $HTMLpage);
 
 echo $HTMLpage;
-
 $connection->endDbConnection();
+include "footer.php";
 ?>

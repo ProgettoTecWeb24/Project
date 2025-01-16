@@ -7,6 +7,8 @@ use Conn\DbConnection;
 setlocale(LC_ALL, 'it_IT');
 
 $connection = new DbConnection();
+
+include "header.php";
 $HTMLpage = file_get_contents('../HTML/registrati.html');
 
 if(isset($_POST["submit"])){
@@ -41,4 +43,5 @@ if(isset($_POST["submit"])){
 }
 
 echo $HTMLpage;
+include "footer.php";
 ?>

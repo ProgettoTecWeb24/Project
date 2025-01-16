@@ -11,6 +11,7 @@ if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
 
+include "header.php";
 $HTMLpage = file_get_contents('../HTML/paginaSingola.html');
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -135,4 +136,5 @@ $HTMLpage = str_replace("{singlePage_content}", $content, $HTMLpage);
 echo $HTMLpage;
 
 $connection->endDbConnection();
+include "footer.php";
 ?>
