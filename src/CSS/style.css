@@ -620,6 +620,9 @@ h2 {
   text-align: left;
 }
 
+.review-info{
+    width: 100%;
+}
 .review-icon img {
   width: 3em;
   height: 3em;

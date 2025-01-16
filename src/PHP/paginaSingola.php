@@ -108,8 +108,8 @@ if (!empty($recensioni)) {
         <div class="review">
             <div class="review-icon">
                 <img src="../assets/wolf-mini.png" alt="User Icon">
-            </div>
-            <div class="review-info">
+                </div>
+                <div class="review-info">
                 <div class="review-header">
                     <div class="review-left">
                         <span class="review-user">' . htmlspecialchars($recensione['username']) . '</span>
