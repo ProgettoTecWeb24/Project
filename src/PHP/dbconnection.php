@@ -57,18 +57,24 @@ Class DbConnection{
     }
 
     public function insertNewReview($username, $scarpa_id, $rating, $comment) {
-        $query = "SELECT * FROM recensione WHERE username = ? AND scarpa_id = ?";
-        $result = $this->prepareAndExecute($query, 'si', $username, $scarpa_id);
-    
-        if (count($result) == 0) {
-            // Aggiungi la recensione
+        $query = "SELECT * FROM recensione WHERE username='$username' AND scarpa_id='$scarpa_id'";
+        $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" . mysqli_error($this->connection));
+        
+        if ($result->num_rows == 0) { // se non mi restituisce la recensione cercata allora non esiste
+            $result->free_result();
             $query = "INSERT INTO recensione (username, scarpa_id, voto, commento, data_aggiunta)
-                      VALUES (?, ?, ?, ?, CURDATE())";
-            $result = $this->prepareAndExecute($query, 'siis', $username, $scarpa_id, $rating, $comment);
-            return $result !== false;
+                      VALUES('$username', '$scarpa_id', '$rating', '$comment')";
+            $currentDate = '2025-01-01';
+            $query = "INSERT INTO recensione (username, scarpa_id, voto, commento, data_aggiunta)
+                      VALUES('$username', '$scarpa_id', '$rating', '$comment', '$currentDate')";
+            $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" . mysqli_error($this->connection));
+            $reviewCreated = TRUE;
         } else {
-            return false;
+            $reviewCreated = FALSE;
+            $result->free_result();
         }
+        
+        return $reviewCreated;
     }
 
     public function query($sql)

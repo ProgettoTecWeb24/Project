@@ -582,18 +582,17 @@ color: #555;
 width: 4em;
 }
 /* Valutazioni */
-.rating {
+.rating-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  justify-content: space-between;
 }
 
-.rating img.stars {
+img.stars {
   width: 7em;
   height: auto;
 }
 
-.rating h3 {
+.rating-wrapper h3 {
   font-size: 1.3em;
   margin-bottom: 0.3em;
   color: #555;
@@ -612,8 +611,7 @@ padding: 1em;
 display: flex;
 max-width: 90%;
 align-items: center;
-justify-content: center;
-text-align: left;
+justify-content: space-between;
 }
 
 /* Scritta "Lascia la tua Recensione!" */

@@ -19,9 +19,6 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id == 0) {
     die("ID scarpa non valido.");
 }
-var_dump($_GET);
-
-$_SESSION['scarpa_id'] = $id;
 
 $queryScarpa = "SELECT * FROM SCARPA WHERE id = ?";
 $scarpaResult = $connection->prepareAndExecute($queryScarpa, 'i', $id);
@@ -42,32 +39,6 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 
-$error_text = '';
-$success_text = '';
-
-if (isset($_POST["submit"])) {
-    $rating = sanitizeInput($_POST["rating"]);
-    $comment = sanitizeInput($_POST["comment"]);
-
-    if ($rating && $comment && isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-        var_dump($id);
-        $scarpa_id = $id;
-
-        $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, $comment);
-
-        if (!$reviewAdded) {
-            $error_text = '<p class="error_text" id="error_text" role="alert">Errore durante l\'inserimento della recensione. Riprova più tardi.</p>';
-        } else {
-            $success_text = '<p class="success_text" id="success_text" role="alert">Recensione aggiunta con successo!</p>';
-        }
-    } else {
-        $error_text = '<p class="error_text" id="error_text" role="alert">Compila tutti i campi obbligatori.</p>';
-    }
-    
-    header("Location: ../PHP/paginaSingola.php?id=$id");
-    exit;
-}
 
 $content = '
     <div class="shoe-main">
@@ -104,29 +75,34 @@ $content = '
     </div>
     <div class="reviews-wrapper">
     <h3>Recensioni</h3>
-    <div class="reviews-section">' . $error_text . $success_text;
+    <div class="reviews-section">';
 
 if (isset($_SESSION['username'])) {
     $content .= '
-    <div class="add-review-section">
-        <div class="add-review-wrapper">
-            <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
-            <span class="review-prompt">Lascia la tua Recensione!</span>
+        <div class="rating-wrapper">
+            <div class="rating-section">
+
+                <h3>Valutazione Utenti</h3>
+                <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
+            </div>
+            <div class="add-review-section">
+            
+            
+                <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
+                <span class="review-prompt">Lascia la tua Recensione!</span>
+
+            </div>
         </div>
-        <div class="rating">
-        <h3>Valutazione Utenti</h3>
-        <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
-    </div>
-    </div>';
+    ';
 } else {
     $content .= '
     <div class="add-review-section">
-        <div class="add-review-wrapper hidden">
-            <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
-            <span class="review-prompt">Lascia la tua Recensione!</span>
-        </div>
-        <div class="rating">
-        <h3>Valutazione Utenti</h3>
+    <div class="rating">
+    <h3>Valutazione Utenti</h3>
+    <div class="add-review-wrapper hidden">
+        <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
+        <span class="review-prompt">Lascia la tua Recensione!</span>
+    </div>
         <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
     </div>
     </div>';
@@ -161,7 +137,8 @@ $content .= '
     <div class="modal-content">
         <span class="close-btn" onclick="closeAddReviewForm()">&times;</span>
         <h2>Lascia una Recensione</h2>
-        <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '" method="POST">
+        <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
+            <input type="hidden" name="idscarpa" id="idscarpa" value="' . $id . '"/>
             <label for="rating">Valutazione:</label>
             <select name="rating" id="rating" required>
                 <option value="1">1 Stella</option>
@@ -173,14 +150,23 @@ $content .= '
             <label for="comment">Commento:</label>
             <textarea name="comment" id="comment" rows="4" required></textarea>
             <button type="submit" name="submit">Invia Recensione</button>
-        </form>
-        <div id="review-message">
-            ' . $error_text . '
-            ' . $success_text . '
-        </div>
+        </form>';
+        
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    $rating = $_POST['rating'] ?? '';
+    $comment = $_POST['comment'] ?? '';
+    $scarpa_id = intval($_POST['idscarpa'] ?? 0);
+    $username = $_SESSION['username'] ?? '';
+
+    if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
+        $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, $comment);
+    }
+}
+
+$content .= '
     </div>
-</div>
-';
+</div>';
+
 
 $HTMLpage = str_replace("{singlePage_content}", $content, $HTMLpage);
 
