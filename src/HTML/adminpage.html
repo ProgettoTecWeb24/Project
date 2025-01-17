@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CorsaIdeale - Recensioni di scarpe e servizi dedicati ai runner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorsaIdeale</title>
+    <link rel="stylesheet" href="../CSS/style.css" media="screen">
+    <link rel="stylesheet" href="../CSS/print.css" media="print">
+    <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
+    <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../JS/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper-admin">
+            <!-- Navbar -->
+            <header>
+                <nav class="navbar" id="navbar-id">
+                    <a href="index.php">
+                        <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
+                    </a>
+                    <div class="icon" onclick="myFunction()" id="menu-toggle">
+                        <img src="../assets/menu.png" alt="Menu Icon">
+                    </div>
+                    <ul class="navbar-items" id="navbar-menu">
+                        <li class="navbar-item"><a href="index.php">Home</a></li>
+                        <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
+                        <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
+                        <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
+                        <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
+                    </ul>
+                </nav>
+
+                <nav id="breadcrumb" aria-label="Percorso">
+                    <p>Ti trovi in: <span lang="en">Home</span></p>
+                  </nav>
+            </header>
+            <h2 class="title-admin">Benvenuto nel gestore di CorsaIdeale</h2>
+            <h3 class="title-admin">Cosa desideri fare?</h3>
+            <div class="wrapper-card-admin">
+                <a href="adminAggiungiScarpa.php" class="card-link">
+                    <div class="card-admin">
+                        <div class="text-card-admin">
+                            <h3>Aggiungi una scarpa</h3>
+                        </div>
+                        <img class="admin-home-icon" src="../assets/add.svg" alt="aggiungi scarpa">
+                    </div>
+                </a>
+                <a href="adminModificaLista.php" class="card-link">
+                    <div class="card-admin">
+                        <div class="text-card-admin">
+                            <h3>Operazioni su scarpe</h3>
+                        </div>
+                        <img class="admin-home-icon" src="../assets/edit.svg" alt="gestisci scarpe">
+                    </div>
+                </a>
+                <a href="adminRecensioni.php" class="card-link">
+                    <div class="card-admin">
+                        <div class="text-card-admin">
+                            <h3>Monitora le recensioni</h3>
+                        </div>
+                        <img class="admin-home-icon" src="../assets/look.svg" alt="gestisci recensioni">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CorsaIdeale. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>

@@ -85,3 +85,50 @@
 .animal-roles {
     grid-template-columns: 1fr; /* 1 card per riga */
 }
+
+
+/* TUTTA SEZIONE ADMIN */
+
+.wrapper-admin{
+  margin-top: 0px;
+  width: 100%;
+}
+
+.wrapper-card-admin{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.wrapper-admin-aggiungi{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+h2.title-admin{
+  font-size: x-large;
+  text-align: center;
+}
+
+h3.title-admin{
+  font-size: x-large;
+}
+
+.immagine-scarpa-modifica{
+  max-width: 80%; 
+  height: auto;
+}
+
+
+.table-admin-list th:nth-child(1),
+.table-admin-list td:nth-child(1) {
+  width: 40%;  /* Imposta una larghezza fissa per la colonna dell'immagine */
+  text-align: center;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+/* FINE SEZIONE ADMIN *

@@ -88,3 +88,49 @@ footer{
     border-radius: 0px;
     margin-top: 0px;
 }
+
+
+/* TUTTA SEZIONE ADMIN */
+
+.wrapper-admin{
+  margin-top: 0px;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.wrapper-card-admin{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.wrapper-admin-aggiungi{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h2.title-admin{
+  text-align: center;
+}
+
+.immagine-scarpa-modifica{
+  max-width: 30%; 
+  height: auto;
+}
+
+.link-con-icona .icona {
+  width: 44px; 
+  height: 44px;
+  object-fit: cover;
+}
+
+.table-admin-list th:nth-child(1),
+.table-admin-list td:nth-child(1) {
+  width: 25%;  /* Imposta una larghezza fissa per la colonna dell'immagine */
+  text-align: center;
+}
+
+.hide-tablet {
+  display: none;
+}
+
+/* FINE SEZIONE ADMIN *

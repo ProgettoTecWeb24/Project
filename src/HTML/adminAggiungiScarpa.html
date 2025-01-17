@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CorsaIdeale - Recensioni di scarpe e servizi dedicati ai runner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorsaIdeale</title>
+    <link rel="stylesheet" href="../CSS/style.css" media="screen">
+    <link rel="stylesheet" href="../CSS/print.css" media="print">
+    <link rel="stylesheet" href="../CSS/tablet.css" media="screen and (max-width:1024px)">
+    <link rel="stylesheet" href="../CSS/mobile.css" media="screen and (max-width:600px)">
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../JS/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper-admin">
+            <!-- Navbar -->
+            <header>
+                <nav class="navbar" id="navbar-id">
+                    <a href="index.php">
+                        <img class="logo-navbar" src="../assets/logo.png" alt="Logo del sito">
+                    </a>
+                    <div class="icon" onclick="myFunction()" id="menu-toggle">
+                        <img src="../assets/menu.png" alt="Menu Icon">
+                    </div>
+                    <ul class="navbar-items" id="navbar-menu">
+                        <li class="navbar-item"><a href="index.php">Home</a></li>
+                        <li class="navbar-item"><a href="lista.php">Lista Scarpe</a></li>
+                        <li class="navbar-item"><a href="chisiamo.php">Chi siamo</a></li>
+                        <li class="navbar-item"><a href="accedi.php">Accedi</a></li>
+                        <li class="navbar-item"><a href="registrati.php">Registrati</a></li>
+                    </ul>
+                </nav>
+
+                <nav id="breadcrumb" aria-label="Percorso">
+                    <p>Ti trovi in: <span lang="en">Home</span></p>
+                </nav>
+            </header> 
+                 
+            <h3 class="title-admin">Aggiungi scarpa</h2>
+            <div class="wrapper-admin-aggiungi">
+                <form action="adminAggiungiScarpa.php" class="form" method="POST" enctype="multipart/form-data">
+                    <div class="input-add-scarpa">
+                        <label for="nome">Nome: </label>
+                        <input type="scarpa-admin" name="nome" id="nome" required placeholder="Inserisci nome"/>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="marca">Marca: </label>
+                        <input type="scarpa-admin" name="marca" id="marca" required placeholder="Inserisci marca"/>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="descrizione">Descrizione: </label>
+                        <input type="scarpa-admin" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)"/>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="tipo">Tipo: </label>
+                        <select class="sel-scarpa-admin" name="tipo" id="tipo" required>
+                            <option value="" disabled selected>-- seleziona tipo --</option>
+                            <option value="strada">Strada</option>
+                            <option value="trail">Trail</option>
+                            <option value="pista">Pista</option>
+                        </select>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="feedback">Feedback: </label>
+                        <input type="scarpa-admin" name="feedback" id="feedback" placeholder="Feedback (opzionale)"/>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="valutazione">Valutazione: </label>
+                        <select class="sel-scarpa-admin" name="valutazione" id="valutazione" required>
+                            <option value="" disabled selected>-- dai una valutazione --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="input-add-scarpa">
+                        <label for="immagine">Scegli una foto per la scarpa: </label>
+                        <input type="file" name="image" id="image" accept="image/*" required>
+                    </div>
+                    <button class="button" type="submit" name="conferma-aggiungi">Aggiungi</button>
+                </form>
+                <form action="adminpage.php" class="form" method="POST">
+                    <button class="button-gray" type="submit" name="annulla">Annulla</button>
+                </form>
+            </div>
+            {info} 
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CorsaIdeale. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>
