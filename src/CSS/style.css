@@ -16,13 +16,14 @@ body {
 
 /*Variabili colori*/
 :root {
-  --main-bg-color: #4297D0; /* Main Background - Light Blue */
+  --main-bg-color: #6CAEDA; /* Main Background - Light Blue */
   --accent-color: #fcb52f; /* Accent Color - Ochre Yellow */
   --wrapper-bg-color: #F2F2F2; /* Wrapper Background - Light Gray */
   --navbar-bg-color: #094074; /* Navbar Background - Dark Blue */
   --card-bg-color: #ffffff; /* Cards Background - White */
   --red-heart: #ff3300; /* Like Button -Red Heart */
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
+  --link-color: #fcb52f;
 }
 
 /* Wrapper */
@@ -64,14 +65,19 @@ body {
 }
 
 .navbar-items li a {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--card-bg-color);
     padding: 0.625em 0.9375em;
     transition: color 0.3s;
 }
 
 .navbar-items li a:hover {
-  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.navbar-items li a:visited {
+  text-decoration: underline;
+  color: var(--link-color);
 }
 
 .navbar-items {
@@ -783,19 +789,23 @@ footer .footer-text p,
 footer .footer-text address {
     color: var(--card-bg-color);
     margin: 0.2em 0;
-    line-height: 1.4;
-    font-size: 0.9em;
+    line-height: 1.4;;
 }
 
 footer .footer-text a {
     color: var(--card-bg-color);
-    text-decoration: none;
+    text-decoration: underline;
     transition: color 0.3s, text-decoration 0.3s;
 }
 
 footer .footer-text a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+    color: var(--card-bg-color);
+    text-decoration: none;
+}
+
+#footer-text a:visited {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 footer .valid-code {
@@ -810,7 +820,6 @@ footer .imgValidCode {
 }
 
 #footer-links {
-    color: var(--card-bg-color);
     width: 100%;
     text-align: center;
     margin-top: 1em;
@@ -826,15 +835,19 @@ footer .imgValidCode {
 
 #footer-links a {
     color: var(--card-bg-color);
-    text-decoration: none;
-    margin: 0 0.8em;
-    font-size: 0.9em;
+    text-decoration: underline;
+    margin-left: 1em;
     transition: color 0.3s, text-decoration 0.3s;
 }
 
 #footer-links a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+    color: var(--card-bg-color);
+    text-decoration: none;
+}
+
+#footer-links a:visited {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 footer .copyright {
@@ -842,7 +855,7 @@ footer .copyright {
     width: 100%;
     text-align: center;
     margin-top: 0.5em;
-    font-size: 0.85em;
+    font-size: 0.9em;
     padding-top: 0.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
