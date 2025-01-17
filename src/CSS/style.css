@@ -19,7 +19,7 @@ body {
   --main-bg-color: #4297D0; /* Main Background - Light Blue */
   --accent-color: #fcb52f; /* Accent Color - Ochre Yellow */
   --wrapper-bg-color: #F2F2F2; /* Wrapper Background - Light Gray */
-  --navbar-bg-color: #264653; /* Navbar Background - Dark Blue */
+  --navbar-bg-color: #094074; /* Navbar Background - Dark Blue */
   --card-bg-color: #ffffff; /* Cards Background - White */
   --red-heart: #ff3300; /* Like Button -Red Heart */
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
@@ -51,8 +51,8 @@ body {
     flex-wrap: nowrap;
 }
 
-.logo-navbar {
-    width: 4.375em;
+.logo {
+    width: 4.5em;
     height: auto;
     align-self: center;
 }
@@ -773,11 +773,6 @@ footer .logo-container {
     display: flex;
     align-items: center;
     gap: 2em;
-}
-
-footer .logo img {
-    width: 7em;
-    height: auto;
 }
 
 footer .footer-text {
