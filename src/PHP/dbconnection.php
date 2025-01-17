@@ -56,6 +56,21 @@ Class DbConnection{
         return $userCreated;
     }
 
+    public function insertNewReview($username, $scarpa_id, $rating, $comment) {
+        $query = "SELECT * FROM recensione WHERE username = ? AND scarpa_id = ?";
+        $result = $this->prepareAndExecute($query, 'si', $username, $scarpa_id);
+    
+        if (count($result) == 0) {
+            // Aggiungi la recensione
+            $query = "INSERT INTO recensione (username, scarpa_id, voto, commento, data_aggiunta)
+                      VALUES (?, ?, ?, ?, CURDATE())";
+            $result = $this->prepareAndExecute($query, 'siis', $username, $scarpa_id, $rating, $comment);
+            return $result !== false;
+        } else {
+            return false;
+        }
+    }
+
     public function query($sql)
     {
         $result = mysqli_query($this->connection, $sql);

@@ -27,14 +27,14 @@ body {
 
 /* Wrapper */
 .wrapper {
-  margin-top: 10px;
-  background-color: var(--wrapper-bg-color);
-  width: 100%;
-  max-width: 1200px;
-  height: fit-content;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 10px;
+    margin-top: 0.625em;
+    background-color: var(--wrapper-bg-color);
+    width: 100%;
+    max-width: 1200px;
+    height: fit-content;
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    padding: 0.625em;
 }
 
 /*---------------------------------------- 
@@ -42,32 +42,32 @@ body {
 ----------------------------------------*/
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--navbar-bg-color);
-  border-radius: 8px;
-  padding: 10px 20px;
-  flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-bg-color);
+    border-radius: 0.5em;
+    padding: 0.625em 1.25em;
+    flex-wrap: nowrap;
 }
 
 .logo-navbar {
-  width: 70px;
-  height: auto;
-  align-self: center;
+    width: 4.375em;
+    height: auto;
+    align-self: center;
 }
 
 .navbar-items {
-  display: flex;
-  list-style: none;
-  align-items: center;
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
 .navbar-items li a {
-  text-decoration: none;
-  color: var(--card-bg-color);
-  padding: 10px 15px;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: var(--card-bg-color);
+    padding: 0.625em 0.9375em;
+    transition: color 0.3s;
 }
 
 .navbar-items li a:hover {
@@ -104,72 +104,72 @@ body {
 
 /* Cards */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
 }
 
 .card {
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  background-color: var(--card-bg-color);
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+    display: flex;
+    background-color: var(--card-bg-color);
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
 }
 
 .card-link {
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
 }
 
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .img-card {
-  width: 40%;
-  height: auto;
-  border-radius: 10px;
-  flex: 0.3;
+    width: 40%;
+    height: auto;
+    border-radius: 0.625em;
+    flex: 0.3;
 }
-  
+    
 .listcards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
 }
 
 /* SEZIONE TASTO LIKE */
 .like-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-  padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.625em;
+    padding: 0;
 }
 
 .heart-icon {
-  fill: #ccc;
-  width: 24px;
-  height: 24px;
-  transition: fill 0.3s;
+    fill: #ccc;
+    width: 1.5em;
+    height: 1.5em;
+    transition: fill 0.3s;
 }
 
 .like-button:hover .heart-icon,
 .like-button.active .heart-icon {
-  fill: var(--red-heart);
+    fill: var(--red-heart);
 }
 
 /* Titoli delle cards */
 .card h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 0.625em;
 }
 
 /* Contenuto delle cards */
@@ -195,49 +195,49 @@ body {
 }
 
 .new-cards {
-  display: flex;
-  justify-content: space-between;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
 }
 
 .new-card {
-background-color: var(--card-bg-color);
-border: 2px solid var(--navbar-bg-color);
-border-radius: 10px;
-padding: 20px;
-text-align: center;
-flex: 1;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-color);
+    border: 0.125em solid var(--navbar-bg-color);
+    border-radius: 0.625em;
+    padding: 1.25em;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
 }
 
 .new-card h3 {
-font-size: 1.5em;
-color: var(--navbar-bg-color);
-margin-bottom: 10px;
+    font-size: 1.5em;
+    color: var(--navbar-bg-color);
+    margin-bottom: 0.625em;
 }
 
 .new-card p {
-color: var(--text-color);
-line-height: 1.5;
+    color: var(--text-color);
+    line-height: 1.5;
 }
 
 .animal-roles {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 20px;
-justify-content: center;
-margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25em;
+    justify-content: center;
+    margin-top: 2em;
 }
 
 .animal-role {
-background-color: var(--card-bg-color);
-border: 2px solid var(--navbar-bg-color);
-border-radius: 10px;
-padding: 20px;
-text-align: center;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-color);
+    border: 0.125em solid var(--navbar-bg-color);
+    border-radius: 0.625em;
+    padding: 1.25em;
+    text-align: center;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
 }
 
 .animal-role p {
@@ -263,50 +263,50 @@ margin: 1em auto;
 ----------------------------------------*/
 
 .login-signin-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
 }
 
 .login-signin-container {
-  background-color: var(--card-bg-color);
-  padding: 2em;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 40em;
+    background-color: var(--card-bg-color);
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 40em;
 }
-  
+    
 input[type="username"],
 input[type="password"] {
-  width: 100%;
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 1px solid var(--navbar-bg-color);
-  border-radius: 4px;
-  font-size: 1em;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 0.0625em solid var(--navbar-bg-color);
+    border-radius: 0.25em;
+    font-size: 1em;
 }
 
-.login-signin-container input[type="submit"], button{
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  font-size: 1em;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  padding: 1em;
+.login-signin-container input[type="submit"], button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    width: 100%;
+    padding: 1em;
 }
 
 p.error_text {
-  color: var(--red-heart);
-
+    color: var(--red-heart);
 }
 
 .icon {
-  display: none;
+    display: none;
 }
 
 /*---------------------------------------- 
@@ -367,148 +367,133 @@ p.error_text {
               SEZIONE GESTIONE PROFILO 
 ----------------------------------------*/
 
-label{
-  color: var(--text-color);
+label {
+    color: var(--text-color);
 }
 
-.div-column{
-  display: flex;
-  flex-direction: column;
+.div-column {
+    display: flex;
+    flex-direction: column;
 }
+
 .settings-card {
-  background-color: var(--card-bg-color);
-  border: 2px solid var(--navbar-bg-color);
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+    background-color: var(--card-bg-color);
+    border: 0.125em solid var(--navbar-bg-color);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
 }
 
 .username-input {
-  width: 29em;
-  height: 3em;
-  border-radius: 8px;
-  padding: 10px;
-  border: 1px solid #ccc;
+    width: 100%;
+    height: 3em;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    border: 0.0625em solid #ccc;
 }
 
 .select-settings {
-  width: 29em;
-  height: 3em;
-  border-radius: 8px;
-  padding: 10px;
-  border: 1px solid #ccc;
+    width: 100%;
+    height: 3em;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    border: 0.0625em solid #ccc;
 }
 
 .submit-settings {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  padding: 1em;
-  width: 100%;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1em;
 }
 
 .submit-ricerca {
-  padding: 7px;
-  width: 15em;
-  height: 3em;
-  margin-top: 0rem;
-  border-radius: 8px;
-  background-color: white;
-  cursor: pointer;
-  font-size: revert;
+    padding: 0.4375em;
+    width: 100%;
+    height: 3em;
+    margin-top: 0;
+    border-radius: 0.5em;
+    background-color: white;
+    cursor: pointer;
+    font-size: revert;
 }
 
 .submit-settings img {
-  height: 2em;
+    height: 2em;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
 
 /*---------------------------------------- 
               SEZIONE SINGLE PAGE 
 ----------------------------------------*/
 
-/*DA SISTEMARE EDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-y
-y
-y
-y
-y
-y
-y
-y
-y
-y
-(cancella commento*/
 
 .shoe-title h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 .shoe-title h2 {
-  font-size: 1.5em;
-  color: #777;
-  margin-bottom: 1.5em;
+    font-size: 1.5em;
+    color: #777;
+    margin-bottom: 1.5em;
 }
 
 .shoe-main {
-  display: flex;
-  gap: 5%;
-  margin-bottom: 2em;
+    display: flex;
+    gap: 5%;
+    margin-bottom: 2em;
 }
 
 .shoe-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 .shoe-image {
-  flex: 1;
+    flex: 1;
 }
 
 .shoe-image img {
-  max-width: 100%;
-  border-radius: 0.5em;
+    max-width: 100%;
+    border-radius: 0.5em;
 }
 
 .shoe-image img {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 0.5em;
 }
-
 
 .colors {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 0.5em;
 }
 
 .color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    border: 0.0625em solid #ccc;
 }
 
 
-.hidden {
-  display: none;
-}
 /* Sezioni dettagli e descrizione */
 .details-section,
 .description-section {
@@ -650,108 +635,105 @@ transition: background-color 0.3s ease;
 }
 
 /* Nascondi sezioni nascoste */
-.add-review-section.hidden {
+.add-review-wrapper.hidden{
 display: none;
 }
 
-#add-review-form h3 {
-font-size: 1.5em;
-margin-bottom: 1em;
-color: #444;
-text-align: center;
+/* Stile per la modale */
+#add-review-modal.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002; /* Assicurati che sia sopra tutto */
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Porta la modale in primo piano */
 }
 
-#add-review-form .form-group {
-margin-bottom: 1em;
+.modal-content {
+    height: 1000px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Assicurati che il contenuto della modale sia sopra l'overlay */
 }
 
-#add-review-form label {
-display: block;
-font-size: 1em;
-margin-bottom: 0.5em;
+.close-btn {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-#add-review-form input,
-#add-review-form select,
-#add-review-form textarea {
-width: 100%;
-padding: 0.8em;
-border: 1px solid #ddd;
-border-radius: 0.3em;
-font-size: 1em;
+.hidden {
+    display: none;
 }
 
-#add-review-form button {
-padding: 0.8em 2em;
-font-size: 1em;
-background-color: #ffa500;
-color: white;
-border: none;
-border-radius: 0.3em;
-cursor: pointer;
-transition: background-color 0.3s;
-}
-
-#add-review-form button:hover {
-background-color: #e69500;
-}
 
 /*---------------------------------------- 
               SEZIONE CHI SIAMO 
 ----------------------------------------*/
 
 .whoarewe-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-left: 140px;
-  margin-right: 140px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .us-div {
-  /* contenitore della parte "il team" */
-  border-radius: 10px;
-  margin-top: 20px;
+    /* contenitore della parte "il team" */
+    border-radius: 0.625em;
+    margin-top: 1.25em;
 }
 
 .whoarewe-div {
-  /* comprende una foto e relativa descrizione */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: transform 0.2s;
-  gap: 2px;
-  margin-left: 10px;
+    /* comprende una foto e relativa descrizione */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.2s;
+    gap: 0.125em;
+    margin-left: 0.625em;
 }
 
 .whoarewe-div:nth-child(odd) {
-  /* specchia il contenuto dei whoarewe-div in posizioni pari */
-  flex-direction: row-reverse;
-  margin-right: 10px;
+    /* specchia il contenuto dei whoarewe-div in posizioni pari */
+    flex-direction: row-reverse;
+    margin-right: 0.625em;
 }
 
 .whoarewe-desc {
-  /* nome e descrizione persona */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 15px;
+    /* nome e descrizione persona */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1em;
 }
 
 .whoarewe-div:nth-child(odd) .whoarewe-desc {
-  /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
-  text-align: right;
+    /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
+    text-align: right;
 }
 
 .img-whoarewe {
-  /* stile delle immagini di presentazione */
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  float: left;
-  box-shadow: 0 0 5px var(--navbar-bg-color);
+    /* stile delle immagini di presentazione */
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    float: left;
+    box-shadow: 0 0 0.3125em var(--navbar-bg-color);
 }
 
 /*---------------------------------------- 

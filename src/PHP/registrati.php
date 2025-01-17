@@ -36,7 +36,7 @@ if(isset($_POST["submit"])){
         
         $HTMLpage = str_replace("{error_text}", $error_text, $HTMLpage);
     }else {
-        header("Location: ../HTML/error500.html");
+        header("Location: ../PHP/error500.php");
     }
 }else{
     $HTMLpage = str_replace("{error_text}","",$HTMLpage);

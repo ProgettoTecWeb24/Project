@@ -1,6 +1,6 @@
 .wrapper {
     margin-top: 0px;
-  
+    border-radius:0px;
     width: 100%;
     height: 100%;
   }
@@ -80,4 +80,11 @@
 /* Immagine del ruolo */
 .animal-roles {
     grid-template-columns: repeat(2, 1fr); /* 2 card per riga */
+}
+
+
+/* FOOTER */
+footer{
+    border-radius: 0px;
+    margin-top: 0px;
 }

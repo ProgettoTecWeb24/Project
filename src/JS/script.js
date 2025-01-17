@@ -12,3 +12,31 @@ function myFunction() {
     }
 
 }
+
+function openAddReviewForm() {
+    const modal = document.getElementById("add-review-modal");
+    if (modal) {
+        modal.classList.remove("hidden");
+    }
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("modal-overlay");
+    overlay.onclick = closeAddReviewForm;
+    document.body.appendChild(overlay);
+
+    document.body.classList.add("modal-open");
+}
+
+function closeAddReviewForm() {
+    const modal = document.getElementById("add-review-modal");
+    if (modal) {
+        modal.classList.add("hidden");
+    }
+
+    const overlay = document.querySelector(".modal-overlay");
+    if (overlay) {
+        overlay.remove();
+    }
+
+    document.body.classList.remove("modal-open");
+}

@@ -12,10 +12,6 @@
     padding: 10px;
 }
 
-.icon {
-    display: block; /* Mostra l'icona solo su schermi piccoli */
-}
-
 .navbar-items {
     display: none; /* Nasconde gli item della navbar su schermi piccoli */
 }
