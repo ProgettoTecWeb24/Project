@@ -10,7 +10,6 @@ CREATE TABLE SCARPA (
     tipo ENUM('strada', 'trail', 'pista') NOT NULL,
     descrizione TEXT,
     dettagli TEXT,
-    colori VARCHAR(100) NOT NULL,
     votoexp INT NOT NULL CHECK (votoexp BETWEEN 1 AND 5),
     feedback TEXT,
     immagine VARCHAR(255) NOT NULL,
@@ -46,7 +45,7 @@ CREATE TABLE LIKES (
 );
 
 -- Dati per SCARPA
-INSERT INTO SCARPA (nome, marca, descrizione, dettagli, colori, votoexp, feedback, immagine, data_aggiunta)
+INSERT INTO SCARPA (nome, marca, descrizione, dettagli, votoexp, feedback, immagine, data_aggiunta)
 VALUES 
 ('Pegasus Trail 4', 'Nike', 'Scarpa versatile per trail running.', 'Ottima per trail di media difficoltà.', 'Rosso, Nero', 4, 'Comoda e affidabile', 'pegasus_trail_4.jpg', '2025-01-10'),
 ('UltraBoost Light', 'Adidas', 'Scarpa con un’ammortizzazione avanzata.', 'Ideale per runner su strada.', 'Bianco, Blu', 5, 'Ottima per lunghe distanze', 'ultraboost_light.jpg', '2025-01-12'),
