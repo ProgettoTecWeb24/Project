@@ -813,7 +813,7 @@ footer .footer-text a:hover {
     text-decoration: none;
 }
 
-#footer-text a:visited {
+.footer-text a:visited {
   color: var(--link-color);
   text-decoration: none;
 }
