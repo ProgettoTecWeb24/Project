@@ -19,19 +19,6 @@
       display: none; /* Nasconde gli item della navbar su schermi piccoli */
   }
 
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .cards > :nth-child(1) {
-    grid-column: span 2;
-  }
-  
-  .cards > :nth-child(2) {
-    grid-column: span 1;
-  }
   
   .listcards {
     display: grid;

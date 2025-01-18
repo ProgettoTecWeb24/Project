@@ -1,10 +1,7 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(1,1fr);
-  }
-  .cards > :nth-child(1) {
-    grid-column: span 1;
-  }
+}
   
    /* Responsività */
    .navbar {
@@ -77,6 +74,21 @@
   .review {
     display: flex;
     gap: 0.5em;
+  }
+
+  .add-review-section {
+    flex-direction: column-reverse;
+  }
+
+  #add-review-modal {
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    margin-top: 20em;
+  }
+
+  .modal-content{
+    width: 100%;
   }
   /* FINE SINGLE PAGE */
   
