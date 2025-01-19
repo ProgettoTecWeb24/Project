@@ -1,4 +1,5 @@
 <?php
+$location = 'Gestione recensioni';
 require_once('dbconnection.php');
 require_once('controls.php');
 session_start();

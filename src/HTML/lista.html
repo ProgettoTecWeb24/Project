@@ -1,7 +1,7 @@
 <form action="lista.php" method="POST">
     <div class="searchbar-acc">
         <div>
-            <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..." />
+            <input class="search-input" name="nomescarpa"  id="nomescarpa" type="text" placeholder="Cerca le scarpe..." value="" />
         </div>
 
         <div>
@@ -39,11 +39,11 @@
 
 
         <!-- Pulsante di ricerca -->
-        <div>
+        
             <button type="submit" class="submit-filter">
                 <img src="../assets/search-icon.svg" alt="Cerca" />
             </button>
-        </div>
+        
     </div>
 </form>
 <div class="content">
@@ -52,5 +52,3 @@
         {shoes}
     </div>
 </div>
-</div>
-</main>

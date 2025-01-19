@@ -6,7 +6,7 @@
             <h1>Impostazioni</h1>
             <div class="div-column">
                 <label for="newUser">Nuovo username:</label>
-                <input class="username-input" name="newUser" type="text" placeholder="Inserisci nuovo username..." />
+                <input class="username-input" name="newUser" id="newUser" type="text" placeholder="Inserisci nuovo username..." />
             </div>
             <div class="div-column">
                 <label for="kmsett">Kilometri settimanali:</label>
@@ -20,8 +20,8 @@
 
 
             <!-- Pulsante di ricerca -->
-            <div>
-                <button type="submit" class="submit-settings">
+            <div class="div-column">
+                <button type="submit" name="salvaImpos" class="submit-settings">
                     <p>Salva impostazioni</p>
                 </button>
             </div>
@@ -30,14 +30,55 @@
 
     <form action="profilo.php" method="POST">
         <div class="settings-card">
-            <h1>Scarpe con il like</h1>
-            <div>
-                <label for="ricercaLike">Nome scarpa:</label>
-                <input class="username-input" name="ricercaLike" type="text" placeholder="Inserisci nome..." />
-                <button type="submit" class="submit-ricerca">
-                    <p>Effettua ricerca</p>
-                </button>
-            </div>
+            <a name="likes"><h1>Scarpe con il like</h1></a>
+            <div class="searchbar-liked">
+                <div>
+                    <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..."
+                        value="" />
+                </div>
+
+                <div>
+                    <label for="ordina">Ordina:</label>
+                    <select name="ordina" id="ordina" class="select-filter">
+                        <option value="ordStand">Ordine standard</option>
+                        <option value="nomeCres">Nome crescente</option>
+                        <option value="nomeDesc">Nome descrescente</option>
+                        <option value="votoCres">Voto crescente</option>
+                        <option value="votoDesc">Voto decrescente</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="marca">Marca:</label>
+                    <select name="marca" id="marca" class="select-filter">
+                        <option value="all">Tutte le marche</option>
+                        <option value="nike">Nike</option>
+                        <option value="adidas">Adidas</option>
+                        <option value="asics">Asics</option>
+                        <option value="hoka">Hoka</option>
+                        <option value="altra">Altra</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tipo">Tipo:</label>
+                    <select name="tipo" id="tipo" class="select-filter">
+                        <option value="all">Tutti i tipi</option>
+                        <option value="trail">Trail</option>
+                        <option value="strada">Strada</option>
+                        <option value="pista">Pista</option>
+                    </select>
+                </div>
+
+
+                <!-- Pulsante di ricerca -->
+                <div>
+                    <button type="submit" class="submit-filter">
+                        <img src="../assets/search-icon.svg" alt="Cerca" />
+                    </button>
+                </div>
+            </div>  
+    
 
             <div class="cards">
                 {shoesliked}
@@ -51,12 +92,26 @@
 
     </form>
 
-    <form action="profilo.php" method="POST" name="logout">
+ <!-- <label for="ricercaLike">Nome scarpa:</label>
+                <input class="username-input" name="ricercaLike" type="text" placeholder="Inserisci nome..." />
+                <button type="submit" class="submit-ricerca">
+                    <p>Effettua ricerca</p>
+                </button>
+                </div> -->
+
         <div class="settings-card">
-            <button type="submit" class="submit-settings" name="logout">
-                <p>Logout</p>
-            </button>
-        </div>
-    </form>
+            <a name="reviews"><h1>Tue recensioni</h1></a>
+            <div class="reviews-wrapper">    
+        {yourreviews}
+</div>
+</div>
+
+<form action="profilo.php" method="POST" name="logout">
+    <div class="settings-card">
+        <button type="submit" class="submit-settings" name="logout">
+            <p>Logout</p>
+        </button>
+    </div>
+</form>
 
 </div>

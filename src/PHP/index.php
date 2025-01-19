@@ -1,4 +1,5 @@
 <?php
+$location = 'Home';
 require_once('dbconnection.php');
 session_start();
 
