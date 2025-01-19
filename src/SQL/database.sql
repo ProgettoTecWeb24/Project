@@ -18,7 +18,6 @@ CREATE TABLE SCARPA (
 
 CREATE TABLE UTENTE (
     username VARCHAR(100) PRIMARY KEY,
-    email VARCHAR(255),
     pw CHAR(255),
     ruolo ENUM('tartaruga', 'lepre', 'lupo', 'ghepardo') NOT NULL DEFAULT 'tartaruga',
     admin BOOLEAN NOT NULL DEFAULT FALSE
@@ -64,13 +63,13 @@ VALUES
 ('Hoka Clifton 9', 'Hoka', 'Scarpa morbida e ammortizzata.', 'Ottima per lunghe distanze.', 'Azzurro, Bianco', 5, 'Comfort incredibile', 'clifton_9.jpg', '2025-02-11');
 
 -- Dati per UTENTE
-INSERT INTO UTENTE (username, email, pw, ruolo, admin) VALUES
-('user', 'user@example.com', '$2y$10$/BjuFjBdobvdAOqIZFHGO.aa46YkgmIb3A/YyIIA94is2Inq7cUgm', 'tartaruga', FALSE),
-('admin', 'admin@example.com', '$2y$10$b154faL4nCt/0GTE/svh4.oCiawsVaBrkQ2uu6VT6Bm/37oPROi5i', 'ghepardo', TRUE),
-('giulia', 'giulia@example.com', '$2y$10$GiuliaPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'lepre', FALSE),
-('marco', 'marco@example.com', '$2y$10$MarcoPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'lupo', FALSE),
-('sara', 'sara@example.com', '$2y$10$SaraPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'tartaruga', FALSE),
-('luca', 'luca@example.com', '$2y$10$LucaPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'ghepardo', FALSE);
+INSERT INTO UTENTE (username, pw, ruolo, admin) VALUES
+('user', '$2y$10$/BjuFjBdobvdAOqIZFHGO.aa46YkgmIb3A/YyIIA94is2Inq7cUgm', 'tartaruga', FALSE),
+('admin', '$2y$10$b154faL4nCt/0GTE/svh4.oCiawsVaBrkQ2uu6VT6Bm/37oPROi5i', 'ghepardo', TRUE),
+('giulia', '$2y$10$GiuliaPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'lepre', FALSE),
+('marco', '$2y$10$MarcoPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'lupo', FALSE),
+('sara', '$2y$10$SaraPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'tartaruga', FALSE),
+('luca', '$2y$10$LucaPass.aa46YkgmIb3A/YyIIA94is2Inq7c', 'ghepardo', FALSE);
 
 -- Dati per RECENSIONE
 INSERT INTO RECENSIONE (username, scarpa_id, voto, commento, data_aggiunta) VALUES

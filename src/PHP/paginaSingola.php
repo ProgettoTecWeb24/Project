@@ -27,9 +27,9 @@ $scarpa = $scarpaResult[0] ?? null;
 if (!$scarpa) {
     die("Scarpa non trovata.");
 }
-
-$queryRecensioni = "SELECT r.username, r.voto, r.commento 
+$queryRecensioni = "SELECT r.username, r.voto, r.commento, u.ruolo 
                     FROM RECENSIONE r 
+                    JOIN UTENTE u ON r.username = u.username
                     WHERE r.scarpa_id = ?";
 $recensioni = $connection->prepareAndExecute($queryRecensioni, 'i', $id);
 
@@ -38,7 +38,6 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
                    WHERE r.scarpa_id = ?";
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
-
 
 $content = '
     <div class="shoe-main">
@@ -106,7 +105,7 @@ if (!empty($recensioni)) {
         $content .= '
         <div class="review">
             <div class="review-icon">
-                <img src="../assets/wolf-mini.png" alt="User Icon">
+                <img src="../assets/'. $recensione['ruolo'] .'-mini.png" alt="User Icon">
             </div>
             <div class="review-info">
                 <div class="review-header">
