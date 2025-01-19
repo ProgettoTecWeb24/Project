@@ -101,15 +101,17 @@ Class DbConnection{
         }
     
         $result = $stmt->get_result();
-        if (!$result) {
+        if ($stmt->errno != '0') {
             die("Errore nell'ottenere il risultato: " . $stmt->error);
         }
-    
+
         $rows = [];
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
+        if($result){    
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
         }
-    
+        
         $stmt->close();
     
         return $rows;

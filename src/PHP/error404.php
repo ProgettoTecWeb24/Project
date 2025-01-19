@@ -1,4 +1,5 @@
 <?php
+$location = 'Error404';
 require_once('dbconnection.php');
 session_start();
 

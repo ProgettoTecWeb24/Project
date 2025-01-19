@@ -1,4 +1,5 @@
 <?php
+$location = 'Chi siamo';
 require_once('dbconnection.php');
 session_start();
 

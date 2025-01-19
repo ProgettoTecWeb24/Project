@@ -1,4 +1,5 @@
 <?php
+$location = 'Pagina Admin';
 require_once('dbconnection.php');
 session_start();
 

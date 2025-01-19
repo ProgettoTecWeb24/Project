@@ -1,4 +1,5 @@
 <?php
+$location = 'Error500';
 require_once('dbconnection.php');
 session_start();
 
