@@ -1,3 +1,15 @@
+
+/* Titolo "CorsaIdeale" */
+.navbar h1 {
+  font-size: 1.8em;
+
+}
+.logo {
+  width: 3.5em;
+  height: auto;
+}
+
+
 .cards {
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -12,11 +24,21 @@
 .navbar-items {
     display: none; /* Nasconde gli item della navbar su schermi piccoli */
 }
+
+  
   .listcards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  
+  .new-cards {
+    flex-direction: column;
+}
+
+.new-card {
+    width: 100%;
+}
+
+
   .whoarewe-cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -143,4 +165,12 @@ h3.title-admin{
   display: none;
 }
 
-/* FINE SEZIONE ADMIN *
+
+/* FOOTER */
+
+footer .valid-code {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    gap: 1em;
+}

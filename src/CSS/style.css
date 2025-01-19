@@ -212,7 +212,7 @@ body {
 .new-cards {
     display: flex;
     justify-content: space-between;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1em;
     margin-bottom: 2em;
 }
@@ -264,13 +264,12 @@ line-height: 1.5em;
 .animal-role h3 {
 font-size: 1.8em; 
 color: var(--navbar-bg-color);
-margin-bottom: 1em;
 }
 
-.animal-role .animal-image {
-width: 10em;
-height: 10em;
-margin: 1em auto;
+.animal-role img {
+width: 8em;
+height: auto;
+margin: 1.5em;
 }
 
 /*---------------------------------------- 
