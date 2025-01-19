@@ -20,6 +20,8 @@ if (isset($_POST['logout'])) {
     exit();
 }
 
+
+
 if(isset($_POST['likePress'])){
     if (!empty($_SESSION['username'])) {
         $qCheck = "SELECT * FROM likes WHERE scarpa_id ='" . $_POST['likePress'] ."' AND username = '" . $_SESSION['username'] . "'";
@@ -84,21 +86,54 @@ $qRecensioni = "SELECT r.username, r.voto, r.commento, r.scarpa_id, s.nome, s.im
                 WHERE r.scarpa_id = s.id AND r.username ='" . $_SESSION['username'] . "'";
 $recensioni = $connection->query($qRecensioni);
 
-
-
 $query ="
 SELECT *
 FROM scarpa
 WHERE id IN ( SELECT scarpa_id FROM likes WHERE username ='" . $_SESSION['username'] . "')";
 
-//$query = "SELECT * FROM scarpa WHERE nome LIKE '%'";
+if(!empty($_POST['nomescarpa'])){
+    $query .= " AND nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
+    $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
 
-if(!empty($_POST['ricercaLike'])){
+}
+
+/*if(!empty($_POST['ricercaLike'])){
     $query = "
 SELECT *
 FROM scarpa
 WHERE id IN ( SELECT scarpa_id FROM 'likes' WHERE username = 'user') AND nome LIKE '%" . $_POST['ricercaLike'] . "%' ";
+
+}*/
+
+if (!empty($_POST['marca']) AND $_POST['marca'] != 'all') {
+    $query = $query . "AND marca = '" . $_POST['marca']. "' ";
+    $HTMLpage = str_replace('value="' . $_POST['marca'] . '"', 'value="' . $_POST['marca'] . '" selected', $HTMLpage);
+
 }
+
+if (!empty($_POST['tipo']) AND $_POST['tipo'] != 'all') {
+    $query = $query . "AND tipo = '" . $_POST['tipo']. "' ";
+    $HTMLpage = str_replace('value="' . $_POST['tipo'] . '"', 'value="' . $_POST['tipo'] . '" selected', $HTMLpage);
+}
+
+if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
+    $HTMLpage = str_replace('value="' . $_POST['ordina'] . '"', 'value="' . $_POST['ordina'] . '" selected', $HTMLpage);
+    if($_POST['ordina'] == "nomeCres"){
+        $query = $query . "ORDER BY nome ASC ";
+    }elseif($_POST['ordina'] == "nomeDesc"){
+        $query = $query . "ORDER BY nome DESC ";
+    }elseif($_POST['ordina'] == "votoCres"){
+        $query = $query . "ORDER BY votoexp ASC ";
+    }elseif($_POST['ordina'] == "votoDesc"){
+        $query = $query . "ORDER BY votoexp DESC ";
+    }
+}
+
+
+
+//$query = "SELECT * FROM scarpa WHERE nome LIKE '%'";
+
+
 $result = $connection->query($query);
 
 $cardsHTML = "";
@@ -116,7 +151,7 @@ if ($result) {
                         <p class="marca">Marca: ' . htmlspecialchars($row['marca']) . '</p>
                         <p class="modello">Modello: ' . htmlspecialchars($row['nome']) . '</p>
                         <p class="feedback">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
-                        <form action="profilo.php#likes'. htmlspecialchars($row['id']).'" method="POST">
+                        <form action="profilo.php#likes" method="POST">
                         <button class="like-button" type="submit" name="likePress" value="' . htmlspecialchars($row['id']) .'">{like}<path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                             </svg>
