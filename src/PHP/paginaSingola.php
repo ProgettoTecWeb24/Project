@@ -70,38 +70,116 @@ $content = '
     <h3>Recensioni</h3>
     <div class="reviews-section">';
 
+$hasUserReviewed = false;
 if (isset($_SESSION['username'])) {
-    $content .= '
-        <div class="rating-wrapper">
-            <div class="rating-section">
+    foreach ($recensioni as $recensione) {
+        if ($recensione['username'] === $_SESSION['username']) {
+            $hasUserReviewed = true;
+            break;
+        }
+    }
+}
 
+if (isset($_SESSION['username'])) {
+    if ($hasUserReviewed) {
+        $content .= '
+            <div class="rating-wrapper">
+            <div class="rating-section">
                 <h3>Valutazione Utenti</h3>
                 ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
-            
-            
-                <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
-                <span class="review-prompt">Lascia la tua Recensione!</span>
-
+                <button type="button" id="modifica-btn" class="link-con-icona" onclick="openModal(\'edit-review-modal\')">
+                    <img src="../assets/edit.svg" alt="modifica" class="icona-profilo">
+                </button>
+                <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
+                    <img src="../assets/delete.svg" alt="elimina" class="icona-profilo">
+                </button>
+            </div>
+            </div>
+        ';
+    } else {
+        $content .= '
+            <div class="rating-wrapper">
+                <div class="rating-section">
+                    <h3>Valutazione Utenti</h3>
+                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">' : '<p>Nessuna recensione disponibile.</p>') . '
+                </div>
+                <div class="add-review-section">
+                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
+                    <span class="review-prompt">Lascia la tua Recensione!</span>
+                </div>
+            </div>
+        ';
+    }
+} else {
+    $content .= '
+        <div class="add-review-section">
+            <div class="rating">
+                <h3>Valutazione Utenti</h3>
+                <div class="add-review-wrapper hidden">
+                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
+                    <span class="review-prompt">Lascia la tua Recensione!</span>
+                </div>
+                <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
             </div>
         </div>
     ';
-} else {
-    $content .= '
-    <div class="add-review-section">
-    <div class="rating">
-    <h3>Valutazione Utenti</h3>
-    <div class="add-review-wrapper hidden">
-        <button id="add-review-btn" onclick="openAddReviewForm()">+</button>
-        <span class="review-prompt">Lascia la tua Recensione!</span>
-    </div>
-        <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
-    </div>
-    </div>';
 }
 
+$content .= '
+    <div id="edit-review-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(\'edit-review-modal\')">&times;</span>
+            <h2>Modifica la tua Recensione</h2>
+            <form id="edit-review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
+                <input type="hidden" name="idscarpa" value="' . $id . '"/>
+                <div class="input-add-scarpa">
+                    <label for="edit-rating">Valutazione:</label>
+                    <select class="sel-scarpa-admin" name="rating" id="edit-rating" required>
+                        <option value="" disabled selected>-- Dai una valutazione --</option>
+                        <option value="1">1 Stella</option>
+                        <option value="2">2 Stelle</option>
+                        <option value="3">3 Stelle</option>
+                        <option value="4">4 Stelle</option>
+                        <option value="5">5 Stelle</option>
+                    </select>
+                </div>
+                <div class="input-add-scarpa">
+                    <label for="edit-comment">Recensione:</label>
+                    <textarea name="comment" id="edit-comment" rows="4" required></textarea>
+                </div>
+                <button class="button" type="submit" name="edit">Modifica Recensione</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-review-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+            <h2>Conferma Eliminazione</h2>
+            <p>Sei sicuro di voler eliminare questa recensione?</p>
+            <form id="delete-review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
+                <input type="hidden" name="idscarpa" value="' . $id . '"/>
+                <button class="button" type="submit" name="delete">Conferma</button>
+            </form>
+        </div>
+    </div>
+';
+
+
 if (!empty($recensioni)) {
+    if (isset($_SESSION['username'])) {
+        foreach ($recensioni as $key => $recensione) {
+            if ($recensione['username'] === $_SESSION['username']) {
+                $userReview = $recensioni[$key];
+                unset($recensioni[$key]);
+                array_unshift($recensioni, $userReview);
+                break;
+            }
+        }
+    }
+
     foreach ($recensioni as $recensione) {
         $content .= '
         <div class="review">
@@ -150,12 +228,12 @@ $content .= '
                     <textarea name="comment" id="comment" rows="4" required placeholder="Scrivi la tua recensione"></textarea>
                 </div>
                 
-                <button class="button" type="submit" name="submit">Invia Recensione</button>
+                <button class="button" type="submit" name="submit_add_review">Invia Recensione</button>
             </form>
         </div>
     </div>';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_add_review'])) {
     $rating = $_POST['rating'] ?? '';
     $comment = $_POST['comment'] ?? '';
     $scarpa_id = intval($_POST['idscarpa'] ?? 0);
@@ -163,6 +241,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
     if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
         $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, sanitizeInput($comment));
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit'])) {
+    $rating = $_POST['rating'] ?? '';
+    $comment = $_POST['comment'] ?? '';
+    $scarpa_id = intval($_POST['idscarpa'] ?? 0);
+    $username = $_SESSION['username'] ?? '';
+
+    if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
+        $reviewUpdated = $connection->updateReview($username, $scarpa_id, $rating, sanitizeInput($comment));
+    }
+}
+
+if (isset($_POST['delete'])) {
+    $scarpa_id = intval($_POST['idscarpa'] ?? 0);
+    $username = $_SESSION['username'] ?? '';
+    if ($connection->deleteReview($scarpa_id, $username)) {
+        $info = '<p class="success_text" id="info" role="alert">La recensione è stata eliminata con successo</p>';
+    } else {
+        $info = '<p class="error_text" id="info" role="alert">Errore: eliminazione non possibile, la scarpa non esiste</p>';
     }
 }
 

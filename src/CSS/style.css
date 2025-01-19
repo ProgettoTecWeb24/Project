@@ -734,13 +734,15 @@ img.stars {
 }
 
 /* Stile per la modale */
-#add-review-modal.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1002;
-  /* Assicurati che sia sopra tutto */
+#add-review-modal.modal,
+#edit-review-modal.modal,
+#delete-review-modal.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    /* Assicurati che sia sopra tutto */
 }
 
 .modal-overlay {

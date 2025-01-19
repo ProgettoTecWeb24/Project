@@ -40,3 +40,33 @@ function closeAddReviewForm() {
 
     document.body.classList.remove("modal-open");
 }
+
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove("hidden");
+    }
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("modal-overlay");
+    overlay.onclick = function () {
+        closeModal(modalId);
+    };
+    document.body.appendChild(overlay);
+
+    document.body.classList.add("modal-open");
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add("hidden");
+    }
+
+    const overlay = document.querySelector(".modal-overlay");
+    if (overlay) {
+        overlay.remove();
+    }
+
+    document.body.classList.remove("modal-open");
+}

@@ -230,5 +230,22 @@ Class DbConnection{
         }
         return $deleted;
     }
+    public function updateReview($username, $scarpa_id, $rating, $comment) {
+        $updated = false;
+        $query = "UPDATE recensione SET voto=?, commento=? WHERE username=? AND scarpa_id=?";
+        $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            die("Errore nella preparazione della query: " . $this->connection->error);
+        }
+        $stmt->bind_param("issi", $rating, $comment, $username, $scarpa_id);
+        if ($stmt->execute()) {
+            $updated = true;
+        } else {
+            die("Errore durante l'esecuzione della query: " . $stmt->error);
+        }
+        $stmt->close();
+
+        return $updated;
+}
 }
 ?>
