@@ -248,7 +248,7 @@ if (!empty($recensioni)) {
         </div>
         </form>
         </a>
-        </div>
+        
         ';
     }
 } else {
