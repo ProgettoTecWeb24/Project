@@ -46,9 +46,9 @@ if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
     }elseif($_POST['ordina'] == "nomeDesc"){
         $query = $query . "ORDER BY nome DESC ";
     }elseif($_POST['ordina'] == "votoCres"){
-        $query = $query . "ORDER BY nome DESC ";
+        $query = $query . "ORDER BY voto ASC ";
     }elseif($_POST['ordina'] == "votoDesc"){
-        $query = $query . "ORDER BY nome DESC ";
+        $query = $query . "ORDER BY voto DESC ";
     }
 }
 
