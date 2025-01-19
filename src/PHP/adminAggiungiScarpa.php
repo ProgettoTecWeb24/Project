@@ -11,7 +11,7 @@ $connection = new DbConnection();
 if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
-
+include "header.php";
 $HTMLpage = file_get_contents('../HTML/adminAggiungiScarpa.html');
 if($connection->isAdmin($_SESSION["username"])){
 
@@ -67,4 +67,5 @@ if($connection->isAdmin($_SESSION["username"])){
 }
 
 echo $HTMLpage;
+include "footer.php";
 ?>

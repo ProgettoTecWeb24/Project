@@ -14,9 +14,11 @@ if (!$connection->startDbConnection()) {
 if($connection->isAdmin($_SESSION["username"])){
     $lista_scarpe = "";
     $info = "";
+    include "header.php";
     $HTMLpage = file_get_contents('../HTML/adminpage.html');
 
     echo $HTMLpage;
+    include "footer.php";
 }else{
     header("Location: ../HTML/error404.html");
 }

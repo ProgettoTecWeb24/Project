@@ -239,10 +239,10 @@ if (!empty($recensioni)) {
             </div>
         <div class="div-coloum">
             <button type="submit" id="modifica" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                <img src="../assets/close.png" alt="modifica" class="icona-profilo">
+                <img src="../assets/edit.svg" alt="modifica" class="icona-profilo">
             </button>
             <button type="submit" id="elimina" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                <img src="../assets/close.png" alt="elimina" class="icona-profilo">
+                <img src="../assets/delete.svg" alt="elimina" class="icona-profilo">
             </button>
         </div>   
         </div>

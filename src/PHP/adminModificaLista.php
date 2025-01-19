@@ -12,7 +12,7 @@ $connection = new DbConnection();
 if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
-
+include "header.php";
 $HTMLpage = file_get_contents('../HTML/adminModificaLista.html');
 
 if($connection->isAdmin($_SESSION["username"])){
@@ -82,7 +82,7 @@ if($connection->isAdmin($_SESSION["username"])){
     $HTMLpage = str_replace("{lista_scarpe}", $lista_scarpe, $HTMLpage);
     $HTMLpage = str_replace("{info}", $info, $HTMLpage);
     echo $HTMLpage;
-
+    include "footer.php";
 }else{
     header("Location: ../HTML/error404.html");
 }
