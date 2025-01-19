@@ -39,12 +39,12 @@ Class DbConnection{
         return $userData;
     }
 
-    public function insertNewUser($username, $password){
+    public function insertNewUser($username, $password, $ruolo){
         $query ="SELECT username FROM utente WHERE username='$username'"; //controllo se lo username esiste già
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
         if ($result->num_rows == 0) { //se non mi restituisce lo username cercato allora non esiste
             $result->free_result();
-            $query ="INSERT INTO utente (username, pw, km, admin) VALUES('$username', '$password', 0, 0)";
+            $query ="INSERT INTO utente (username, pw, ruolo, admin) VALUES('$username', '$password', '$ruolo', 0)";
             $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
             $userCreated = TRUE;
         }else{ 

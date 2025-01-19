@@ -1,10 +1,19 @@
+
+/* Titolo "CorsaIdeale" */
+.navbar h1 {
+  font-size: 1.8em;
+
+}
+.logo {
+  width: 3.5em;
+  height: auto;
+}
+
+
 .cards {
     display: grid;
     grid-template-columns: repeat(1,1fr);
-  }
-  .cards > :nth-child(1) {
-    grid-column: span 1;
-  }
+}
   
    /* Responsività */
    .navbar {
@@ -15,11 +24,21 @@
 .navbar-items {
     display: none; /* Nasconde gli item della navbar su schermi piccoli */
 }
+
+  
   .listcards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  
+  .new-cards {
+    flex-direction: column;
+}
+
+.new-card {
+    width: 100%;
+}
+
+
   .whoarewe-cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -78,6 +97,21 @@
     display: flex;
     gap: 0.5em;
   }
+
+  .add-review-section {
+    flex-direction: column-reverse;
+  }
+
+  #add-review-modal {
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    margin-top: 20em;
+  }
+
+  .modal-content{
+    width: 100%;
+  }
   /* FINE SINGLE PAGE */
   
 
@@ -131,4 +165,12 @@ h3.title-admin{
   display: none;
 }
 
-/* FINE SEZIONE ADMIN *
+
+/* FOOTER */
+
+footer .valid-code {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    gap: 1em;
+}

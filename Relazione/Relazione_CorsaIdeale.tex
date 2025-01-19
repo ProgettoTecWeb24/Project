@@ -1,0 +1,160 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage{graphicx}  % Per inserire il logo
+\usepackage{titlesec}  % Per modificare lo stile dei titoli
+
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=20mm,
+    bottom=20mm,
+}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\graphicspath{{images}}
+
+% Modifica lo stile dei titoli section*
+\titleformat{\section*}
+  {\normalfont\normalsize\bfseries\centering}  % Formato centrato
+
+% Indice
+\renewcommand{\contentsname}{Indice}
+
+\begin{document}
+
+% Titolo e informazioni del progetto
+\title{\textbf{Relazione Progetto Tecnologie Web}}
+\author{Sito Web: \textit{CorsaIdeale}}
+\date{Anno Accademico 2024-2025}
+
+\begin{center}
+\maketitle
+
+% Inserimento logo
+\includegraphics[width=0.2\textwidth]{logo.png}
+\end{center}
+
+\section*{\centering Componenti del Gruppo}
+\begin{center}
+Marin Davide - 2068234\\
+\vspace{0.2cm}
+Eddy Pinarello - 2075535\\
+\vspace{0.2cm}
+Rubino Alfredo - 2076435\\
+\vspace{0.2cm}
+Salvò Giovanni - 2074010
+\end{center}
+
+\section*{\centering Informazioni Generali}
+\begin{center}
+\textbf{Indirizzo sito web}: \url{http://tecweb.studenti.math.unipd.it/epinarello/}\\
+\vspace{0.2cm}
+\textbf{Email referente gruppo}: eddy.pinarello@studenti.unipd.it
+\end{center}
+
+\section*{\centering Credenziali Utenti}
+\begin{center}
+\begin{longtable}{|l|l|l|}
+\hline
+\rowcolor[HTML]{094074}
+{\color[HTML]{FFFFFF} Ruolo} & {\color[HTML]{FFFFFF} Username} & {\color[HTML]{FFFFFF} Password}\\
+\hline
+Utente & user & user\\
+\hline
+Amministratore & admin & admin\\
+\hline
+\end{longtable}
+\end{center}
+
+\newpage
+\tableofcontents
+
+\newpage
+\begin{justify}
+    
+
+\section{Introduzione}
+Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni e ai servizi per i runner. Il sito offre informazioni sulle scarpe da corsa, analisi approfondite, strumenti per il monitoraggio delle performance e un sistema di classificazione basato sui chilometri percorsi settimanalmente. L'obiettivo principale \`e migliorare l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
+
+\section{Analisi dei requisiti}
+Durante la fase iniziale del progetto, abbiamo raccolto e analizzato i requisiti richiesti per il sito web. Il portale deve:
+
+\begin{itemize}
+    \item Permettere agli utenti di consultare una lista dettagliata di scarpe con immagini e descrizioni.
+    \item Consentire la registrazione e il login per salvare preferenze personali.
+    \item Offrire un sistema di recensioni e valutazioni con commenti.
+    \item Classificare gli utenti in base ai chilometri percorsi settimanalmente, assegnando loro un ruolo specifico (es. \textit{Tartaruga}, \textit{Lepre}, \textit{Lupo}, \textit{Ghepardo}).
+    \item Garantire un'esperienza accessibile e responsive su dispositivi diversi.
+\end{itemize}
+
+\section{Progettazione}
+La progettazione del sito \`e stata suddivisa in tre fasi principali:
+
+\subsection{Struttura generale}
+Il sito \`e stato progettato per avere una struttura semplice e intuitiva, con una \textbf{navbar} che consente di accedere rapidamente alle sezioni principali:
+\begin{itemize}
+    \item Home: Introduzione e presentazione dei servizi offerti.
+    \item Lista scarpe: Catalogo dettagliato.
+    \item Chi siamo: Informazioni sul team e la missione.
+    \item Area utente: Accesso al profilo personale.
+\end{itemize}
+
+\subsection{Database}
+Il database \`e stato progettato per supportare le principali funzionalit\`a del sito. Include le seguenti tabelle:
+\begin{itemize}
+    \item \textbf{SCARPA}: Contiene informazioni su nome, marca, descrizione, tipo e immagine delle scarpe.
+    \item \textbf{UTENTE}: Include username, email, password e ruolo.
+    \item \textbf{RECENSIONE}: Associa gli utenti alle scarpe recensite, includendo voto e commento.
+    \item \textbf{LIKES}: Gestisce il sistema di preferenze delle scarpe.
+\end{itemize}
+
+\subsection{Accessibilit\`a e responsive design}
+Il design \`e stato sviluppato per essere compatibile con dispositivi di diverse dimensioni. Sono state applicate media query per adattare la visualizzazione su schermi piccoli e grandi.
+
+\section{Implementazione}
+\subsection{Frontend}
+Il frontend \`e stato sviluppato utilizzando HTML5, CSS3 e JavaScript. Sono stati utilizzati framework e librerie moderne per garantire:
+\begin{itemize}
+    \item Navigazione fluida e interfaccia intuitiva.
+    \item Animazioni leggere per migliorare l'esperienza utente.
+    \item Struttura semantica del codice per migliorare l'accessibilit\`a.
+\end{itemize}
+
+\subsection{Backend}
+Il backend \`e stato implementato utilizzando PHP per la gestione della logica server-side e MySQL per il database. Funzionalit\`a principali:
+\begin{itemize}
+    \item Autenticazione e autorizzazione degli utenti.
+    \item Salvataggio e recupero di recensioni e preferenze.
+    \item Generazione dinamica di contenuti.
+\end{itemize}
+
+\section{Test e validazione}
+Il sito \`e stato sottoposto a test rigorosi per verificare:
+\begin{itemize}
+    \item Funzionamento delle principali funzionalit\`a.
+    \item Compatibilit\`a con browser moderni (Chrome, Firefox, Edge).
+    \item Conformit\`a agli standard HTML e CSS tramite validatori.
+\end{itemize}
+
+\section{Conclusioni e sviluppi futuri}
+Il progetto \textbf{CorsaIdeale} ha raggiunto con successo gli obiettivi prefissati, offrendo una piattaforma utile e innovativa per i runner. In futuro, prevediamo di:
+\begin{itemize}
+    \item Implementare un sistema di notifiche per aggiornamenti su nuove scarpe.
+    \item Aggiungere una sezione dedicata a eventi e raduni.
+    \item Integrare funzionalit\`a avanzate per il monitoraggio delle performance.
+\end{itemize}
+
+\vspace{1cm}
+
+
+\end{justify}
+\end{document}
+

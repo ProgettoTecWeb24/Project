@@ -28,9 +28,9 @@ $scarpa = $scarpaResult[0] ?? null;
 if (!$scarpa) {
     die("Scarpa non trovata.");
 }
-
-$queryRecensioni = "SELECT r.username, r.voto, r.commento 
+$queryRecensioni = "SELECT r.username, r.voto, r.commento, u.ruolo 
                     FROM RECENSIONE r 
+                    JOIN UTENTE u ON r.username = u.username
                     WHERE r.scarpa_id = ?";
 $recensioni = $connection->prepareAndExecute($queryRecensioni, 'i', $id);
 
@@ -39,7 +39,6 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
                    WHERE r.scarpa_id = ?";
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
-
 
 $content = '
     <div class="shoe-main">
@@ -56,14 +55,7 @@ $content = '
                 <img class="stars" src="../assets/' . $scarpa['votoexp'] . '.png" alt="Valutazione Esperti">
                 <p>' . htmlspecialchars($scarpa['feedback']) . '</p>
             </div>
-            
-            <div class="color-options">
-                <h3>Colori Disponibili</h3>
-                <div class="colors">' . implode('', array_map(function($colore) {
-                    return '<span class="color" style="background-color: ' . htmlspecialchars(trim($colore)) . ';"></span>';
-                }, explode(',', $scarpa['colori']))) . '
-                </div>
-            </div>
+        
         </div>
     </div>
     <div class="details-section">
@@ -84,7 +76,7 @@ if (isset($_SESSION['username'])) {
             <div class="rating-section">
 
                 <h3>Valutazione Utenti</h3>
-                <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
             
@@ -114,7 +106,7 @@ if (!empty($recensioni)) {
         $content .= '
         <div class="review">
             <div class="review-icon">
-                <img src="../assets/wolf-mini.png" alt="User Icon">
+                <img src="../assets/'. $recensione['ruolo'] .'-mini.png" alt="User Icon">
             </div>
             <div class="review-info">
                 <div class="review-header">
@@ -134,25 +126,35 @@ if (!empty($recensioni)) {
 }
 
 $content .= '
-<div id="add-review-modal" class="modal hidden">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeAddReviewForm()">&times;</span>
-        <h2>Lascia una Recensione</h2>
-        <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
-            <input type="hidden" name="idscarpa" id="idscarpa" value="' . $id . '"/>
-            <label for="rating">Valutazione:</label>
-            <select name="rating" id="rating" required>
-                <option value="1">1 Stella</option>
-                <option value="2">2 Stelle</option>
-                <option value="3">3 Stelle</option>
-                <option value="4">4 Stelle</option>
-                <option value="5">5 Stelle</option>
-            </select>
-            <label for="comment">Commento:</label>
-            <textarea name="comment" id="comment" rows="4" required></textarea>
-            <button type="submit" name="submit">Invia Recensione</button>
-        </form>';
-        
+    <div id="add-review-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAddReviewForm()">&times;</span>
+            <h2>Lascia una Recensione</h2>
+            <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
+                <input type="hidden" name="idscarpa" id="idscarpa" value="' . $id . '"/>
+                
+                <div class="input-add-scarpa">
+                    <label for="rating">Valutazione:</label>
+                    <select class="sel-scarpa-admin" name="rating" id="rating" required>
+                        <option value="" disabled selected>-- Dai una valutazione --</option>
+                        <option value="1">1 Stella</option>
+                        <option value="2">2 Stelle</option>
+                        <option value="3">3 Stelle</option>
+                        <option value="4">4 Stelle</option>
+                        <option value="5">5 Stelle</option>
+                    </select>
+                </div>
+                
+                <div class="input-add-scarpa">
+                    <label for="comment">Recensione:</label>
+                    <textarea name="comment" id="comment" rows="4" required placeholder="Scrivi la tua recensione"></textarea>
+                </div>
+                
+                <button class="button" type="submit" name="submit">Invia Recensione</button>
+            </form>
+        </div>
+    </div>';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $rating = $_POST['rating'] ?? '';
     $comment = $_POST['comment'] ?? '';
@@ -160,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $username = $_SESSION['username'] ?? '';
 
     if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
-        $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, $comment);
+        $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, sanitizeInput($comment));
     }
 }
 

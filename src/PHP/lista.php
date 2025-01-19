@@ -82,7 +82,9 @@ if ($result) {
         $cardsHTML .= '
             <a name ="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
                 <div class="card">
+                <div class="img-card-container">
                     <img class="img-card" src="../assets/' . htmlspecialchars($row['immagine'])  . '" alt="' . htmlspecialchars($row['nome']) . '">
+                </div>
                     <div class="text-card">
                         <h3>' . htmlspecialchars($row['nome']) . '</h3>
                         <p class="marca">Marca: ' . htmlspecialchars($row['marca']) . '</p>
