@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  line-height: 1.5em
 }
 
 /*Variabili colori*/
@@ -803,7 +804,7 @@ textarea#comment::placeholder {
               SEZIONE CHI SIAMO 
 ----------------------------------------*/
 
-.whoarewe-container {
+.chisiamo-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-left: 10%;
@@ -812,14 +813,7 @@ textarea#comment::placeholder {
   margin-bottom: 1em;
 }
 
-.us-div {
-  /* contenitore della parte "il team" */
-  border-radius: 0.625em;
-  margin-top: 1.25em;
-}
-
-.whoarewe-div {
-  /* comprende una foto e relativa descrizione */
+.chisiamo-div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -828,28 +822,31 @@ textarea#comment::placeholder {
   margin-left: 0.625em;
 }
 
-.whoarewe-div:nth-child(odd) {
+.chisiamo-div:nth-child(odd) {
   /* specchia il contenuto dei whoarewe-div in posizioni pari */
   flex-direction: row-reverse;
   margin-right: 0.625em;
 }
 
-.whoarewe-desc {
+.desc-membro {
   /* nome e descrizione persona */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
   padding: 1em;
+  font-size: 0.9em;
 }
+.desc-membro h3{
+    font-size: 1.5em;
+  }
 
-.whoarewe-div:nth-child(odd) .whoarewe-desc {
+.chisiamo-div:nth-child(odd) .desc-membro {
   /* allinea a destra il testo dei whoarewe-desc in posizioni pari */
   text-align: right;
 }
 
-.img-whoarewe {
-  /* stile delle immagini di presentazione */
+.chisiamo-div img {
   height: 10em;
   width: 10em;
   border-radius: 50%;
@@ -866,13 +863,20 @@ textarea#comment::placeholder {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: auto
+  height: auto;
+  padding: 2em;
+}
+
+.error-content h1,
+.error-content h2,
+.error-content p {
+    padding: 0.2em;
 }
 
 .error-image {
-  width: 30%;
+  width: 40%;
   height: auto;
-  margin: 2em;
+  margin: 1em;
 }
 
 /*---------------------------------------- 
@@ -1197,4 +1201,4 @@ footer .copyright {
     font-size: 1rem;
   }
   
-  /* FINE MODIFICASCARPA */?
+  /* FINE MODIFICASCARPA */
