@@ -49,7 +49,7 @@ body {
   align-items: center;
   background-color: var(--navbar-bg-color);
   border-radius: 0.5em;
-  padding: 0.625em 1.25em;
+  padding: 0.6em;
   flex-wrap: nowrap;
 }
 
@@ -58,6 +58,7 @@ body {
     width: 4.5em;
     height: auto;
     align-self: center;
+    margin-left: 0.8em;
 }
 
 .navbar-items {
@@ -69,7 +70,7 @@ body {
 .navbar-items li a {
     text-decoration: underline;
     color: var(--card-bg-color);
-    padding: 0.625em 0.9375em;
+    padding: 0.5em 0.9em;
     transition: color 0.3s;
 }
 
@@ -104,6 +105,10 @@ body {
 
 #title2 {
   color: var(--accent-color);
+}
+
+#breadcrumb {
+    padding: 0.5em;
 }
 
 /*---------------------------------------- 
@@ -886,11 +891,11 @@ textarea#comment::placeholder {
 ----------------------------------------*/
 
 footer {
+    margin-top: 1em;
   background-color: var(--navbar-bg-color);
   color: var(--card-bg-color);
-  padding: 0.5em 2%;
-  border-radius: 8px;
-  margin-top: 0.8em;
+  padding: 0.6em;
+  border-radius: 0.5em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
