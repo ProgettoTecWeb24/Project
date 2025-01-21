@@ -412,6 +412,10 @@ p.error_text {
   width: 5%;
 }
 
+.text-card{
+  text-align: center;
+}
+
 /*---------------------------------------- 
               SEZIONE GESTIONE PROFILO 
 ----------------------------------------*/
