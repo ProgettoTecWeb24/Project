@@ -44,23 +44,23 @@ CREATE TABLE LIKES (
 );
 
 -- Dati per SCARPA
-INSERT INTO SCARPA (id,nome, marca,tipo, descrizione, dettagli, votoexp, feedback, immagine, data_aggiunta)
+INSERT INTO SCARPA (nome, marca,tipo, descrizione, dettagli, votoexp, feedback, immagine, data_aggiunta)
 VALUES 
-('Pegasus Trail 4', 'Nike','strada', 'Scarpa versatile per trail running.', 'Ottima per trail di media difficoltà.', 'Rosso, Nero', 4, 'Comoda e affidabile', 'pegasus_trail_4.jpg', '2025-01-10'),
-('UltraBoost Light', 'Adidas','strada', 'Scarpa con un’ammortizzazione avanzata.', 'Ideale per runner su strada.', 'Bianco, Blu', 5, 'Ottima per lunghe distanze', 'ultraboost_light.jpg', '2025-01-12'),
-('Gel-Kayano 30', 'Asics','strada', 'Perfetta per chi cerca stabilità.', 'Supporta pronatori leggeri.', 'Grigio, Arancione', 4, 'Supporto eccellente', 'gel_kayano_30.jpg', '2025-01-15'),
-('Speedgoat 5', 'Hoka','strada', 'Ideale per terreni accidentati.', 'Scarpa molto robusta.', 'Verde, Giallo', 5, 'Aderenza incredibile', 'speedgoat_5.jpg', '2025-01-17'),
-('Zoom Fly 5', 'Nike','strada', 'Scarpa veloce per gare su strada.', 'Reattiva e leggera.', 'Nero, Bianco', 4, 'Leggera e reattiva', 'zoom_fly_5.jpg', '2025-01-20'),
-('Lone Peak 7', 'Altra','strada', 'Perfetta per lunghe escursioni trail.', 'Ampia vestibilità.', 'Blu, Verde', 5, 'Ampio spazio per le dita', 'lone_peak_7.jpg', '2025-01-22'),
-('Metaspeed Sky+', 'Asics','strada', 'Pensata per migliorare la velocità.', 'Ottima per gare di velocità.', 'Rosso, Nero', 5, 'Ideale per record personali', 'metaspeed_sky_plus.jpg', '2025-01-25'),
-('Ghost 15', 'Brooks','strada', 'Scarpa universale per corsa su strada.', 'Morbida e reattiva.', 'Grigio, Blu', 4, 'Ottima per runner intermedi', 'ghost_15.jpg', '2025-01-28'),
-('Endorphin Speed 3', 'Saucony','strada', 'Scarpa leggera e reattiva.', 'Ideale per allenamenti veloci.', 'Rosa, Bianco', 5, 'Reattiva e performante', 'endorphin_speed_3.jpg', '2025-01-30'),
-('Wave Rider 27', 'Mizuno','strada', 'Scarpa con tecnologia Wave.', 'Ammortizzata e stabile.', 'Bianco, Verde', 4, 'Perfetta per runner quotidiani', 'wave_rider_27.jpg', '2025-02-01'),
-('Fresh Foam 1080v12', 'New Balance','strada', 'Comfort eccezionale per lunghe distanze.', 'Vestibilità perfetta.', 'Blu, Grigio', 5, 'Super comoda', '1080v12.jpg', '2025-02-03'),
-('Vaporfly Next% 3', 'Nike','strada', 'Scarpa da gara ultraleggera.', 'Velocità e comfort.', 'Arancione, Nero', 5, 'Top di gamma', 'vaporfly_next_3.jpg', '2025-02-05'),
-('Adizero Adios Pro 3', 'Adidas','strada', 'Scarpa da competizione.', 'Leggera e veloce.', 'Giallo, Verde', 5, 'Massima performance', 'adios_pro_3.jpg', '2025-02-07'),
-('Novablast 3', 'Asics','strada', 'Ottima ammortizzazione.', 'Reattiva e leggera.', 'Viola, Rosa', 4, 'Super rimbalzo', 'novablast_3.jpg', '2025-02-09'),
-('Clifton 9', 'Hoka','strada', 'Scarpa morbida e ammortizzata.', 'Ottima per lunghe distanze.', 'Azzurro, Bianco', 5, 'Comfort incredibile', 'clifton_9.jpg', '2025-02-11');
+('Pegasus Trail 4', 'Nike','strada', 'Scarpa versatile per trail running.', 'Ottima per trail di media difficoltà.', 4, 'Comoda e affidabile', 'pegasus_trail_4.jpg', '2025-01-10'),
+('UltraBoost Light', 'Adidas','strada', 'Scarpa con un’ammortizzazione avanzata.', 'Ideale per runner su strada.',  5, 'Ottima per lunghe distanze', 'ultraboost_light.jpg', '2025-01-12'),
+('Gel-Kayano 30', 'Asics','strada', 'Perfetta per chi cerca stabilità.', 'Supporta pronatori leggeri.', 4, 'Supporto eccellente', 'gel_kayano_30.jpg', '2025-01-15'),
+('Speedgoat 5', 'Hoka','strada', 'Ideale per terreni accidentati.', 'Scarpa molto robusta.',  5, 'Aderenza incredibile', 'speedgoat_5.jpg', '2025-01-17'),
+('Zoom Fly 5', 'Nike','strada', 'Scarpa veloce per gare su strada.', 'Reattiva e leggera.',  4, 'Leggera e reattiva', 'zoom_fly_5.jpg', '2025-01-20'),
+('Lone Peak 7', 'Altra','strada', 'Perfetta per lunghe escursioni trail.', 'Ampia vestibilità.',  5, 'Ampio spazio per le dita', 'lone_peak_7.jpg', '2025-01-22'),
+('Metaspeed Sky+', 'Asics','strada', 'Pensata per migliorare la velocità.', 'Ottima per gare di velocità.',  5, 'Ideale per record personali', 'metaspeed_sky_plus.jpg', '2025-01-25'),
+('Ghost 15', 'Brooks','strada', 'Scarpa universale per corsa su strada.', 'Morbida e reattiva.',  4, 'Ottima per runner intermedi', 'ghost_15.jpg', '2025-01-28'),
+('Endorphin Speed 3', 'Saucony','strada', 'Scarpa leggera e reattiva.', 'Ideale per allenamenti veloci.',  5, 'Reattiva e performante', 'endorphin_speed_3.jpg', '2025-01-30'),
+('Wave Rider 27', 'Mizuno','strada', 'Scarpa con tecnologia Wave.', 'Ammortizzata e stabile.',  4, 'Perfetta per runner quotidiani', 'wave_rider_27.jpg', '2025-02-01'),
+('Fresh Foam 1080v12', 'New Balance','strada', 'Comfort eccezionale per lunghe distanze.', 'Vestibilità perfetta.',  5, 'Super comoda', '1080v12.jpg', '2025-02-03'),
+('Vaporfly Next% 3', 'Nike','strada', 'Scarpa da gara ultraleggera.', 'Velocità e comfort.',  5, 'Top di gamma', 'vaporfly_next_3.jpg', '2025-02-05'),
+('Adizero Adios Pro 3', 'Adidas','strada', 'Scarpa da competizione.', 'Leggera e veloce.',  5, 'Massima performance', 'adios_pro_3.jpg', '2025-02-07'),
+('Novablast 3', 'Asics','strada', 'Ottima ammortizzazione.', 'Reattiva e leggera.',  4, 'Super rimbalzo', 'novablast_3.jpg', '2025-02-09'),
+('Clifton 9', 'Hoka','strada', 'Scarpa morbida e ammortizzata.', 'Ottima per lunghe distanze.',  5, 'Comfort incredibile', 'clifton_9.jpg', '2025-02-11');
 
 -- Dati per UTENTE
 INSERT INTO UTENTE (username, pw, ruolo, admin) VALUES
