@@ -1,47 +1,42 @@
 \documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{longtable}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage{float}
+\usepackage{graphicx}
 \usepackage{ragged2e}
-\usepackage{graphicx}  % Per inserire il logo
-\usepackage{titlesec}  % Per modificare lo stile dei titoli
-
 \geometry{
     a4paper,
     left=25mm,
     right=25mm,
     top=20mm,
-    bottom=20mm,
+    bottom=20mm
 }
-
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
-
-\graphicspath{{images}}
-
-% Modifica lo stile dei titoli section*
-\titleformat{\section*}
-  {\normalfont\normalsize\bfseries\centering}  % Formato centrato
+\graphicspath{{images/}}
 
 % Indice
 \renewcommand{\contentsname}{Indice}
 
 \begin{document}
 
-% Titolo e informazioni del progetto
-\title{\textbf{Relazione Progetto Tecnologie Web}}
-\author{Sito Web: \textit{CorsaIdeale}}
-\date{Anno Accademico 2024-2025}
-
+% Pagina del titolo e sezioni
+\begin{titlepage}
 \begin{center}
-\maketitle
+    \vspace*{0.5cm}
+    \Huge \textbf{Relazione Progetto Tecnologie Web} \\
+    \vspace{0.5cm}
+    \Large Anno Accademico 2024-2025\\
+    \vspace{1cm}
+    \Huge Sito Web: \textit{CorsaIdeale} \\
+    \vspace{0.5cm} 
 
-% Inserimento logo
-\includegraphics[width=0.2\textwidth]{logo.png}
+    \includegraphics[width=0.2\textwidth]{logo.png}
 \end{center}
 
+% Componenti del Gruppo
 \section*{\centering Componenti del Gruppo}
 \begin{center}
 Marin Davide - 2068234\\
@@ -53,6 +48,7 @@ Rubino Alfredo - 2076435\\
 Salvò Giovanni - 2074010
 \end{center}
 
+% Informazioni Generali
 \section*{\centering Informazioni Generali}
 \begin{center}
 \textbf{Indirizzo sito web}: \url{http://tecweb.studenti.math.unipd.it/epinarello/}\\
@@ -60,6 +56,9 @@ Salvò Giovanni - 2074010
 \textbf{Email referente gruppo}: eddy.pinarello@studenti.unipd.it
 \end{center}
 
+\renewcommand{\arraystretch}{1.5} % Aumenta l'altezza delle righe del 50%
+
+% Credenziali Utenti
 \section*{\centering Credenziali Utenti}
 \begin{center}
 \begin{longtable}{|l|l|l|}
@@ -73,6 +72,7 @@ Amministratore & admin & admin\\
 \hline
 \end{longtable}
 \end{center}
+\end{titlepage}
 
 \newpage
 \tableofcontents
@@ -82,23 +82,62 @@ Amministratore & admin & admin\\
     
 
 \section{Introduzione}
-Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni e ai servizi per i runner. Il sito offre informazioni sulle scarpe da corsa, analisi approfondite, strumenti per il monitoraggio delle performance e un sistema di classificazione basato sui chilometri percorsi settimanalmente. L'obiettivo principale \`e migliorare l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
+Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni di scarpe da corsa e ai servizi per i runner. Il sito si basa sull'interazione tra appassionati, presentando schede dettagliate dei prodotti e permettendo agli utenti di valutarli e salvare i modelli di maggior interesse. Ogni calzatura dispone di una pagina dedicata che include specifiche tecniche, recensioni con voto degli utenti registrati e il feedback di un esperto. Un aspetto distintivo del sito è il sistema di categorizzazione degli utenti, che assegna un ruolo basato sui chilometri corsi settimanalmente. Questa funzionalità, oltre a motivare gli utenti, contribuisce a creare una community più coinvolgente e orientata al miglioramento personale. Gli utenti possono creare liste personali di scarpe preferite, consultare e pubblicare recensioni, accedendo a pagine personalizzate in base al proprio profilo. L'obiettivo principale del sito è rendere piacevole l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
 
-\section{Analisi dei requisiti}
-Durante la fase iniziale del progetto, abbiamo raccolto e analizzato i requisiti richiesti per il sito web. Il portale deve:
 
+\section{Analisi dei Requisiti}
+
+\subsection{Target di Utenza}
+
+Il pubblico a cui si rivolge \textbf{CorsaIdeale} è molto ampio, partendo dai principianti fino ad arrivare agli atleti esperti. I runner meno esperti possono utilizzare la piattaforma per orientarsi nella scelta della prima scarpa, mentre gli utenti più avanzati possono esplorare modelli specializzati per migliorare le proprie prestazioni. Oltre alle funzionalità riservate agli utenti registrati, cioè la possibilità di recensire e salvare i modelli di scarpe, il sito prevede una dashboard amministrativa per la gestione del database e delle recensioni, accessibile esclusivamente agli amministratori.\\
+L'interfaccia è progettata per essere semplice e intuitiva, garantendo l'accessibilità a tutti gli utenti con disabilità e a chi utilizza dispositivi non all'avanguardia. Allo stesso tempo, la struttura del sito supporta funzionalità avanzate per chiunque desideri interagire attivamente con la piattaforma.\\
+La funzionalità di ricerca del sito è stata ideata cercando di ricoprire tutte le fasce di utenza definite dalla metafora della pesca:
 \begin{itemize}
-    \item Permettere agli utenti di consultare una lista dettagliata di scarpe con immagini e descrizioni.
-    \item Consentire la registrazione e il login per salvare preferenze personali.
-    \item Offrire un sistema di recensioni e valutazioni con commenti.
-    \item Classificare gli utenti in base ai chilometri percorsi settimanalmente, assegnando loro un ruolo specifico (es. \textit{Tartaruga}, \textit{Lepre}, \textit{Lupo}, \textit{Ghepardo}).
-    \item Garantire un'esperienza accessibile e responsive su dispositivi diversi.
+    \item \textbf{Tiro perfetto}: gli schemi organizzativi esatti consentono ad un utente deciso di raggiungere immediatamente la scarpa desiderata.
+    \item \textbf{Trappola per aragoste}: gli schemi organizzativi ambigui permettono all'utente di approfondire le conoscenze grazie alla possibilità di suddividere la lista in sottocategorie.
+    \item \textbf{Pesca con la rete}: il sito è navigabile con facilità anche da un utente che non vuole perdersi nulla, grazie alla divisione in macrosezioni.
+    \item \textbf{Boa di segnalazione}: la funzionalità che permette di salvare le scarpe preferite è perfetta per chi vuole ritrovarle in un secondo momento.
 \end{itemize}
 
+\subsection{Funzionalità del Sito}
+
+Oltre a quelle elencate, ogni categoria di utente ha a disposizione tutte le funzionalità di quella precedente. Segue l'elenco delle funzionalità alle quali ha accesso ogni tipologia di utente:
+
+\begin{itemize}
+    \item \textbf{Utente generico}:
+        \begin{itemize}
+            \item Visualizzazione della Lista Scarpe;
+            \item Visualizzazione delle informazioni della singola scarpa;
+            \item Visualizzazione delle recensioni degli utenti registrati;
+            \item Registrazione e assegnazione del ruolo.
+        \end{itemize}
+    \item \textbf{Utente registrato}:
+        \begin{itemize}
+            \item Login;
+            \item Recensioni con voto;
+            \item Salvataggio delle scarpe;
+            \item Gestione e modifica delle proprie recensioni tramite pagina personale.
+        \end{itemize}
+    \item \textbf{Amministratore}:
+        \begin{itemize}
+            \item Accesso a dashboard amministrativa;
+            \item Gestione e modifica delle recensioni di tutti gli utenti;
+            \item Gestione e modifica del database;
+            \item boh
+        \end{itemize}
+\end{itemize}
+
+
 \section{Progettazione}
-La progettazione del sito \`e stata suddivisa in tre fasi principali:
 
 \subsection{Struttura generale}
+
+Il sito si articola in quattro sezioni principali, ognuna con funzionalità specifiche. La \textbf{home page} offre una panoramica delle ultime scarpe aggiunte e delle funzionalità del sito, fornendo un'introduzione chiara e accattivante. La \textbf{lista scarpe} consente di esplorare l'intero catalogo disponibile, con la possibilità di filtrare i risultati in base a caratteristiche specifiche come marca, tipo di utilizzo o valutazione media.
+
+Ogni scarpa è dotata di una pagina dedicata, dove gli utenti registrati possono lasciare recensioni e assegnare voti. Queste pagine mostrano informazioni dettagliate sui modelli, incluse descrizioni tecniche e immagini. Gli utenti possono anche salvare le scarpe preferite tramite un sistema di "like". Il profilo personale consente di visualizzare le scarpe salvate, le recensioni lasciate e il proprio ruolo, che viene aggiornato automaticamente in base ai chilometri settimanali corsi. Il sistema di ruoli, articolato in categorie come \textit{Tartaruga}, \textit{Lepre}, \textit{Lupo} e \textit{Ghepardo}, motiva gli utenti a migliorare le proprie prestazioni.
+
+Per garantire un ambiente sicuro e moderato, gli amministratori possono gestire il database delle scarpe e moderare le recensioni, rimuovendo contenuti inappropriati. Questa gestione avviene tramite una dashboard dedicata, accessibile esclusivamente a utenti con privilegi amministrativi.
+
 Il sito \`e stato progettato per avere una struttura semplice e intuitiva, con una \textbf{navbar} che consente di accedere rapidamente alle sezioni principali:
 \begin{itemize}
     \item Home: Introduzione e presentazione dei servizi offerti.
