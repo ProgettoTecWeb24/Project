@@ -561,20 +561,23 @@ input:focus {
 .shoe-title h2 {
   font-size: 1.5em;
   color: #777;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .shoe-main {
-  display: flex;
-  gap: 5%;
-  margin-bottom: 2em;
+    width: 90%; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 5%;
 }
+
 
 .shoe-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
 }
 
 .shoe-image {
@@ -593,18 +596,31 @@ input:focus {
 
 
 /* Sezioni dettagli e descrizione */
+.description-details {
+    width: 90%; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    box-sizing: border-box; 
+  }
+  
 .details-section,
 .description-section {
-  margin-top: 2em;
+    margin-top: 1.5em;
 }
 
 .details-section h3,
-
+.description-section h3 {
+    font-size: 1.5em;
+    color: var(--navbar-bg-color);
+    margin-bottom: 0.625em;
+}
 
 .details-section p,
 .description-section p {
-  font-size: 1em;
-  color: #666;
+    font-size: 1em;
+    color: black;
 }
 
 /* Recensioni */
@@ -627,8 +643,7 @@ input:focus {
 
 .reviews-wrapper>h3 {
   font-size: 1.8em;
-  color: #333;
-  border-bottom: 2px solid #ffa500;
+  color: var(--navbar-bg-color);
   display: inline-block;
 }
 
@@ -687,6 +702,10 @@ object-fit: cover;
   justify-content: space-between;
 }
 
+.rating-section{
+    margin-top: 1em;
+}
+
 img.stars {
   width: 7em;
   height: auto;
@@ -695,7 +714,7 @@ img.stars {
 .rating-wrapper h3 {
   font-size: 1.3em;
   margin-bottom: 0.3em;
-  color: #555;
+  color: black;
 }
 
 /* Pulsante per aggiungere recensioni */
@@ -1221,8 +1240,19 @@ footer .copyright {
   
   /* FINE MODIFICASCARPA */
 
+/* torna su home */ 
 
-  /* torna su home */
-.torna-su {
-    display: none;
-}
+.backToTop {
+    position: fixed;
+    bottom: 2em; 
+    right: calc(52% - 600px); 
+    background-color: var(--accent-color);
+    color: var(--card-bg-color);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1000;
+  }
+  

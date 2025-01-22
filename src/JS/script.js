@@ -70,3 +70,4 @@ function closeModal(modalId) {
 
     document.body.classList.remove("modal-open");
 }
+

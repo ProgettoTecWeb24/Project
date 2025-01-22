@@ -45,11 +45,19 @@
   /* INIZIO SINGLE PAGE */
   .shoe-main{
     flex-direction: column;
-  }
+    margin: 0;
+    width: 100%;
+}
   .reviews-section{
     width: 100%;
   }
+  .rating-section{
+    margin-top: 0em;
+}
 
+  .description-details {
+    margin: 0 ; /* Centra orizzontalmente */
+  }
   .add-review-section{
     padding: 0em;
   }
@@ -126,10 +134,7 @@ h2.title-admin{
 
 /* FINE SEZIONE ADMIN */
 
-/* torna su home */ 
-
-.torna-su{
-    display: block;
+.backToTop{
     position: fixed;
     bottom: 2em;
     right: 0.8em;

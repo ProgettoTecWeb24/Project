@@ -43,12 +43,14 @@ $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 $content = '
     <div class="shoe-main">
         <div class="shoe-image">
-            <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa' . htmlspecialchars($scarpa['nome']) . '" />
+            <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
         </div>
         <div class="shoe-info">
             <div class="shoe-title">
                 <h1>' . htmlspecialchars($scarpa['nome']) . '</h1>
                 <h2>Modello: ' . htmlspecialchars($scarpa['nome']) . '</h2>
+                <h2>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</h2>
+
             </div>
             <div class="rating">
                 <h3>Valutazione Esperti</h3>
@@ -58,13 +60,15 @@ $content = '
         
         </div>
     </div>
-    <div class="details-section">
-        <h3>Dettagli</h3>
-        <p>' . htmlspecialchars($scarpa['dettagli']) . '</p>
-    </div>
-    <div class="description-section">
-        <h3>Descrizione</h3>
-        <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
+    <div class="description-details"> 
+        <div class="description-section">
+            <h3>Descrizione</h3>
+            <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
+        </div>
+        <div class="details-section">
+            <h3>Dettagli</h3>
+            <p>' . htmlspecialchars($scarpa['dettagli']) . '</p>
+        </div>
     </div>
     <div class="reviews-wrapper">
     <h3>Recensioni</h3>

@@ -38,13 +38,12 @@
     width: 100%;
 }
 
-
-  .whoarewe-cards {
+.whoarewe-cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-  }
-  
-  .navbar-items {
+}
+
+.navbar-items {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -57,52 +56,46 @@
     margin-right: 10px;
     z-index: 1000;
     border-radius: 5px;
-  }
-  
-  .navbar-items.active {
+}
+
+.navbar-items.active {
     display: flex;
-  }
-  
-  .navbar-items li {
+}
+
+.navbar-items li {
     width: 100%;
-  }
-  
-  .navbar-items li a {
+}
+
+.navbar-items li a {
     display: block;
     width: 100%;
     padding: 15px 20px;
     text-align: center;
-  }
-  
+}
 
-  /* PAGINA CHI SIAMO */
-  .whoarewe-container {
+/* PAGINA CHI SIAMO */
+.whoarewe-container {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 30px;
     margin-bottom: 15px;
-  }
-  
-  .img-whoarewe {
+}
+
+.img-whoarewe {
     height: 100px;
     width: 100px;
-  }
-  /* FINE PAGINA CHI SIAMO */
-  
-  /* INIZIO SINGLE PAGE */
-  .review {
+}
+/* FINE PAGINA CHI SIAMO */
+
+/* INIZIO SINGLE PAGE */
+.review {
     display: flex;
     gap: 0.5em;
-  }
+}
 
-  .add-review-section {
+.add-review-section {
     flex-direction: column-reverse;
-  }
-
-  #add-review-modal, #delete-review-modal,  #delete-shoe-modal {
-   
-  }
-
+}
 
 .modal-content {
     width: 18em;
@@ -174,4 +167,13 @@ footer .valid-code {
     gap: 1em;
 }
 
-/* torna su home */
+
+/* SINGLE PAGE */
+
+.shoe-info{
+    gap:0em;
+}
+
+#add-review-button {
+    width: 15px;
+}
