@@ -25,6 +25,7 @@ body {
   --red-heart: #ff3300; /* Like Button -Red Heart */
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
   --link-color: #fcb52f;
+  --menu-link-color: #ffffff;
 }
 
 /* Wrapper */
@@ -39,18 +40,22 @@ body {
   padding: 0.625em;
 }
 
+.link{
+    color: var(--link-color);    
+}
+
 /*---------------------------------------- 
               SEZIONE NAVBAR 
 ----------------------------------------*/
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--navbar-bg-color);
-  border-radius: 0.5em;
-  padding: 0.6em;
-  flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-bg-color);
+    border-radius: 0.5em;
+    padding: 0.6em;
+    flex-wrap: nowrap;
 }
 
 
@@ -61,33 +66,27 @@ body {
     margin-left: 0.8em;
 }
 
-.navbar-items {
+#navbar-links {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-.navbar-items li a {
+#navbar-links li a:link {
     text-decoration: underline;
-    color: var(--card-bg-color);
+    color: var(--menu-link-color);
     padding: 0.5em 0.9em;
     transition: color 0.3s;
 }
 
-.navbar-items li a:hover {
-  text-decoration: none;
+#navbar-links li a:visited {
+    text-decoration: underline;
+    color: var(--link-color);
 }
 
-.navbar-items li a:visited {
-  text-decoration: underline;
-  color: var(--link-color);
-}
-
-.navbar-items {
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
+#navbar-links li a:hover {
+    text-decoration: none;
+  }
 
 /* Titolo "CorsaIdeale" */
 .navbar h1 {
@@ -115,12 +114,12 @@ body {
               SEZIONE HOME 
 ----------------------------------------*/
 
-/* Cards */
 .cards {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
+  margin-bottom: 1em;
 }
 
 .card {
@@ -193,7 +192,6 @@ body {
   transition: fill 0.3s;
 }
 
-
 .like-button:hover .heart-icon,
 .like-button.active .heart-icon {
   fill: var(--red-heart);
@@ -204,32 +202,27 @@ body {
   fill: #ccc;
 }
   
-  
-
-/* Titoli delle cards */
 .card h3 {
   font-size: 1.5em;
   margin-bottom: 0.625em;
 }
 
-/* Contenuto delle cards */
 .card p {
   font-size: 1.2em;
   color: var(--text-color);
 }
 
-/* Titoli delle sezioni */
+
 .content h2 {
-  font-size: 2.5em;
-  margin: 0.2em 0.8em 0.8em 0.8em;
-  text-align: center;
-  color: var(--navbar-bg-color);
+    font-size: 2.5em;
+    margin: 1em;
+    text-align: center;
+    color: var(--navbar-bg-color);
 }
 
-/* Paragrafo (Chi Siamo) */
 .content p {
   font-size: 1.2em;
-  line-height: 1.6;
+  line-height: 1.5em;
   color: var(--text-color);
   text-align: center;
 }
@@ -993,20 +986,20 @@ footer .imgValidCode {
 }
 
 #footer-links a {
-    color: var(--card-bg-color);
     text-decoration: underline;
+    color: var(--menu-link-color);
+    padding: 0.5em 0.9em;
+    transition: color 0.3s;
     margin-left: 1em;
-    transition: color 0.3s, text-decoration 0.3s;
-}
-
-#footer-links a:hover {
-    color: var(--card-bg-color);
-    text-decoration: none;
 }
 
 #footer-links a:visited {
-  color: var(--link-color);
-  text-decoration: none;
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+#footer-links a:hover {
+    text-decoration: none;
 }
 
 footer .copyright {
