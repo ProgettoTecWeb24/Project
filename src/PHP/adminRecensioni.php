@@ -58,7 +58,7 @@ if($connection->isAdmin($_SESSION["username"])){
                                 <input type="hidden" name="delete_id" value="'.$review['scarpa_id'].'">
                                 <input type="hidden" name="username" value="'.$review['username'].'">
                                 <button type="submit" id="submit" name="submit" class="link-con-icona">
-                                    <img src="../assets/delete.svg" alt="elimina" class="icona">
+                                    <img src="../assets/delete.svg" alt="elimina" class="icona" />
                                 </button>
                             </form>
                         </td>

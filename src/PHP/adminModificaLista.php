@@ -52,7 +52,7 @@ if($connection->isAdmin($_SESSION["username"])){
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '
                     <tr>
-                        <td><img src="../assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin"></td>
+                        <td><img src="../assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
                         <td>'.$shoe["nome"] .'</td>
                         <td class="hide-tablet">'.$shoe["marca"] .'</td>
                         <td class="hide-tablet">'.$shoe["descrizione"] .'</td>
@@ -62,11 +62,11 @@ if($connection->isAdmin($_SESSION["username"])){
                             $shoe["votoexp"].'
                         </td>
                         <td>
-                            <a class="link-con-icona" name="modifica" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="../assets/edit.svg" alt="modifica" class="icona"></a>
+                            <a class="link-con-icona" name="modifica" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="../assets/edit.svg" alt="modifica" class="icona" /></a>
                             <form action="adminModificaLista.php" class="form" method="POST">
                                 <input type="hidden" name="delete_id" value="'.$shoe['id'].'">
                                 <button type="submit" id="submit" name="submit" class="link-con-icona">
-                                    <img src="../assets/delete.svg" alt="elimina" class="icona">
+                                    <img src="../assets/delete.svg" alt="elimina" class="icona" />
                                 </button>
                             </form>
                         </td>

@@ -43,7 +43,7 @@ $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 $content = '
     <div class="shoe-main">
         <div class="shoe-image">
-            <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt="' . htmlspecialchars($scarpa['nome']) . '">
+            <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa' . htmlspecialchars($scarpa['nome']) . '" />
         </div>
         <div class="shoe-info">
             <div class="shoe-title">
@@ -52,7 +52,7 @@ $content = '
             </div>
             <div class="rating">
                 <h3>Valutazione Esperti</h3>
-                <img class="stars" src="../assets/' . $scarpa['votoexp'] . '.png" alt="Valutazione Esperti">
+                <img class="stars" src="../assets/' . $scarpa['votoexp'] . '.png" alt="immagine di ' . $scarpa['votoexp'] . ' stelle su 5 per gli Esperti" />
                 <p>' . htmlspecialchars($scarpa['feedback']) . '</p>
             </div>
         
@@ -86,14 +86,14 @@ if (isset($_SESSION['username'])) {
             <div class="rating-wrapper">
             <div class="rating-section">
                 <h3>Valutazione Utenti</h3>
-                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">' : '<p>Nessuna recensione disponibile.</p>') . '
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
                 <button type="button" id="modifica-btn" class="link-con-icona" onclick="openModal(\'edit-review-modal\')">
-                    <img src="../assets/edit.svg" alt="modifica" class="icona-profilo">
+                    <img src="../assets/edit.svg" alt="modifica" class="icona-profilo" />
                 </button>
                 <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
-                    <img src="../assets/delete.svg" alt="elimina" class="icona-profilo">
+                    <img src="../assets/delete.svg" alt="elimina" class="icona-profilo" />
                 </button>
             </div>
             </div>
@@ -103,11 +103,11 @@ if (isset($_SESSION['username'])) {
             <div class="rating-wrapper">
                 <div class="rating-section">
                     <h3>Valutazione Utenti</h3>
-                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">' : '<p>Nessuna recensione disponibile.</p>') . '
+                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
                 </div>
                 <div class="add-review-section">
-                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
-                    <span class="review-prompt">Lascia la tua Recensione!</span>
+                <span class="review-prompt">Lascia la tua Recensione!</span>
+                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>  </button>
                 </div>
             </div>
         ';
@@ -115,14 +115,14 @@ if (isset($_SESSION['username'])) {
 } else {
     $content .= '
         <div class="add-review-section">
-            <div class="rating">
+            <div class="rating-section">
                 <h3>Valutazione Utenti</h3>
-                <div class="add-review-wrapper hidden">
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
+            </div>
+            <div class="add-review-section hidden">
                     <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
                     <span class="review-prompt">Lascia la tua Recensione!</span>
                 </div>
-                <img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="Valutazione Utenti">
-            </div>
         </div>
     ';
 }
@@ -146,8 +146,8 @@ $content .= '
                     </select>
                 </div>
                 <div class="input-add-scarpa">
-                    <label for="edit-comment">Recensione:</label>
-                    <textarea name="comment" id="edit-comment" rows="4" required></textarea>
+                    <label for="comment">Recensione:</label>
+                    <textarea name="comment" id="comment" rows="4" required placeholder="Modifica la tua recensione"></textarea>
                 </div>
                 <button class="button" type="submit" name="edit">Modifica Recensione</button>
             </form>
@@ -155,10 +155,12 @@ $content .= '
     </div>
 
     <div id="delete-review-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
-            <h2>Conferma Eliminazione</h2>
-            <p>Sei sicuro di voler eliminare questa recensione?</p>
+        <div class="modal-content-delete">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+                <h2>Conferma Eliminazione</h2>
+                <p>Sei sicuro di voler eliminare questa recensione?</p>
+            </div>
             <form id="delete-review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
                 <input type="hidden" name="idscarpa" value="' . $id . '"/>
                 <button class="button" type="submit" name="delete">Conferma</button>
@@ -184,7 +186,7 @@ if (!empty($recensioni)) {
         $content .= '
         <div class="review">
             <div class="review-icon">
-                <img src="../assets/'. $recensione['ruolo'] .'-mini.png" alt="User Icon">
+                <img src="../assets/'. $recensione['ruolo'] .'-mini.png" alt="immagine di un '. $recensione['ruolo'] .'" />
             </div>
             <div class="review-info">
                 <div class="review-header">
@@ -192,7 +194,7 @@ if (!empty($recensioni)) {
                         <span class="review-user">' . htmlspecialchars($recensione['username']) . '</span>
                     </div>
                     <div class="review-stars">
-                        <img class="stars" src="../assets/' . $recensione['voto'] . '.png" alt="Voto Utente">
+                        <img class="stars" src="../assets/' . $recensione['voto'] . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per l\'utente" />
                     </div>
                 </div>
                 <div class="review-text">' . htmlspecialchars($recensione['commento']) . '</div>

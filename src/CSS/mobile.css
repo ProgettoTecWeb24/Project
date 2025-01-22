@@ -99,16 +99,18 @@
     flex-direction: column-reverse;
   }
 
-  #add-review-modal {
-    width: 90%;
-    height: 100%;
-    padding: 0;
-    margin-top: 20em;
+  #add-review-modal, #delete-review-modal,  #delete-shoe-modal {
+   
   }
 
-  .modal-content{
-    width: 100%;
-  }
+
+.modal-content {
+    width: 18em;
+}
+.modal-content-delete {
+    width: 18em;
+    height: 11em;
+}
   /* FINE SINGLE PAGE */
   
 
@@ -171,3 +173,5 @@ footer .valid-code {
     margin-top: 1em;
     gap: 1em;
 }
+
+/* torna su home */

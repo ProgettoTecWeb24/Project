@@ -144,7 +144,7 @@ if ($result) {
             <a href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
                 <div class="card">
                 <div class="img-card-container">
-                    <img class="img-card" src="../assets/' . htmlspecialchars($row['immagine'])  . '" alt="' . htmlspecialchars($row['nome']) . '">
+                    <img class="img-card" src="../assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['nome']) . '" />
                 </div>
                     <div class="text-card">
                         <h3>' . htmlspecialchars($row['nome']) . '</h3>
@@ -189,7 +189,7 @@ if (!empty($recensioni)) {
         <form action="profilo.php#review'. htmlspecialchars($recensione['scarpa_id']).'" method="POST">
         <div class="review-profile">
             <div class="review-icon-shoes">
-                <img src="../assets/' . htmlspecialchars($recensione['immagine'])  . '" alt="' . htmlspecialchars($recensione['nome']) . '">
+                <img src="../assets/' . htmlspecialchars($recensione['immagine'])  . '" alt="' . htmlspecialchars($recensione['nome']) . '" />
             </div>
             <div class="review-info-profile">
                
@@ -239,10 +239,10 @@ if (!empty($recensioni)) {
             </div>
         <div class="div-coloum">
             <button type="submit" id="modifica" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                <img src="../assets/edit.svg" alt="modifica" class="icona-profilo">
+                <img src="../assets/edit.svg" alt="modifica" class="icona-profilo" />
             </button>
             <button type="submit" id="elimina" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                <img src="../assets/delete.svg" alt="elimina" class="icona-profilo">
+                <img src="../assets/delete.svg" alt="elimina" class="icona-profilo" />
             </button>
         </div>   
         </div>

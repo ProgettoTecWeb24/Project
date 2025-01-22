@@ -64,8 +64,22 @@
     grid-template-columns: repeat(2, 1fr); /* 2 card per riga */
 }
 
+/* single page */
+#add-review-modal.modal,
+#edit-review-modal.modal,
+#delete-review-modal.modal {
+    top: 80%;
+    left: 50%;
+}
 
 
+.modal-content {
+    width: 25em;
+}
+.modal-content-delete {
+    width: 25em;
+    height: 11em;
+}
 
 /* TUTTA SEZIONE ADMIN */
 
@@ -110,4 +124,21 @@ h2.title-admin{
   display: none;
 }
 
-/* FINE SEZIONE ADMIN *
+/* FINE SEZIONE ADMIN */
+
+/* torna su home */ 
+
+.torna-su{
+    display: block;
+    position: fixed;
+    bottom: 2em;
+    right: 0.8em;
+    background-color: var(--accent-color);
+    color: var(--card-bg-color);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1000;
+  }
