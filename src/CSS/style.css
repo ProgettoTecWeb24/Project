@@ -221,7 +221,7 @@ body {
 /* Titoli delle sezioni */
 .content h2 {
   font-size: 2.5em;
-  margin: 0.8em;
+  margin: 0.2em 0.8em 0.8em 0.8em;
   text-align: center;
   color: var(--navbar-bg-color);
 }
@@ -351,13 +351,8 @@ p.error_text {
 ----------------------------------------*/
 
 .searchbar-acc {
-  border-color: var(--navbar-bg-color);
-  border: 0.125em solid;
-  background-color: var(--card-bg-color);
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
-  padding: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
