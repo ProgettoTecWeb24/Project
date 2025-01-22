@@ -19,7 +19,7 @@ if($connection->isAdmin($_SESSION["username"])){
     $lista_scarpe = "";
     $info = "";
 
-    if(isset($_POST['submit'])){
+    if(isset($_POST['delete'])){
         $idScarpa = intval($_POST['delete_id']);
         $shoe = $connection->getShoe($idScarpa);
         if($connection->deleteShoe($idScarpa)){
@@ -63,14 +63,24 @@ if($connection->isAdmin($_SESSION["username"])){
                         </td>
                         <td>
                             <a class="link-con-icona" name="modifica" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="../assets/edit.svg" alt="modifica" class="icona" /></a>
-                            <form action="adminModificaLista.php" class="form" method="POST">
-                                <input type="hidden" name="delete_id" value="'.$shoe['id'].'">
-                                <button type="submit" id="submit" name="submit" class="link-con-icona">
+                            <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
                                     <img src="../assets/delete.svg" alt="elimina" class="icona" />
-                                </button>
-                            </form>
+                            </button>
                         </td>
                     </tr>
+                    <div id="delete-review-modal" class="modal hidden">
+                        <div class="modal-content-delete">
+                            <div class="modal-header">
+                                <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+                                <h2>Conferma Eliminazione</h2>
+                                <p>Sei sicuro di voler eliminare questa recensione?</p>
+                            </div>
+                            <form id="delete-review-form" action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                                <input type="hidden" name="delete_id" value="'.$shoe['id'].'"/>
+                                <button class="button" type="submit" name="delete">Conferma</button>
+                            </form>
+                        </div>
+                    </div
             '; 
         }
          $lista_scarpe .= '
