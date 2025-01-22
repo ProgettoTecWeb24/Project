@@ -2,7 +2,7 @@
     <h1>Gestione profilo di {user}</h1>
 
     <form action="profilo.php" method="POST">
-        <div class="settings-card">
+        <div class="settings">
             <h1>Impostazioni</h1>
             <div class="div-column">
                 <label for="newUser">Nuovo username:</label>
@@ -25,12 +25,49 @@
                     <p>Salva impostazioni</p>
                 </button>
             </div>
+
+
+            
+
+
+
+
         </div>
     </form>
+<form action="profilo.php" method="POST" name="logout">
+        
+                    <button type="submit" class="submit-settings" name="logout">
+                        <p>Logout</p>
+                    </button>
+                
+            </form>
+
+            <h2 class="title-admin">Benvenuto nel gestore di CorsaIdeale</h2>
+            <h3 class="title-admin">Cosa desideri fare?</h3>
+            <div class="wrapper-card-admin">
+                <a href="adminAggiungiScarpa.php" class="card-link">
+                    <div class="card-admin">
+                        <div class="text-card-admin">
+                            <h3>Scarpe salvate</h3>
+                        </div>
+                        <img class="admin-home-icon" src="../assets/heart.png" alt="aggiungi scarpa" />
+                    </div>
+                </a>
+                <a href="adminModificaLista.php" class="card-link">
+                    <div class="card-admin">
+                        <div class="text-card-admin">
+                            <h3>Le mie recensioni</h3>
+                        </div>
+                        <img class="admin-home-icon" src="../assets/review.png" alt="gestisci scarpe" />
+                    </div>
+                </a>
+            </div>
+
+
 
     <form action="profilo.php#likes" method="POST">
-        <div class="settings-card">
-            <a name="likes"><h1>Scarpe con il like</h1></a>
+        <div class="settings">
+            <a name="likes"><h2>Scarpe salvate</h2></a>
             <div class="searchbar-liked">
                 <div>
                     <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..."
@@ -99,19 +136,12 @@
                 </button>
                 </div> -->
 
-        <div class="settings-card">
+        <div class="settings">
             <a name="reviews"><h1>Tue recensioni</h1></a>
             <div class="reviews-wrapper">    
         {yourreviews}
 </div>
 </div>
 
-<form action="profilo.php" method="POST" name="logout">
-    <div class="settings-card">
-        <button type="submit" class="submit-settings" name="logout">
-            <p>Logout</p>
-        </button>
-    </div>
-</form>
 
 </div>
