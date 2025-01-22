@@ -21,7 +21,7 @@
     padding: 10px;
 }
 
-.navbar-items {
+#navbar-links {
     display: none; /* Nasconde gli item della navbar su schermi piccoli */
 }
 
@@ -41,9 +41,9 @@
 .whoarewe-cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-}
-
-.navbar-items {
+  }
+  
+  #navbar-links {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -56,17 +56,17 @@
     margin-right: 10px;
     z-index: 1000;
     border-radius: 5px;
-}
-
-.navbar-items.active {
+  }
+  
+  #navbar-links.active {
     display: flex;
-}
-
-.navbar-items li {
+  }
+  
+  #navbar-links li {
     width: 100%;
-}
-
-.navbar-items li a {
+  }
+  
+  #navbar-links li a {
     display: block;
     width: 100%;
     padding: 15px 20px;
