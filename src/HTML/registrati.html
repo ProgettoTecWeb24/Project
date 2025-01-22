@@ -9,8 +9,16 @@
                   <label for="password">Conferma <span lang="en">Password</span></label>
                   <input type="password" name="confirm_password" placeholder="Conferma la tua password"/>
                   {error_text}
-                  <label for="km_settimanali">Kilometri settimanali (Opzionale)</label>
-                  <input type="username" name="km_settimanali" placeholder="Inserisci i kilometri che fai in una settimana!"/>
+                <div class="div-column">
+
+                  <label for="kmsett">Kilometri settimanali:</label>
+                <select name="km_settimanali" id="kmsett" class="select-settings">
+                    <option value="tartaruga">Fino a 5 km/sett</option>
+                    <option value="lepre">Da 6 a 20 km/sett</option>
+                    <option value="lupo">Da 21 a 50 km/sett</option>
+                    <option value="ghepardo">Oltre 50 km/sett</option>
+                </select>
+                </div>
                   <button type="submit" name="submit" >Registrati</button>
                </form>
                   <h3>Hai già un <span lang="en">account</span>? <a href="accedi.php">Accedi con le tue credenziali</a></h3>
