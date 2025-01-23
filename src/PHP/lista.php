@@ -112,7 +112,7 @@ if (!empty($_SESSION['username'])) {
     $result = $result = $connection->query($qFill);
     if ($result) {
         while ($row = $result->fetch_assoc()) {
-            $oldStr = 'value="' . $row['scarpa_id'] .'">{like}';
+            $oldStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'">{like}';
             $newStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon-filled">';
             $HTMLpage = str_replace($oldStr, $newStr, $HTMLpage);   
         }
