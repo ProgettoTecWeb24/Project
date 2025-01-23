@@ -898,8 +898,6 @@ textarea#comment::placeholder {
 .chisiamo-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  margin-left: 10%;
-  margin-right: 10%;
   margin-top: 2em;
   margin-bottom: 1em;
 }
@@ -909,14 +907,14 @@ textarea#comment::placeholder {
   flex-direction: row;
   align-items: center;
   transition: transform 0.2s;
-  gap: 0.125em;
-  margin-left: 0.625em;
+  gap: 0.2em;
+  margin-left: 0.8em;
 }
 
 .chisiamo-div:nth-child(odd) {
   /* specchia il contenuto dei whoarewe-div in posizioni pari */
   flex-direction: row-reverse;
-  margin-right: 0.625em;
+  margin-right: 0.8em;
 }
 
 .desc-membro {
@@ -947,8 +945,8 @@ textarea#comment::placeholder {
 }
 
 .chisiamo-div img {
-  height: 10em;
-  width: 10em;
+  height: 8em;
+  width: 8em;
   border-radius: 50%;
   float: left;
   box-shadow: 0 0 0.3125em var(--navbar-bg-color);
