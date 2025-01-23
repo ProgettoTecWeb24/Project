@@ -22,7 +22,7 @@ if (!empty($_SESSION['username'])) {
     }
     
 }
-$DOM = str_replace('<p>Ti trovi in: <span lang="en">', '<p>Ti trovi in: <span lang="en">' . $location, $DOM);
+
 
 echo ($DOM);
 ?>

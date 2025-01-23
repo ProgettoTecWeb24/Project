@@ -15,7 +15,7 @@ if (!$connection->startDbConnection()) {
 
 include "header.php";
 $HTMLpage = file_get_contents('../HTML/paginaSingola.html');
-
+$breadcrumb_scarpa ="Pagina scarpa";
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id == 0) {
     die("ID scarpa non valido.");
@@ -39,6 +39,8 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
                    WHERE r.scarpa_id = ?";
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
+
+$breadcrumb_scarpa = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']);
 
 $content = '
     <div class="shoe-main">
@@ -275,7 +277,7 @@ $content .= '
     </div>
 </div>';
 
-
+$HTMLpage = str_replace("{breadcrumb_scarpa}", $breadcrumb_scarpa, $HTMLpage);
 $HTMLpage = str_replace("{singlePage_content}", $content, $HTMLpage);
 
 echo $HTMLpage;
