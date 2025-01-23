@@ -20,7 +20,7 @@
       display: block; /* Mostra l'icona solo su schermi piccoli */
   }
 
-  #navbar-links {
+  .navbar-links {
       display: none; /* Nasconde gli item della navbar su schermi piccoli */
   }
 

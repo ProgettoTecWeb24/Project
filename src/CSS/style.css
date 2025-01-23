@@ -31,14 +31,15 @@ body {
 
 /* Wrapper */
 .wrapper {
-  margin-top: 0.625em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   background-color: var(--wrapper-bg-color);
   width: 100%;
   max-width: 1200px;
   height: fit-content;
   box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
-  padding: 0.625em;
+  padding: 0.5em;
 }
 
 .link{
@@ -67,7 +68,7 @@ body {
     margin-left: 0.8em;
 }
 
-#navbar-links {
+.navbar-links {
   display: flex;
   list-style: none;
   align-items: center;
@@ -576,6 +577,15 @@ label {
 input:focus {
   outline: none;
 }
+
+.profile-cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 
 /*---------------------------------------- 
               SEZIONE SINGLE PAGE 

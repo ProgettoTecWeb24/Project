@@ -6,6 +6,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
 \usepackage{ragged2e}
+\usepackage[T1]{fontenc}
 \geometry{
     a4paper,
     left=25mm,
@@ -41,7 +42,7 @@
 \begin{center}
 Marin Davide - 2068234\\
 \vspace{0.2cm}
-Eddy Pinarello - 2075535\\
+Pinarello Eddy - 2075535\\
 \vspace{0.2cm}
 Rubino Alfredo - 2076435\\
 \vspace{0.2cm}
@@ -82,7 +83,11 @@ Amministratore & admin & admin\\
     
 
 \section{Introduzione}
-Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni di scarpe da corsa e ai servizi per i runner. Il sito si basa sull'interazione tra appassionati, presentando schede dettagliate dei prodotti e permettendo agli utenti di valutarli e salvare i modelli di maggior interesse. Ogni calzatura dispone di una pagina dedicata che include specifiche tecniche, recensioni con voto degli utenti registrati e il feedback di un esperto. Un aspetto distintivo del sito è il sistema di categorizzazione degli utenti, che assegna un ruolo basato sui chilometri corsi settimanalmente. Questa funzionalità, oltre a motivare gli utenti, contribuisce a creare una community più coinvolgente e orientata al miglioramento personale. Gli utenti possono creare liste personali di scarpe preferite, consultare e pubblicare recensioni, accedendo a pagine personalizzate in base al proprio profilo. L'obiettivo principale del sito è rendere piacevole l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
+
+Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni di scarpe da corsa e ai servizi per i runner. Il sito si basa sull'interazione tra appassionati, presentando schede dettagliate dei prodotti e permettendo agli utenti di valutarli e salvare i modelli di maggior interesse.\\
+Ogni calzatura dispone di una pagina dedicata che include specifiche tecniche, recensioni con voto degli utenti registrati e il feedback di un esperto.\\
+Un aspetto distintivo del sito è il sistema di categorizzazione degli utenti, che assegna un ruolo basato sui chilometri corsi settimanalmente. Questa funzionalità, oltre a motivare gli utenti, contribuisce a creare una community più coinvolgente e orientata al miglioramento personale.\\ 
+Gli utenti possono creare liste personali di scarpe preferite, consultare e pubblicare recensioni, accedendo a pagine personalizzate in base al proprio profilo. L'obiettivo principale del sito è rendere piacevole l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
 
 
 \section{Analisi dei Requisiti}
@@ -101,65 +106,180 @@ La funzionalità di ricerca del sito è stata ideata cercando di ricoprire tutte
 
 \subsection{Funzionalità del Sito}
 
-Oltre a quelle elencate, ogni categoria di utente ha a disposizione tutte le funzionalità di quella precedente. Segue l'elenco delle funzionalità alle quali ha accesso ogni tipologia di utente:
-
+Sono state implementate tre diverse tipologie di utente: utente generico, utente loggato e amministratore. Ogni categoria di utente ha a disposizione le funzionalità elencate, oltre a ereditare tutte quelle della categoria precedente.
 \begin{itemize}
-    \item \textbf{Utente generico}:
+    \item \textbf{Utente generico}: un qualsiasi visitatore occasionale del sito, oppure un utente già registrato ma che non ha ancora effettuato il login.
         \begin{itemize}
-            \item Visualizzazione della Lista Scarpe;
+            \item Visualizzazione della pagina Home;
+            \item Visualizzazione della pagina Lista Scarpe;
+            \item Visualizzazione della pagina Chi Siamo;
             \item Visualizzazione delle informazioni della singola scarpa;
             \item Visualizzazione delle recensioni degli utenti registrati;
-            \item Registrazione e assegnazione del ruolo.
+            \item Registrazione e assegnazione del ruolo;
+            \item Login.
         \end{itemize}
-    \item \textbf{Utente registrato}:
+    \item \textbf{Utente registrato}: un utente che ha effettuato l'accesso con le sue credenziali e ha quindi accesso alla sua pagina personale.
         \begin{itemize}
-            \item Login;
             \item Recensioni con voto;
             \item Salvataggio delle scarpe;
-            \item Gestione e modifica delle proprie recensioni tramite pagina personale.
+            \item Gestione e modifica delle proprie recensioni tramite pagina personale;
+            \item Modifica dello username;
+            \item Modifica del ruolo assegnato.
         \end{itemize}
-    \item \textbf{Amministratore}:
+    \item \textbf{Amministratore}: l'utente che gestisce il sito, ha la possibilità di moderare le recensioni e inserire o modificare le scarpe all'interno del database.
         \begin{itemize}
             \item Accesso a dashboard amministrativa;
             \item Gestione e modifica delle recensioni di tutti gli utenti;
             \item Gestione e modifica del database;
-            \item boh
+            \item boh altro??
         \end{itemize}
 \end{itemize}
 
 
-\section{Progettazione}
+\section{Progettazione del sito}
 
-\subsection{Struttura generale}
+\subsection{Struttura del sito}
 
-Il sito si articola in quattro sezioni principali, ognuna con funzionalità specifiche. La \textbf{home page} offre una panoramica delle ultime scarpe aggiunte e delle funzionalità del sito, fornendo un'introduzione chiara e accattivante. La \textbf{lista scarpe} consente di esplorare l'intero catalogo disponibile, con la possibilità di filtrare i risultati in base a caratteristiche specifiche come marca, tipo di utilizzo o valutazione media.
+La progettazione del sito web segue un'organizzazione strutturata per garantire un accesso rapido e intuitivo alle informazioni e ai servizi offerti. La struttura è gerarchica ma progettata per mantenere un equilibrio ottimale tra ampiezza e profondità. La profondità, ossia il numero di clic necessari per navigare dalla homepage a una pagina foglia, corrisponde a INSERIRE clic, che non supera il valore ottimale di 5. Per quanto riguarda l'ampiezza, il menù presenta non più di 4-5 opzioni, restando quindi al di sotto del valore ottimale, cioè 7.\\
+Questo approccio permette agli utenti di trovare rapidamente le informazioni desiderate senza subire gli effetti di un sovraccarico cognitivo o perdendosi in strutture troppo complesse.
 
-Ogni scarpa è dotata di una pagina dedicata, dove gli utenti registrati possono lasciare recensioni e assegnare voti. Queste pagine mostrano informazioni dettagliate sui modelli, incluse descrizioni tecniche e immagini. Gli utenti possono anche salvare le scarpe preferite tramite un sistema di "like". Il profilo personale consente di visualizzare le scarpe salvate, le recensioni lasciate e il proprio ruolo, che viene aggiornato automaticamente in base ai chilometri settimanali corsi. Il sistema di ruoli, articolato in categorie come \textit{Tartaruga}, \textit{Lepre}, \textit{Lupo} e \textit{Ghepardo}, motiva gli utenti a migliorare le proprie prestazioni.
+\subsection{Composizione}
 
-Per garantire un ambiente sicuro e moderato, gli amministratori possono gestire il database delle scarpe e moderare le recensioni, rimuovendo contenuti inappropriati. Questa gestione avviene tramite una dashboard dedicata, accessibile esclusivamente a utenti con privilegi amministrativi.
+La composizione di una pagina tipo del sito è strutturata in quattro elementi principali: header, breadcrumb, contenuto e footer. Di seguito viene descritta ciascuna parte.
 
-Il sito \`e stato progettato per avere una struttura semplice e intuitiva, con una \textbf{navbar} che consente di accedere rapidamente alle sezioni principali:
+\subsubsection{Header}
+
+L'header è una parte fondamentale del sito e viene aggiunto dinamicamente in tutte le pagine. Contiene:
 \begin{itemize}
-    \item Home: Introduzione e presentazione dei servizi offerti.
-    \item Lista scarpe: Catalogo dettagliato.
-    \item Chi siamo: Informazioni sul team e la missione.
-    \item Area utente: Accesso al profilo personale.
+    \item \textbf{Logo}: situato nell'angolo in alto a sinistra e cliccabile per tornare alla homepage.
+    \item \textbf{Titolo}: il nome del sito scritto in un font particolare e con i colori che riprendono quelli del logo.
+    \item \textbf{Navbar}: tramite un menù a lista che rimanda alle altre pagine del sito, consente una navigazione semplice e intuitiva. Nella visualizzazione da tablet e da mobile la lista viene visualizzata tramite un \textit{hamburger menu} per esigenze di spazio.\\
+    La navbar cambia leggermente in base al tipo di utente:
+        \begin{itemize}
+            \item \textbf{Utente generico}: visualizza le seguenti voci: "Home", "Lista Scarpe", "Chi siamo", "Accedi" e "Registrati".
+            \item \textbf{Utente loggato}: al posto delle voci "Accedi" e "Registrati" dell'utente loggato, visualizza un'unica voce denominata "Il mio profilo".
+            \item \textbf{Amministratore}: presenta le voci dell'utente loggato, e in aggiunta la "Dashboard Admin" per accedere alle funzionalità di gestione.
+        \end{itemize}
 \end{itemize}
 
-\subsection{Database}
-Il database \`e stato progettato per supportare le principali funzionalit\`a del sito. Include le seguenti tabelle:
+\subsubsection{Breadcrumb}
+
+Il breadcrumb è posizionato immediatamente sotto la navbar ed è fondamentale per aiutare l'utente a orientarsi all'interno del sito, sia da \textit{desktop} che da \textit{mobile}. Mostra il percorso gerarchico fino alla pagina corrente e permette un rapido accesso alle sezioni precedenti tramite link diretto. Per evitare i link circolari, la pagina attuale non è un link attivo.\\ 
+Ad esempio, per la pagina singola di un modello di scarpe, il breadcrumb potrebbe essere: \textit{Home > Lista Scarpe > Modello Scarpa}.
+
+\subsubsection{Contenuto}
+
+Il contenuto varia ovviamente a seconda della singola pagina. È stato progettato mettendo nella zona sicura (\textit{above the fold}) le informazioni fondamentali per dare una risposta alle tre domande che riguardano l'orientamento:
+\begin{enumerate}
+    \item \textbf{Dove sono?} Questa domanda trova risposta nel titolo della pagina oppure nel breadcrumb.
+    \item \textbf{Dove posso andare?} Le opzioni disponibili sono chiaramente visibili nel menu o attraverso link contestuali nel contenuto.
+    \item \textbf{Di cosa si tratta?} Il contenuto principale della pagina fornisce informazioni dettagliate sull'argomento specifico tramite un titolo.
+\end{enumerate}
+
+\subsubsection{Footer}
+
+Il footer, come l'header, è aggiunto dinamicamente a tutte le pagine del sito e contiene:
 \begin{itemize}
-    \item \textbf{SCARPA}: Contiene informazioni su nome, marca, descrizione, tipo e immagine delle scarpe.
-    \item \textbf{UTENTE}: Include username, email, password e ruolo.
-    \item \textbf{RECENSIONE}: Associa gli utenti alle scarpe recensite, includendo voto e commento.
-    \item \textbf{LIKES}: Gestisce il sistema di preferenze delle scarpe.
+    \item \textbf{Logo}: situato nell'angolo in basso a sinistra, stavolta non cliccabile.
+    \item \textbf{Informazioni di contatto}: sono stati inseriti dei dati fittizi come un numero di telefono e un indirizzo email per contattare l'azienda, oltre all'indirizzo della sede principale (aula LUM250).
+    \item \textbf{Social network}: i link ai profili per seguire l'azienda.
+    \item \textbf{Badge}: icone di validazione del codice HTML e CSS.
 \end{itemize}
 
-\subsection{Accessibilit\`a e responsive design}
-Il design \`e stato sviluppato per essere compatibile con dispositivi di diverse dimensioni. Sono state applicate media query per adattare la visualizzazione su schermi piccoli e grandi.
+\subsection{Descrizione delle pagine}
+
+Il contenuto presente nelle diverse pagine che compongono il sito è organizzato come segue:
+\begin{itemize}
+    \item \textbf{Homepage (index.html)}:
+        \begin{itemize}
+            \item Contiene una sezione dedicata alle ultime uscite, con immagini delle scarpe, dettagli come marca, modello e tipo.
+            \item Presenta un messaggio di benvenuto che introduce gli utenti ai servizi offerti.
+            \item Descrive la meccanica dei ruoli assegnati in base ai chilometri percorsi settimanalmente, utilizzando un'efficace CTA (\textit{call to action}).
+            \item Include link al resto del sito tramite un menu di navigazione principale.
+        \end{itemize}
+    \item \textbf{Lista Scarpe (lista.html)}:
+        \begin{itemize}
+            \item Pagina che elenca tutte le scarpe disponibili in un formato a griglia.
+            \item Consente di riordinare le scarpe, applicare dei filtri o fare una ricerca diretta.
+            \item Ogni elemento è una card che include immagine, dettagli principali (marca, modello, tipo), 
+            \item Cliccando sopra la card si accede alla pagina di dettaglio della scarpa.
+        \end{itemize}
+    \item \textbf{Pagina Singola (paginaSingola.html)}:
+        \begin{itemize}
+            \item Mostra la descrizione e i dettagli completi di una scarpa selezionata.
+            \item Include la recensione con il feedback di un esperto.
+            \item Da questa pagina, per ogni scarpa è possibile visualizzare le recensioni degli altri utenti, oltre a poter aggiungere e modificare la propria.
+        \end{itemize}
+    \item \textbf{Chi Siamo (chisiamo.html)}:
+        \begin{itemize}
+            \item Sezione dedicata alla descrizione del progetto e agli obiettivi del sito.
+            \item Presenta una foto e breve descrizione dei membri del team fondatore.
+        \end{itemize}
+    \item \textbf{Profilo Utente (profilo.html)}:
+        \begin{itemize}
+            \item Pagina personale accessibile solo agli utenti registrati.
+            \item Consente di visualizzare e modificare le informazioni personali, come username e ruolo.
+            \item Offre accesso ad altre due pagine per gestire le scarpe preferite o le recensioni rilasciate.
+            \item Permette di effettuare il logout.
+        \end{itemize}
+    \item \textbf{Admin Page (adminpage.html)}:\\ 
+    Dashboard centrale per i soli amministratori, con accesso alle seguenti funzionalità:
+        \begin{itemize}
+            \item \textbf{Aggiunta Scarpe (adminAggiungiScarpa.html)}: Form per aggiungere nuove scarpe al catalogo.
+            \item \textbf{Modifica Lista Scarpe (adminModificaLista.html)}: Interfaccia per aggiornare o eliminare scarpe dalla lista generale.
+            \item \textbf{Modifica Singola Scarpa (adminModificaScarpa.html)}: Accessibile dalla pagina precedente, è una funzione dedicata all'aggiornamento di dettagli specifici di una scarpa.
+            \item \textbf{Gestione Recensioni (adminRecensioni.html)}: Strumenti per moderare ed eventualmente eliminare le recensioni degli utenti.
+        \end{itemize}
+    \item \textbf{Pagine di Errore}:\\
+    Vengono mostrate in caso di errori di navigazione o di server; sono state sviluppate ponendo particolare attenzione all'emotional design e presentano un titolo e un'immagine rassicuranti per l'utente.
+        \begin{itemize}
+            \item \textbf{Errore 404 (error404.html)}: Pagina mostrata quando una risorsa non viene trovata.
+            \item \textbf{Errore 500 (error500.html)}: Pagina per gestire errori del server, con messaggi informativi per l'utente.
+        \end{itemize}
+    \item \textbf{Accesso e Registrazione (accedi.html e registrati.html)}:
+        \begin{itemize}
+            \item Pagine per la gestione degli account utente.
+            \item \textbf{Accesso}: Form per l'autenticazione degli utenti registrati.
+            \item \textbf{Registrazione}: Form per creare un nuovo account.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Suddivisione del lavoro}
+Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i membri del gruppo nel seguente modo:
+\begin{itemize}
+    \item \textbf{Davide Marin}: 
+        \begin{itemize}
+            \item Pagine per la gestione degli account utente.
+            \item
+            \item
+            \item 
+        \end{itemize}
+    \item \textbf{Eddy Pinarello}:
+        \begin{itemize}
+            \item Pagine per la gestione degli account utente.
+            \item
+            \item
+            \item
+        \end{itemize}
+    \item \textbf{Alfredo Rubino}:
+        \begin{itemize}
+            \item Pagine per la gestione degli account utente.
+            \item
+            \item
+        \end{itemize}
+    \item \textbf{Giovanni Salvò}:
+        \begin{itemize}
+            \item Pagine per la gestione degli account utente.
+            \item
+            \item
+        \end{itemize}
+\end{itemize}
+
 
 \section{Implementazione}
+
 \subsection{Frontend}
+
 Il frontend \`e stato sviluppato utilizzando HTML5, CSS3 e JavaScript. Sono stati utilizzati framework e librerie moderne per garantire:
 \begin{itemize}
     \item Navigazione fluida e interfaccia intuitiva.
