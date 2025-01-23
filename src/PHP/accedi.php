@@ -11,7 +11,7 @@ $connection = new DbConnection();
 include "header.php";
 $HTMLpage = file_get_contents('../HTML/accedi.html');
 
-if(isset($_POST["submit"])){
+if(isset($_POST["submit-login"])){
     $username = sanitizeInput($_POST["username"]);
     $password = sanitizeInput($_POST["password"]);
 

@@ -382,6 +382,17 @@ p.error_text {
   color: var(--red-heart);
 }
 
+/*---------------------------------------- 
+              SEZIONE FORM ERROR 
+----------------------------------------*/
+
+form .error_text {
+    color: var(--text-color);     
+    text-align: left;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
 .icon {
   display: none;
 }

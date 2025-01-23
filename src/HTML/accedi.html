@@ -8,14 +8,14 @@
             <div class="login-signin-wrapper">
                <div class="content">
                   <h2>Accedi</h2>  
-                  <form action="accedi.php" class="form" method="post">
+                  <form action="accedi.php" onsubmit="return validateLogin()" class="form" method="post" >
                      <label for="username"><span lang="en">Username</span></label>
-                     <input type="username" name="username" id="username" placeholder="Inserisci il tuo username" />
+                     <span><input type="username" name="username" id="username" placeholder="Inserisci il tuo username" onblur="validateUsernameLogin()"  /></span>
                      <label for="password"><span lang="en">Password</span></label>
-                     <input type="password" name="password" id="password" placeholder="Inserisci la tua password" />
-                     {error_text}
-                     <button type="submit" name="submit">Accedi</button>
+                     <span><input type="password" name="password" id="password" placeholder="Inserisci la tua password" onblur="validatePasswordLogin()"  /></span>
+                     <button id="submit-login" type="submit" name="submit-login" >Accedi</button>
                      </form>
+                     {error_text}
                   <p class="not-log">Non sei ancora registrato? <a href="registrati.php">Crea un nuovo <span lang="en">account</span></a></p>
                </div>
             </div>

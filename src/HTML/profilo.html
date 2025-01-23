@@ -8,12 +8,12 @@
 <div class="content">
     <h2>Gestione profilo di {user}</h2>
 
-    <form action="profilo.php" method="POST">
+    <form action="profilo.php" onsubmit="return validateChangeUsername()" method="POST">
         <div class="settings">
             <h3>Impostazioni</h3>
             <div class="div-column">
                 <label for="newUser">Nuovo username:</label>
-                <input class="username-input" name="newUser" id="newUser" type="text" placeholder="Inserisci nuovo username..." />
+                <span><input class="username-input" name="newUser" id="username" type="text" placeholder="Inserisci nuovo username..." onblur="validateUsername()"/></span>
             </div>
             <div class="div-column">
                 <label for="kmsett">Kilometri settimanali:</label>
@@ -27,7 +27,7 @@
 
             <!-- Pulsante di salvataggio impostazioni -->
             <div class="div-column">
-                <button type="submit" name="salvaImpos" class="submit-settings">
+                <button type="submit" name="salvaImpos" class="submit-settings" >
                     <p>Salva impostazioni</p>
                 </button>
             </div>

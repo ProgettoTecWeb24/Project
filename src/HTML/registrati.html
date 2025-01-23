@@ -7,27 +7,27 @@
 </nav>
          <div class="login-signin-wrapper">
 <div class="content">
-               <form action="registrati.php" class="form" method="post">
+               <form action="registrati.php" onsubmit="return validateRegister()" class="form" method="post">
                   <h2>Registrati</h2>
                   <label for="username"><span lang="en">Username</span></label>
-                  <input type="username" id="username" name="username" placeholder="Inserisci lo username" />
+                  <span><input type="username" id="username" name="username" placeholder="Inserisci lo username" onblur="validateUsername()" /></span>
                   <label for="password"><span lang="en">Password</span></label>
-                  <input type="password" id="password" name="password" placeholder="Inserisci la password" />
+                  <span><input type="password" id="password" name="password" placeholder="Inserisci la password" onblur="validatePassword()"/></span>
                   <label for="password">Conferma <span lang="en">Password</span></label>
-                  <input type="password" name="confirm_password" placeholder="Conferma la tua password"/>
-                  {error_text}
-                <div class="div-column">
-
-                  <label for="kmsett">Kilometri settimanali:</label>
-                <select name="km_settimanali" id="kmsett" class="select-settings">
-                    <option value="tartaruga">Fino a 5 km/sett</option>
-                    <option value="lepre">Da 6 a 20 km/sett</option>
-                    <option value="lupo">Da 21 a 50 km/sett</option>
-                    <option value="ghepardo">Oltre 50 km/sett</option>
-                </select>
-                </div>
-                  <button type="submit" name="submit" >Registrati</button>
-               </form>
+                  <span><input id="confirm_password" type="password" name="confirm_password" placeholder="Conferma la tua password" onblur="validateConfirmPassword()"/></span>
+                  <div class="div-column">
+                      
+                      <label for="kmsett">Kilometri settimanali:</label>
+                      <select name="km_settimanali" id="kmsett" class="select-settings">
+                          <option value="tartaruga">Fino a 5 km/sett</option>
+                          <option value="lepre">Da 6 a 20 km/sett</option>
+                          <option value="lupo">Da 21 a 50 km/sett</option>
+                          <option value="ghepardo">Oltre 50 km/sett</option>
+                        </select>
+                    </div>
+                    <button type="submit" name="submit" >Registrati</button>
+                </form>
+                {error_text}
                   <p class="not-log">Hai già un <span lang="en">account</span>? <a href="accedi.php">Accedi con le tue credenziali</a></h3>
 </div>
          </div>

@@ -214,7 +214,7 @@ if (!empty($recensioni)) {
 $content .= '
     <div id="add-review-modal" class="modal hidden">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeAddReviewForm()">&times;</span>
+            <span class="close-btn"  onclick="closeAddReviewForm()">&times;</span>
             <h2>Lascia una Recensione</h2>
             <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
                 <input type="hidden" name="idscarpa" id="idscarpa" value="' . $id . '"/>
@@ -233,10 +233,10 @@ $content .= '
                 
                 <div class="input-add-scarpa">
                     <label for="comment">Recensione:</label>
-                    <textarea name="comment" id="comment" rows="4" required placeholder="Scrivi la tua recensione"></textarea>
-                </div>
+                    <textarea name="comment"  id="comment" rows="4" required placeholder="Scrivi la tua recensione""></textarea>
+                </div> 
                 
-                <button class="button" type="submit" name="submit_add_review">Invia Recensione</button>
+                <button id="add_review_button"  type="submit" name="submit_add_review">Invia Recensione</button>
             </form>
         </div>
     </div>';
@@ -249,6 +249,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_add_review']))
 
     if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
         $reviewAdded = $connection->insertNewReview($username, $scarpa_id, $rating, sanitizeInput($comment));
+        if ($reviewAdded) {
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $scarpa_id);
+            exit();
+        }
     }
 }
 
@@ -260,6 +264,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit'])) {
 
     if (!empty($rating) && !empty($comment) && $scarpa_id > 0 && !empty($username)) {
         $reviewUpdated = $connection->updateReview($username, $scarpa_id, $rating, sanitizeInput($comment));
+        if ($reviewUpdated) {
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $scarpa_id);
+            exit();
+        }
     }
 }
 
@@ -267,7 +275,8 @@ if (isset($_POST['delete'])) {
     $scarpa_id = intval($_POST['idscarpa'] ?? 0);
     $username = $_SESSION['username'] ?? '';
     if ($connection->deleteReview($scarpa_id, $username)) {
-        $info = '<p class="success_text" id="info" role="alert">La recensione è stata eliminata con successo</p>';
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $scarpa_id);
+        exit();
     } else {
         $info = '<p class="error_text" id="info" role="alert">Errore: eliminazione non possibile, la scarpa non esiste</p>';
     }
