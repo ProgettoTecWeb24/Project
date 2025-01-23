@@ -1,0 +1,65 @@
+<nav id="breadcrumb" aria-label="Percorso">
+    <p>Ti trovi in:</p>
+    <ul class="inline-list">
+        <li><a href="../PHP/index.php"><span lang="en"> Home </span></a></li>
+        <li> Scarpe salvate </li>
+    </ul>
+</nav>
+<div class="content">
+    <h1>Gestione scarpe salvate di {user}</h1>
+
+    <form action="profiloScarpe.php#likes" method="POST">
+        <div class="settings">
+            <a name="likes"><h2>Scarpe salvate</h2></a>
+            <div class="searchbar-liked">
+                <div>
+                    <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..."
+                        value="" />
+                </div>
+
+                <div>
+                    <label for="ordina">Ordina:</label>
+                    <select name="ordina" id="ordina" class="select-filter">
+                        <option value="ordStand">Ordine standard</option>
+                        <option value="nomeCres">Nome crescente</option>
+                        <option value="nomeDesc">Nome descrescente</option>
+                        <option value="votoCres">Voto crescente</option>
+                        <option value="votoDesc">Voto decrescente</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="marca">Marca:</label>
+                    <select name="marca" id="marca" class="select-filter">
+                        <option value="all">Tutte le marche</option>
+                        <option value="nike">Nike</option>
+                        <option value="adidas">Adidas</option>
+                        <option value="asics">Asics</option>
+                        <option value="hoka">Hoka</option>
+                        <option value="altra">Altra</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tipo">Tipo:</label>
+                    <select name="tipo" id="tipo" class="select-filter">
+                        <option value="all">Tutti i tipi</option>
+                        <option value="trail">Trail</option>
+                        <option value="strada">Strada</option>
+                        <option value="pista">Pista</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit" class="submit-filter">
+                        <img src="../assets/search-icon.svg" alt="Cerca" />
+                    </button>
+                </div>
+            </div>  
+
+            <div class="cards">
+                {shoesliked}
+            </div>
+        </div>
+    </form>
+</div>
