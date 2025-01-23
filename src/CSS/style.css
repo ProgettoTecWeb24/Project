@@ -68,14 +68,14 @@ body {
     margin-left: 0.8em;
 }
 
-#navbar-links {
+.navbar-links {
   display: flex;
   list-style: none;
   align-items: center;
   gap: 0.2em;
 }
 
-#navbar-links li a:link {
+.navbar-links li a:link {
     text-decoration: none;
     font-weight: bold;
     border-radius: 0.5em;
@@ -85,21 +85,21 @@ body {
     color: var(--menu-link-color);
 }
 
-#navbar-links li a:visited {
+.navbar-links li a:visited {
     text-decoration: none;
     border-radius: 0.5em;
     border-color: var(--link-color);
     color: var(--link-color);
 }
 
-#navbar-links li a:hover{
+.navbar-links li a:hover{
     text-decoration: none;
     border-radius: 0.5em;
     background-color: var(--link-color);
     color: var(--highcontrast--yellow);
 }
 
-#navbar-links li.navbar-current{
+.navbar-links li.navbar-current{
   font-weight: bold;
   border-radius: 0.5em;
   padding: 0.5em 0.9em;

@@ -1,6 +1,6 @@
 function myFunction() {
     console.log("Funzione chiamata!"); // Debug
-    const navbarMenu = document.getElementById("navbar-menu");
+    const navbarMenu = document.getElementById("navbar-links");
     const toggleIcon = document.getElementById("menu-toggle").querySelector("img");
 
     navbarMenu.classList.toggle("active");

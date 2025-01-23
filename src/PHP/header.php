@@ -13,7 +13,7 @@ if (!$connection->startDbConnection()) {
 $navbar_links = "";
 $DOM = file_get_contents('../HTML/header.html');
 $navbar_links .= '
-    <ul id="navbar-links">
+    <ul id="navbar-links" class="navbar-links">
         '.((basename($_SERVER['PHP_SELF']) == 'index.php') ? '<li class="navbar-current"><span lang="en">Home</span>' : '<li class="navbar-item"><a href="index.php"><span lang="en">Home</span></a>').'</li>
         '.((basename($_SERVER['PHP_SELF']) == 'lista.php') ? '<li class="navbar-current">Lista' : '<li class="navbar-item"><a href="lista.php">Lista</a>').'</li>
         '.((basename($_SERVER['PHP_SELF']) == 'chisiamo.php') ? '<li class="navbar-current">Chi siamo' : '<li class="navbar-item"><a href="chisiamo.php">Chi siamo</a>').'</li>';
