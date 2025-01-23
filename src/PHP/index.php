@@ -11,6 +11,23 @@ if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
 
+if(isset($_POST['likePress'])){
+    if (!empty($_SESSION['username'])) {
+        $qCheck = "SELECT * FROM likes WHERE scarpa_id ='" . $_POST['likePress'] ."' AND username = '" . $_SESSION['username'] . "'";
+        $result = $connection->query($qCheck);
+        if(mysqli_num_rows($result) === 0){
+            $qLike = "INSERT INTO likes (username,scarpa_id,data_aggiunta) VALUES('" . $_SESSION['username'] . "','" . $_POST['likePress'] . "','" . date("Y/m/d") . "')";
+            $result = $connection->query($qLike);
+        }else{
+            $qLike = "DELETE FROM likes WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['likePress'] . "'";
+            $result = $connection->query($qLike);
+        }
+    }else{
+        header('Location: accedi.php');
+        die();
+    }
+}
+
 include "header.php";
 $HTMLpage = file_get_contents('../HTML/index.html');
 
