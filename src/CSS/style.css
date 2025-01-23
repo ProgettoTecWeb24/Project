@@ -26,6 +26,7 @@ body {
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
   --link-color: #fcb52f;
   --menu-link-color: #ffffff;
+  --highcontrast--yellow: #574343;
 }
 
 /* Wrapper */
@@ -70,23 +71,41 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
+  gap: 0.2em;
 }
 
 #navbar-links li a:link {
-    text-decoration: underline;
-    color: var(--menu-link-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5em;
     padding: 0.5em 0.9em;
     transition: color 0.3s;
+    border: 0.1em solid var(--link-color);
+    color: var(--menu-link-color);
 }
 
 #navbar-links li a:visited {
-    text-decoration: underline;
+    text-decoration: none;
+    border-radius: 0.5em;
+    border-color: var(--link-color);
     color: var(--link-color);
 }
 
-#navbar-links li a:hover {
+#navbar-links li a:hover{
     text-decoration: none;
-  }
+    border-radius: 0.5em;
+    background-color: var(--link-color);
+    color: var(--highcontrast--yellow);
+}
+
+#navbar-links li.navbar-current{
+  font-weight: bold;
+  border-radius: 0.5em;
+  padding: 0.5em 0.9em;
+  transition: color 0.3s;
+  background-color: var(--link-color);
+  color: var(--highcontrast--yellow);
+}
 
 /* Titolo "CorsaIdeale" */
 .navbar h1 {
