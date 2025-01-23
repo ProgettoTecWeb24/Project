@@ -68,7 +68,7 @@ body {
     margin-left: 0.8em;
 }
 
-.navbar-links {
+#navbar-links {
   display: flex;
   list-style: none;
   align-items: center;
