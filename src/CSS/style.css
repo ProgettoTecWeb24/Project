@@ -66,25 +66,25 @@ body {
     margin-left: 0.8em;
 }
 
-#navbar-links {
+.navbar-links {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-#navbar-links li a:link {
+.navbar-links li a:link {
     text-decoration: underline;
     color: var(--menu-link-color);
     padding: 0.5em 0.9em;
     transition: color 0.3s;
 }
 
-#navbar-links li a:visited {
+.navbar-links li a:visited {
     text-decoration: underline;
     color: var(--link-color);
 }
 
-#navbar-links li a:hover {
+.navbar-links li a:hover {
     text-decoration: none;
   }
 

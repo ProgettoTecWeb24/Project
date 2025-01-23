@@ -39,7 +39,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
   
-  #navbar-links {
+  .navbar-links {
     display: none; /* Nasconde gli item della navbar su schermi piccoli */
     flex-direction: column;
     position: absolute;
@@ -55,15 +55,15 @@
 }
 
 /* Mostra il menu quando 'active' è aggiunto */
-#navbar-links.active {
+.navbar-links.active {
     display: flex; /* Mostra il menu come flexbox */
 }
 
-#navbar-links li {
+.navbar-links li {
     width: 100%;
 }
 
-#navbar-links li a {
+.navbar-links li a {
     display: block;
     width: 100%;
     padding: 15px 20px;
