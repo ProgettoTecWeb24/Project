@@ -1244,6 +1244,11 @@ footer .copyright {
     justify-content: center; 
   }
   
+  p#sum{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
   /*FINE ADMINMODIFICALISTA*/
   
   /* PAGINA ADMINAGGIUNGISCARPA */
