@@ -253,7 +253,7 @@ body {
 
 .content h2 {
     font-size: 2.5em;
-    margin: 1em;
+    margin: 0.5em 1em 0.5em 1em;
     text-align: center;
     color: var(--navbar-bg-color);
     line-height: 1.2em;
@@ -339,14 +339,8 @@ margin: 1.5em;
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 1em;
 }
 
-.login-signin-container {
-  padding: 2em;
-  max-width: 100%;
-  width: 40em;
-}
 
 input[type="username"],
 input[type="password"] {
@@ -358,7 +352,7 @@ input[type="password"] {
   font-size: 1em;
 }
 
-.login-signin-container input[type="submit"],
+.login-signin-wrapper input[type="submit"],
 button {
   background-color: var(--accent-color);
   color: var(--text-color);
@@ -368,6 +362,20 @@ button {
   cursor: pointer;
   width: 100%;
   padding: 1em;
+}
+
+.not-log {
+  text-align: center;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.login-signin-wrapper h2 {
+    font-size: 2.5em;
+    margin: 1em;
+    text-align: center;
+    color: var(--navbar-bg-color);
+    line-height: 1.2em;
 }
 
 p.error_text {
@@ -465,6 +473,14 @@ label {
   justify-content: space-between;
   margin-bottom: 1em;
   margin-top: 0.5em;
+}
+
+.settings h3 {
+  font-size: 1.5em;
+  margin: 1em;
+  text-align: center;
+  color: var(--navbar-bg-color);
+  line-height: 1.2em;
 }
 
 .searchbar-liked {
@@ -912,9 +928,18 @@ textarea#comment::placeholder {
   padding: 1em;
   font-size: 0.9em;
 }
-.desc-membro h3{
+
+.desc-membro .namedx {
     font-size: 1.5em;
-  }
+    text-align: right;
+    font-weight: bold;
+}
+
+.desc-membro .namesx {
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: bold;
+}
 
 .chisiamo-div:nth-child(odd) .desc-membro {
   /* allinea a destra il testo dei whoarewe-desc in posizioni pari */

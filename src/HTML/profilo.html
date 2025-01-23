@@ -6,11 +6,11 @@
     </ul>
 </nav>
 <div class="content">
-    <h1>Gestione profilo di {user}</h1>
+    <h2>Gestione profilo di {user}</h2>
 
     <form action="profilo.php" method="POST">
         <div class="settings">
-            <h1>Impostazioni</h1>
+            <h3>Impostazioni</h3>
             <div class="div-column">
                 <label for="newUser">Nuovo username:</label>
                 <input class="username-input" name="newUser" id="newUser" type="text" placeholder="Inserisci nuovo username..." />
@@ -48,8 +48,7 @@
                     </button>
                 
             </form>
-
-            <h2 class="title-admin">Benvenuto nel gestore di CorsaIdeale</h2>
+            <div class="content">
             <h3 class="title-admin">Cosa desideri fare?</h3>
             <div class="profile-cards">
                 <a href="profiloScarpe.php" class="card-link">
@@ -69,7 +68,7 @@
                     </div>
                 </a>
             </div>
-
+            </div>
 
 
     <form action="profilo.php#likes" method="POST">
