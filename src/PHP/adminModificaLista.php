@@ -35,30 +35,31 @@ if($connection->isAdmin($_SESSION["username"])){
     $lista_scarpe .= '
         <h2>Ecco tutte le scarpe presenti in database</h2>
         <div class="table-wrapper-admin">
-            <table class="table-admin-list">
+            <p id="sum">tabella che contiene tutte le scarpe lasciate nel sito</p>
+            <table aria-describedby="sum" class="table-admin-list">
                 <thead>
                     <tr>
-                        <th>Immagine</th>
-                        <th>Nome</th>
-                        <th class="hide-tablet">Marca</th>
-                        <th class="hide-tablet">Descrizione</th>
-                        <th class="hide-mobile">Tipo</th>
-                        <th class="hide-mobile">Feedback</th>
+                        <th scope="col">Immagine</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="hide-tablet">Marca</th>
+                        <th scope="col" class="hide-tablet">Descrizione</th>
+                        <th scope="col" class="hide-mobile">Tipo</th>
+                        <th scope="col" class="hide-mobile" lang="en">Feedback</th>
                         <th></th>
                     </tr>
                 </thead>
-                    <tbody>
+                <tbody>
         ';
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '
                     <tr>
                         <td><img src="../assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
-                        <td>'.$shoe["nome"] .'</td>
-                        <td class="hide-tablet">'.$shoe["marca"] .'</td>
+                        <td lang="en">'.$shoe["nome"] .'</td>
+                        <td class="hide-tablet"  lang="en">'.$shoe["marca"] .'</td>
                         <td class="hide-tablet">'.$shoe["descrizione"] .'</td>
                         <td class="hide-mobile">'.$shoe["tipo"] .'</td>
-                        <td class="hide-mobile">'.
-                            $shoe["feedback"].'</br>'.
+                        <td class="hide-mobile"><span lang="en">'.
+                            $shoe["feedback"].'</span></br>'.
                             $shoe["votoexp"].'
                         </td>
                         <td>
@@ -66,21 +67,22 @@ if($connection->isAdmin($_SESSION["username"])){
                             <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
                                     <img src="../assets/delete.svg" alt="elimina" class="icona" />
                             </button>
+                            <div id="delete-review-modal" class="modal hidden">
+                                <div class="modal-content-delete">
+                                    <div class="modal-header">
+                                        <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+                                        <h2>Conferma Eliminazione</h2>
+                                        <p>Sei sicuro di voler eliminare questa scarpa?</p>
+                                    </div>
+                                    <form id="delete-review-form" action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                                        <input type="hidden" name="delete_id" value="'.$shoe['id'].'"/>
+                                        <button class="button" type="submit" name="delete">Conferma</button>
+                                    </form>
+                                </div>
+                    </div>
                         </td>
                     </tr>
-                    <div id="delete-review-modal" class="modal hidden">
-                        <div class="modal-content-delete">
-                            <div class="modal-header">
-                                <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
-                                <h2>Conferma Eliminazione</h2>
-                                <p>Sei sicuro di voler eliminare questa recensione?</p>
-                            </div>
-                            <form id="delete-review-form" action="'.$_SERVER['PHP_SELF'].'" method="POST">
-                                <input type="hidden" name="delete_id" value="'.$shoe['id'].'"/>
-                                <button class="button" type="submit" name="delete">Conferma</button>
-                            </form>
-                        </div>
-                    </div
+                    
             '; 
         }
          $lista_scarpe .= '

@@ -33,24 +33,25 @@ if($connection->isAdmin($_SESSION["username"])){
 
     $lista_recensioni .= '
         <h2>Ecco tutte le recensioni</h2>
-        <div class="table-wrapper-admin">
-            <table class="table-admin-list">
+        <div class="table-wrapper-admin">   
+            <p id="sum">tabella che contiene tutte le recensioni lasciate nel sito</p>
+            <table aria-describedby="sum" class="table-admin-list">
                 <thead>
                     <tr>
-                        <th>Username</th>
-                        <th class="hide-mobile">Scarpa recensita</th>
-                        <th class="hide-tablet">Voto</th>
-                        <th>Commento</th>
+                        <th scope="col" lang="en">Username</th>
+                        <th class="hide-mobile" scope="col">Scarpa recensita</th>
+                        <th class="hide-tablet"  scope="col">Voto</th>
+                        <th scope="col">Commento</th>
                         <th></th>
                     </tr>
                 </thead>
-                    <tbody>
+                <tbody>
         ';
     foreach($all_review as $review){
         $lista_recensioni .= '
                     <tr>
                         <td>'.$review["username"] .'</td>
-                        <td class="hide-mobile">'.$review["marca"] .' '.$review["nome"].'</td>
+                        <td class="hide-mobile"  lang="en">'.$review["marca"] .' '.$review["nome"].'</td>
                         <td class="hide-tablet">'.$review["voto"] .'</td>
                         <td>'.$review["commento"] .'</td>
                         <td>
