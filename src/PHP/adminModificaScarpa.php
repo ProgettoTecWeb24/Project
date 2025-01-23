@@ -64,7 +64,7 @@ if($connection->isAdmin($_SESSION["username"])){
         if($shoe){
             $dettaglio_scarpa .= '
                 <div class="img-scarpa-modifica-div">
-                    <img class="immagine-scarpa-modifica" src="'.$shoe["immagine"].'" />
+                    <img class="immagine-scarpa-modifica" src="../assets/'.$shoe["immagine"] .'" />
                 </div>
                 <div class="wrapper-admin-aggiungi">
                     <form action="adminModificaScarpa.php" class="form" method="POST" enctype="multipart/form-data">
