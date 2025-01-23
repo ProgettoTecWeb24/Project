@@ -26,7 +26,6 @@ body {
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
   --link-color: #fcb52f;
   --menu-link-color: #ffffff;
-  --highcontrast--yellow: #574343;
 }
 
 /* Wrapper */
@@ -96,7 +95,7 @@ body {
     text-decoration: none;
     border-radius: 0.5em;
     background-color: var(--link-color);
-    color: var(--highcontrast--yellow);
+    color: var(--navbar-bg-color);
 }
 
 .navbar-links li.navbar-current{
@@ -105,7 +104,7 @@ body {
   padding: 0.5em 0.9em;
   transition: color 0.3s;
   background-color: var(--link-color);
-  color: var(--highcontrast--yellow);
+  color: var(--navbar-bg-color);
 }
 
 /* Titolo "CorsaIdeale" */
