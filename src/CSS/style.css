@@ -237,6 +237,7 @@ body {
     margin: 1em;
     text-align: center;
     color: var(--navbar-bg-color);
+    line-height: 1.2em;
 }
 
 .content p {

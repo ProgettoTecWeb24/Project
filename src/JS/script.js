@@ -1,10 +1,12 @@
 function myFunction() {
-    const navbarMenu = document.getElementById("navbar-menu");
+    console.log("Funzione chiamata!"); // Debug
+    const navbarMenu = document.getElementById("navbar-links");
     const toggleIcon = document.getElementById("menu-toggle").querySelector("img");
 
     navbarMenu.classList.toggle("active");
 
-    
+    console.log(navbarMenu.classList);
+
     if (navbarMenu.classList.contains("active")) {
         toggleIcon.src = "../assets/close.png"; 
     } else {

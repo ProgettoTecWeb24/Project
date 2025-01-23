@@ -21,10 +21,6 @@
     padding: 10px;
 }
 
-#navbar-links {
-    display: none; /* Nasconde gli item della navbar su schermi piccoli */
-}
-
   
   .listcards {
     display: grid;
@@ -44,29 +40,30 @@
   }
   
   #navbar-links {
-    display: none;
+    display: none; /* Nasconde gli item della navbar su schermi piccoli */
     flex-direction: column;
     position: absolute;
     top: 80px;
     left: 0;
     right: 0;
-    background-color: var(--navbar-bg-color);
+    background-color: var(--navbar-bg-color); /* Usa la tua variabile o un colore specifico */
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
     z-index: 1000;
     border-radius: 5px;
-  }
-  
-  #navbar-links.active {
-    display: flex;
-  }
-  
-  #navbar-links li {
+}
+
+/* Mostra il menu quando 'active' è aggiunto */
+#navbar-links.active {
+    display: flex; /* Mostra il menu come flexbox */
+}
+
+#navbar-links li {
     width: 100%;
-  }
-  
-  #navbar-links li a {
+}
+
+#navbar-links li a {
     display: block;
     width: 100%;
     padding: 15px 20px;
