@@ -33,7 +33,8 @@ if($connection->isAdmin($_SESSION["username"])){
     $all_shoes = $connection->getAllShoes();
 
     $lista_scarpe .= '
-        <h2>Ecco tutte le scarpe presenti in database</h2>
+    <div class="content">
+        <h2>Lista delle scarpe nel <span lang="en">database</span></h2>
         <div class="table-wrapper-admin">
             <p id="sum">tabella che contiene tutte le scarpe lasciate nel sito</p>
             <table aria-describedby="sum" class="table-admin-list">
@@ -49,6 +50,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     </tr>
                 </thead>
                 <tbody>
+        </div>
         ';
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '

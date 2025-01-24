@@ -26,6 +26,8 @@ body {
   --text-color: #1f1f1f; /* Main Text - Dark Gray */
   --link-color: #fcb52f;
   --menu-link-color: #ffffff;
+  --link-main-color: #094074;
+  --visited-link-color: #6CAEDA;
 }
 
 /* Wrapper */
@@ -107,7 +109,15 @@ body {
   color: var(--navbar-bg-color);
 }
 
-/* Titolo "CorsaIdeale" */
+.link-main {
+  color: var(--link-main-color);
+}
+
+.link-main:visited{
+    color: var(--visited-link-color);
+  }
+
+/* Titolo h1 */
 .navbar h1 {
   font-family: "Russo One", sans-serif;
   font-weight: 400;
@@ -157,7 +167,6 @@ body {
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
-  margin-bottom: 1em;
 }
 
 .card {
@@ -241,9 +250,12 @@ body {
 }
   
 .card h3 {
-  font-size: 1.5em;
-  margin-bottom: 0.625em;
-}
+    font-size: 1.5em;
+    margin: 0.5em;
+    text-align: center;
+    color: var(--navbar-bg-color);
+    line-height: 1.2em;
+  }
 
 .card p {
   font-size: 1.2em;
@@ -266,6 +278,9 @@ body {
   text-align: center;
 }
 
+.content-link {
+  margin-top: 1em;
+}
 .new-cards {
     display: flex;
     justify-content: space-between;
@@ -474,21 +489,18 @@ label {
 
 .settings {
   background-position: center;
-  border-radius: 0.5em;
-  padding: 0.625em;
   width: 100%;
   display: flex;
   gap: 1em;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1em;
-  margin-top: 0.5em;
+  margin-bottom: 2em;
 }
 
 .settings h3 {
   font-size: 1.5em;
-  margin: 1em;
+  margin: 0.5em;
   text-align: center;
   color: var(--navbar-bg-color);
   line-height: 1.2em;
@@ -535,6 +547,17 @@ label {
   border-radius: 0.25em;
   cursor: pointer;
   font-size: 1em;
+}
+
+#logout-settings {
+    background-color: var(--red-heart);
+    color: var(--text-color);
+    margin-top: 1em;
+    width: 20em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1em;
 }
 
 .submit-ricerca {
@@ -1105,23 +1128,20 @@ footer .copyright {
     padding: 10px;
   }
   
-  h2.title-admin{
-    text-align: start;
-    margin-bottom: 2em;
-    margin-top: 1em;
-    font-weight: bold;
-    font-size: xx-large;
-    color: black;
-  }
-  
-  h3.title-admin{
+h3.title-admin {
+    font-size: 2em;
+    margin: 0.5em 1em 0.5em 1em;
     text-align: center;
-    margin-bottom: 1em;
-    font-weight: bold;
-    font-size: xx-large;
     color: var(--navbar-bg-color);
-  }
+    line-height: 1.2em;
+}
   
+h4.title-admin {
+    font-size: 1.4em;
+    margin: 0.5em 1em 0.5em 1em;
+    text-align: center;
+    line-height: 1.2em;
+}
   .aggiungi_scarpa-div{
     display: flex;
     flex-direction: row;

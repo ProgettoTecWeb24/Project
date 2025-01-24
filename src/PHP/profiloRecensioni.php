@@ -16,6 +16,9 @@ if (!empty($_SESSION['username'])) {
     include "header.php";
     $HTMLpage = file_get_contents('../HTML/profiloRecensioni.html');
 
+        // Sostituisce il nome utente nel template
+        $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
+
     // Aggiungo le funzionalità di modifica e eliminazione recensione
     if(isset($_POST['elimina'])){
         $qDelete = "DELETE FROM recensione WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['elimina'] . "'";

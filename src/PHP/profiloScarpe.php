@@ -34,7 +34,8 @@ if (!empty($_SESSION['username'])) {
     include "header.php";
     $HTMLpage = file_get_contents('../HTML/profiloScarpe.html');
 
-    $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
+        // Sostituisce il nome utente nel template
+        $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
 
     $query ="
     SELECT *

@@ -1,59 +1,63 @@
- 
-            <nav id="breadcrumb" aria-label="Percorso">
-                <p>Ti trovi in:</p>
-                <ul class="inline-list">
-                    <li><a href="../PHP/index.php"><span lang="en"> Home </span></a></li>
-                    <li><a href="../PHP/adminpage.php"><span lang="en"> Dashboard admin </span></a></li>
-                    <li> Aggiungi scarpa </li>
-                </ul>
-            </nav>
-            <h3 class="title-admin">Aggiungi scarpa</h2>
-            <div class="wrapper-admin-aggiungi">
-                <form action="adminAggiungiScarpa.php" class="form" method="POST" enctype="multipart/form-data">
-                    <div class="input-add-scarpa">
-                        <label for="nome">Nome: </label>
-                        <input type="scarpa-admin" name="nome" id="nome" required placeholder="Inserisci nome"/>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="marca">Marca: </label>
-                        <input type="scarpa-admin" name="marca" id="marca" required placeholder="Inserisci marca"/>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="descrizione">Descrizione: </label>
-                        <input type="scarpa-admin" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)"/>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="tipo">Tipo: </label>
-                        <select class="sel-scarpa-admin" name="tipo" id="tipo" required>
-                            <option value="" disabled selected>-- seleziona tipo --</option>
-                            <option value="strada">Strada</option>
-                            <option value="trail">Trail</option>
-                            <option value="pista">Pista</option>
-                        </select>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="feedback">Feedback: </label>
-                        <input type="scarpa-admin" name="feedback" id="feedback" placeholder="Feedback (opzionale)"/>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="valutazione">Valutazione: </label>
-                        <select class="sel-scarpa-admin" name="valutazione" id="valutazione" required>
-                            <option value="" disabled selected>-- dai una valutazione --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="input-add-scarpa">
-                        <label for="immagine">Scegli una foto per la scarpa: </label>
-                        <input type="file" name="image" id="image" accept="image/*" required>
-                    </div>
-                    <button class="button" type="submit" name="conferma-aggiungi">Aggiungi</button>
-                </form>
-                <form action="adminpage.php" class="form" method="POST">
-                    <button class="button-gray" type="submit" name="annulla">Annulla</button>
-                </form>
+
+<nav id="breadcrumb" aria-label="Percorso">
+    <p>Ti trovi in:</p>
+    <ul class="inline-list">
+        <li><a href="../PHP/index.php"><span lang="en"> Home </span></a></li>
+        <li><a href="../PHP/adminpage.php"><span lang="en"> Dashboard admin </span></a></li>
+        <li> Aggiungi scarpa </li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Aggiungi una nuova scarpa</h2>
+    <div class="wrapper-admin-aggiungi">
+        <form action="adminAggiungiScarpa.php" class="form" method="POST" enctype="multipart/form-data">
+            <div class="input-add-scarpa">
+                <label for="nome">Nome: </label>
+                <input type="scarpa-admin" name="nome" id="nome" required placeholder="Inserisci nome"/>
             </div>
-            {info} 
+            <div class="input-add-scarpa">
+                <label for="marca">Marca: </label>
+                <input type="scarpa-admin" name="marca" id="marca" required placeholder="Inserisci marca"/>
+            </div>
+            <div class="input-add-scarpa">
+                <label for="descrizione">Descrizione: </label>
+                <input type="scarpa-admin" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)"/>
+            </div>
+            <div class="input-add-scarpa">
+                <label for="tipo">Tipo: </label>
+                <select class="sel-scarpa-admin" name="tipo" id="tipo" required>
+                    <option value="" disabled selected>-- seleziona tipo --</option>
+                    <option value="strada">Strada</option>
+                    <option value="trail">Trail</option>
+                    <option value="pista">Pista</option>
+                </select>
+            </div>
+            <div class="input-add-scarpa">
+                <label for="feedback">Feedback: </label>
+                <input type="scarpa-admin" name="feedback" id="feedback" placeholder="Feedback (opzionale)"/>
+            </div>
+            <div class="input-add-scarpa">
+                <label for="valutazione">Valutazione: </label>
+                <select class="sel-scarpa-admin" name="valutazione" id="valutazione" required>
+                    <option value="" disabled selected>-- dai una valutazione --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="input-add-scarpa">
+                <label for="immagine">Scegli una foto per la scarpa: </label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </div>
+            <button class="button" type="submit" name="conferma-aggiungi">Aggiungi</button>
+        </form>
+        <form action="adminpage.php" class="form" method="POST">
+            <button class="button-gray" type="submit" name="annulla">Annulla</button>
+        </form>
+    </div>
+</div>
+
+{info} 

@@ -10,7 +10,7 @@
 
     <form action="profilo.php" onsubmit="return validateChangeUsername()" method="POST">
         <div class="settings">
-            <h3>Impostazioni</h3>
+            <h3 class="title-admin">Impostazioni</h3>
             <div class="div-column">
                 <label for="newUser">Nuovo username:</label>
                 <span><input class="username-input" name="newUser" id="username" type="text" placeholder="Inserisci nuovo username..." onblur="validateUsername()"/></span>
@@ -30,15 +30,16 @@
                 <button type="submit" name="salvaImpos" class="submit-settings" >
                     <p>Salva impostazioni</p>
                 </button>
+                <form action="profilo.php" method="POST" name="logout">
+                    <button type="submit" id="logout-settings" name="logout">
+                        <p>Logout</p>
+                    </button>
+                </form>
             </div>
         </div>
     </form>
 
-    <form action="profilo.php" method="POST" name="logout">
-        <button type="submit" class="submit-settings" name="logout">
-            <p>Logout</p>
-        </button>
-    </form>
+    
 
     <div class="content">
         <h3 class="title-admin">Cosa desideri modificare?</h3>
@@ -46,7 +47,7 @@
             <a href="profiloScarpe.php" class="card-link">
                 <div class="card-admin">
                     <div class="text-card-admin">
-                        <h3>Scarpe salvate</h3>
+                        <h4 class="title-admin">Scarpe salvate</h4>
                     </div>
                     <img class="admin-home-icon" src="../assets/heart.png" alt="scarpe salvate" />
                 </div>
@@ -54,7 +55,7 @@
             <a href="profiloRecensioni.php" class="card-link">
                 <div class="card-admin">
                     <div class="text-card-admin">
-                        <h3>Recensioni personali</h3>
+                        <h4 class="title-admin">Recensioni personali</h4>
                     </div>
                     <img class="admin-home-icon" src="../assets/review.png" alt="le mie recensioni" />
                 </div>

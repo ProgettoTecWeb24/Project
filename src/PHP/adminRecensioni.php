@@ -32,7 +32,8 @@ if($connection->isAdmin($_SESSION["username"])){
     $all_review = $connection->getAllReviews();
 
     $lista_recensioni .= '
-        <h2>Ecco tutte le recensioni</h2>
+    <div class="content">
+        <h2>Lista delle recensioni</h2>
         <div class="table-wrapper-admin">   
             <p id="sum">tabella che contiene tutte le recensioni lasciate nel sito</p>
             <table aria-describedby="sum" class="table-admin-list">
@@ -46,6 +47,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     </tr>
                 </thead>
                 <tbody>
+    </div>
         ';
     foreach($all_review as $review){
         $lista_recensioni .= '
