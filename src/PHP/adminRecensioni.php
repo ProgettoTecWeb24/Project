@@ -50,9 +50,13 @@ if($connection->isAdmin($_SESSION["username"])){
     foreach($all_review as $review){
         $lista_recensioni .= '
                     <tr>
-                        <td>'.$review["username"] .'</td>
+                        <th class="int-row" scope="row">'.$review["username"] .'</th>
                         <td class="hide-mobile"  lang="en">'.$review["marca"] .' '.$review["nome"].'</td>
-                        <td class="hide-tablet">'.$review["voto"] .'</td>
+                        <td class="hide-tablet">
+                        <div class="review-stars">
+                            <img class="stars" src="../assets/' . $review['voto'] . '.png" alt="immagine di ' . $review["voto"] . ' stelle su 5" />
+                        </div>
+                        </td>
                         <td>'.$review["commento"] .'</td>
                         <td>
                             <form action="adminRecensioni.php" class="form" method="POST">
