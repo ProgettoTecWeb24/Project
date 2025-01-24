@@ -39,12 +39,12 @@ if($connection->isAdmin($_SESSION["username"])){
             <table aria-describedby="sum" class="table-admin-list">
                 <thead>
                     <tr>
-                        <th scope="col">Immagine</th>
                         <th scope="col">Nome</th>
                         <th scope="col" class="hide-tablet">Marca</th>
                         <th scope="col" class="hide-tablet">Descrizione</th>
                         <th scope="col" class="hide-mobile">Tipo</th>
                         <th scope="col" class="hide-mobile" lang="en">Feedback</th>
+                        <th scope="col">Immagine</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -53,15 +53,17 @@ if($connection->isAdmin($_SESSION["username"])){
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '
                     <tr>
-                        <td><img src="../assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
-                        <td lang="en">'.$shoe["nome"] .'</td>
+                        <th class="int-row" scope="row" lang="en">'.$shoe["nome"] .'</th>
                         <td class="hide-tablet"  lang="en">'.$shoe["marca"] .'</td>
                         <td class="hide-tablet">'.$shoe["descrizione"] .'</td>
                         <td class="hide-mobile">'.$shoe["tipo"] .'</td>
                         <td class="hide-mobile"><span lang="en">'.
-                            $shoe["feedback"].'</span></br>'.
-                            $shoe["votoexp"].'
+                            $shoe["feedback"].'</span></br>
+                            <div class="review-stars">
+                                <img class="stars" src="../assets/' . $shoe["votoexp"] . '.png" alt="immagine di ' . $shoe["votoexp"] . ' stelle su 5 per l\'esperto" />
+                            </div>
                         </td>
+                        <td><img src="../assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
                         <td>
                             <a class="link-con-icona" name="modifica" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="../assets/edit.svg" alt="modifica" class="icona" /></a>
                             <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">

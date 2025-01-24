@@ -1212,8 +1212,8 @@ footer .copyright {
     text-align: center;
   }
   
-  .table-admin-list th:nth-child(1),
-  .table-admin-list td:nth-child(1) {
+  .table-admin-list th:nth-child(6),
+  .table-admin-list td:nth-child(6) {
     width: 15%;  /* Imposta una larghezza fissa per la colonna dell'immagine */
     text-align: center;
   }
@@ -1228,6 +1228,13 @@ footer .copyright {
     font-weight: bold;
     color: white;
   }
+
+  .table-admin-list th.int-row {
+    background-color: transparent;
+    font-weight: bold;
+    color: black;
+  }
+  
   
   .table-admin-list tr:nth-child(odd) {
     background-color: #e0eefc; /* Colore per le righe dispari */
@@ -1236,7 +1243,9 @@ footer .copyright {
   .table-admin-list tr:nth-child(even) {
     background-color: #c3cbd8; /* Colore per le righe pari */
   }
-  
+
+
+
   .table-wrapper-admin{
     display: flex;
     width: 100%;
