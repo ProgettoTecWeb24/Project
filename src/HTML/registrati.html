@@ -10,11 +10,11 @@
                <form action="registrati.php" onsubmit="return validateRegister()" class="form" method="post">
                   <h2>Registrati</h2>
                   <label for="username"><span lang="en">Username</span></label>
-                  <span><input type="username" id="username" name="username" placeholder="Inserisci lo username" onblur="validateUsername()" /></span>
+                  <span class="validate_message"><input type="username" id="username" name="username" placeholder="Inserisci lo username" onblur="validateUsername()" /></span>
                   <label for="password"><span lang="en">Password</span></label>
-                  <span><input type="password" id="password" name="password" placeholder="Inserisci la password" onblur="validatePassword()"/></span>
+                  <span class="validate_message"><input type="password" id="password" name="password" placeholder="Inserisci la password" onblur="validatePassword()"/></span>
                   <label for="password">Conferma <span lang="en">Password</span></label>
-                  <span><input id="confirm_password" type="password" name="confirm_password" placeholder="Conferma la tua password" onblur="validateConfirmPassword()"/></span>
+                  <span class="validate_message"><input id="confirm_password" type="password" name="confirm_password" placeholder="Conferma la tua password" onblur="validateConfirmPassword()"/></span>
                   <div class="div-column">
                       
                       <label for="kmsett">Kilometri settimanali:</label>

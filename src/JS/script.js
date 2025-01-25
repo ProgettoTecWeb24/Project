@@ -72,7 +72,7 @@ function closeModal(modalId) {
 }
 
 function checkUsername(str) {
-    var re = /^(?![_.])[a-z0-9._]{5,15}(?<![_.])$/; //limita da 5 a 15 caratteri e accetta solo caratteri alfanumerici minuscoli, _ e .
+    var re = /^[a-z0-9_.]{1,15}$/; // massimo 15 caratteri e accetta solo caratteri alfanumerici minuscoli, _ e .
     return re.test(str);
 }
 
@@ -173,24 +173,26 @@ function validateUsername() {
     const errorClass = "error_text";
     const existingError = x.parentElement.querySelector(`.${errorClass}`);
     
+    // Rimuove il messaggio di errore esistente, se presente
     if (existingError) {
         x.parentElement.removeChild(existingError);
     }
 
+    // Crea il nodo del messaggio di errore
     const node = document.createElement("p");
     node.classList.add(errorClass);
     node.setAttribute("role", "alert");
 
+    // Controlla se il campo è vuoto
     if (x.value.trim() === "") {
-        const textnode = document.createTextNode("Il campo username non può essere vuoto.");
-        node.appendChild(textnode);
+        node.innerHTML = 'Il campo <span lang="en">username</span> non può essere vuoto.';
         x.parentElement.appendChild(node);
         return false;
     }
 
+    // Controlla la validità dello username
     if (!checkUsername(x.value)) {
-        const textnode = document.createTextNode("Il nome utente non è valido. Deve essere lungo tra 5 e 15 caratteri e contenere solo lettere minuscole, numeri, _ o .");
-        node.appendChild(textnode);
+        node.innerHTML = '<span lang="en">Username</span> non valido. Massimo 15 caratteri: lettere minuscole, numeri, _ o .';
         x.parentElement.appendChild(node);
         return false;
     }
@@ -218,7 +220,7 @@ function validatePassword() {
     }
     
     if (!checkPassword(password.value)) {
-        errorNode.textContent = "La password non è valida. Deve contenere almeno 5 caratteri e almeno un numero";
+        errorNode.textContent = "Password non valida. Almeno 5 caratteri e almeno un numero";
         password.parentElement.appendChild(errorNode);
         return false;
     }
@@ -247,13 +249,13 @@ function validateConfirmPassword() {
     }
     
     if (!checkPassword(confirmPassword.value)) {
-        errorNode.textContent = "La password di conferma non è valida. Deve seguire le stesse regole della password principale.";
+        errorNode.textContent = "Password non valida. Almeno 5 caratteri e almeno un numero";
         confirmPassword.parentElement.appendChild(errorNode);
         return false;
     }
     
     if (password.value !== confirmPassword.value) {
-        errorNode.textContent = "Le password non corrispondono. Assicurati di inserire la stessa password.";
+        errorNode.textContent = "Le password non corrispondono.";
         confirmPassword.parentElement.appendChild(errorNode);
         return false;
     }

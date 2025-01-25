@@ -487,7 +487,12 @@ label {
   flex-direction: column;
 }
 
-.settings {
+.settings{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.update-settings {
   background-position: center;
   width: 100%;
   display: flex;
@@ -498,7 +503,7 @@ label {
   margin-bottom: 2em;
 }
 
-.settings h3 {
+.update-settings h3 {
   font-size: 1.5em;
   margin: 0.5em;
   text-align: center;
@@ -506,6 +511,19 @@ label {
   line-height: 1.2em;
 }
 
+.logout-deleteUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#delete-account-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1003; /* Assicurati che sia sopra tutto */
+}
 .searchbar-liked {
   background-color: var(--card-bg-color);
   background-size: cover;
@@ -1360,3 +1378,9 @@ h4.title-admin {
     z-index: 1000;
   }
   
+/* ERRORI VALIDATE */
+.form .validate_message {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}

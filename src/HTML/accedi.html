@@ -10,9 +10,9 @@
                   <h2>Accedi</h2>  
                   <form action="accedi.php" onsubmit="return validateLogin()" class="form" method="post" >
                      <label for="username"><span lang="en">Username</span></label>
-                     <span><input type="username" name="username" id="username" placeholder="Inserisci il tuo username" onblur="validateUsernameLogin()"  /></span>
+                     <span class="validate_message"><input type="username" name="username" id="username" placeholder="Inserisci il tuo username" onblur="validateUsernameLogin()"  /></span>
                      <label for="password"><span lang="en">Password</span></label>
-                     <span><input type="password" name="password" id="password" placeholder="Inserisci la tua password" onblur="validatePasswordLogin()"  /></span>
+                     <span class="validate_message"><input type="password" name="password" id="password" placeholder="Inserisci la tua password" onblur="validatePasswordLogin()"  /></span>
                      <button id="submit-login" type="submit" name="submit-login" >Accedi</button>
                      </form>
                      {error_text}

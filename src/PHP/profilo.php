@@ -33,6 +33,15 @@ if (!empty($_SESSION['username'])) {
         }
     }
 
+    if(isset($_POST['deleteUser'])){
+        $qDelete = "DELETE FROM utente WHERE username ='" . $_SESSION['username'] . "'";
+        $elimina = $connection->query($qDelete);
+        session_destroy();
+        session_abort();
+        header("Location: index.php");
+        exit();
+    }
+    
     include "header.php";
     $HTMLpage = file_get_contents('../HTML/profilo.html');
 
