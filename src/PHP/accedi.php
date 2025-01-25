@@ -1,12 +1,14 @@
 <?php
 $location = 'Accedi';
+
 require_once('dbconnection.php');
 require_once('controls.php');
 session_start();
 
 use Conn\DbConnection;
 setlocale(LC_ALL, 'it_IT');
-
+if(!isset($_SESSION['username'])) {
+   
 $connection = new DbConnection();
 include "header.php";
 $HTMLpage = file_get_contents('../HTML/accedi.html');
@@ -45,4 +47,8 @@ if(isset($_POST["submit-login"])){
 
 echo $HTMLpage;
 include "footer.php";
+
+}else{
+    header("Location: profilo.php");
+}
 ?>

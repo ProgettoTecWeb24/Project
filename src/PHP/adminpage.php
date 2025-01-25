@@ -20,6 +20,6 @@ if($connection->isAdmin($_SESSION["username"])){
     echo $HTMLpage;
     include "footer.php";
 }else{
-    header("Location: ../HTML/error404.html");
+    header("Location: error404.php");
 }
 ?>
