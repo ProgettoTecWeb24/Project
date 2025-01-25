@@ -6,7 +6,7 @@ session_start();
 
 use Conn\DbConnection;
 setlocale(LC_ALL, 'it_IT');
-
+if(!isset($_SESSION['username'])) {
 $connection = new DbConnection();
 
 include "header.php";
@@ -55,4 +55,7 @@ if(isset($_POST["submit"])){
 
 echo $HTMLpage;
 include "footer.php";
+}else{
+    header("Location: profilo.php");
+}
 ?>
