@@ -88,6 +88,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     </tbody>
                 </table>
             </div>
+        </div>
             '; 
 
     $HTMLpage = str_replace("{lista_recensioni}", $lista_recensioni, $HTMLpage);
