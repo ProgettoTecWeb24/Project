@@ -227,15 +227,15 @@ body {
 
 .heart-icon {
   fill: #ccc;
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   transition: fill 0.3s;
 }
 
 .heart-icon-filled {
   fill: var(--red-heart);
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   transition: fill 0.3s;
 }
 

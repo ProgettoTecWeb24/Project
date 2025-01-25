@@ -145,3 +145,32 @@ h2.title-admin{
     font-size: 1.5em;
     z-index: 1000;
   }
+
+  /* icone ingrandite */
+.search-input {
+    height: 4em;
+    
+}
+
+.select-filter {
+    height: 4em;
+}
+
+.submit-filter {
+  width: 4em;
+  height: 4em;
+}
+
+.submit-filter img {
+  height: 3em;
+}
+
+.heart-icon {
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.heart-icon-filled {
+  width: 3.5em;
+  height: 3.5em;
+}
