@@ -627,8 +627,6 @@ label {
   padding: 10px;
 }
 
-
-
 .inputRecensione{
   width: 100%;
   height: 10em;
@@ -652,6 +650,30 @@ input:focus {
     width: 100%;
     padding-left: 15%;
     padding-right: 15%;
+  }
+
+  .profile-content {
+    background-position: center;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+  }
+  
+  .profile-content h3 {
+    font-size: 1.5em;
+    margin: 1em;
+    margin: 0.5em;
+    text-align: center;
+    color: var(--navbar-bg-color);
+    line-height: 1.2em;
   }
 
 /*---------------------------------------- 
