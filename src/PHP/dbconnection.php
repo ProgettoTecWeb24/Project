@@ -122,9 +122,9 @@ Class DbConnection{
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
         $row = $result->fetch_assoc();
         $result->free_result();
-        return $row["admin"];
+        return $row ? $row["admin"] : false; // null check
     }
-    
+
     public function getAllShoes(){ //restituisce le info di tutte le scarpe, dalle più recenti aggiunta alle più vecchie
         $query ="SELECT * FROM scarpa ORDER BY data_aggiunta DESC";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
