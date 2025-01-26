@@ -29,10 +29,22 @@ if($connection->isAdmin($_SESSION["username"])){
             if ($check === false) {
                 die("Errore: Il file caricato non è un'immagine.");
             }
-            $allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+            $allowedExtensions = ["png", "webp"];
             if (!in_array($imageFileType, $allowedExtensions)) {
-                die("Errore: Sono ammessi solo file JPG, JPEG, PNG e GIF.");
+                die("Errore: Sono ammessi solo file PNG e WEBP.");
             }
+            $maxFileSize = 2 * 1024 * 1024; // 2 MB
+            if ($_FILES["image"]["size"] > $maxFileSize) {
+                die("Errore: La dimensione del file non deve superare i 2 MB.");
+            }
+            $width = $check[0];
+            $height = $check[1];
+
+            // Controlla che l'immagine sia orizzontale
+            if ($width <= $height) {
+                die("Errore: L'immagine deve essere orizzontale (larghezza maggiore dell'altezza).");
+            }
+
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                 $immagine = '../assets/'.basename($_FILES["image"]["name"]);
             }else {
@@ -70,7 +82,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     <form action="adminModificaScarpa.php" class="form" method="POST" enctype="multipart/form-data">
                         <div class="input-add-scarpa">
                             <label for="immagine">Cambia foto della scarpa: </label>
-                            <input type="file" name="image" id="image" accept="image/*">
+                            <input type="file" name="image" id="image" accept=".png, .webp" required>
                         </div>
                         <input type="hidden" name="idscarpa" id="idscarpa" value="'.$shoe["id"].'"/>
                         <div class="input-add-scarpa">

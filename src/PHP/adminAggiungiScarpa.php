@@ -19,7 +19,7 @@ if($connection->isAdmin($_SESSION["username"])){
     $immagine = "";
     if(isset($_POST["conferma-aggiungi"])){
         if(isset($_FILES["image"])) {
-            $immagine .= '../assets/'.basename($_FILES["image"]["name"]);
+           
             // Specifica la directory di destinazione
             $targetDir = "../assets/";
             // Ottieni il nome del file originale
@@ -34,14 +34,26 @@ if($connection->isAdmin($_SESSION["username"])){
             }
 
             // Controlla l'estensione del file
-            $allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+            $allowedExtensions = ["png", "webp"];
             if (!in_array($imageFileType, $allowedExtensions)) {
-                die("Errore: Sono ammessi solo file JPG, JPEG, PNG e GIF.");
+                die("Errore: Sono ammessi solo file PNG e WEBP.");
+            }
+            
+            $maxFileSize = 2 * 1024 * 1024; // 2 MB
+            if ($_FILES["image"]["size"] > $maxFileSize) {
+                die("Errore: La dimensione del file non deve superare i 2 MB.");
+            }
+
+            $width = $check[0];
+            $height = $check[1];
+            // Controlla che l'immagine sia orizzontale
+            if ($width <= $height) {
+                die("Errore: L'immagine deve essere orizzontale (larghezza maggiore dell'altezza).");
             }
             
             // Sposta il file nella directory di destinazione
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                
+                $immagine .= '../assets/'.basename($_FILES["image"]["name"]);
             } else {
                 $info = '<p class="error_text" id="info" role="alert">Errore: aggiunta immagine non riuscita :(</p>';
             }
