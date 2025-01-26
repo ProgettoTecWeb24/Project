@@ -49,9 +49,10 @@ $content = '
         </div>
         <div class="shoe-info">
             <div class="shoe-title">
-                <h1>' . htmlspecialchars($scarpa['nome']) . '</h1>
-                <h2>Modello: ' . htmlspecialchars($scarpa['nome']) . '</h2>
-                <h2>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</h2>
+                <h2>' . htmlspecialchars($scarpa['marca']) . ' ' . htmlspecialchars($scarpa['nome']) . '</h2>
+                <h3>Marca: ' . htmlspecialchars($scarpa['marca']) . '</h3>
+                <h3>Modello: ' . htmlspecialchars($scarpa['nome']) . '</h3>
+                <h3>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</h3>
 
             </div>
             <div class="rating">
@@ -64,11 +65,11 @@ $content = '
     </div>
     <div class="description-details"> 
         <div class="description-section">
-            <h3>Descrizione</h3>
+            <h4>Descrizione</h4>
             <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
         </div>
         <div class="details-section">
-            <h3>Dettagli</h3>
+            <h4>Dettagli</h4>
             <p>' . htmlspecialchars($scarpa['dettagli']) . '</p>
         </div>
     </div>
