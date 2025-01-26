@@ -682,14 +682,15 @@ input:focus {
 ----------------------------------------*/
 
 
-.shoe-title h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+.shoe-title h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: var(--navbar-bg-color);
 }
 
-.shoe-title h2 {
+.shoe-title h3 {
   font-size: 1.5em;
-  color: #777;
+  color: var(--text-color);
   margin-bottom: 1em;
 }
 
@@ -739,16 +740,16 @@ input:focus {
     margin-top: 1.5em;
 }
 
-.details-section h3,
-.description-section h3 {
-    font-size: 1.5em;
-    color: var(--navbar-bg-color);
-    margin-bottom: 0.625em;
+.details-section h4,
+.description-section h4 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-bottom: 0.8em;
 }
 
 .details-section p,
 .description-section p {
-    font-size: 1em;
+    font-size: 1.2em;
     color: black;
 }
 
