@@ -97,7 +97,7 @@ if (isset($_SESSION['username'])) {
         $content .= '
             <div class="rating-wrapper">
             <div class="rating-section">
-                <h3>Valutazione Utenti</h3>
+                <p>Valutazione Utenti</p>
                 ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="../assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
