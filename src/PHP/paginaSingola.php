@@ -43,24 +43,29 @@ $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 $breadcrumb_scarpa = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']);
 
 $content = '
-    <div class="shoe-main">
-        <div class="shoe-image">
-            <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
-        </div>
-        <div class="shoe-info">
-            <div class="shoe-title">
-                <h2>' . htmlspecialchars($scarpa['marca']) . ' ' . htmlspecialchars($scarpa['nome']) . '</h2>
-                <h3>Marca: ' . htmlspecialchars($scarpa['marca']) . '</h3>
-                <h3>Modello: ' . htmlspecialchars($scarpa['nome']) . '</h3>
-                <h3>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</h3>
+        <div class="shoe-main">
+            <div class="shoe-image">
+                <img src="../assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
+            </div>
 
+            <div class="shoe-info">
+                <div class="shoe-title">
+                    <h2>' . htmlspecialchars($scarpa['marca']) . ' ' . htmlspecialchars($scarpa['nome']) . '</h2>
+                    <ul class="shoe-details">
+                        <li>Marca: ' . htmlspecialchars($scarpa['marca']) . '</li>
+                        <li>Modello: ' . htmlspecialchars($scarpa['nome']) . '</li>
+                        <li>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</li>
+                        <li>
+                            Valutazione Esperti: 
+                            <img class="stars" src="../assets/' . $scarpa['votoexp'] . '.png" alt="immagine di ' . $scarpa['votoexp'] . ' stelle su 5 per gli Esperti" />
+                        </li>
+                        <li>Feedback: ' . htmlspecialchars($scarpa['feedback']) . '</li>
+                    </ul>
+                </div>
             </div>
-            <div class="rating">
-                <h3>Valutazione Esperti</h3>
-                <img class="stars" src="../assets/' . $scarpa['votoexp'] . '.png" alt="immagine di ' . $scarpa['votoexp'] . ' stelle su 5 per gli Esperti" />
-                <p>' . htmlspecialchars($scarpa['feedback']) . '</p>
-            </div>
-        
+
+
+            
         </div>
     </div>
     <div class="description-details"> 
@@ -74,8 +79,8 @@ $content = '
         </div>
     </div>
     <div class="reviews-wrapper">
-    <h3>Recensioni</h3>
-    <div class="reviews-section">';
+        <h3>Recensioni</h3>
+            <div class="reviews-section">';
 
 $hasUserReviewed = false;
 if (isset($_SESSION['username'])) {
