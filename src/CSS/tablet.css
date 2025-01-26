@@ -103,9 +103,11 @@
 }
 
 .wrapper-card-admin{
-  padding-left: 5%;
-  padding-right: 5%;
-}
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
 .wrapper-admin-aggiungi{
   padding-left: 10%;
@@ -212,3 +214,12 @@ h2.title-admin{
   padding: 15px 20px;
   text-align: center;
 }
+
+/* PAGINA PROFILO */
+
+.profile-cards{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 5%;
+    padding-right: 5%;
+  }

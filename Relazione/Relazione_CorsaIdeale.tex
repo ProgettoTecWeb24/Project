@@ -38,7 +38,7 @@
 \end{center}
 
 % Componenti del Gruppo
-\section*{\centering Componenti del Gruppo}
+\section*{\centering Componenti del gruppo}
 \begin{center}
 Marin Davide - 2068234\\
 \vspace{0.2cm}
@@ -50,7 +50,7 @@ Salvò Giovanni - 2074010
 \end{center}
 
 % Informazioni Generali
-\section*{\centering Informazioni Generali}
+\section*{\centering Informazioni generali}
 \begin{center}
 \textbf{Indirizzo sito web}: \url{http://tecweb.studenti.math.unipd.it/epinarello/}\\
 \vspace{0.2cm}
@@ -60,7 +60,7 @@ Salvò Giovanni - 2074010
 \renewcommand{\arraystretch}{1.5} % Aumenta l'altezza delle righe del 50%
 
 % Credenziali Utenti
-\section*{\centering Credenziali Utenti}
+\section*{\centering Credenziali utenti}
 \begin{center}
 \begin{longtable}{|l|l|l|}
 \hline
@@ -90,9 +90,9 @@ Un aspetto distintivo del sito è il sistema di categorizzazione degli utenti, c
 Gli utenti possono creare liste personali di scarpe preferite, consultare e pubblicare recensioni, accedendo a pagine personalizzate in base al proprio profilo. L'obiettivo principale del sito è rendere piacevole l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
 
 
-\section{Analisi dei Requisiti}
+\section{Analisi dei requisiti}
 
-\subsection{Target di Utenza}
+\subsection{Target di utenza}
 
 Il pubblico a cui si rivolge \textbf{CorsaIdeale} è molto ampio, partendo dai principianti fino ad arrivare agli atleti esperti. I runner meno esperti possono utilizzare la piattaforma per orientarsi nella scelta della prima scarpa, mentre gli utenti più avanzati possono esplorare modelli specializzati per migliorare le proprie prestazioni. Oltre alle funzionalità riservate agli utenti registrati, cioè la possibilità di recensire e salvare i modelli di scarpe, il sito prevede una dashboard amministrativa per la gestione del database e delle recensioni, accessibile esclusivamente agli amministratori.\\
 L'interfaccia è progettata per essere semplice e intuitiva, garantendo l'accessibilità a tutti gli utenti con disabilità e a chi utilizza dispositivi non all'avanguardia. Allo stesso tempo, la struttura del sito supporta funzionalità avanzate per chiunque desideri interagire attivamente con la piattaforma.\\
@@ -104,7 +104,7 @@ La funzionalità di ricerca del sito è stata ideata cercando di ricoprire tutte
     \item \textbf{Boa di segnalazione}: la funzionalità che permette di salvare le scarpe preferite è perfetta per chi vuole ritrovarle in un secondo momento.
 \end{itemize}
 
-\subsection{Funzionalità del Sito}
+\subsection{Funzionalità del sito}
 
 Sono state implementate tre diverse tipologie di utente: utente generico, utente loggato e amministratore. Ogni categoria di utente ha a disposizione le funzionalità elencate, oltre a ereditare tutte quelle della categoria precedente.
 \begin{itemize}
@@ -140,8 +140,7 @@ Sono state implementate tre diverse tipologie di utente: utente generico, utente
 
 \subsection{Struttura del sito}
 
-La progettazione del sito web segue un'organizzazione strutturata per garantire un accesso rapido e intuitivo alle informazioni e ai servizi offerti. La struttura è gerarchica ma progettata per mantenere un equilibrio ottimale tra ampiezza e profondità. La profondità, ossia il numero di clic necessari per navigare dalla homepage a una pagina foglia, corrisponde a INSERIRE clic, che non supera il valore ottimale di 5. Per quanto riguarda l'ampiezza, il menù presenta non più di 4-5 opzioni, restando quindi al di sotto del valore ottimale, cioè 7.\\
-Questo approccio permette agli utenti di trovare rapidamente le informazioni desiderate senza subire gli effetti di un sovraccarico cognitivo o perdendosi in strutture troppo complesse.
+La progettazione del sito web segue un'organizzazione strutturata per garantire un accesso rapido e intuitivo alle informazioni e ai servizi offerti. Lo schema organizzativo adottato è quello a task.La struttura è gerarchica ma progettata per mantenere un equilibrio ottimale tra ampiezza e profondità. La profondità, ossia il numero di clic necessari per navigare dalla homepage a una pagina foglia, corrisponde a INSERIRE clic, che non supera il valore ottimale di 5. Per quanto riguarda l'ampiezza, il menù presenta non più di 4-5 opzioni, restando quindi al di sotto del valore ottimale, cioè 7. Questo approccio permette agli utenti di trovare rapidamente le informazioni desiderate senza subire gli effetti di un sovraccarico cognitivo o perdendosi in strutture troppo complesse.
 
 \subsection{Composizione}
 
@@ -193,9 +192,9 @@ Il contenuto presente nelle diverse pagine che compongono il sito è organizzato
     \item \textbf{Homepage (index.html)}:
         \begin{itemize}
             \item Contiene una sezione dedicata alle ultime uscite, con immagini delle scarpe, dettagli come marca, modello e tipo.
-            \item Presenta un messaggio di benvenuto che introduce gli utenti ai servizi offerti.
+            \item Presenta un'introduzione per gli utenti ai servizi offerti.
             \item Descrive la meccanica dei ruoli assegnati in base ai chilometri percorsi settimanalmente, utilizzando un'efficace CTA (\textit{call to action}).
-            \item Include link al resto del sito tramite un menu di navigazione principale.
+            \item Include link al resto del sito tramite un menù di navigazione principale.
         \end{itemize}
     \item \textbf{Lista Scarpe (lista.html)}:
         \begin{itemize}
@@ -248,7 +247,7 @@ Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i memb
 \begin{itemize}
     \item \textbf{Davide Marin}: 
         \begin{itemize}
-            \item Pagine per la gestione degli account utente.
+            \item Dashboard admin;
             \item
             \item
             \item 
@@ -262,42 +261,72 @@ Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i memb
         \end{itemize}
     \item \textbf{Alfredo Rubino}:
         \begin{itemize}
-            \item Pagine per la gestione degli account utente.
-            \item
-            \item
+            \item Scrittura della relazione;
+            \item Pagine di errore;
+            \item Header e footer;
+            \item Pagina Home e Chi Siamo;
         \end{itemize}
     \item \textbf{Giovanni Salvò}:
         \begin{itemize}
-            \item Pagine per la gestione degli account utente.
+            \item Lista scarpe;
             \item
             \item
         \end{itemize}
 \end{itemize}
 
 
-\section{Implementazione}
+\section{Implementazione Frontend}
 
-\subsection{Frontend}
-
-Il frontend \`e stato sviluppato utilizzando HTML5, CSS3 e JavaScript. Sono stati utilizzati framework e librerie moderne per garantire:
+\subsection{HTML}
+La struttura del sito è stata realizzata utilizzando il linguaggio HTML5, scelta motivata dall'obbiettivo del gruppo di creare un sito web moderno e attuale. Il sito è stato sviluppato seguendo le linee guida del W3C, con particolare attenzione alla semantica e all'accessibilità.\\
+I principali elementi di HTML5 che sono stati utilizzati sono:
 \begin{itemize}
-    \item Navigazione fluida e interfaccia intuitiva.
-    \item Animazioni leggere per migliorare l'esperienza utente.
-    \item Struttura semantica del codice per migliorare l'accessibilit\`a.
+    \item \texttt{<nav>}: utilizzato per implementare sia la barra di navigazione principale che il breadcrumb, permettendo una chiara strutturazione del menù di navigazione;
+    \item \texttt{<header>}: impiegato per la testata del sito, contenente il logo e il menu di navigazione;
+    \item \texttt{<footer>}: utilizzato per la sezione in basso a tutte le pagine, contiene le informazioni di contatto e i link ai social media;
+    \item \texttt{<main>}: usato per identificare il contenuto principale di ogni pagina;
+    \item \texttt{<section>}: impiegato per dividere logicamente i contenuti in alcune pagine;
+    \item \texttt{<address>}: utilizzato nel footer per formattare l'indirizzo.
+\end{itemize}
+Particolare attenzione è stata posta all'accessibilità, implementando:
+\begin{itemize}
+    \item Attributi \texttt{lang} per specificare le porzioni di testo in lingua inglese;
+    \item Attributi \texttt{aria-label} per migliorare la navigazione con screen reader;
+    \item Etichette \texttt{<label>} associate correttamente ai campi dei form;
+    \item Testi alternativi per le immagini tramite l'attributo \texttt{alt}.
+\end{itemize}
+La validazione del codice HTML è stata effettuata utilizzando il validatore W3C, come dimostrato dai badge presenti nel footer del sito. La struttura è stata organizzata seguendo il principio della separazione tra contenuto, presentazione e comportamento, mantenendo i file CSS e JavaScript separati dal markup HTML.\\
+Nei form di registrazione e login sono stati utilizzati gli attributi di HTML5 per la validazione lato client, come \texttt{required} per i campi obbligatori e \texttt{type} appropriati per i diversi tipi di input (\texttt{text}, \texttt{password}).
+
+\subsection{CSS}
+
+
+\section{Implementazione Backend}
+
+\subsection{PHP}
+
+\subsection{JavaScript}
+
+\subsection{Database}
+Il database di \textbf{CorsaIdeale} è scritto in mysql rappresenta l'architettura fondamentale per la gestione dei dati della piattaforma,
+\subsubsection{Struttura e normalizzazione}
+Il database risulta principalmente in Terza Forma Normale (3NF), poiché elimina le dipendenze transitive e garantisce che ogni attributo non chiave dipenda direttamente dalla chiave primaria. Questa strutturazione assicura l'efficienza nell'archiviazione e nel recupero dei dati, riducendo la ridondanza e mantenendo l'integrità informativa.
+\subsubsection{Tabelle}
+Le tabelle principali del database sono:
+\begin{itemize}
+\item \textbf{SCARPA} (id, nome, marca, tipo, descrizione, dettagli, votoexp, feedback, immagine, data\_aggiunta): Contiene le informazioni complete delle scarpe da corsa, inclusi dettagli tecnici, valutazioni e immagini.
+\item \textbf{UTENTE} (`username`, `pw`, `ruolo`, `admin`): Gestisce le informazioni degli utenti, implementando un sistema di ruoli che riflette l'esperienza dei runner e i privilegi di accesso.
+
+\item \textbf{RECENSIONE} (`username`, `scarpa\_id`, `voto`, `commento`, `data\_aggiunta`): Registra le recensioni degli utenti, permettendo valutazioni e feedback dettagliati sui prodotti.
+
+\item \textbf{LIKES} (`username`, `scarpa\_id`, `data\_aggiunta`): Traccia i prodotti salvati dagli utenti, implementando una funzionalità di preferiti.
 \end{itemize}
 
-\subsection{Backend}
-Il backend \`e stato implementato utilizzando PHP per la gestione della logica server-side e MySQL per il database. Funzionalit\`a principali:
-\begin{itemize}
-    \item Autenticazione e autorizzazione degli utenti.
-    \item Salvataggio e recupero di recensioni e preferenze.
-    \item Generazione dinamica di contenuti.
-\end{itemize}
 
 \section{Test e validazione}
-Il sito \`e stato sottoposto a test rigorosi per verificare:
+Il sito è stato sottoposto a test rigorosi per verificare:
 \begin{itemize}
-    \item Funzionamento delle principali funzionalit\`a.
+    \item Funzionamento delle principali funzionalità.
     \item Compatibilit\`a con browser moderni (Chrome, Firefox, Edge).
     \item Conformit\`a agli standard HTML e CSS tramite validatori.
 \end{itemize}
