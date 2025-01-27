@@ -491,6 +491,7 @@ label {
 .settings{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .update-settings {
@@ -515,6 +516,7 @@ label {
 .logout-deleteUser{
     display: flex;
     flex-direction: column;
+    gap: 1em;
     justify-content: space-evenly;
 }
 
