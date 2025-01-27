@@ -24,17 +24,17 @@ if (!empty($_SESSION['username'])) {
     // Salvataggio impostazioni profilo
     if(isset($_POST['salvaImpos'])){
         if(!empty($_POST['newUser'])){
-            $qSalva = "UPDATE utente SET username = '" . $_POST['newUser'] . "', ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
+            $qSalva = "UPDATE UTENTE SET username = '" . $_POST['newUser'] . "', ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
             $modifica = $connection->prepareAndExecute($qSalva, 's', $_POST['kmsett']);
             $_SESSION['username'] = $_POST['newUser'];
         }else{
-            $qSalva = "UPDATE utente SET ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
+            $qSalva = "UPDATE UTENTE SET ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
             $modifica = $connection->prepareAndExecute($qSalva, 's', $_POST['kmsett']);
         }
     }
 
     if(isset($_POST['deleteUser'])){
-        $qDelete = "DELETE FROM utente WHERE username ='" . $_SESSION['username'] . "'";
+        $qDelete = "DELETE FROM UTENTE WHERE username ='" . $_SESSION['username'] . "'";
         $elimina = $connection->query($qDelete);
         session_destroy();
         session_abort();
@@ -48,7 +48,7 @@ if (!empty($_SESSION['username'])) {
     $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
 
     $qCategoria = "SELECT ruolo
-                    FROM utente
+                    FROM UTENTE
                     WHERE username ='" . $_SESSION['username'] . "'";
     $categorie = $connection->query($qCategoria);
 

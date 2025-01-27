@@ -16,13 +16,13 @@ if (!empty($_SESSION['username'])) {
     // Gestione del like/unlike
     if(isset($_POST['likePress'])){
         if (!empty($_SESSION['username'])) {
-            $qCheck = "SELECT * FROM likes WHERE scarpa_id ='" . $_POST['likePress'] ."' AND username = '" . $_SESSION['username'] . "'";
+            $qCheck = "SELECT * FROM LIKES WHERE scarpa_id ='" . $_POST['likePress'] ."' AND username = '" . $_SESSION['username'] . "'";
             $result = $connection->query($qCheck);
             if(mysqli_num_rows($result) === 0){
-                $qLike = "INSERT INTO likes (username,scarpa_id,data_aggiunta) VALUES('" . $_SESSION['username'] . "','" . $_POST['likePress'] . "','" . date("Y/m/d") . "')";
+                $qLike = "INSERT INTO LIKES (username,scarpa_id,data_aggiunta) VALUES('" . $_SESSION['username'] . "','" . $_POST['likePress'] . "','" . date("Y/m/d") . "')";
                 $result = $connection->query($qLike);
             }else{
-                $qLike = "DELETE FROM likes WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['likePress'] . "'";
+                $qLike = "DELETE FROM LIKES WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['likePress'] . "'";
                 $result = $connection->query($qLike);
             }
         }else{
@@ -39,12 +39,12 @@ if (!empty($_SESSION['username'])) {
 
     $query ="
     SELECT *
-    FROM scarpa
-    WHERE id IN ( SELECT scarpa_id FROM likes WHERE username ='" . $_SESSION['username'] . "')";
+    FROM SCARPA
+    WHERE id IN ( SELECT scarpa_id FROM LIKES WHERE username ='" . $_SESSION['username'] . "')";
 
     // Gestione dei filtri di ricerca
     if(!empty($_POST['nomescarpa'])){
-        $query = "SELECT * FROM scarpa WHERE nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
+        $query = "SELECT * FROM SCARPA WHERE nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
         $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
     
     }
@@ -109,7 +109,7 @@ if (!empty($_SESSION['username'])) {
 
     // Gestione del cuore riempito per le scarpe già liked
     if (!empty($_SESSION['username'])) {
-        $qFill = "SELECT * FROM likes WHERE username = '" . $_SESSION['username'] . "'"; 
+        $qFill = "SELECT * FROM LIKES WHERE username = '" . $_SESSION['username'] . "'"; 
         $result = $connection->query($qFill);
         if ($result) {
             while ($row = $result->fetch_assoc()) {

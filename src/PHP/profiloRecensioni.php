@@ -21,18 +21,18 @@ if (!empty($_SESSION['username'])) {
 
     // Aggiungo le funzionalità di modifica e eliminazione recensione
     if(isset($_POST['elimina'])){
-        $qDelete = "DELETE FROM recensione WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['elimina'] . "'";
+        $qDelete = "DELETE FROM RECENSIONE WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['elimina'] . "'";
         $result = $connection->query($qDelete);
         header('Location: profiloRecensioni.php#reviews');
     }
 
     if(isset($_POST['modifica'])){
-        $qModifica = "UPDATE recensione SET voto = '" . $_POST['rating'] . "', commento =? WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['modifica'] . "'";
+        $qModifica = "UPDATE RECENSIONE SET voto = '" . $_POST['rating'] . "', commento =? WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['modifica'] . "'";
         $modifica = $connection->prepareAndExecute($qModifica, 's', $_POST['newCommento']);
     }
 
     $qRecensioni = "SELECT r.username, r.voto, r.commento, r.scarpa_id, s.nome, s.immagine
-                    FROM RECENSIONE r JOIN scarpa s
+                    FROM RECENSIONE r JOIN SCARPA s
                     WHERE r.scarpa_id = s.id AND r.username ='" . $_SESSION['username'] . "'";
     $recensioni = $connection->query($qRecensioni);
 

@@ -27,7 +27,7 @@ Class DbConnection{
     }
 
     public function getUserData($username){ //restituisce le info di un utente
-        $query ="SELECT username,pw,admin FROM utente WHERE username='$username'";
+        $query ="SELECT username,pw,admin FROM UTENTE WHERE username='$username'";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
     
         if ($result) {
@@ -40,11 +40,11 @@ Class DbConnection{
     }
 
     public function insertNewUser($username, $password, $ruolo){
-        $query ="SELECT username FROM utente WHERE username='$username'"; //controllo se lo username esiste già
+        $query ="SELECT username FROM UTENTE WHERE username='$username'"; //controllo se lo username esiste già
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
         if ($result->num_rows == 0) { //se non mi restituisce lo username cercato allora non esiste
             $result->free_result();
-            $query ="INSERT INTO utente (username, pw, ruolo, admin) VALUES('$username', '$password', '$ruolo', 0)";
+            $query ="INSERT INTO UTENTE (username, pw, ruolo, admin) VALUES('$username', '$password', '$ruolo', 0)";
             $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
             $userCreated = TRUE;
         }else{ 
@@ -56,15 +56,15 @@ Class DbConnection{
     }
 
     public function insertNewReview($username, $scarpa_id, $rating, $comment) {
-        $query = "SELECT * FROM recensione WHERE username='$username' AND scarpa_id='$scarpa_id'";
+        $query = "SELECT * FROM RECENSIONE WHERE username='$username' AND scarpa_id='$scarpa_id'";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" . mysqli_error($this->connection));
         
         if ($result->num_rows == 0) { // se non mi restituisce la recensione cercata allora non esiste
             $result->free_result();
-            $query = "INSERT INTO recensione (username, scarpa_id, voto, commento, data_aggiunta)
+            $query = "INSERT INTO RECENSIONE (username, scarpa_id, voto, commento, data_aggiunta)
                       VALUES('$username', '$scarpa_id', '$rating', '$comment')";
             $currentDate = '2025-01-01';
-            $query = "INSERT INTO recensione (username, scarpa_id, voto, commento, data_aggiunta)
+            $query = "INSERT INTO RECENSIONE (username, scarpa_id, voto, commento, data_aggiunta)
                       VALUES('$username', '$scarpa_id', '$rating', '$comment', '$currentDate')";
             $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" . mysqli_error($this->connection));
             $reviewCreated = TRUE;
@@ -118,7 +118,7 @@ Class DbConnection{
     }
 
     public function isAdmin ($username){ //restituisce 1 se l'utente è admin, 0 altrimenti
-        $query ="SELECT admin FROM utente WHERE username='$username'";
+        $query ="SELECT admin FROM UTENTE WHERE username='$username'";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
         $row = $result->fetch_assoc();
         $result->free_result();
@@ -126,7 +126,7 @@ Class DbConnection{
     }
 
     public function getAllShoes(){ //restituisce le info di tutte le scarpe, dalle più recenti aggiunta alle più vecchie
-        $query ="SELECT * FROM scarpa ORDER BY data_aggiunta DESC";
+        $query ="SELECT * FROM SCARPA ORDER BY data_aggiunta DESC";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
 
         $shoes = array();
@@ -142,7 +142,7 @@ Class DbConnection{
     }
 
     public function getShoe($id){
-        $query ="SELECT * FROM scarpa WHERE id='$id'";
+        $query ="SELECT * FROM SCARPA WHERE id='$id'";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
 
         if ($result->num_rows > 0) {
@@ -156,7 +156,7 @@ Class DbConnection{
 
     public function updateShoe($id, $nome, $marca, $descrizione, $tipo, $feedback, $voto_exp, $immagine){
         $created = false;
-        $query = "UPDATE scarpa SET nome=?, marca=?, descrizione=?, tipo=?, feedback=?, votoexp=?, immagine=? WHERE id=?";
+        $query = "UPDATE SCARPA SET nome=?, marca=?, descrizione=?, tipo=?, feedback=?, votoexp=?, immagine=? WHERE id=?";
         $stmt = $this->connection->prepare($query);
         if ($stmt === false) {
             die("Errore nella preparazione della query: " . $this->connection->error);
@@ -176,7 +176,7 @@ Class DbConnection{
         $created = false;
         $data_aggiunta = date("Y-m-d");
 
-        $query = "INSERT INTO scarpa (nome, marca, descrizione, tipo, feedback, votoexp, immagine, data_aggiunta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO SCARPA (nome, marca, descrizione, tipo, feedback, votoexp, immagine, data_aggiunta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
         if ($stmt === false) {
             die("Errore nella preparazione della query: " . $this->connection->error);
@@ -194,7 +194,7 @@ Class DbConnection{
 
     public function deleteShoe($id){
         $deleted = FALSE;
-        $query ="DELETE FROM scarpa WHERE id='$id'";
+        $query ="DELETE FROM SCARPA WHERE id='$id'";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
@@ -205,7 +205,7 @@ Class DbConnection{
 
 
     public function getAllReviews(){ //restituisce le info di tutte le scarpe, dalle più recenti aggiunta alle più vecchie
-        $query ="SELECT * FROM recensione, scarpa WHERE recensione.scarpa_id=scarpa.id ORDER BY recensione.data_aggiunta DESC";
+        $query ="SELECT * FROM RECENSIONE, SCARPA WHERE recensione.scarpa_id=scarpa.id ORDER BY RECENSIONE.data_aggiunta DESC";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
 
         $reviews = array();
@@ -222,7 +222,7 @@ Class DbConnection{
 
     public function deleteReview($scarpa_id, $username){
         $deleted = FALSE;
-        $query ="DELETE FROM recensione WHERE scarpa_id='$scarpa_id' AND username='$username'";
+        $query ="DELETE FROM RECENSIONE WHERE scarpa_id='$scarpa_id' AND username='$username'";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
@@ -232,7 +232,7 @@ Class DbConnection{
     }
     public function updateReview($username, $scarpa_id, $rating, $comment) {
         $updated = false;
-        $query = "UPDATE recensione SET voto=?, commento=? WHERE username=? AND scarpa_id=?";
+        $query = "UPDATE RECENSIONE SET voto=?, commento=? WHERE username=? AND scarpa_id=?";
         $stmt = $this->connection->prepare($query);
         if ($stmt === false) {
             die("Errore nella preparazione della query: " . $this->connection->error);
