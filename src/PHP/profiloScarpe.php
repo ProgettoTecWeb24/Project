@@ -87,7 +87,7 @@ if (!empty($_SESSION['username'])) {
                     </div>
                         <div class="text-card">
                         <h3>' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</h3>
-                        <p class="feedback">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
+                        <p class="feedback" lang="en">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
                         <p class="tipo">Tipo: ' . htmlspecialchars($row['tipo']) . '</p>
                         <p class="tipo">Voto esperto: ' . htmlspecialchars($row['votoexp']) . '</p>
                             <form action="profiloScarpe.php#likes" method="POST">

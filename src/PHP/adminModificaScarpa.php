@@ -40,8 +40,8 @@ if($connection->isAdmin($_SESSION["username"])){
             $width = $check[0];
             $height = $check[1];
 
-            // Controlla che l'immagine sia orizzontale
-            if ($width <= $height) {
+            
+            if ($width <= $height) { // immagine orizzontale
                 die("Errore: L'immagine deve essere orizzontale (larghezza maggiore dell'altezza).");
             }
 

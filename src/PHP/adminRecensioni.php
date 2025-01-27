@@ -35,13 +35,13 @@ if($connection->isAdmin($_SESSION["username"])){
     <div class="content">
         <h2>Lista delle recensioni</h2>
         <div class="table-wrapper-admin">   
-            <p id="sum">tabella che contiene tutte le recensioni lasciate nel sito</p>
+            <p id="sum">Tabella che contiene tutte le recensioni degli utenti lasciate nel sito</p>
             <table aria-describedby="sum" class="table-admin-list">
                 <thead>
                     <tr>
                         <th scope="col" lang="en">Username</th>
                         <th class="hide-mobile" scope="col">Scarpa recensita</th>
-                        <th class="hide-tablet"  scope="col">Voto</th>
+                        <th class="hide-tablet" scope="col">Voto</th>
                         <th scope="col">Commento</th>
                         <th></th>
                     </tr>

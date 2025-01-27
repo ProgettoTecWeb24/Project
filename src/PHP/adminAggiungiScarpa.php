@@ -20,20 +20,15 @@ if($connection->isAdmin($_SESSION["username"])){
     if(isset($_POST["conferma-aggiungi"])){
         if(isset($_FILES["image"])) {
            
-            // Specifica la directory di destinazione
             $targetDir = "../assets/";
-            // Ottieni il nome del file originale
             $targetFile = $targetDir . basename($_FILES["image"]["name"]);
-            // Ottieni l'estensione del file
             $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
             
-            // Controlla che il file sia un'immagine
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if ($check === false) {
                 die("Errore: Il file caricato non è un'immagine.");
             }
 
-            // Controlla l'estensione del file
             $allowedExtensions = ["png", "webp"];
             if (!in_array($imageFileType, $allowedExtensions)) {
                 die("Errore: Sono ammessi solo file PNG e WEBP.");
@@ -46,12 +41,12 @@ if($connection->isAdmin($_SESSION["username"])){
 
             $width = $check[0];
             $height = $check[1];
-            // Controlla che l'immagine sia orizzontale
-            if ($width <= $height) {
+            
+            if ($width <= $height) { //immagine orizzontale
                 die("Errore: L'immagine deve essere orizzontale (larghezza maggiore dell'altezza).");
             }
             
-            // Sposta il file nella directory di destinazione
+
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                 $immagine .= '../assets/'.basename($_FILES["image"]["name"]);
             } else {

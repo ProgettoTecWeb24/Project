@@ -12,18 +12,18 @@
             <div class="update-settings">
                 <h3 class="title-admin">Impostazioni</h3>
                 <div class="div-column">
-                    <label for="username">Nuovo username:</label>
+                    <label for="username">Nuovo <span lang="en">username</span>:</label>
                     <span class="validate_message">
                         <input class="username-input" name="newUser" id="username" type="text" placeholder="Inserisci nuovo username..." onblur="validateUsername()"/>
                     </span>
                 </div>
                 <div class="div-column">
-                    <label for="kmsett">Kilometri settimanali:</label>
+                    <label for="kmsett">Chilometri settimanali:</label>
                     <select name="kmsett" id="kmsett" class="select-settings">
-                        <option value="tartaruga">Fino a 5 km/sett</option>
-                        <option value="lepre">Da 6 a 20 km/sett</option>
-                        <option value="lupo">Da 21 a 50 km/sett</option>
-                        <option value="ghepardo">Oltre 50 km/sett</option>
+                        <option value="tartaruga">Fino a 5 <abbr title="chilometri">km</abbr>/settimana</option>
+                        <option value="lepre">Da 6 a 20 <abbr title="chilometri">km</abbr>/settimana</option>
+                        <option value="lupo">Da 21 a 50 <abbr title="chilometri">km</abbr>/settimana</option>
+                        <option value="ghepardo">Oltre 50 <abbr title="chilometri">km</abbr>/settimana</option>
                     </select>
                 </div>
     
@@ -51,8 +51,8 @@
             <div class="modal-content-delete">
                 <div class="modal-header">
                     <span class="close-btn" onclick="closeModal('delete-account-modal')">&times;</span>
-                    <h3>Sei sicuro di voler eliminare il tuo profilo?</h3>
-                    <h3>Questa azione è irreversibile</h3>
+                    <p>Sei sicuro di voler eliminare il tuo profilo?</p>
+                    <p>Questa azione è irreversibile</p>
                 </div>
                 <form action="profilo.php" method="POST">
                     <button class="button" type="submit" name="deleteUser">Conferma</button>

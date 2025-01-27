@@ -36,7 +36,7 @@ if($connection->isAdmin($_SESSION["username"])){
     <div class="content">
         <h2>Lista delle scarpe nel <span lang="en">database</span></h2>
         <div class="table-wrapper-admin">
-            <p id="sum">tabella che contiene tutte le scarpe lasciate nel sito</p>
+            <p id="sum">Tabella che contiene tutte le scarpe presenti nel sito</p>
             <table aria-describedby="sum" class="table-admin-list">
                 <thead>
                     <tr>

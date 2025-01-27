@@ -1072,12 +1072,24 @@ textarea#comment::placeholder {
   text-align: center;
   height: auto;
   padding: 2em;
+  margin: 1em;
+  
 }
 
-.error-content h1,
-.error-content h2,
+.error-content h2{
+    font-size: 3em;
+    color: var(--navbar-bg-color);
+    margin-bottom: 0.8em;
+}
+
+.error-content h3{
+    font-size: 2em;
+    color: var(--navbar-bg-color);
+    margin-bottom: 0.8em;
+}
+
 .error-content p {
-    padding: 0.2em;
+    font-size: 1.2em;
 }
 
 .error-image {

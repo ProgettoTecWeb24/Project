@@ -45,10 +45,8 @@ if (!empty($_SESSION['username'])) {
     include "header.php";
     $HTMLpage = file_get_contents('../HTML/profilo.html');
 
-    // Sostituisce il nome utente nel template
     $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
 
-    // Imposta l'opzione corrente per i kilometri settimanali
     $qCategoria = "SELECT ruolo
                     FROM utente
                     WHERE username ='" . $_SESSION['username'] . "'";
