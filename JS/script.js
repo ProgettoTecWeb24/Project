@@ -6,9 +6,9 @@ function myFunction() {
 
 
     if (navbarMenu.classList.contains("active")) {
-        toggleIcon.src = "../assets/close.png"; 
+        toggleIcon.src = "assets/close.png"; 
     } else {
-        toggleIcon.src = "../assets/menu.png"; 
+        toggleIcon.src = "assets/menu.png"; 
     }
 
 }
