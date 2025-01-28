@@ -243,6 +243,7 @@ Il contenuto presente nelle diverse pagine che compongono il sito è organizzato
 \end{itemize}
 
 \subsection{Suddivisione del lavoro}
+
 Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i membri del gruppo nel seguente modo:
 \begin{itemize}
     \item \textbf{Davide Marin}: 
@@ -278,6 +279,7 @@ Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i memb
 \section{Implementazione Frontend}
 
 \subsection{HTML}
+
 La struttura del sito è stata realizzata utilizzando il linguaggio HTML5, scelta motivata dall'obbiettivo del gruppo di creare un sito web moderno e attuale. Il sito è stato sviluppato seguendo le linee guida del W3C, con particolare attenzione alla semantica e all'accessibilità.\\
 I principali elementi di HTML5 che sono stati utilizzati sono:
 \begin{itemize}
@@ -300,6 +302,49 @@ Nei form di registrazione e login sono stati utilizzati gli attributi di HTML5 p
 
 \subsection{CSS}
 
+Per la presentazione e lo stile del sito è stato utilizzato CSS3, implementando un design responsivo e moderno. La formattazione è stata completamente separata dalla struttura HTML, seguendo le best practice di sviluppo web. Sono stati impostati due punti di controllo tramite \textit{media query}, e di conseguenza creati tre fogli di stile distinti per gestire i diversi contesti di visualizzazione dai dispositivi, oltre a quello dedicato al formato stampa:
+\begin{itemize}
+    \item \texttt{style.css}: caricato per tutti gli schermi come stile di base, definisce il layout per desktop;
+    \item \texttt{tablet.css}: applicato per viewport con larghezza massima di 1200px, contiene le regole per l'adattamento su tablet;
+    \item \texttt{mobile.css}: applicato per viewport con larghezza massima di 600px, gestisce il layout per i dispositivi mobili più piccoli, come gli smartphone;
+    \item \texttt{print.css}: ottimizza la visualizzazione per la stampa.
+\end{itemize}
+
+\subsubsection{Layout Principale}
+
+Il layout è stato realizzato utilizzando tecniche CSS come \textit{flexbox} e \textit{grid}, che permettono una disposizione flessibile e dinamica degli elementi.\\ Particolare attenzione è stata posta a:
+\begin{itemize}
+    \item Utilizzo di variabili CSS per la gestione consistente dei colori e delle proprietà ricorrenti;
+    \item Layout fluido con unità relative (\texttt{em}, \texttt{\%}) per garantire la scalabilità;
+    \item Implementazione di una griglia responsiva per la visualizzazione delle scarpe;
+\end{itemize}
+[Inserire screenshot del layout desktop]
+
+\subsubsection{Responsive Web Design}
+
+Il sito implementa un design completamente responsivo attraverso l'uso delle media query, che modificano il layout in base alle dimensioni dello schermo.\\
+Nei dispositivi mobili è stato implementato un \textit{hamburger menu} per la navigazione, al fine di evitare disallineamenti dovuti alle numerose voci di menù affiancate nella navbar.\\
+Su tablet il layout si adatta riducendo il numero di colonne nella griglia e modificando le dimensioni degli elementi, mentre su mobile il layout diventa a singola colonna. Inoltre, gli elementi interattivi come pulsanti e campi di input vengono ingranditi per facilitare l'interazione tramite \textit{touch}.
+
+[Inserire screenshot del layout tablet e mobile affiancati]
+
+\subsubsection{Accessibilità e User Experience}
+
+Sono state implementate diverse soluzioni per migliorare l'accessibilità e l'esperienza utente:
+\begin{itemize}
+    \item Contrasto adeguato tra testo e sfondo;
+    \item Focus visibili per la navigazione da tastiera;
+    \item Stati hover chiaramente distinguibili;
+    \item Dimensioni del testo scalabili;
+    \item Stile estetico coerente tra le diverse pagine.
+\end{itemize}
+
+\subsubsection{Stampa}
+
+Il foglio di stile \texttt{print.css} è stato ottimizzato per la stampa di tutte le pagine del sito: rispetto agli altri layout, sono stati rimossi gli elementi non essenziali (menù, footer, pulsanti interattivi) ed è stato adattato il formato pagina. Inoltre, si è scelto di utilizzare un font \textit{serif} (con grazie) per migliorare la leggibilità su carta e sono stati ottimizzati i colori per la stampa in bianco e nero.
+
+[Inserire screenshot dell'anteprima di stampa]
+
 
 \section{Implementazione Backend}
 
@@ -307,31 +352,58 @@ Nei form di registrazione e login sono stati utilizzati gli attributi di HTML5 p
 
 \subsection{JavaScript}
 
-\subsection{Database}
-Il database di \textbf{CorsaIdeale} è scritto in mysql rappresenta l'architettura fondamentale per la gestione dei dati della piattaforma,
-\subsubsection{Struttura e normalizzazione}
-Il database risulta principalmente in Terza Forma Normale (3NF), poiché elimina le dipendenze transitive e garantisce che ogni attributo non chiave dipenda direttamente dalla chiave primaria. Questa strutturazione assicura l'efficienza nell'archiviazione e nel recupero dei dati, riducendo la ridondanza e mantenendo l'integrità informativa.
-\subsubsection{Tabelle}
-Le tabelle principali del database sono:
+Il codice JavaScript si occupa dei seguenti tre aspetti fondamentali: la validazione dei form, la gestione delle finestre modali e il menù di navigazione responsivo.
+
+\subsubsection{Validazione dei form}
+
+La validazione dei form è stata implementata lato client per offrire un feedback immediato agli utenti. I controlli verificano la correttezza di username e password attraverso espressioni regolari.\\
+In particolare:
 \begin{itemize}
-\item \textbf{SCARPA} (id, nome, marca, tipo, descrizione, dettagli, votoexp, feedback, immagine, data\_aggiunta): Contiene le informazioni complete delle scarpe da corsa, inclusi dettagli tecnici, valutazioni e immagini.
-\item \textbf{UTENTE} (`username`, `pw`, `ruolo`, `admin`): Gestisce le informazioni degli utenti, implementando un sistema di ruoli che riflette l'esperienza dei runner e i privilegi di accesso.
-
-\item \textbf{RECENSIONE} (`username`, `scarpa\_id`, `voto`, `commento`, `data\_aggiunta`): Registra le recensioni degli utenti, permettendo valutazioni e feedback dettagliati sui prodotti.
-
-\item \textbf{LIKES} (`username`, `scarpa\_id`, `data\_aggiunta`): Traccia i prodotti salvati dagli utenti, implementando una funzionalità di preferiti.
+    \item \textbf{Username}: devono essere composti solo da caratteri alfanumerici minuscoli, underscore o punto, con un limite massimo di 15 caratteri.
+    \item \textbf{Password}: devono essere composte da almeno 5 caratteri, che includano almeno un numero.
 \end{itemize}
+Vengono inoltre mostrati messaggi specifici per i campi di input interessati in  caso di errore, permettendo agli utenti di correggere immediatamente i dati inseriti.
+
+\subsubsection{Gestione delle finestre modali}
+
+La gestione delle finestre modali è stata implementata per migliorare l'esperienza utente durante l'inserimento delle recensioni o altre interazioni. Quando viene aperta una finestra modale, viene anche creato un overlay scuro che copre il contenuto attorno, focalizzando l'attenzione dell'utente sul form attivo.
+
+\subsubsection{Menuù di navigazione responsivo}
+
+Il menù di navigazione è stato reso responsivo per rendere il sito facilmente navigabile anche su dispositivi mobili. In particolare, la gestione JavaScript permette di alternare tra l'icona di \textit{hamburger menu} e l'icona \textit{X} di chiusura in base allo stato aperto o chiuso del menù.
+
+\subsection{Database}
+
+Il database è stato implementato tramite MySQL e costituisce l'infrastruttura centrale per la gestione dei dati della piattaforma.
+
+\subsubsection{Struttura e normalizzazione}
+
+Il database risulta principalmente in Terza Forma Normale (3NF), che assicura che i dati siano organizzati nel modo più efficiente possibile. Tale organizzazione rende più facile e sicuro aggiornare le informazioni e permette di mantenere i dati sempre coerenti tra loro.
+
+\subsubsection{Tabelle}
+
+Le tabelle che compongono il database sono:
+\begin{itemize}
+    \item \textbf{SCARPA} (`id', `nome', `marca', `tipo', `descrizione', `dettagli', `votoexp', `feedback', `immagine', `data\_aggiunta'): contiene le informazioni complete delle scarpe da corsa, inclusi dettagli tecnici, valutazioni e immagini;
+    \item \textbf{UTENTE} (`username', `pw', `ruolo', `admin'): gestisce le informazioni degli utenti, implementando un sistema di ruoli che riflette l'esperienza dei runner e i privilegi di accesso;
+    \item \textbf{RECENSIONE} (`username', `scarpa\_id', `voto', `commento', `data\_aggiunta'): registra le recensioni degli utenti, permettendo valutazioni e feedback dettagliati sui prodotti;
+    \item \textbf{LIKES} (`username', `scarpa\_id', `data\_aggiunta'): traccia i prodotti salvati dagli utenti, implementando una funzionalità di preferiti.
+\end{itemize}
+Per testare le funzionalità del sistema, il database è stato già popolato con un set di dati realistici.
+
 
 
 \section{Test e validazione}
+
 Il sito è stato sottoposto a test rigorosi per verificare:
 \begin{itemize}
     \item Funzionamento delle principali funzionalità.
-    \item Compatibilit\`a con browser moderni (Chrome, Firefox, Edge).
-    \item Conformit\`a agli standard HTML e CSS tramite validatori.
+    \item Compatibilit con browser moderni (Chrome, Firefox, Edge).
+    \item Conformit agli standard HTML e CSS tramite validatori.
 \end{itemize}
 
 \section{Conclusioni e sviluppi futuri}
+
 Il progetto \textbf{CorsaIdeale} ha raggiunto con successo gli obiettivi prefissati, offrendo una piattaforma utile e innovativa per i runner. In futuro, prevediamo di:
 \begin{itemize}
     \item Implementare un sistema di notifiche per aggiornamenti su nuove scarpe.
