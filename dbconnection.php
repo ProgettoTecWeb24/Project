@@ -205,7 +205,7 @@ Class DbConnection{
 
 
     public function getAllReviews(){ //restituisce le info di tutte le scarpe, dalle più recenti aggiunta alle più vecchie
-        $query ="SELECT * FROM RECENSIONE, SCARPA WHERE recensione.scarpa_id=scarpa.id ORDER BY RECENSIONE.data_aggiunta DESC";
+        $query ="SELECT * FROM RECENSIONE, SCARPA WHERE RECENSIONE.scarpa_id=SCARPA.id ORDER BY RECENSIONE.data_aggiunta DESC";
         $result = mysqli_query($this->connection, $query) or die("Errore nell'accesso al database" .mysqli_error($this->connection));
 
         $reviews = array();
