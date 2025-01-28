@@ -1,3 +1,0 @@
-ErrorDocument 404 /Project/src/PHP/error404.php
-ErrorDocument 500 /Project/src/PHP/error500.php
-

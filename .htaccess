@@ -1,0 +1,3 @@
+ErrorDocument 404 /Project/src/error404.php
+ErrorDocument 500 /Project/src/error500.php
+
