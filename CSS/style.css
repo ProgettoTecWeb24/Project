@@ -61,6 +61,15 @@ body {
     flex-wrap: nowrap;
 }
 
+.navigationHelp {
+    position: absolute;
+    left: -999em;
+}
+
+.navigationHelp:focus {
+    position: static;
+    display: block;
+}
 
 .logo {
     width: 4.5em;
@@ -363,7 +372,7 @@ input[type="password"] {
   width: 100%;
   padding: 1em;
   margin-bottom: 1em;
-  border: 0.0625em solid var(--navbar-bg-color);
+  border: 0.0625em solid var(--text-color);
   border-radius: 0.25em;
   font-size: 1em;
 }
@@ -525,7 +534,7 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1003; /* Assicurati che sia sopra tutto */
+    z-index: 1003; 
 }
 .searchbar-liked {
   background-color: var(--card-bg-color);
@@ -548,7 +557,7 @@ label {
   height: 3em;
   border-radius: 0.5em;
   padding: 0.625em;
-  border: 0.0625em solid #ccc;
+  border: 0.0625em solid var(--text-color);
 }
 
 .select-settings {
@@ -556,7 +565,8 @@ label {
   height: 3em;
   border-radius: 0.5em;
   padding: 0.625em;
-  border: 0.0625em solid #ccc;
+  border: 0.0625em solid var(--text-color);
+  margin-bottom: 1.5em;
 }
 
 .submit-settings {
@@ -877,6 +887,7 @@ img.stars {
 .add-review-section {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   padding: 1em;
 }

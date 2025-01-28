@@ -44,7 +44,7 @@ if (!empty($_SESSION['username'])) {
             <form action="profiloRecensioni.php#review'. htmlspecialchars($recensione['scarpa_id']).'" method="POST">
             <div class="review-profile">
                 <div class="review-icon-shoes">
-                    <img src="assets/' . htmlspecialchars($recensione['immagine'])  . '" alt="' . htmlspecialchars($recensione['nome']) . '" />
+                    <img src="assets/' . htmlspecialchars($recensione['immagine'])  . '" alt="Immagine della scarpa ' . htmlspecialchars($recensione['nome']) . '" />
                 </div>
                 <div class="review-info-profile">
                    
