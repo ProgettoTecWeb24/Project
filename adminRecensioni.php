@@ -60,7 +60,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         <td>'.$review["commento"] .'</td>
                         <td>
                             <form action="adminRecensioni.php" class="form" method="POST">
-                                <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'\')">
+                                <button type="button" name="delete-review-'.$review['scarpa_id'].$review['username'].'" class="link-con-icona" onclick="openModal(\'delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'\')">
                                     <img src="assets/delete.svg" alt="elimina" class="icona" />
                                 </button>
                             </form>
