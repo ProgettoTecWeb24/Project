@@ -1409,7 +1409,7 @@ h4.title-admin {
     margin-bottom: 1rem;
   }
   
-  input[type="scarpa-admin"] {
+  input[type="text"].input-text-add-scarpa {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ccc;
