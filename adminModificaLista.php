@@ -68,22 +68,22 @@ if($connection->isAdmin($_SESSION["username"])){
                         <td><img src="assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
                         <td>
                             <a class="link-con-icona" name="modifica" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="assets/edit.svg" alt="modifica" class="icona" /></a>
-                            <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
+                            <button type="button" class="link-con-icona" onclick="openModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">
                                     <img src="assets/delete.svg" alt="elimina" class="icona" />
                             </button>
-                            <div id="delete-review-modal" class="modal hidden">
+                            <div id="delete-shoe-admin-modal-'.$shoe['id'].'" class="delete-shoe-admin-modal hidden">
                                 <div class="modal-content-delete">
                                     <div class="modal-header">
-                                        <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+                                        <span class="close-btn" onclick="closeModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">&times;</span>
                                         <h2>Conferma Eliminazione</h2>
                                         <p>Sei sicuro di voler eliminare questa scarpa?</p>
                                     </div>
-                                    <form id="delete-review-form" action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                                    <form id="delete-review-form-'.$shoe['id'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
                                         <input type="hidden" name="delete_id" value="'.$shoe['id'].'"/>
                                         <button class="button" type="submit" name="delete">Conferma</button>
                                     </form>
                                 </div>
-                    </div>
+                            </div>
                         </td>
                     </tr>
                     
