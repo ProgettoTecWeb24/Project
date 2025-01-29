@@ -71,7 +71,7 @@ if($connection->isAdmin($_SESSION["username"])){
                             <button type="button" class="link-con-icona" onclick="openModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">
                                     <img src="assets/delete.svg" alt="elimina" class="icona" />
                             </button>
-                            <div id="delete-shoe-admin-modal-'.$shoe['id'].'" class="delete-shoe-admin-modal hidden">
+                            <div id="delete-shoe-admin-modal-'.$shoe['id'].'" class="delete-admin-modal hidden">
                                 <div class="modal-content-delete">
                                     <div class="modal-header">
                                         <span class="close-btn" onclick="closeModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">&times;</span>
