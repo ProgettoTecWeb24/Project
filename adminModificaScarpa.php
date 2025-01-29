@@ -76,26 +76,26 @@ if($connection->isAdmin($_SESSION["username"])){
         if($shoe){
             $dettaglio_scarpa .= '
                 <div class="img-scarpa-modifica-div">
-                    <img class="immagine-scarpa-modifica" src="assets/'.$shoe["immagine"] .'" />
+                    <img class="immagine-scarpa-modifica" alt="immagine della scarpa '.$shoe["nome"].'" src="assets/'.$shoe["immagine"] .'" />
                 </div>
                 <div class="wrapper-admin-aggiungi">
                     <form action="adminModificaScarpa.php" class="form" method="POST" enctype="multipart/form-data">
                         <div class="input-add-scarpa">
-                            <label for="immagine">Cambia foto della scarpa: </label>
-                            <input type="file" name="image" id="image" accept=".png, .webp" required>
+                            <label for="image">Cambia foto della scarpa: </label>
+                            <input type="file" name="image" id="image" accept="image/png, image/webp" required>
                         </div>
                         <input type="hidden" name="idscarpa" id="idscarpa" value="'.$shoe["id"].'"/>
                         <div class="input-add-scarpa">
                             <label for="nome">Nome: </label>
-                            <input type="scarpa-admin" name="nome" id="nome" required placeholder="Inserisci nome" value="'.$shoe["nome"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="nome" id="nome" required placeholder="Inserisci nome" value="'.$shoe["nome"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="marca">Marca: </label>
-                            <input type="scarpa-admin" name="marca" id="marca" required placeholder="Inserisci marca" value="'.$shoe["marca"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="marca" id="marca" required placeholder="Inserisci marca" value="'.$shoe["marca"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="descrizione">Descrizione: </label>
-                            <input type="scarpa-admin" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)" value="'.$shoe["descrizione"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)" value="'.$shoe["descrizione"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="tipo">Tipo: </label>
@@ -108,7 +108,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="feedback">Feedback: </label>
-                            <input type="scarpa-admin" name="feedback" id="feedback" placeholder="Feedback (opzionale)" value="'.$shoe["feedback"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" placeholder="Feedback (opzionale)" value="'.$shoe["feedback"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="valutazione">Valutazione: </label>
