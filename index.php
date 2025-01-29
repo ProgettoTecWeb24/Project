@@ -1,4 +1,8 @@
 <?php
+$title = "test";
+$description = "12345";
+$keywords = "mela,banana,pera";
+
 require_once('dbconnection.php');
 session_start();
 

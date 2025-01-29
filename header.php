@@ -12,6 +12,11 @@ if (!$connection->startDbConnection()) {
 }
 $navbar_links = "";
 $DOM = file_get_contents('HTML/header.html');
+
+$DOM = str_replace('<title></title>', '<title>' . $title . '</title>', $DOM);
+$DOM = str_replace('<meta name="description" content="" />', '<meta name="description" content=' . $description . ' />', $DOM);
+$DOM = str_replace('<meta name="keywords" content="" />', '<meta name="keywords" content=' . $keywords . ' />', $DOM);
+
 $navbar_links .= '
     <ul id="navbar-links" class="navbar-links">
         '.((basename($_SERVER['PHP_SELF']) == 'index.php') ? '<li class="navbar-current"><span lang="en">Home</span>' : '<li class="navbar-item"><a href="index.php"><span lang="en">Home</span></a>').'</li>
