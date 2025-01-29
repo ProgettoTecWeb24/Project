@@ -1,8 +1,7 @@
 <?php
-$title = "test";
-$description = "12345";
-$keywords = "mela,banana,pera";
-
+$title = "CorsaIdeale - Home";
+$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
+$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
 require_once('dbconnection.php');
 session_start();
 
