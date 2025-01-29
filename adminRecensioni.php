@@ -32,8 +32,6 @@ if($connection->isAdmin($_SESSION["username"])){
     $all_review = $connection->getAllReviews();
 
     $lista_recensioni .= '
-    <div class="content">
-        <h2>Lista delle recensioni</h2>
         <div class="table-wrapper-admin">   
             <p id="sum">Tabella che contiene tutte le recensioni degli utenti lasciate nel sito</p>
             <table aria-describedby="sum" class="table-admin-list">
