@@ -1137,7 +1137,12 @@ footer .footer-text {
   text-align: left;
 }
 
-footer .footer-text p,
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .footer-text li,
 footer .footer-text address {
     color: var(--card-bg-color);
     margin: 0.2em 0;

@@ -5,59 +5,63 @@
         <li> Lista scarpe </li>
     </ul>
 </nav>
-<form action="lista.php" method="POST">
-    <div class="content">
-        <h2>Lista scarpe</h2>
 
-        <div class="searchbar-acc">
-            <div>
-                <input class="search-input" name="nomescarpa" id="nomescarpa" type="text" placeholder="Cerca le scarpe..." value="" />
+<main id="main-content">
+
+    <form action="lista.php" method="POST">
+        <div class="content">
+            <h2>Lista scarpe</h2>
+
+            <div class="searchbar-acc">
+                <div>
+                    <input class="search-input" name="nomescarpa" id="nomescarpa" type="text" placeholder="Cerca le scarpe..." value="" />
+                </div>
+
+                <div>
+                    <label for="ordina">Ordina:</label>
+                    <select name="ordina" id="ordina" class="select-filter">
+                        <option value="ordStand">Ordine <span lang="en">standard</span></option>
+                        <option value="nomeCres">Nome crescente</option>
+                        <option value="nomeDesc">Nome descrescente</option>
+                        <option value="votoCres">Voto crescente</option>
+                        <option value="votoDesc">Voto decrescente</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="marca">Marca:</label>
+                    <select name="marca" id="marca" class="select-filter">
+                        <option value="all">Tutte le marche</option>
+                        <option value="Adidas" lang="en">Adidas</option>
+                        <option value="Altra" lang="en">Altra</option>
+                        <option value="Asics" lang="en">Asics</option>
+                        <option value="Brooks" lang="en">Brooks</option>
+                        <option value="Hoka" lang="en">Hoka</option>
+                        <option value="Mizuno" lang="en">Mizuno</option>
+                        <option value="New Balance" lang="en">New Balance</option>
+                        <option value="Nike" lang="en">Nike</option>
+                        <option value="Saucony" lang="en">Saucony</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tipo">Tipo:</label>
+                    <select name="tipo" id="tipo" class="select-filter">
+                        <option value="all">Tutti i tipi</option>
+                        <option value="pista">Pista</option>
+                        <option value="strada">Strada</option>
+                        <option value="trail" lang="en">Trail</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-filter">
+                    <img src="assets/search-icon.svg" alt="Cerca" />
+                </button>
             </div>
-
-            <div>
-                <label for="ordina">Ordina:</label>
-                <select name="ordina" id="ordina" class="select-filter">
-                    <option value="ordStand">Ordine <span lang="en">standard</span></option>
-                    <option value="nomeCres">Nome crescente</option>
-                    <option value="nomeDesc">Nome descrescente</option>
-                    <option value="votoCres">Voto crescente</option>
-                    <option value="votoDesc">Voto decrescente</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="marca">Marca:</label>
-                <select name="marca" id="marca" class="select-filter">
-                    <option value="all">Tutte le marche</option>
-                    <option value="Adidas" lang="en">Adidas</option>
-                    <option value="Altra" lang="en">Altra</option>
-                    <option value="Asics" lang="en">Asics</option>
-                    <option value="Brooks" lang="en">Brooks</option>
-                    <option value="Hoka" lang="en">Hoka</option>
-                    <option value="Mizuno" lang="en">Mizuno</option>
-                    <option value="New Balance" lang="en">New Balance</option>
-                    <option value="Nike" lang="en">Nike</option>
-                    <option value="Saucony" lang="en">Saucony</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="tipo">Tipo:</label>
-                <select name="tipo" id="tipo" class="select-filter">
-                    <option value="all">Tutti i tipi</option>
-                    <option value="pista">Pista</option>
-                    <option value="strada">Strada</option>
-                    <option value="trail" lang="en">Trail</option>
-                </select>
-            </div>
-
-            <button type="submit" class="submit-filter">
-                <img src="assets/search-icon.svg" alt="Cerca" />
-            </button>
         </div>
-    </div>
-</form>
+    </form>
     <div class="cards">
         {shoes}
     </div>
 
+</main>
