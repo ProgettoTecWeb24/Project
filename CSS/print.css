@@ -192,18 +192,6 @@ ul, ol {
     width: 50%;
 }
 
-.review-profile {
-    display: flex;
-    gap: 1em;
-    padding: 1.5em;
-    width: 50em;
-    border: 1px solid #ddd;
-    border-radius: 0.5em;
-    background-color: #f9f9f9;
-    align-items: left;
-    text-align: left;
-}
-  
 .review-info-profile {
     width: 100%;
     display: flex;
@@ -244,4 +232,17 @@ ul, ol {
 
 .inputRecensione{
     border: none;
+}
+
+.reviews-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.review-profile {
+    display: inline;
+    border: none;
+    page-break-after: avoid;
 }
