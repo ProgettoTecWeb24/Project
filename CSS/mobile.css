@@ -114,6 +114,11 @@
   /* 1 card per riga */
 }
 
+.animal-role img {
+    width: 6em;
+    height: auto;
+    margin: 1em;
+    }
 
 /* TUTTA SEZIONE ADMIN */
 

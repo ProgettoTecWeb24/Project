@@ -4,22 +4,8 @@ html {
   font-size: 12pt;
 }
 
-nav,
-footer,
-.backToTop,
-.icon,
-.icona-profilo,
-.link-con-icona,
-.navbar-links,
-.valid-code,
-.searchbar-acc,
-.modal,
-.admin-home-icon,
-.add-review-section,
-.review-icon,
-.modal-content-delete,
-p#sum {
-  display: none !important;
+nav, footer, .backToTop, .icon, .icona-profilo, .link-con-icona, .navbar-links, .valid-code, .searchbar-acc, .modal, .admin-home-icon, .add-review-section, .review-icon, .modal-content-delete, p#sum{
+    display: none;
 }
 
 body {
