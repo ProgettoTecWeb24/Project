@@ -643,7 +643,7 @@ label {
   display: flex;
   gap: 1em;
   padding: 1.5em;
-  width: 50em;
+  width: 70em;
   border: 1px solid var(--border-review-color);
   border-radius: 0.5em;
   background-color: var(--card-bg-color);
@@ -863,6 +863,7 @@ input:focus {
 .review-header {
   width: 100%;
   display: flex;
+  gap: 0.5em;
   justify-content: space-between;
   align-items: center;
 }

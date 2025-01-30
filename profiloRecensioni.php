@@ -47,7 +47,7 @@ if (!empty($_SESSION['username'])) {
         }else{
         foreach ($recensioni as $recensione) {
             $content .= '
-            <a name=review' . htmlspecialchars($recensione['scarpa_id']) . '>
+            <a id=review' . htmlspecialchars($recensione['scarpa_id']) . '></a>
             <form action="profiloRecensioni.php#review'. htmlspecialchars($recensione['scarpa_id']).'" method="POST">
             <div class="review-profile">
                 <div class="review-icon-shoes">
@@ -60,8 +60,8 @@ if (!empty($_SESSION['username'])) {
                             <span class="review-user">' . htmlspecialchars($recensione['marca']) . ' '. htmlspecialchars($recensione['nome']) . '</span>
                         </div>
                     <div>
-                        <label for="rating">Valutazione:</label>
-                        <select class="select-review-profile" name="rating" id="rating" required>';
+                        <label for="rating' . $recensione['scarpa_id'] . '">Valutazione:</label>
+                        <select class="select-review-profile" name="rating" id="rating' . $recensione['scarpa_id'] . '">';
                         if($recensione['voto'] == '1'){
                             $content .= '<option value="1" selected>1 Stella</option>
                             <option value="2">2 Stelle</option>
@@ -100,16 +100,16 @@ if (!empty($_SESSION['username'])) {
                     
                 </div>
             <div class="add-review-section">
-                <button type="submit" id="modifica" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
+                <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
                     <img src="assets/edit.svg" alt="modifica" class="icona-profilo" />
                 </button>
-                <button type="submit" id="elimina" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
+                <button type="submit" id="elimina' . $recensione['scarpa_id'] . '" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
                     <img src="assets/delete.svg" alt="elimina" class="icona-profilo" />
                 </button>
             </div>   
             </div>
             </form>
-            </a>
+            
             ';
         }
     }
