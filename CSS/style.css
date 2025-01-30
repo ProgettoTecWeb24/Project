@@ -231,7 +231,6 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 0.625em;
   padding: 0;
 }
 
@@ -632,7 +631,7 @@ label {
   display: flex;
   gap: 1em;
   padding: 1.5em;
-  width: 50em;
+  width: 70em;
   border: 1px solid #ddd;
   border-radius: 0.5em;
   background-color: #f9f9f9;
@@ -687,7 +686,6 @@ input:focus {
     padding: 0.625em;
     width: 100%;
     display: flex;
-    gap: 1em;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -851,6 +849,7 @@ object-fit: cover;
 .review-header {
   width: 100%;
   display: flex;
+  gap: 0.5em;
   justify-content: space-between;
   align-items: center;
 }
