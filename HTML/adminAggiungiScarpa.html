@@ -14,11 +14,11 @@
         <form action="adminAggiungiScarpa.php" class="form" method="POST" enctype="multipart/form-data">
             <div class="input-add-scarpa">
                 <label for="nome">Nome: </label>
-                <input type="text" class="input-text-add-scarpa" name="nome" id="nome" required placeholder="Inserisci nome"/>
+                <input type="text" class="input-text-add-scarpa" name="nome" id="nome" required maxlength="50" placeholder="Inserisci nome"/>
             </div>
             <div class="input-add-scarpa">
                 <label for="marca">Marca: </label>
-                <input type="text" class="input-text-add-scarpa" name="marca" id="marca" required placeholder="Inserisci marca"/>
+                <input type="text" class="input-text-add-scarpa" name="marca" id="marca" maxlength="40" required placeholder="Inserisci marca"/>
             </div>
             <div class="input-add-scarpa">
                 <label for="descrizione">Descrizione: </label>
@@ -35,7 +35,7 @@
             </div>
             <div class="input-add-scarpa">
                 <label for="feedback" lang="en">Feedback: </label>
-                <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" placeholder="Feedback (opzionale)"/>
+                <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" maxlength="50" placeholder="Feedback (opzionale)"/>
             </div>
             <div class="input-add-scarpa">
                 <label for="valutazione">Valutazione: </label>

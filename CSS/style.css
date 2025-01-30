@@ -273,9 +273,8 @@ body {
 }
 
 
-.content h2 {
+#main-content h2 {
     font-size: 2.5em;
-    margin: 0.5em 1em 0.5em 1em;
     text-align: center;
     color: var(--navbar-bg-color);
     line-height: 1.2em;
@@ -704,15 +703,11 @@ input:focus {
 
 
 .shoe-title h2 {
+  margin: 0;
+  text-align: left;
   font-size: 2.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   color: var(--navbar-bg-color);
-}
-
-.shoe-title h4 {
-  font-size: 1.5em;
-  color: var(--text-color);
-  margin-bottom: 1em;
 }
 
 .shoe-main {
@@ -813,11 +808,6 @@ input:focus {
   width: 90%;
 }
 
-.reviews-wrapper>h3 {
-  font-size: 1.8em;
-  color: var(--navbar-bg-color);
-  display: inline-block;
-}
 
 /* Singola recensione */
 .review {
@@ -833,12 +823,13 @@ input:focus {
 
 .review-info {
   width: 100%;
+  height: 4.5em;
 }
 
 .review-icon img {
-width: 3em;
-height: 3em;
-object-fit: cover;
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
 }
 
 .review-header {
@@ -860,8 +851,17 @@ object-fit: cover;
 }
 
 .review-text {
-  font-size: 1em;
-  color: var(--text-color);
+    margin-top: 0.3em;
+    width: 100%;
+    min-height: 3.5em;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    border: none;
+    resize: none;
+    padding: 0;
+    font-family: inherit;
+    overflow: auto; 
 }
 
 .review-stars img.stars {
@@ -876,9 +876,9 @@ object-fit: cover;
 
 .rating-section{
     margin-top: 1em;
-    font-size: 1.2em; /* Stessa dimensione degli h3 */
-    font-weight: bold; /* Stessa enfasi degli h3 */
-    margin-bottom: 0.5em; /* Spaziatura tra gli elementi */
+    font-size: 1.2em; 
+    font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
 img.stars {
@@ -964,7 +964,7 @@ img.stars {
 }
 
 .modal-content {
-    height: 40em;
+    height: 38em;
     width: 30em;
     background-color: white;
     padding: 20px;
@@ -977,7 +977,7 @@ img.stars {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    height: 10em;
+    height: 15em;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -1001,7 +1001,7 @@ img.stars {
 
 textarea#comment {
     width: 100%;
-    height: 27.5em; 
+    height: 20em; 
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;

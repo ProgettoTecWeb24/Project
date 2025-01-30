@@ -72,16 +72,16 @@ $content = '
     </div>
     <div class="description-details"> 
         <div class="description-section">
-            <h4>Descrizione</h4>
+            <h2>Descrizione</h2>
             <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
         </div>
         <div class="details-section">
-            <h4>Dettagli</h4>
+            <h2>Dettagli</h2>
             <p>' . htmlspecialchars($scarpa['dettagli']) . '</p>
         </div>
     </div>
     <div class="reviews-wrapper">
-        <h3>Recensioni</h3>
+        <h2>Recensioni</h2>
             <div class="reviews-section">';
 
 $hasUserReviewed = false;
@@ -211,7 +211,7 @@ if (!empty($recensioni)) {
                         <img class="stars" src="assets/' . $recensione['voto'] . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per l\'utente" />
                     </div>
                 </div>
-                <div class="review-text">' . htmlspecialchars($recensione['commento']) . '</div>
+                <textarea class="review-text" readonly>' . htmlspecialchars($recensione['commento']) . '</textarea>
             </div>
         </div>';
     }
