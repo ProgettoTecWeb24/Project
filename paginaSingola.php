@@ -138,6 +138,18 @@ if (isset($_SESSION['username'])) {
     ';
 }
 
+$utenteVoto = "";
+$utenteCommento = "";
+if (isset($_SESSION['username'])) {
+    foreach ($recensioni as $recensione) {
+        if ($recensione['username'] === $_SESSION['username']) {
+            $utenteVoto = $recensione['voto'];
+            $utenteCommento = $recensione['commento'];
+            break;
+        }
+    }
+}
+
 $content .= '
     <div id="edit-review-modal" class="modal hidden">
         <div class="modal-content">
@@ -148,17 +160,17 @@ $content .= '
                 <div class="input-add-scarpa">
                     <label for="edit-rating">Valutazione:</label>
                     <select class="sel-scarpa-admin" name="rating" id="edit-rating" required>
-                        <option value="" disabled selected>-- Dai una valutazione --</option>
-                        <option value="1">1 Stella</option>
-                        <option value="2">2 Stelle</option>
-                        <option value="3">3 Stelle</option>
-                        <option value="4">4 Stelle</option>
-                        <option value="5">5 Stelle</option>
+                        <option value="" disabled>-- Dai una valutazione --</option>
+                        <option value="1" ' . ($utenteVoto == 1 ? 'selected' : '') . '>1 Stella</option>
+                        <option value="2" ' . ($utenteVoto == 2 ? 'selected' : '') . '>2 Stelle</option>
+                        <option value="3" ' . ($utenteVoto == 3 ? 'selected' : '') . '>3 Stelle</option>
+                        <option value="4" ' . ($utenteVoto == 4 ? 'selected' : '') . '>4 Stelle</option>
+                        <option value="5" ' . ($utenteVoto == 5 ? 'selected' : '') . '>5 Stelle</option>
                     </select>
                 </div>
                 <div class="input-add-scarpa">
                     <label for="commentEdit">Recensione:</label>
-                    <textarea name="commentEdit" id="commentEdit" rows="4" required placeholder="Modifica la tua recensione"></textarea>
+                    <textarea name="commentEdit" id="commentEdit" rows="4" required>' . htmlspecialchars($utenteCommento) . '</textarea>
                 </div>
                 <button class="button" type="submit" name="edit">Modifica Recensione</button>
             </form>

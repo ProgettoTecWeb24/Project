@@ -1047,7 +1047,7 @@ textarea#commentEdit {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  resize: vertical;
+  resize: none;
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: #333;
