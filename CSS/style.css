@@ -17,17 +17,18 @@ body {
 
 /*Variabili colori*/
 :root {
-  --main-bg-color: #6CAEDA; /* Main Background - Light Blue */
-  --accent-color: #fcb52f; /* Accent Color - Ochre Yellow */
-  --wrapper-bg-color: #F2F2F2; /* Wrapper Background - Light Gray */
-  --navbar-bg-color: #094074; /* Navbar Background - Dark Blue */
-  --card-bg-color: #ffffff; /* Cards Background - White */
-  --red-heart: #ff3300; /* Like Button -Red Heart */
-  --text-color: #1f1f1f; /* Main Text - Dark Gray */
+  --main-bg-color: #6CAEDA;
+  --accent-color: #fcb52f;
+  --wrapper-bg-color: #F2F2F2;
+  --navbar-bg-color: #094074;
+  --card-bg-color: #ffffff;
+  --red-heart: #ff3300;
+  --text-color: #1f1f1f;
   --link-color: #fcb52f;
   --menu-link-color: #ffffff;
-  --link-main-color: #094074;
-  --visited-link-color: #6CAEDA;
+  --border-review-color: #b4b4b4;
+  /*--link-main-color: #094074;*/
+  /*--visited-link-color: #6CAEDA;*/
 }
 
 /* Wrapper */
@@ -119,14 +120,6 @@ body {
   color: var(--navbar-bg-color);
 }
 
-.link-main {
-  color: var(--link-main-color);
-}
-
-.link-main:visited{
-    color: var(--visited-link-color);
-  }
-
 /* Titolo h1 */
 .navbar h1 {
   font-family: "Russo One", sans-serif;
@@ -166,6 +159,21 @@ body {
 
 .inline-list li {
   display: inline;
+}
+
+/* torna su */ 
+.backToTop {
+    position: fixed;
+    bottom: 2em; 
+    right: calc(52% - 600px); 
+    background-color: var(--accent-color);
+    color: var(--card-bg-color);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1000;
 }
 
 /*---------------------------------------- 
@@ -417,7 +425,7 @@ button {
 }
 
 p.error_text {
-  color: var(--red-heart);
+  color: red;
 }
 
 /*---------------------------------------- 
@@ -632,9 +640,9 @@ label {
   gap: 1em;
   padding: 1.5em;
   width: 50em;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-review-color);
   border-radius: 0.5em;
-  background-color: #f9f9f9;
+  background-color: var(--card-bg-color);
   align-items: center;
   text-align: left;
 }
@@ -830,9 +838,9 @@ input:focus {
   display: flex;
   gap: 1em;
   padding: 1.5em;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-review-color);
   border-radius: 0.5em;
-  background-color: #f9f9f9;
+  background-color: var(--card-bg-color);
   align-items: flex-start;
   text-align: left;
 }
@@ -933,12 +941,10 @@ img.stars {
   transition: background-color 0.3s ease;
 }
 
-/* Nascondi sezioni nascoste */
 .add-review-wrapper.hidden {
   display: none;
 }
 
-/* Stile per la modale */
 #add-review-modal.modal,
 #edit-review-modal.modal,
 #delete-review-modal.modal {
@@ -947,26 +953,24 @@ img.stars {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1002;
-    /* Assicurati che sia sopra tutto */
 }
 
 .delete-admin-modal{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1002;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
 }
 
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  /* Porta la modale in primo piano */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .modal-content {
@@ -995,14 +999,14 @@ img.stars {
     margin-bottom: auto; 
 }
 .close-btn {
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 textarea#comment {
@@ -1032,29 +1036,27 @@ textarea#comment::placeholder {
 ----------------------------------------*/
 
 .chisiamo-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-top: 2em;
-  margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .chisiamo-div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: transform 0.2s;
-  gap: 0.2em;
-  margin-left: 0.8em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.2s;
+    gap: 0.2em;
+    margin-left: 0.8em;
 }
 
 .chisiamo-div:nth-child(odd) {
-  /* specchia il contenuto dei whoarewe-div in posizioni pari */
-  flex-direction: row-reverse;
-  margin-right: 0.8em;
+    flex-direction: row-reverse;
+    margin-right: 0.8em;
 }
 
 .desc-membro {
-  /* nome e descrizione persona */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1107,7 +1109,6 @@ textarea#comment::placeholder {
   height: auto;
   padding: 2em;
   margin: 1em;
-  
 }
 
 .error-content h2{
@@ -1131,6 +1132,8 @@ textarea#comment::placeholder {
   height: auto;
   margin: 1em;
 }
+
+
 
 /*---------------------------------------- 
               SEZIONE FOOTER 
@@ -1241,9 +1244,12 @@ footer .copyright {
 }
 
 
-  /* PAGINA ADMINPAGE */
 
-  .wrapper-admin{
+/*---------------------------------------- 
+              SEZIONE ADMIN 
+----------------------------------------*/
+
+.wrapper-admin{
     margin-top: 10px;
     background-color: var(--wrapper-bg-color);
     width: 1200px;
@@ -1252,7 +1258,7 @@ footer .copyright {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 10px;
-  }
+}
   
 h3.title-admin {
     font-size: 2em;
@@ -1268,57 +1274,57 @@ h4.title-admin {
     text-align: center;
     line-height: 1.2em;
 }
-  .aggiungi_scarpa-div{
+
+.aggiungi_scarpa-div{
     display: flex;
     flex-direction: row;
     align-items: center;
     transition: transform 0.2s;
     gap: 2px;
     margin-left: 10px;
-  }
+}
   
-  .admin-home-icon{
+.admin-home-icon{
     width: 48px; 
     height: 48px;
     object-fit: cover;
-  }
+}
   
-  .card-admin{
+.card-admin{
     flex: 1 1 calc(33.33% - 15px);
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-review-color);
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--card-bg-color);
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
-  }
+}
   
-  .card-admin:hover {
+.card-admin:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .text-card-admin{
+}
+
+.text-card-admin{
     text-align: center;
     margin-bottom: 1em;
-  }
-  
-  .wrapper-card-admin{
+}
+
+.wrapper-card-admin{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     width: 100%;
     padding-left: 15%;
     padding-right: 15%;
-  }
-  /*FINE ADMINPAGE*/
+}
   
   /*PAGINA ADMINMODIFICALISTA*/
   
-  p.success_text{
+p.success_text{
     color: green; 
-  }
+}
   
   .descrizione-scarpa-admin {
     display: flex;
@@ -1381,7 +1387,6 @@ h4.title-admin {
     color: black;
   }
   
-  
   .table-admin-list tr:nth-child(odd) {
     background-color: #e0eefc; /* Colore per le righe dispari */
   }
@@ -1389,8 +1394,6 @@ h4.title-admin {
   .table-admin-list tr:nth-child(even) {
     background-color: #c3cbd8; /* Colore per le righe pari */
   }
-
-
 
   .table-wrapper-admin{
     display: flex;
@@ -1404,9 +1407,10 @@ h4.title-admin {
     top: -9999px;
     left: -9999px;
   }
-  /*FINE ADMINMODIFICALISTA*/
   
+
   /* PAGINA ADMINAGGIUNGISCARPA */
+
   .wrapper-admin-aggiungi{
     width: 100%;
     align-items: center;
@@ -1456,8 +1460,6 @@ h4.title-admin {
     margin-bottom: 1em;
   }
   
-  /* FINE AGGIUNGISCARPA */
-  
   /* PAGINA ADMINMODIFICASCARPA */
   
   select.sel-scarpa-admin{
@@ -1468,23 +1470,8 @@ h4.title-admin {
     font-size: 1rem;
   }
   
-  /* FINE MODIFICASCARPA */
 
-/* torna su home */ 
 
-.backToTop {
-    position: fixed;
-    bottom: 2em; 
-    right: calc(52% - 600px); 
-    background-color: var(--accent-color);
-    color: var(--card-bg-color);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5em;
-    cursor: pointer;
-    font-size: 1.5em;
-    z-index: 1000;
-  }
   
 /* ERRORI VALIDATE */
 .form .validate_message {

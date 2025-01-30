@@ -8,6 +8,12 @@
     background-color: var(--searchbar-bg-color);
 }
 
+.wrapper {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    border-radius: 0em;
+}
+
 .search-input {
     width: 100%;
     padding: 0.5em 1em;
@@ -186,7 +192,7 @@ h2.title-admin{
   display: none; 
   flex-direction: column;
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 0;
   right: 0;
   background-color: var(--navbar-bg-color); 
