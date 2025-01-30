@@ -4,13 +4,50 @@ html{
     font-size:12pt;
 }
 
-header h1{
-    margin-left: 0em;
-    content: url('../assets/logo.png');
+nav, footer, .backToTop, .icon, .icona-profilo, .link-con-icona, .navbar-links, .valid-code, .searchbar-acc, .modal, .admin-home-icon{
+    display: none !important;
 }
 
-#menu, #backToTop, header {
-    display: none;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    color: #000;
+    background: none;
+}
+
+#breadcrumb {
+    padding: 0.5em;
+    display: flex;
+    gap: 0.6em;
+}
+
+.inline-list {
+  list-style-type: "/";
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5em
+}
+
+.inline-list li:not(:first-child)::before {
+  content: "/";
+  margin: 0;
+}
+
+.inline-list li {
+  display: inline;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
 }
 
 main {
@@ -19,6 +56,193 @@ main {
     padding: 0.3em 0em 0.5em 0em;
 }
 
+h1, h2, h3 {
+    color: #000;
+    page-break-after: avoid;
+}
+
+
+header h1{
+    margin-left: 0em;
+    content: url('../assets/logo.png');
+}
+
+p {
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+section {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.animal-role img, .chisiamo-div img{
+    display: none;
+}
+
+.img-card{
+    width: 50%;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+.cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
 .text-card{
-    width: 20%;
+    color: black;
+}
+
+.new-card, .card {
+    page-break-inside: avoid;
+}
+
+.like-button, .content-link{
+    display: none;
+}
+
+.animal-roles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+
+
+.settings{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.update-settings {
+  background-position: center;
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.update-settings h3 {
+  font-size: 1.5em;
+  margin: 0.5em;
+  text-align: center;
+  color: var(--navbar-bg-color);
+  line-height: 1.2em;
+}
+
+.profile-cards a:link:after, .profile-cards a:visited:after {
+    content: " [" attr(href) "] ";
+    font-size:90%;
+    color:#000;
+}
+
+.username-input {
+    width: 22em;
+    height: 3em;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    border: 0.0625em solid var(--text-color);
+}
+
+.select-settings {
+    width: 22em;
+    height: 3em;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    border: 0.0625em solid var(--text-color);
+    margin-bottom: 1.5em;
+}
+  
+.submit-settings, .delete-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 1em;
+    width: 20em;
+    border: 0.1em solid #000;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1em;
+}
+  
+#logout-settings {
+      color: var(--text-color);
+      margin-top: 1em;
+      width: 20em;
+      border: 0.1em solid #000;
+      border-radius: 0.25em;
+      cursor: pointer;
+      font-size: 1em;
+}
+
+.review-icon-shoes img{
+    width: 50%;
+}
+
+.review-info-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+
+.inputRecensione{
+    width: 100%;
+    height: 10em;
+    padding: 0.5em;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+    
+.profile-content h3 {
+    font-size: 1.5em;
+    margin: 1em;
+    margin: 0.5em;
+    text-align: center;
+    color: var(--navbar-bg-color);
+    line-height: 1.2em;
+}
+
+.profile-content{
+    align-items: center;
+}
+
+.review-info-profile .select-review-profile{
+    border: none;
+}
+
+.select-review-profile{
+    appearance: none;
+}
+
+.inputRecensione{
+    border: none;
+}
+
+.reviews-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.review-profile {
+    display: inline;
+    border: none;
+    page-break-after: avoid;
 }

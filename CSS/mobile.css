@@ -215,10 +215,27 @@ footer .valid-code {
     gap: 0.3em; 
 }
 
-.search-input{
+
+
+
+.submit-filter {
+    margin-top: 1em;
+    width: 100%;
+    height: 3em;
+}
+
+.submit-filter img {
+    height: 2em;
+}
+
+.search-button {
     width: 100%;
 }
 
-.submit-filter{
-    width: 100%;
+.review-profile{
+  width: 100%;
+}
+
+.review-header{
+  flex-direction: column;
 }

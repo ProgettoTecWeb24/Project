@@ -90,7 +90,7 @@ if (!empty($_SESSION['username'])) {
     if ($result) {
         if($result->num_rows == 0){
             $HTMLpage = str_replace('<div class="cards">', '<div class="error-cards">', $HTMLpage);
-            $cardsHTML .= '<div class="new-card">  <p class="tipo">Non sono presenti scarpe con il like.</p> </div>';
+            $cardsHTML .= '<div class="error-card">  <p class="tipo">Non sono presenti scarpe salvate.</p> </div>';
         }else{
             while ($row = $result->fetch_assoc()) {
                 $cardsHTML .= '

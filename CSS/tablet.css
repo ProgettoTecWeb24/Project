@@ -38,6 +38,12 @@
     height: 4em;
 }
 
+.wrapper {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    border-radius: 0em;
+}
+
 .search-input {
     height: 4em;
     width: 100%;
@@ -50,7 +56,6 @@
 .submit-filter img {
   height: 3em;
 }
-
 
 
   .icon {
@@ -211,7 +216,7 @@ h2.title-admin{
   display: none; 
   flex-direction: column;
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 0;
   right: 0;
   background-color: var(--navbar-bg-color); 
@@ -244,7 +249,12 @@ h2.title-admin{
     grid-template-columns: repeat(1, 1fr);
     padding-left: 5%;
     padding-right: 5%;
-  }
+}
+
+.review-profile{
+  width: 36em;
+  flex-direction: column;
+}
 
 
 

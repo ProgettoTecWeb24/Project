@@ -34,7 +34,7 @@ if (!empty($_SESSION['username'])) {
         $modifica = $connection->prepareAndExecute($qModifica, 's', $_POST['newCommento']);
     }
 
-    $qRecensioni = "SELECT r.username, r.voto, r.commento, r.scarpa_id, s.nome, s.immagine
+    $qRecensioni = "SELECT r.username, r.voto, r.commento, r.scarpa_id, s.nome, s.marca, s.immagine
                     FROM RECENSIONE r JOIN SCARPA s
                     WHERE r.scarpa_id = s.id AND r.username ='" . $_SESSION['username'] . "'";
     $recensioni = $connection->query($qRecensioni);
@@ -43,7 +43,7 @@ if (!empty($_SESSION['username'])) {
     if ($recensioni) {
         if($recensioni->num_rows == 0){
             $HTMLpage = str_replace('<div class="reviews-wrapper">', '<div class="error-cards">', $HTMLpage);
-            $content .= '<div class="new-card">  <p class="tipo">Non sono presenti scarpe con il like.</p> </div>';
+            $content .= '<div class="error-card">  <p class="tipo">Non sono presenti scarpe con il like.</p> </div>';
         }else{
         foreach ($recensioni as $recensione) {
             $content .= '
@@ -57,7 +57,7 @@ if (!empty($_SESSION['username'])) {
                    
                     <div class="review-header">
                         <div class="review-left">
-                            <span class="review-user">' . htmlspecialchars($recensione['nome']) . '</span>
+                            <span class="review-user">' . htmlspecialchars($recensione['marca']) . ' '. htmlspecialchars($recensione['nome']) . '</span>
                         </div>
                     <div>
                         <label for="rating">Valutazione:</label>
@@ -99,7 +99,7 @@ if (!empty($_SESSION['username'])) {
                     <textarea class="inputRecensione" name="newCommento">' . htmlspecialchars($recensione['commento']) . '</textarea>
                     
                 </div>
-            <div class="div-coloum">
+            <div class="add-review-section">
                 <button type="submit" id="modifica" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
                     <img src="assets/edit.svg" alt="modifica" class="icona-profilo" />
                 </button>
