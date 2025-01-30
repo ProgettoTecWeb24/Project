@@ -91,15 +91,15 @@ if($connection->isAdmin($_SESSION["username"])){
                         <input type="hidden" name="idscarpa" id="idscarpa" value="'.$shoe["id"].'"/>
                         <div class="input-add-scarpa">
                             <label for="nome">Nome: </label>
-                            <input type="text" class="input-text-add-scarpa" name="nome" id="nome" required placeholder="Inserisci nome" value="'.$shoe["nome"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="nome" id="nome" maxlength="50" required placeholder="Inserisci nome" value="'.$shoe["nome"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="marca">Marca: </label>
-                            <input type="text" class="input-text-add-scarpa" name="marca" id="marca" required placeholder="Inserisci marca" value="'.$shoe["marca"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="marca" id="marca" maxlength="40" required placeholder="Inserisci marca" value="'.$shoe["marca"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="descrizione">Descrizione: </label>
-                            <input type="text" class="input-text-add-scarpa" name="descrizione" id="descrizione" placeholder="Descrizione (opzionale)" value="'.$shoe["descrizione"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="descrizione" id="descrizione" maxlength="480" placeholder="Descrizione (opzionale)" value="'.$shoe["descrizione"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="tipo">Tipo: </label>
@@ -112,7 +112,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="feedback">Feedback: </label>
-                            <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" placeholder="Feedback (opzionale)" value="'.$shoe["feedback"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" maxlength="50" placeholder="Feedback (opzionale)" value="'.$shoe["feedback"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="valutazione">Valutazione: </label>

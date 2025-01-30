@@ -1,9 +1,9 @@
-
 /* Titolo "CorsaIdeale" */
 .navbar h1 {
   font-size: 1.8em;
 
 }
+
 .logo {
   width: 3.5em;
   height: auto;
@@ -14,99 +14,104 @@
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-}
-  
-   /* Responsività */
-   .navbar {
-    justify-content: space-between;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-  
-  .listcards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .new-cards {
-    flex-direction: column;
+/* Responsività */
+.navbar {
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.listcards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.new-cards {
+  flex-direction: column;
 }
 
 .new-card {
-    width: 100%;
+  width: 100%;
 }
 
 .whoarewe-cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  
-  .navbar-links {
-    display: none; /* Nasconde gli item della navbar su schermi piccoli */
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: var(--navbar-bg-color); /* Usa la tua variabile o un colore specifico */
-    padding: 10px;
-    margin-left: 8px;
-    margin-right: 8px;
-    z-index: 1000;
-    border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.navbar-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: var(--navbar-bg-color);
+  padding: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  z-index: 1000;
+  border-radius: 5px;
 }
 
 /* Mostra il menu quando 'active' è aggiunto */
 .navbar-links.active {
-    display: flex; /* Mostra il menu come flexbox */
+  display: flex;
 }
 
 .navbar-links li {
-    width: 100%;
+  width: 100%;
 }
 
 .navbar-links li a {
-    display: block;
-    width: 100%;
-    padding: 15px 20px;
-    text-align: center;
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
 }
 
 /* PAGINA CHI SIAMO */
 .whoarewe-container {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 30px;
-    margin-bottom: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .img-whoarewe {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
+
 /* FINE PAGINA CHI SIAMO */
 
 /* INIZIO SINGLE PAGE */
 
 .review {
-    display: flex;
-    gap: 0.5em;
+  display: flex;
+  gap: 0.5em;
 }
 
 .modal-content {
-    width: 18em;
+  width: 18em;
 }
+
 .modal-content-delete {
-    width: 18em;
-    height: 11em;
+  width: 18em;
+  height: 11em;
 }
-  /* FINE SINGLE PAGE */
-  
+
+/* FINE SINGLE PAGE */
+
 
 /* Immagine del ruolo */
 .animal-roles {
-    grid-template-columns: 1fr; /* 1 card per riga */
+  grid-template-columns: 1fr;
+  /* 1 card per riga */
 }
 
 .animal-role img {
@@ -117,41 +122,41 @@
 
 /* TUTTA SEZIONE ADMIN */
 
-.wrapper-admin{
+.wrapper-admin {
   margin-top: 0px;
   width: 100%;
 }
 
-.wrapper-card-admin{
+.wrapper-card-admin {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding-left: 5%;
   padding-right: 5%;
 }
 
-.wrapper-admin-aggiungi{
+.wrapper-admin-aggiungi {
   padding-left: 0%;
   padding-right: 0%;
 }
 
-h2.title-admin{
+h2.title-admin {
   font-size: x-large;
   text-align: center;
 }
 
-h3.title-admin{
+h3.title-admin {
   font-size: x-large;
 }
 
-.immagine-scarpa-modifica{
-  max-width: 80%; 
+.immagine-scarpa-modifica {
+  max-width: 80%;
   height: auto;
 }
 
 
 .table-admin-list th:nth-child(1),
 .table-admin-list td:nth-child(1) {
-  width: 40%;  /* Imposta una larghezza fissa per la colonna dell'immagine */
+  width: 40%;
   text-align: center;
 }
 
@@ -163,79 +168,84 @@ h3.title-admin{
 /* FOOTER */
 
 footer .valid-code {
-    display: flex;
-    align-items: center;
-    margin-top: 1em;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  gap: 1em;
 }
 
 
 /* SINGLE PAGE */
 
-.shoe-info{
-    gap:0em;
+.shoe-info {
+  gap: 0em;
 }
 
 #add-review-button {
-    width: 15px;
+  width: 15px;
 }
+
 .review {
-    padding: 1em 0.6em;
-     height:8em;
-  }
-  .review-info {
-    width: 100%;
-    height: 3em;
-  }
-  .review-text{
-    height:4.5em;
-  }
+  padding: 1em 0.6em;
+  height: 8em;
+}
+
+.review-info {
+  width: 100%;
+  height: 3em;
+}
+
+.review-text {
+  height: 4.5em;
+}
+
 /* icone ingrandite */
 
 
-.submit-settings{
+.submit-settings {
   width: 18em;
 }
 
-#logout-settings{
+#logout-settings {
   width: 18em;
 }
 
-.delete-button{
+.delete-button {
   width: 18em;
 }
 
 /* searchbar */
 .searchbar-acc {
-    display: flex;
-    flex-direction: column; 
-    gap: 0.2em; 
-    padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding: 1em;
 }
 
 .searchbar-acc div {
-    width: 100%;
-    gap: 0.3em; 
+  width: 100%;
+  gap: 0.3em;
 }
-
-
 
 
 .submit-filter {
-    margin-top: 1em;
-    width: 100%;
-    height: 3em;
+  margin-top: 1em;
+  width: 100%;
+  height: 3em;
 }
 
 .submit-filter img {
-    height: 2em;
+  height: 2em;
 }
 
 .search-button {
-    width: 100%;
-}
-
-.review-profile{
   width: 100%;
 }
 
+.review-profile {
+  width: 100%;
+}
+
+.review-header{
+  flex-direction: column;
+}

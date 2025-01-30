@@ -73,7 +73,7 @@ $content = '
     <div class="description-details"> 
         <div class="description-section">
             <h2>Descrizione</h2>
-            <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
+            <textarea name="description" id="descriptionArea" readonly class="description-text">' . htmlspecialchars($scarpa['descrizione']) . '</textarea>
         </div>
 
     </div>
