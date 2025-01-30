@@ -264,6 +264,29 @@ function validateConfirmPassword() {
     
     return true;
 }
+
+
+// eliminazione scarpe
+function impostaIdEliminazione() {
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const form = this.closest('form');
+            const deleteIdInput = form.querySelector('.delete-id');
+            const deleteBtn = form.querySelector('.delete-button');
+            if (deleteIdInput) {
+                // Imposta il nome del campo solo se non è già impostato
+                deleteIdInput.setAttribute('name', 'delete_id');
+                deleteBtn.setAttribute('name', 'delete');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    impostaIdEliminazione();
+});
+
+
 /*
 function validateComment() {
     console.log("validateComment");

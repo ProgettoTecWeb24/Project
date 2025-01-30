@@ -67,8 +67,8 @@ if($connection->isAdmin($_SESSION["username"])){
                         </td>
                         <td><img src="assets/'.$shoe["immagine"] .'" alt="immagine della scarpa '.$shoe["nome"] .'" class="scarpa-admin" /></td>
                         <td>
-                            <a class="link-con-icona" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="assets/edit.svg" alt="modifica" class="icona" /></a>
-                            <button type="button" class="link-con-icona" name="delete-shoe-'.$shoe['id'].'" onclick="openModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">
+                            <a class="link-con-icona" aria-label="Modifica scarpa '.$shoe["nome"] .'" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="assets/edit.svg" alt="modifica" class="icona" /></a>
+                            <button type="button" aria-label="Elimina scarpa '.$shoe["nome"] .'" class="link-con-icona" name="delete-shoe-'.$shoe['id'].'" onclick="openModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">
                                     <img src="assets/delete.svg" alt="elimina" class="icona" />
                             </button>
                             <div id="delete-shoe-admin-modal-'.$shoe['id'].'" class="delete-admin-modal hidden">
@@ -79,8 +79,8 @@ if($connection->isAdmin($_SESSION["username"])){
                                         <p>Sei sicuro di voler eliminare questa scarpa?</p>
                                     </div>
                                     <form id="delete-review-form-'.$shoe['id'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
-                                        <input type="hidden" name="delete_id" value="'.$shoe['id'].'"/>
-                                        <button class="button" type="submit" name="delete">Conferma</button>
+                                        <input type="hidden" class="delete-id" value="'.$shoe['id'].'"/>
+                                        <button aria-label="Conferma eliminazione '.$shoe["nome"] .'" class="delete-button" type="submit">Conferma</button>
                                     </form>
                                 </div>
                             </div>
