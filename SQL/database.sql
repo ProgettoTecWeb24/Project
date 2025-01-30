@@ -48,24 +48,24 @@ CREATE TABLE LIKES (
 -- Dati per SCARPA
 INSERT INTO SCARPA (nome, marca, tipo, descrizione, dettagli, votoexp, feedback, immagine, data_aggiunta)
 VALUES 
-('Pegasus Trail', 'Nike', 'trail', 'Scarpa versatile per trail running.', 'Ideale per terreni misti e sentieri leggeri.', 4, 'Comoda e affidabile', 'pegasus_trail.webp', '2025-01-10'),
+('Pegasus Trail', 'Nike', 'trail', 'Scarpa versatile per trail running.', 'Ideale per terreni misti e sentieri leggeri.', 3, 'Comoda e affidabile', 'pegasus_trail.webp', '2025-01-10'),
 ('UltraBoost Light', 'Adidas', 'strada', 'Scarpa con un’ammortizzazione avanzata.', 'Perfetta per lunghe sessioni su asfalto.', 5, 'Ottima per lunghe distanze', 'ultraboost_light.webp', '2025-01-12'),
 ('Gel-Kayano', 'Asics', 'strada', 'Scarpa progettata per stabilità e supporto.', 'Indicate per runner con lieve pronazione.', 4, 'Supporto eccellente', 'gel_kayano.webp', '2025-01-15'),
 ('Speedgoat', 'Hoka', 'trail', 'Scarpa robusta per terreni tecnici.', 'Aderenza straordinaria su superfici scivolose.', 5, 'Aderenza incredibile', 'speedgoat.webp', '2025-01-17'),
-('Zoom Fly', 'Nike', 'pista', 'Scarpa leggera e reattiva.', 'Ideale per sessioni veloci su pista.', 4, 'Leggera e reattiva', 'zoom_fly.webp', '2025-01-20'),
+('Zoom Fly', 'Nike', 'pista', 'Scarpa leggera e reattiva.', 'Ideale per sessioni veloci su pista.', 3, 'Ottima per principianti', 'zoom_fly.webp', '2025-01-20'),
 ('Lone Peak', 'Altra', 'trail', 'Perfetta per escursioni lunghe.', 'Vestibilità ampia per massima comodità.', 5, 'Ampio spazio per le dita', 'lone_peak.webp', '2025-01-22'),
 ('Metaspeed Sky+', 'Asics', 'strada', 'Scarpa pensata per massimizzare la velocità.', 'Perfetta per gare competitive.', 5, 'Ideale per record personali', 'metaspeed_sky_plus.webp', '2025-01-25'),
 ('Ghost', 'Brooks', 'strada', 'Scarpa universale per corse quotidiane.', 'Ammortizzazione bilanciata.', 4, 'Ottima per runner intermedi', 'ghost.webp', '2025-01-28'),
 ('Endorphin Speed', 'Saucony', 'trail', 'Scarpa versatile e performante.', 'Perfetta per sessioni di allenamento intense.', 5, 'Reattiva e performante', 'endorphin_speed.webp', '2025-01-30'),
 ('Wave Rider', 'Mizuno', 'strada', 'Scarpa ammortizzata per lunghe distanze.', 'Tecnologia Wave per maggiore stabilità.', 4, 'Perfetta per runner quotidiani', 'wave_rider.webp', '2025-02-01'),
-('Fresh Foam 1080', 'New Balance', 'strada', 'Comfort eccezionale per ogni tipo di corsa.', 'Ammortizzazione soffice.', 5, 'Super comoda', '1080.webp', '2025-02-03'),
+('Fresh Foam 1080', 'New Balance', 'strada', 'Comfort eccezionale per ogni tipo di corsa.', 'Ammortizzazione soffice.', 3, 'Comoda e versatile', '1080.webp', '2025-02-03'),
 ('Vaporfly Next', 'Nike', 'pista', 'Scarpa ultra-leggera per competizioni.', 'Reattiva e performante.', 5, 'Top di gamma', 'vaporfly_next.webp', '2025-02-05'),
 ('Adizero Adios Pro', 'Adidas', 'strada', 'Scarpa da gara per massima velocità.', 'Design ottimizzato per l’efficienza.', 5, 'Massima performance', 'adios_pro.webp', '2025-02-07'),
 ('Novablast', 'Asics', 'strada', 'Ammortizzazione energica per allenamenti intensi.', 'Design moderno e leggero.', 4, 'Super rimbalzo', 'novablast.webp', '2025-02-09'),
 ('Clifton', 'Hoka', 'pista', 'Scarpa morbida e ammortizzata.', 'Perfetta per lunghe corse.', 5, 'Comfort incredibile', 'clifton.webp', '2025-02-11'),
 ('Rincon', 'Hoka', 'strada', 'Scarpa estremamente leggera.', 'Ideale per corse veloci.', 4, 'Design minimalista', 'rincon.webp', '2025-02-13'),
 ('Mach', 'Hoka', 'trail', 'Reattività superiore per sentieri tecnici.', 'Perfetta per trail running avanzato.', 5, 'Grande velocità', 'mach.webp', '2025-02-15'),
-('Terrex Agravic', 'Adidas', 'trail', 'Scarpa ultra-durevole per montagna.', 'Ideale per percorsi lunghi.', 4, 'Ottima protezione', 'terrex_agravic.webp', '2025-02-17'),
+('Terrex Agravic', 'Adidas', 'trail', 'Scarpa ultra-durevole per montagna.', 'Ideale per percorsi lunghi.', 3, 'Molto resistenti', 'terrex_agravic.webp', '2025-02-17'),
 ('Rebel', 'New Balance', 'strada', 'Scarpa veloce per allenamenti.', 'Grande flessibilità e comfort.', 5, 'Perfetta per allenamenti brevi', 'rebel.webp', '2025-02-19'),
 ('Invincible Run', 'Nike', 'strada', 'Scarpa ammortizzata per chilometraggi elevati.', 'Ideale per runner pesanti.', 5, 'Massimo supporto', 'invincible_run.webp', '2025-02-21'),
 ('Solar Glide', 'Adidas', 'strada', 'Scarpa equilibrata per ogni corsa.', 'Adatta a tutte le distanze.', 4, 'Ottima versatilità', 'solar_glide.webp', '2025-02-23');

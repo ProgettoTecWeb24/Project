@@ -100,7 +100,7 @@ if (isset($_SESSION['username'])) {
             <div class="rating-wrapper">
             <div class="rating-section">
                 <p>Valutazione Utenti</p>
-                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" /><p>('. number_format((float)$mediaVotoUtenti, 2, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" /><p>('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
                 <button type="button" id="modifica-btn" class="link-con-icona" onclick="openModal(\'edit-review-modal\')">
@@ -116,8 +116,8 @@ if (isset($_SESSION['username'])) {
         $content .= '
             <div class="rating-wrapper">
                 <div class="rating-section">
-                    <h3>Valutazione Utenti</h3>
-                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" /><p>('. number_format((float)$mediaVotoUtenti, 2, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
+                    <h3>Valutazione Utenti ('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</h3>
+                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
                 </div>
                 <div class="add-review-section">
                 <span class="review-prompt">Lascia la tua Recensione!</span>
@@ -130,8 +130,8 @@ if (isset($_SESSION['username'])) {
     $content .= '
         <div class="add-review-section">
             <div class="rating-section">
-                <h3>Valutazione Utenti</h3>
-                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" /><p>('. number_format((float)$mediaVotoUtenti, 2, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
+                <h3>Valutazione Utenti ('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</h3>
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section hidden">
                     <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
