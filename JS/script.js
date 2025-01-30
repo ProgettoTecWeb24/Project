@@ -1,4 +1,4 @@
-function myFunction() {
+function menuMobile() {
     const navbarMenu = document.getElementById("navbar-links");
     const toggleIcon = document.getElementById("menu-toggle").querySelector("img");
 
