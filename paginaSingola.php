@@ -75,10 +75,7 @@ $content = '
             <h2>Descrizione</h2>
             <p>' . htmlspecialchars($scarpa['descrizione']) . '</p>
         </div>
-        <div class="details-section">
-            <h2>Dettagli</h2>
-            <p>' . htmlspecialchars($scarpa['dettagli']) . '</p>
-        </div>
+
     </div>
     <div class="reviews-wrapper">
         <h2>Recensioni</h2>

@@ -187,6 +187,7 @@ footer .valid-code {
   }
 /* icone ingrandite */
 
+
 .submit-settings{
   width: 18em;
 }
@@ -233,6 +234,3 @@ footer .valid-code {
   width: 100%;
 }
 
-.review-header{
-  flex-direction: column;
-}

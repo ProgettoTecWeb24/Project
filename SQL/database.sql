@@ -11,7 +11,6 @@ CREATE TABLE SCARPA (
     marca VARCHAR(100) NOT NULL,
     tipo ENUM('strada', 'trail', 'pista') NOT NULL,
     descrizione TEXT,
-    dettagli TEXT,
     votoexp INT NOT NULL CHECK (votoexp BETWEEN 1 AND 5),
     feedback TEXT,
     immagine VARCHAR(255) NOT NULL,
