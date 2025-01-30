@@ -240,3 +240,7 @@ footer .valid-code {
 .review-profile {
   width: 100%;
 }
+
+.review-header{
+  flex-direction: column;
+}
