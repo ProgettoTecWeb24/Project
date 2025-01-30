@@ -1,7 +1,9 @@
 <?php
-$title = "Gestisci lista- CorsaIdeale";
-$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
-$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
+
+$title = "Modifica Lista Scarpe - CorsaIdeale";
+$description = "Gestisci l'elenco delle scarpe disponibili su CorsaIdeale.";
+$keywords = "lista,scarpe,gestione,catalogo,admin,modelli,recensioni";
+
 require_once('dbconnection.php');
 require_once('controls.php');
 session_start();

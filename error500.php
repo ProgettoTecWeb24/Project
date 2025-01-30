@@ -1,7 +1,11 @@
 <?php
-$title = "Errore 500 - CorsaIdeale";
-$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
-$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
+
+http_response_code(500);
+
+$title = "Errore Server - CorsaIdeale";
+$description = "Si è verificato un errore del server.";
+$keywords = "errore,500,server,problema,supporto";
+
 require_once('dbconnection.php');
 session_start();
 

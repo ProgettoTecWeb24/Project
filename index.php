@@ -1,7 +1,9 @@
 <?php
+
 $title = "Home - CorsaIdeale";
 $description = "CorsaIdeale: Scopri e ordina le scarpe per marca, tipo e ordine. Usa la barra di ricerca per trovare il modello perfetto nel nostro elenco aggiornato."; // 148 caratteri
 $keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
+
 require_once('dbconnection.php');
 session_start();
 
