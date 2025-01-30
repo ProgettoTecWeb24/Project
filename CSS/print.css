@@ -317,3 +317,18 @@ td .review-stars .stars{
 .form input{
     margin-bottom: 1em;
 }
+
+textarea{
+    width: 40%;
+    min-height: 3.5em;
+    background: transparent;
+    border: 0.1em solid #000;
+    border-radius: 0.25em;
+    resize: none;
+    padding: 0;
+    overflow: auto;  
+}
+
+textarea.review-text{
+    border: none;
+}
