@@ -12,7 +12,7 @@
             <form action="registrati.php" onsubmit="return validateRegister()" class="form" method="post">
                 <h2>Registrati</h2>
                 <label for="username"><span lang="en">Username</span></label>
-                <span class="validate_message"><input type="username" id="username" name="username" placeholder="Inserisci lo username" onblur="validateUsername()" /></span>
+                <span class="validate_message"><input type="text" id="username" name="username" placeholder="Inserisci lo username" onblur="validateUsername()" /></span>
                 <label for="password"><span lang="en">Password</span></label>
                 <span class="validate_message"><input type="password" id="password" name="password" placeholder="Inserisci la password" onblur="validatePassword()"/></span>
                 <label for="password">Conferma <span lang="en">Password</span></label>
@@ -21,10 +21,10 @@
                 <div class="div-column">    
                     <label for="kmsett">Chilometri settimanali:</label>
                     <select name="km_settimanali" id="kmsett" class="select-settings">
-                        <option value="tartaruga">Fino a 5 <abbr title="chilometri">km</abbr>/settimana</option>
-                        <option value="lepre">Da 6 a 20 <abbr title="chilometri">km</abbr>/settimana</option>
-                        <option value="lupo">Da 21 a 50 <abbr title="chilometri">km</abbr>/settimana</option>
-                        <option value="ghepardo">Oltre 50 <abbr title="chilometri">km</abbr>/settimana</option>
+                        <option value="tartaruga">Fino a 5 chilometri/settimana</option>
+                        <option value="lepre">Da 6 a 20 chilometri/settimana</option>
+                        <option value="lupo">Da 21 a 50 chilometri/settimana</option>
+                        <option value="ghepardo">Oltre 50 chilometri/settimana</option>
                     </select>
                 </div>
 
