@@ -138,10 +138,10 @@ function validateUsernameLogin() {
     node.setAttribute("role", "alert");
 
     if (x.value.trim() === "") {
-        const textnode = document.createTextNode("Il campo username non può essere vuoto.");
+        const textnode = document.createTextNode('Il campo <span lang="en">username</span> non può essere vuoto.');
         node.appendChild(textnode);
         x.parentElement.appendChild(node);
-        return false;
+        return false;   
     }
 
     return true;
@@ -180,6 +180,7 @@ function validateUsername() {
 
     // Crea il nodo del messaggio di errore
     const node = document.createElement("p");
+
     node.classList.add(errorClass);
     node.setAttribute("role", "alert");
 
@@ -192,7 +193,8 @@ function validateUsername() {
 
     // Controlla la validità dello username
     if (!checkUsername(x.value)) {
-        node.innerHTML = '<span lang="en">Username</span> non valido. Massimo 15 caratteri: lettere minuscole, numeri, _ o .';
+        node.innerHTML = '<span lang="en">Username</span> non valido.';
+
         x.parentElement.appendChild(node);
         return false;
     }
@@ -262,6 +264,29 @@ function validateConfirmPassword() {
     
     return true;
 }
+
+
+// eliminazione scarpe
+function impostaIdEliminazione() {
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const form = this.closest('form');
+            const deleteIdInput = form.querySelector('.delete-id');
+            const deleteBtn = form.querySelector('.delete-button');
+            if (deleteIdInput) {
+                // Imposta il nome del campo solo se non è già impostato
+                deleteIdInput.setAttribute('name', 'delete_id');
+                deleteBtn.setAttribute('name', 'delete');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    impostaIdEliminazione();
+});
+
+
 /*
 function validateComment() {
     console.log("validateComment");
