@@ -1,5 +1,8 @@
 <?php
-$location = 'Profilo Recensioni';
+$title = "Le tue recensioni - CorsaIdeale";
+$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
+$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
+
 
 require_once('dbconnection.php');
 session_start();
@@ -37,7 +40,11 @@ if (!empty($_SESSION['username'])) {
     $recensioni = $connection->query($qRecensioni);
 
     $content = "";
-    if (!empty($recensioni)) {
+    if ($recensioni) {
+        if($recensioni->num_rows == 0){
+            $HTMLpage = str_replace('<div class="reviews-wrapper">', '<div class="error-cards">', $HTMLpage);
+            $content .= '<div class="new-card">  <p class="tipo">Non sono presenti scarpe con il like.</p> </div>';
+        }else{
         foreach ($recensioni as $recensione) {
             $content .= '
             <a name=review' . htmlspecialchars($recensione['scarpa_id']) . '>
@@ -105,6 +112,7 @@ if (!empty($_SESSION['username'])) {
             </a>
             ';
         }
+    }
     } else {
         $content .= '<p>Nessuna recensione disponibile.</p>';
     }

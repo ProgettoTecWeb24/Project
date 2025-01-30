@@ -1,5 +1,7 @@
 <?php
-$location = 'Profilo Scarpe Salvate';
+$title = "I tuoi like - CorsaIdeale";
+$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
+$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
 
 require_once('dbconnection.php');
 session_start();
@@ -40,11 +42,11 @@ if (!empty($_SESSION['username'])) {
     $query ="
     SELECT *
     FROM SCARPA
-    WHERE id IN ( SELECT scarpa_id FROM LIKES WHERE username ='" . $_SESSION['username'] . "')";
+    WHERE id IN ( SELECT scarpa_id FROM LIKES WHERE username ='" . $_SESSION['username'] . "') ";
 
     // Gestione dei filtri di ricerca
     if(!empty($_POST['nomescarpa'])){
-        $query = "SELECT * FROM SCARPA WHERE nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
+        $query .= "AND nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
         $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
     
     }
@@ -61,7 +63,7 @@ if (!empty($_SESSION['username'])) {
     }
 
     // Gestione dell'ordinamento
-    if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
+    if (!empty($_POST['ordina'])) {
         $HTMLpage = str_replace('value="' . $_POST['ordina'] . '"', 'value="' . $_POST['ordina'] . '" selected', $HTMLpage);
         if($_POST['ordina'] == "nomeCres"){
             $query = $query . "ORDER BY nome ASC ";
@@ -71,38 +73,50 @@ if (!empty($_SESSION['username'])) {
             $query = $query . "ORDER BY votoexp ASC ";
         }elseif($_POST['ordina'] == "votoDesc"){
             $query = $query . "ORDER BY votoexp DESC ";
+        }elseif($_POST['ordina'] == "ordNonStand"){
+            $query = $query . "ORDER BY data_aggiunta ASC ";
+        }else{
+            $query = $query . "ORDER BY data_aggiunta DESC ";
         }
+    }else{
+        $query = $query . "ORDER BY data_aggiunta DESC ";
     }
+    //echo $query;
 
     $result = $connection->query($query);
 
     $cardsHTML = "";
     if ($result) {
-        while ($row = $result->fetch_assoc()) {
-            $cardsHTML .= '
-                <a href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
-                    <div class="card">
-                    <div class="img-card-container">
-                        <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['nome']) . '" />
-                    </div>
-                        <div class="text-card">
-                        <h3>' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</h3>
-                        <p class="feedback" lang="en">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
-                        <p class="tipo">Tipo: ' . htmlspecialchars($row['tipo']) . '</p>
-                        <p class="tipo">Voto esperto: ' . htmlspecialchars($row['votoexp']) . '</p>
-                            <form action="profiloScarpe.php#likes" method="POST">
-                            <button class="like-button" type="submit" name="likePress" value="' . htmlspecialchars($row['id']) .'">{like}<path
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                </svg>
-                            </button>
-                            </form>
+        if($result->num_rows == 0){
+            $HTMLpage = str_replace('<div class="cards">', '<div class="error-cards">', $HTMLpage);
+            $cardsHTML .= '<div class="new-card">  <p class="tipo">Non sono presenti scarpe con il like.</p> </div>';
+        }else{
+            while ($row = $result->fetch_assoc()) {
+                $cardsHTML .= '
+                    <a href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
+                        <div class="card">
+                        <div class="img-card-container">
+                            <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['nome']) . '" />
                         </div>
-                    </div>
-                </a>
-            ';
+                            <div class="text-card">
+                            <h3>' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</h3>
+                            <p class="feedback" lang="en">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
+                            <p class="tipo">Tipo: ' . htmlspecialchars($row['tipo']) . '</p>
+                            <p class="tipo">Voto esperto: ' . htmlspecialchars($row['votoexp']) . '</p>
+                                <form action="profiloScarpe.php#likes" method="POST">
+                                <button class="like-button" type="submit" name="likePress" value="' . htmlspecialchars($row['id']) .'">{like}<path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                </button>
+                                </form>
+                            </div>
+                        </div>
+                    </a>
+                ';
+            }
         }
     } else {
-        $cardsHTML = "Errore nell'esecuzione della query.";
+        $cardsHTML .= 'Errore esecuzione query.';
     }
 
     $HTMLpage = str_replace("{shoesliked}", $cardsHTML, $HTMLpage);

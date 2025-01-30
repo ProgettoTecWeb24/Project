@@ -1,11 +1,10 @@
 <?php
-
-
+$title = "Lista - CorsaIdeale";
+$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
+$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
 
 require_once('dbconnection.php');
 session_start();
-
-$location = 'Lista scarpe';
 use Conn\DbConnection;
 setlocale(LC_ALL, 'it_IT');
 
@@ -19,7 +18,7 @@ if (!$connection->startDbConnection()) {
 include "header.php";
 $HTMLpage = file_get_contents('HTML/lista.html');
 
-$query = "SELECT * FROM SCARPA WHERE nome LIKE '%'";
+$query = "SELECT * FROM SCARPA WHERE nome LIKE '%' ";
 
 
 if(!empty($_POST['nomescarpa'])){
@@ -39,7 +38,7 @@ if (!empty($_POST['tipo']) AND $_POST['tipo'] != 'all') {
     $HTMLpage = str_replace('value="' . $_POST['tipo'] . '"', 'value="' . $_POST['tipo'] . '" selected', $HTMLpage);
 }
 
-if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
+if (!empty($_POST['ordina'])) {
     $HTMLpage = str_replace('value="' . $_POST['ordina'] . '"', 'value="' . $_POST['ordina'] . '" selected', $HTMLpage);
     if($_POST['ordina'] == "nomeCres"){
         $query = $query . "ORDER BY nome ASC ";
@@ -49,8 +48,16 @@ if (!empty($_POST['ordina']) AND $_POST['ordina'] != 'ordStand') {
         $query = $query . "ORDER BY votoexp ASC ";
     }elseif($_POST['ordina'] == "votoDesc"){
         $query = $query . "ORDER BY votoexp DESC ";
+    }elseif($_POST['ordina'] == "ordNonStand"){
+        $query = $query . "ORDER BY data_aggiunta ASC ";
+    }else{
+        $query = $query . "ORDER BY data_aggiunta DESC ";
     }
+}else{
+    $query = $query . "ORDER BY data_aggiunta DESC ";
 }
+
+//echo $query;
 
 if(isset($_POST['likePress'])){
     if (!empty($_SESSION['username'])) {

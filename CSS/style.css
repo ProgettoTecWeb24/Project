@@ -291,12 +291,20 @@ body {
 .content-link {
   margin-top: 1em;
 }
+
 .new-cards {
     display: flex;
     justify-content: space-between;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
     margin-bottom: 2em;
+}
+
+.error-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 2em;
 }
 
 .new-card {
@@ -537,7 +545,6 @@ label {
     z-index: 1003; 
 }
 .searchbar-liked {
-  background-color: var(--card-bg-color);
   background-size: cover;
   background-position: center;
   border-radius: 8px;

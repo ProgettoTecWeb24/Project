@@ -1,5 +1,7 @@
 <?php
-$location = 'Pagina scarpa';
+
+$description = "CorsaIdeale: scopri consigli e recensioni dettagliate sulle migliori scarpe da corsa. Trova il modello perfetto grazie all'aiuto dei nostri esperti."; // 148 caratteri
+$keywords = "corsa,scarpe,recensioni,running,trail,jogging,nike,adidas,asics"; // 63 caratteri
 require_once('dbconnection.php');
 require_once('controls.php');
 session_start();
@@ -13,7 +15,7 @@ if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
 
-include "header.php";
+
 $HTMLpage = file_get_contents('HTML/paginaSingola.html');
 $breadcrumb_scarpa ="Pagina scarpa";
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -40,7 +42,9 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 
+$title = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']) . ' - CorsaIdeale';
 $breadcrumb_scarpa = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']);
+include "header.php";
 
 $content = '
         <div class="shoe-main">
@@ -62,10 +66,7 @@ $content = '
                         <li>Feedback: ' . htmlspecialchars($scarpa['feedback']) . '</li>
                     </ul>
                 </div>
-            </div>
-
-
-            
+             
         </div>
     </div>
     <div class="description-details"> 
