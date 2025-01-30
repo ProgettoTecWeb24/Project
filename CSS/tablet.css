@@ -10,7 +10,6 @@
 
 .search-input {
     width: 100%;
-    max-width: 25em;
     padding: 0.5em 1em;
     border: 1px solid
   }
@@ -220,7 +219,12 @@ h2.title-admin{
     grid-template-columns: repeat(1, 1fr);
     padding-left: 5%;
     padding-right: 5%;
-  }
+}
+
+.review-profile{
+  width: 36em;
+  flex-direction: column;
+}
 
 
 

@@ -210,6 +210,7 @@ footer .valid-code {
 }
 
 .submit-filter {
+    margin-top: 1em;
     width: 100%;
     height: 3em;
 }
@@ -220,4 +221,12 @@ footer .valid-code {
 
 .search-button {
     width: 100%;
+}
+
+.review-profile{
+  width: 100%;
+}
+
+.review-header{
+  flex-direction: column;
 }

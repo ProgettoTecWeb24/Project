@@ -308,6 +308,12 @@ body {
 }
 
 .new-card {
+  padding: 1.25em;
+  text-align: center;
+  flex: 1;
+}
+
+.new-card {
   background-color: var(--card-bg-color);
   border: 0.125em solid var(--navbar-bg-color);
   border-radius: 0.625em;
@@ -504,6 +510,7 @@ label {
   display: flex;
   flex-direction: column;
 }
+
 
 .settings{
     display: flex;
