@@ -4,7 +4,7 @@ html{
     font-size:12pt;
 }
 
-nav, footer, .backToTop, .icon, .icona-profilo, .link-con-icona, .navbar-links, .valid-code, .searchbar-acc, .modal, .admin-home-icon{
+nav, footer, .backToTop, .icon, .icona-profilo, .link-con-icona, .navbar-links, .valid-code, .searchbar-acc, .modal, .admin-home-icon, .add-review-section, .review-icon, .modal-content-delete, p#sum{
     display: none !important;
 }
 
@@ -144,10 +144,11 @@ ul, ol {
   line-height: 1.2em;
 }
 
-.profile-cards a:link:after, .profile-cards a:visited:after {
+.profile-cards a:link:after, .profile-cards a:visited:after, .wrapper-card-admin a:link:after, .wrapper-card-admin a:visited:after{
     content: " [" attr(href) "] ";
     font-size:90%;
     color:#000;
+    margin: 0;
 }
 
 .username-input {
@@ -246,3 +247,65 @@ ul, ol {
     border: none;
     page-break-after: avoid;
 }
+
+.shoe-image img{
+    width: 50%;
+}
+
+img.stars{
+    width: 10%
+}
+
+.rating-section{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-add-scarpa{
+    margin-bottom: 1rem;
+}
+
+input[type="text"].input-text-add-scarpa, .sel-scarpa-admin {
+    width: 40%;
+    padding: 0.8rem;
+    border: 0.1em solid #000;
+    border-radius: 0.25em;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1em;
+    border: 0.1em solid #000;
+    border-radius: 0.25em;
+    width: 30%;
+    padding: 1em;
+}
+
+td img{
+    width: 40%;
+}
+
+td:last-child, th:last-child {
+    display: none;
+}
+
+.table-admin-list {
+    table-layout: auto;
+    width: 95%;
+    text-align: center;
+}
+
+ .table-admin-list td{
+    border-bottom: 0.1em solid #000;
+}
+
+td .review-stars .stars{
+    width: 40%;
+}
+
+.text-card-admin .title-admin{
+    color: #000;
+}
+
