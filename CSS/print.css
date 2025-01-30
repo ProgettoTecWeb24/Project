@@ -148,7 +148,7 @@ ul, ol {
     content: " [" attr(href) "] ";
     font-size:90%;
     color:#000;
-    margin: 0;
+    margin-bottom: 1em;
 }
 
 .username-input {
@@ -267,7 +267,7 @@ img.stars{
     margin-bottom: 1rem;
 }
 
-input[type="text"].input-text-add-scarpa, .sel-scarpa-admin {
+input[type="text"].input-text-add-scarpa, .sel-scarpa-admin, input[type="username"], input[type="password"], .select-settings {
     width: 40%;
     padding: 0.8rem;
     border: 0.1em solid #000;
@@ -309,3 +309,11 @@ td .review-stars .stars{
     color: #000;
 }
 
+.form label, .form input, .form button {
+    display: block;
+    width: 30%;
+}
+
+.form input{
+    margin-bottom: 1em;
+}
