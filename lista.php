@@ -1,7 +1,6 @@
 <?php
-
 $title = "Lista Scarpe - CorsaIdeale";
-$description = "Scopri recensioni dettagliate e valutazioni degli esperti sulle scarpe da corsa.";
+$description = htmlspecialchars("Scopri recensioni dettagliate e valutazioni degli esperti sulle scarpe da corsa.");
 $keywords = "scarpe,recensioni,modelli,corsa,lista,valutazioni,nike,adidas";
 
 require_once('dbconnection.php');
@@ -92,7 +91,7 @@ if ($result) {
     }else{
         while ($row = $result->fetch_assoc()) {
             $cardsHTML .= '
-                <a name ="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
+                <a id="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
                     <div class="card">
                     <div class="img-card-container">
                         <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '" />
@@ -103,7 +102,7 @@ if ($result) {
                             <p class="tipo">Tipo: ' . htmlspecialchars($row['tipo']) . '</p>
                             <p class="tipo">Voto esperto: ' . htmlspecialchars($row['votoexp']) . '</p>
                             <form action="lista.php#'. htmlspecialchars($row['id']).'" method="POST">
-                                <button class="like-button" type="submit" name="likePress" value="' . htmlspecialchars($row['id']) .'">{like}<path
+                                <button class="like-button" type="submit" name="likePress" value="' . htmlspecialchars($row['id']) .'" aria-label="bottone like scarpa id ' . htmlspecialchars($row['id']) . '">{like}<path
                                             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                                     </svg>
                                 </button>
@@ -125,8 +124,8 @@ if (!empty($_SESSION['username'])) {
     $result = $result = $connection->query($qFill);
     if ($result) {
         while ($row = $result->fetch_assoc()) {
-            $oldStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'">{like}';
-            $newStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon-filled">';
+            $oldStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'" aria-label="bottone like scarpa id ' . htmlspecialchars($row['scarpa_id']) . '">{like}';
+            $newStr = 'value="' . htmlspecialchars($row['scarpa_id']) .'" aria-label="bottone like attivato scarpa id ' . htmlspecialchars($row['scarpa_id']) . '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="heart-icon-filled">';
             $HTMLpage = str_replace($oldStr, $newStr, $HTMLpage);   
         }
     }

@@ -50,7 +50,7 @@ include "header.php";
 $content = '
         <div class="shoe-main">
             <div class="shoe-image">
-                <img src="assets/' . htmlspecialchars($scarpa['immagine']) . '" alt=" immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
+                <img src="assets/' . htmlspecialchars($scarpa['immagine']) . '" alt="immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
             </div>
 
             <div class="shoe-info">
@@ -134,7 +134,7 @@ if (isset($_SESSION['username'])) {
                 ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section hidden">
-                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+</button>
+                    <button id="add-review-btn" aria-label="bottone lascia recensione" onclick="openModal(\'add-review-modal\')">+</button>
                     <span class="review-prompt">Lascia la tua Recensione!</span>
                 </div>
         </div>
@@ -160,8 +160,8 @@ $content .= '
                     </select>
                 </div>
                 <div class="input-add-scarpa">
-                    <label for="comment">Recensione:</label>
-                    <textarea name="comment" id="comment" rows="4" required placeholder="Modifica la tua recensione"></textarea>
+                    <label for="commentEdit">Recensione:</label>
+                    <textarea name="commentEdit" id="commentEdit" rows="4" required placeholder="Modifica la tua recensione"></textarea>
                 </div>
                 <button class="button" type="submit" name="edit">Modifica Recensione</button>
             </form>
@@ -240,8 +240,8 @@ $content .= '
                 </div>
                 
                 <div class="input-add-scarpa">
-                    <label for="comment">Recensione:</label>
-                    <textarea name="comment"  id="comment" rows="4" required placeholder="Scrivi la tua recensione""></textarea>
+                    <label for="commentAdd">Recensione:</label>
+                    <textarea name="commentAdd"  id="commentAdd" rows="4" required placeholder="Scrivi la tua recensione"></textarea>
                 </div> 
                 
                 <button id="add_review_button"  type="submit" name="submit_add_review">Invia Recensione</button>
@@ -251,7 +251,7 @@ $content .= '
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_add_review'])) {
     $rating = $_POST['rating'] ?? '';
-    $comment = $_POST['comment'] ?? '';
+    $comment = $_POST['commentAdd'] ?? '';
     $scarpa_id = intval($_POST['idscarpa'] ?? 0);
     $username = $_SESSION['username'] ?? '';
 
@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_add_review']))
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit'])) {
     $rating = $_POST['rating'] ?? '';
-    $comment = $_POST['comment'] ?? '';
+    $comment = $_POST['commentEdit'] ?? '';
     $scarpa_id = intval($_POST['idscarpa'] ?? 0);
     $username = $_SESSION['username'] ?? '';
 

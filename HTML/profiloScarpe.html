@@ -12,12 +12,12 @@
 <div class="content">
     <form action="profiloScarpe.php#likes" method="POST">
         <div class="profile-content">
-            <a name="likes"><h2>Scarpe salvate di {user}</h2></a>
+            <a id="likes"><h2>Scarpe salvate di {user}</h2></a>
             
             <div class="searchbar-acc">
                 <div>
-                    <input class="search-input" name="nomescarpa" type="text" placeholder="Cerca le scarpe..."
-                        value="" />
+                    <input class="search-input" aria-label="Inserisci nome scarpa"  id="nomescarpa" type="text" placeholder="Cerca le scarpe..." value="" />
+
                 </div>
 
                 <div>
@@ -63,7 +63,9 @@
                         <img src="assets/search-icon.svg" alt="Avvia ricerca" />
                     </button>
                 </div>
-            </div>  
+            </div> 
+        </div>     
+        </form>
 
             <div class="cards">
                 {shoesliked}
