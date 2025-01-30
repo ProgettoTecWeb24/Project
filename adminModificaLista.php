@@ -57,11 +57,11 @@ if($connection->isAdmin($_SESSION["username"])){
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '
                     <tr>
-                        <th class="int-row" scope="row" lang="en">'.$shoe["nome"] .'</th>
-                        <td class="hide-tablet"  lang="en">'.$shoe["marca"] .'</td>
-                        <td class="hide-tablet">'.$shoe["descrizione"] .'</td>
-                        <td class="hide-mobile">'.$shoe["tipo"] .'</td>
-                        <td class="hide-mobile"><span lang="en">'.
+                        <th class="table int-row" scope="row" lang="en">'.$shoe["nome"] .'</th>
+                        <td class="table hide-tablet"  lang="en">'.$shoe["marca"] .'</td>
+                        <td class="table hide-tablet">'.$shoe["descrizione"] .'</td>
+                        <td class="table hide-mobile">'.$shoe["tipo"] .'</td>
+                        <td class="table hide-mobile"><span lang="en">'.
                             $shoe["feedback"].'</span></br>
                             <div class="review-stars">
                                 <img class="stars" src="assets/' . $shoe["votoexp"] . '.png" alt="immagine di ' . $shoe["votoexp"] . ' stelle su 5 per l\'esperto" />

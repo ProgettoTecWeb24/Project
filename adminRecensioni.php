@@ -54,14 +54,14 @@ if($connection->isAdmin($_SESSION["username"])){
     foreach($all_review as $review){
         $lista_recensioni .= '
                     <tr>
-                        <th class="int-row" scope="row">'.$review["username"] .'</th>
-                        <td class="hide-mobile"  lang="en">'.$review["marca"] .' '.$review["nome"].'</td>
-                        <td class="hide-tablet">
-                        <div class="review-stars">
-                            <img class="stars" src="assets/' . $review['voto'] . '.png" alt="immagine di ' . $review["voto"] . ' stelle su 5" />
-                        </div>
+                        <th class="table int-row" scope="row">'.$review["username"] .'</th>
+                        <td class="table hide-mobile"  lang="en">'.$review["marca"] .' '.$review["nome"].'</td>
+                        <td class=" hide-tablet">
+                            <div class="review-stars">
+                                <img class="stars" src="assets/' . $review['voto'] . '.png" alt="immagine di ' . $review["voto"] . ' stelle su 5" />
+                            </div>
                         </td>
-                        <td>'.$review["commento"] .'</td>
+                        <td class="table">'.$review["commento"] .'</td>
                         <td>
                             <form action="adminRecensioni.php" class="form" method="POST">
                                 <button type="button" name="delete-review-'.$review['scarpa_id'].$review['username'].'" class="link-con-icona" onclick="openModal(\'delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'\')">
