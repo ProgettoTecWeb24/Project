@@ -1,0 +1,24 @@
+html{
+    font-family: "Times New Roman", Times,
+    serif;
+    font-size:12pt;
+}
+
+header h1{
+    margin-left: 0em;
+    content: url('../assets/logo.png');
+}
+
+#menu, #backToTop, header {
+    display: none;
+}
+
+main {
+    margin-left: 0em;
+    width: 100%;
+    padding: 0.3em 0em 0.5em 0em;
+}
+
+.text-card{
+    width: 20%;
+}
