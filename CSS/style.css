@@ -1420,7 +1420,7 @@ p.success_text{
     justify-content: center; 
   }
   
-  p#sum{
+  p#sum, table caption{
     position: absolute;
     top: -9999px;
     left: -9999px;

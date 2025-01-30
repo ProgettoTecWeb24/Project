@@ -38,8 +38,9 @@ if($connection->isAdmin($_SESSION["username"])){
 
     $lista_scarpe .= '
         <div class="table-wrapper-admin">
-            <p id="sum">Tabella che contiene tutte le scarpe presenti nel sito</p>
+            <p id="sum">Tabella che contiene tutte le scarpe presenti nel sito, sono presenti nome, marca, descrizione, tipo, <span lang="en">feedback</span> dell\'esperto e foto per ogni scarpa</p>
             <table aria-describedby="sum" class="table-admin-list">
+                <caption>Lista di tutte le scarpe</caption>
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
@@ -80,7 +81,7 @@ if($connection->isAdmin($_SESSION["username"])){
                                         <h2>Conferma Eliminazione</h2>
                                         <p>Sei sicuro di voler eliminare questa scarpa?</p>
                                     </div>
-                                    <form id="delete-review-form-'.$shoe['id'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                                    <form id="delete-review-admin-form-'.$shoe['id'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
                                         <input type="hidden" class="delete-id" value="'.$shoe['id'].'"/>
                                         <button aria-label="Conferma eliminazione '.$shoe["nome"] .'" class="delete-button" type="submit">Conferma</button>
                                     </form>

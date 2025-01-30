@@ -272,11 +272,16 @@ function impostaIdEliminazione() {
         button.addEventListener('click', function () {
             const form = this.closest('form');
             const deleteIdInput = form.querySelector('.delete-id');
+            const deleteUsername = form.querySelector('.username');
             const deleteBtn = form.querySelector('.delete-button');
+            deleteBtn.setAttribute('name', 'delete');
             if (deleteIdInput) {
                 // Imposta il nome del campo solo se non è già impostato
                 deleteIdInput.setAttribute('name', 'delete_id');
-                deleteBtn.setAttribute('name', 'delete');
+            }
+            if (deleteUsername) {
+                // Imposta il nome del campo solo se non è già impostato
+                deleteUsername.setAttribute('name', 'username');
             }
         });
     });

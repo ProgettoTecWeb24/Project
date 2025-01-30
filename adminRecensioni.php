@@ -37,8 +37,9 @@ if($connection->isAdmin($_SESSION["username"])){
 
     $lista_recensioni .= '
         <div class="table-wrapper-admin">   
-            <p id="sum">Tabella che contiene tutte le recensioni degli utenti lasciate nel sito</p>
-            <table aria-describedby="sum" class="table-admin-list">
+            <p id="sum">Tabella che contiene tutte le recensioni degli utenti lasciate nel sito, sono presenti <span lang="en">username</span>, nome della scarpa, voto e commento per ogni recensione</p>
+            <table aria-labelledby="sum" class="table-admin-list">
+                <caption>Lista delle recensioni degli utenti</caption>
                 <thead>
                     <tr>
                         <th scope="col" lang="en">Username</th>
@@ -63,27 +64,26 @@ if($connection->isAdmin($_SESSION["username"])){
                         </td>
                         <td>'.$review["commento"] .'</td>
                         <td>
-                            <form action="adminRecensioni.php" class="form" method="POST">
-                                <button type="button" name="delete-review-'.$review['scarpa_id'].$review['username'].'" class="link-con-icona" onclick="openModal(\'delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'\')">
+                            <button type="button" aria-label="Elimina recensione di '.$review['username'].' della scarpa numero '.$review["scarpa_id"] .'" name="delete-review-'.$review['scarpa_id'].$review['username'].'" class="link-con-icona" onclick="openModal(\'delete-review-admin-modal-'.$review['scarpa_id'].$review['username'].'\')">
                                     <img src="assets/delete.svg" alt="elimina" class="icona" />
-                                </button>
-                            </form>
+                            </button>
+                            <div id="delete-review-admin-modal-'.$review['scarpa_id'].$review['username'].'" class="delete-admin-modal hidden">
+                            <div class="modal-content-delete">
+                                <div class="modal-header">
+                                    <span class="close-btn" onclick="closeModal(\'delete-review-admin-modal-'.$review['scarpa_id'].$review['username'].'\')">&times;</span>
+                                    <h2>Conferma Eliminazione</h2>
+                                    <p>Sei sicuro di voler eliminare questa recensione?</p>
+                                </div>
+                                <form id="delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                                    <input type="hidden" class="delete-id" value="'.$review['scarpa_id'].'">
+                                    <input type="hidden" class="username" value="'.$review['username'].'">
+                                    <button aria-label="Conferma eliminazione recensione di '.$review['username'].' della scarpa numero '.$review["scarpa_id"] .'" class="delete-button" type="submit">Conferma</button>
+                                </form>
+                            </div>
+                        </div>
                         </td>
                     </tr>
-                    <div id="delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'" class="delete-admin-modal hidden">
-                        <div class="modal-content-delete">
-                            <div class="modal-header">
-                                <span class="close-btn" onclick="closeModal(\'delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'\')">&times;</span>
-                                <h2>Conferma Eliminazione</h2>
-                                <p>Sei sicuro di voler eliminare questa recensione?</p>
-                            </div>
-                            <form id="delete-review-admin-form-'.$review['scarpa_id'].$review['username'].'" action="'.$_SERVER['PHP_SELF'].'" method="POST">
-                                <input type="hidden" name="delete_id" value="'.$review['scarpa_id'].'">
-                                <input type="hidden" name="username" value="'.$review['username'].'">
-                                <button class="button" type="submit" name="delete">Conferma</button>
-                            </form>
-                        </div>
-                    </div
+                    
             '; 
         }
          $lista_recensioni .= '
