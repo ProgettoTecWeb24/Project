@@ -560,7 +560,7 @@ label {
 }
 
 .username-input {
-  width: 20em;
+  width: 22em;
   height: 3em;
   border-radius: 0.5em;
   padding: 0.625em;
@@ -568,7 +568,7 @@ label {
 }
 
 .select-settings {
-  width: 20em;
+  width: 22em;
   height: 3em;
   border-radius: 0.5em;
   padding: 0.625em;
@@ -588,7 +588,6 @@ label {
 }
 
 #logout-settings {
-    background-color: var(--red-heart);
     color: var(--text-color);
     margin-top: 1em;
     width: 20em;
@@ -598,6 +597,9 @@ label {
     font-size: 1em;
 }
 
+.logout-deleteUser > #open-delete-modal{
+    background-color: var(--red-heart);
+}
 .submit-ricerca {
   background-color: var(--accent-color);
   color: var(--text-color);
