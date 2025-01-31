@@ -72,6 +72,23 @@ body {
   display: block;
 }
 
+.navigationHelp-nav {
+  color: var(--menu-link-color);
+  position: absolute;
+  left: -999em;
+}
+
+.navigationHelp-nav:focus {
+  position: static;
+  display: block;
+}
+
+.navigationHelp-nav:visited {
+  color: var(--link-color);
+  position: static;
+  display: block;
+}
+
 .logo {
   width: 4.5em;
   height: auto;
@@ -552,7 +569,7 @@ label {
 }
 
 #delete-account-modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -956,7 +973,7 @@ img.stars {
 #add-review-modal.modal,
 #edit-review-modal.modal,
 #delete-review-modal.modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -964,7 +981,7 @@ img.stars {
 }
 
 .delete-admin-modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1371,7 +1388,10 @@ h4.title-admin {
 .table {
   max-width: 10em;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
 
 /*PAGINA ADMINMODIFICALISTA*/
 
