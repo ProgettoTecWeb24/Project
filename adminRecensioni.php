@@ -37,7 +37,7 @@ if($connection->isAdmin($_SESSION["username"])){
 
     $lista_recensioni .= '
         <div class="table-wrapper-admin">   
-            <p id="sum">Tabella che contiene tutte le recensioni degli utenti lasciate nel sito, sono presenti <span lang="en">username</span>, nome della scarpa, voto e commento per ogni recensione</p>
+            <p id="sum">Questa tabella contiene tutte le recensioni degli utenti lasciate nel sito organizzate per colonne: sono presenti <span lang="en">username</span>, nome della scarpa, voto e commento per ogni recensione, oltre ad un icona tramite la quale è possibile eliminare la singola recensione.</p>
             <table aria-labelledby="sum" class="table-admin-list">
                 <caption>Lista delle recensioni degli utenti</caption>
                 <thead>
