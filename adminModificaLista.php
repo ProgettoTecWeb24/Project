@@ -146,6 +146,6 @@ if($connection->isAdmin($_SESSION["username"])){
 }else{
     $connection->endDbConnection();
     header("Location: error404.php");
-
+}
 
 ?>
