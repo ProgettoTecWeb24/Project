@@ -19,6 +19,8 @@ body {
   padding: 0.5em;
   display: flex;
   gap: 0.6em;
+  align-items: center;
+  
 }
 
 .inline-list {
