@@ -99,7 +99,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="descrizione">Descrizione: </label>
-                            <textarea name="descrizione" id="descrizione" class="description-text admin" maxlength="480">'.$shoe["descrizione"].'</textarea>
+                            <textarea name="descrizione" id="descrizione" class="description-text admin" required maxlength="480" placeholder="Descrizione">'.$shoe["descrizione"].'</textarea>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="tipo">Tipo: </label>
@@ -112,7 +112,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="feedback">Feedback: </label>
-                            <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" maxlength="50" placeholder="Feedback (opzionale)" value="'.$shoe["feedback"].'"/>
+                            <input type="text" class="input-text-add-scarpa" name="feedback" id="feedback" maxlength="50" required placeholder="Feedback" value="'.$shoe["feedback"].'"/>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="valutazione">Valutazione: </label>
