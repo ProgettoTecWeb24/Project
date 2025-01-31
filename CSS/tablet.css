@@ -155,7 +155,9 @@
 }
 
 /* single page */
-
+.modal-content-delete {
+    height: 17em;
+}
 
 /* TUTTA SEZIONE ADMIN */
 
