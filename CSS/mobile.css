@@ -97,13 +97,10 @@
 }
 
 .modal-content {
-  width: 18em;
+  width: 19em;
+  height: 47em;
 }
 
-.modal-content-delete {
-  width: 18em;
-  height: 11em;
-}
 
 /* FINE SINGLE PAGE */
 
