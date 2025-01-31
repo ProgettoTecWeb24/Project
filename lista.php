@@ -22,7 +22,7 @@ $query = "SELECT * FROM SCARPA WHERE nome LIKE '%' ";
 
 
 if(!empty($_POST['nomescarpa'])){
-    $query = "SELECT * FROM SCARPA WHERE nome LIKE '%" . $_POST['nomescarpa'] . "%' ";
+    $query = "SELECT * FROM SCARPA WHERE (nome LIKE '%" . $_POST['nomescarpa'] . "%' OR marca LIKE '%" . $_POST['nomescarpa'] . "%') ";
     $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
 
 }
