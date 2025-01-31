@@ -60,23 +60,6 @@ if($connection->isAdmin($_SESSION["username"])){
 
     $all_review = $connection->query($query);
 
-    $lista_recensioni .= '
-        <div class="table-wrapper-admin">   
-            <p id="sum">Questa tabella contiene tutte le recensioni degli utenti lasciate nel sito organizzate per colonne: sono presenti <span lang="en">username</span>, nome della scarpa, voto e commento per ogni recensione, oltre ad un icona tramite la quale è possibile eliminare la singola recensione.</p>
-            <table aria-labelledby="sum" class="table-admin-list">
-                <caption>Lista delle recensioni degli utenti</caption>
-                <thead>
-                    <tr>
-                        <th scope="col" lang="en">Username</th>
-                        <th class="hide-mobile" scope="col">Scarpa recensita</th>
-                        <th class="hide-tablet" scope="col">Voto</th>
-                        <th scope="col">Commento</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-    </div>
-        ';
     foreach($all_review as $review){
         $lista_recensioni .= '
                     <tr>
@@ -111,12 +94,6 @@ if($connection->isAdmin($_SESSION["username"])){
                     
             '; 
         }
-         $lista_recensioni .= '
-                    </tbody>
-                </table>
-            </div>
-        </div>
-            '; 
 
     $HTMLpage = str_replace("{lista_recensioni}", $lista_recensioni, $HTMLpage);
     $HTMLpage = str_replace("{info}", $info, $HTMLpage);
