@@ -9,7 +9,41 @@
             
 <main id="main-content">
     <div class="content">
-        <h2>Lista delle recensioni</h2>
+        <form action="adminRecensioni.php" method="POST">
+            <div class="content">
+                <h2>Lista delle recensioni</h2>
+    
+                <div class="searchbar-acc recensioni">
+                    <input class="search-input"  aria-label="Inserisci commento" name="commento" id="commento-id" type="text" placeholder="Cerca commento..." value="" />
+                    
+                    <div>
+                        <label for="ordina">Ordina:</label>
+                        <select name="ordina" id="ordina" class="select-filter">
+                            <option value="ordStand">Più recenti</option>
+                            <option value="ordNonStand">Meno recenti</option>
+                            <option value="votoCres">Voto crescente</option>
+                            <option value="votoDesc">Voto decrescente</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="valutazione">Voto:</label>
+                        <select name="valutazione" id="valutazione" class="select-filter">
+                            <option value="all">Tutti i voti</option>
+                            <option value="1">1 stella</option>
+                            <option value="2">2 stelle</option>
+                            <option value="3">3 stelle</option>
+                            <option value="4">4 stelle</option>
+                            <option value="5">5 stelle</option>
+                        </select>
+                    </div>
+                
+                    <button type="submit" class="submit-filter" aria-label="effettua ricerca">
+                        <img src="assets/search-icon.svg" alt="Cerca" />
+                    </button>
+                </div>
+            </div>
+        </form>
         {info}
         {lista_recensioni}
     </div>

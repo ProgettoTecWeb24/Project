@@ -455,17 +455,20 @@ form .error_text {
   margin-top: 0.5em;
 
 }
+.recensioni{
+  grid-template-columns: 1fr 1fr;
 
+}
 .search-input {
-  width: 33em;
+  width: 30em;
   border-color: var(--navbar-bg-color);
   border: 0.125em solid;
   height: 3em;
   border-radius: 8px;
-  padding: 10px;
+  padding: 10px; 
 }
 
-.select-filter {
+.select-filter{
   border-color: var(--navbar-bg-color);
   border: 0.125em solid;
   width: 13em;
@@ -484,6 +487,7 @@ form .error_text {
   border-radius: 8px;
   cursor: pointer;
   font-size: revert;
+  justify-self: center;
 }
 
 .submit-filter img {

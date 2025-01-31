@@ -33,7 +33,32 @@ if($connection->isAdmin($_SESSION["username"])){
         }
     }
 
-    $all_review = $connection->getAllReviews();
+    $query ="SELECT * FROM RECENSIONE, SCARPA WHERE RECENSIONE.scarpa_id=SCARPA.id AND commento LIKE '%' ";
+    if(!empty($_POST['commento'])){
+        $query = "SELECT * FROM RECENSIONE, SCARPA WHERE RECENSIONE.scarpa_id=SCARPA.id AND commento LIKE '%" . $_POST['commento'] . "%' ";
+        $HTMLpage = str_replace('value=""', 'value="' . $_POST['commento'] . '" selected', $HTMLpage);
+    }
+    if (!empty($_POST['valutazione']) AND $_POST['valutazione'] != 'all') {
+        $query = $query . " AND voto = " . $_POST['valutazione']. " ";
+        $HTMLpage = str_replace('value="' . $_POST['valutazione'] . '"', 'value="' . $_POST['valutazione'] . '" selected', $HTMLpage);
+    }
+    if (!empty($_POST['ordina'])) {
+        $HTMLpage = str_replace('value="' . $_POST['ordina'] . '"', 'value="' . $_POST['ordina'] . '" selected', $HTMLpage);
+        if($_POST['ordina'] == "votoCres"){
+            $query = $query . "ORDER BY voto ASC ";
+        }elseif($_POST['ordina'] == "votoDesc"){
+            $query = $query . "ORDER BY voto DESC ";
+        }elseif($_POST['ordina'] == "ordNonStand"){
+            $query = $query . "ORDER BY RECENSIONE.data_aggiunta ASC ";
+        }else{
+            $query = $query . "ORDER BY RECENSIONE.data_aggiunta DESC ";
+        }
+    }else{
+        $query = $query . "ORDER BY RECENSIONE.data_aggiunta DESC ";
+    }
+    
+
+    $all_review = $connection->query($query);
 
     $lista_recensioni .= '
         <div class="table-wrapper-admin">   

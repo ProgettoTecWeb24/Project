@@ -10,6 +10,14 @@
   background-color: var(--searchbar-bg-color);
 }
 
+.recensioni{
+  grid-template-columns: 1fr;
+  width: 80%;
+  justify-self: center;
+}
+
+
+
 .submit-filter {
   width: 40em;
   height: 4em;
