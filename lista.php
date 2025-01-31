@@ -4,6 +4,7 @@ $description = htmlspecialchars("Scopri recensioni dettagliate e valutazioni deg
 $keywords = "scarpe,recensioni,modelli,corsa,lista,valutazioni,nike,adidas";
 
 require_once('dbconnection.php');
+require_once('controls.php');
 session_start();
 use Conn\DbConnection;
 setlocale(LC_ALL, 'it_IT');
@@ -22,7 +23,8 @@ $query = "SELECT * FROM SCARPA WHERE nome LIKE '%' ";
 
 
 if(!empty($_POST['nomescarpa'])){
-    $query = "SELECT * FROM SCARPA WHERE (nome LIKE '%" . $_POST['nomescarpa'] . "%' OR marca LIKE '%" . $_POST['nomescarpa'] . "%') ";
+    $nomescarpa = sanitizeInput($_POST['nomescarpa']);
+    $query = "SELECT * FROM SCARPA WHERE (nome LIKE '%" . $nomescarpa . "%' OR marca LIKE '%" . $nomescarpa . "%') ";
     $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
 
 }
@@ -77,6 +79,7 @@ if(isset($_POST['likePress'])){
 }
 
 
+echo $query;
 $result = $connection->query($query);
 
 $cardsHTML = "";

@@ -5,6 +5,7 @@ $description = "Modifica o elimina le recensioni che hai lasciato sulle scarpe d
 $keywords = "recensioni,personali,scarpe,voto,valutazioni,commenti,profilo";
 
 require_once('dbconnection.php');
+require_once('controls.php');
 session_start();
 
 use Conn\DbConnection;
@@ -31,7 +32,7 @@ if (!empty($_SESSION['username'])) {
 
     if(isset($_POST['modifica'])){
         $qModifica = "UPDATE RECENSIONE SET voto = '" . $_POST['rating'] . "', commento =? WHERE username ='" . $_SESSION['username'] . "'AND scarpa_id ='" . $_POST['modifica'] . "'";
-        $modifica = $connection->prepareAndExecute($qModifica, 's', $_POST['newCommento']);
+        $modifica = $connection->prepareAndExecute($qModifica, 's', sanitizeInput($_POST['newCommento']));
     }
 
     $qRecensioni = "SELECT r.username, r.voto, r.commento, r.scarpa_id, s.nome, s.marca, s.immagine

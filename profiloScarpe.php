@@ -5,6 +5,7 @@ $description = "Visualizza le scarpe che hai salvato tra le preferite";
 $keywords = "corsa,scarpe,preferite,salvate,like,voto,valutazioni,profilo";
 
 require_once('dbconnection.php');
+require_once('controls.php');
 session_start();
 
 use Conn\DbConnection;
@@ -48,7 +49,8 @@ if (!empty($_SESSION['username'])) {
 
     // Gestione dei filtri di ricerca
     if(!empty($_POST['nomescarpa'])){
-        $query .= "AND (nome LIKE '%" . $_POST['nomescarpa'] . "%' OR marca LIKE '%" . $_POST['nomescarpa'] . "%') ";
+        $nomescarpa = sanitizeInput($_POST['nomescarpa']);
+        $query .= "AND (nome LIKE '%" . $nomescarpa . "%' OR marca LIKE '%" . $nomescarpa . "%') ";
         $HTMLpage = str_replace('value=""', 'value="' . $_POST['nomescarpa'] . '" selected', $HTMLpage);
     
     }
