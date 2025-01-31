@@ -79,7 +79,7 @@ if(isset($_POST['likePress'])){
 }
 
 
-echo $query;
+//echo $query;
 $result = $connection->query($query);
 
 $cardsHTML = "";
