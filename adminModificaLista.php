@@ -34,7 +34,6 @@ if($connection->isAdmin($_SESSION["username"])){
     }
 
     $lista_scarpe = "";
-    //$all_shoes = $connection->getAllShoes();
 
     $query = "SELECT * FROM SCARPA WHERE nome LIKE '%' ";
 
