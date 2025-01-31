@@ -583,7 +583,7 @@ label {
 }
 
 .select-settings {
-  width: 22em;
+  width: 100%;
   height: 3em;
   border-radius: 0.5em;
   padding: 0.625em;
