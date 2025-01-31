@@ -79,7 +79,7 @@ if($connection->isAdmin($_SESSION["username"])){
     include "footer.php";
 }else{
     $connection->endDbConnection();
-    header("Location: HTML/error404.html");
+    header("Location: error404.php");
 }
 
 
