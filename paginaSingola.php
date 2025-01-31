@@ -21,7 +21,7 @@ $HTMLpage = file_get_contents('HTML/paginaSingola.html');
 $breadcrumb_scarpa ="Pagina scarpa";
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id == 0) {
-    die("ID scarpa non valido.");
+    header("Location: 404.php");
 }
 
 $queryScarpa = "SELECT * FROM SCARPA WHERE id = ?";
@@ -29,7 +29,7 @@ $scarpaResult = $connection->prepareAndExecute($queryScarpa, 'i', $id);
 $scarpa = $scarpaResult[0] ?? null;
 
 if (!$scarpa) {
-    die("Scarpa non trovata.");
+    header("Location: 404.php");
 }
 $queryRecensioni = "SELECT r.username, r.voto, r.commento, u.ruolo 
                     FROM RECENSIONE r 
