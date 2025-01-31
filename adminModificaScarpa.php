@@ -31,28 +31,28 @@ if($connection->isAdmin($_SESSION["username"])){
 
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if ($check === false) {
-                die("Errore: Il file caricato non è un'immagine.");
+                $info = '<p class="error_text" id="info" role="alert">Errore: Il file caricato non è un\'immagine.</p>';
             }
             $allowedExtensions = ["png", "webp"];
             if (!in_array($imageFileType, $allowedExtensions)) {
-                die("Errore: Sono ammessi solo file PNG e WEBP.");
+                $info .= '<p class="error_text" id="info" role="alert">Errore: Sono ammessi solo file PNG e WEBP.</p>';
             }
             $maxFileSize = 2 * 1024 * 1024; // 2 MB
             if ($_FILES["image"]["size"] > $maxFileSize) {
-                die("Errore: La dimensione del file non deve superare i 2 MB.");
+                $info .= '<p class="error_text" id="info" role="alert">Errore: La dimensione del file non deve superare i 2 MB.</p>';
             }
             $width = $check[0];
             $height = $check[1];
 
             
             if ($width <= $height) { // immagine orizzontale
-                die("Errore: L'immagine deve essere orizzontale (larghezza maggiore dell'altezza).");
+                $info .= '<p class="error_text" id="info" role="alert">Errore: L\'immagine deve essere orizzontale (larghezza maggiore dell\'altezza).</p>';
             }
 
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                 $immagine = basename($_FILES["image"]["name"]);
             }else {
-                $info = '<p class="error_text" id="info" role="alert">Errore: aggiunta immagine non riuscita :(</p>';
+                $info .= '<p class="error_text" id="info" role="alert">Errore: aggiunta immagine non riuscita :(</p>';
             }
         } else {
             $idScarpa = $_POST["idscarpa"];
