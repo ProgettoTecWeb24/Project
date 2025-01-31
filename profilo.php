@@ -18,6 +18,7 @@ if (!empty($_SESSION['username'])) {
 
     // Gestione logout
     if (isset($_POST['logout'])) {
+        session_unset();
         session_destroy();
         session_abort();
         header("Location: index.php");
