@@ -46,7 +46,7 @@ if ($result) {
     while ($row = $result->fetch_assoc()) {
         $cardsHTML .= '
             <a id="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '" class="card-link">
-                <div class="card">
+                <div class="card" onclick="goToPage(\'paginaSingola.php?id=' . urlencode($row['id']) . '\')">
                 <div class="img-card-container">
                     <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '" />
                 </div>

@@ -265,6 +265,13 @@ function validateConfirmPassword() {
     return true;
 }
 
+function goToPage(url, newTab = false) {
+    if (newTab) {
+        window.open(url, '_blank'); 
+    } else {
+        window.location.href = url; 
+    }
+}
 
 // eliminazione scarpe
 function impostaIdEliminazione() {
