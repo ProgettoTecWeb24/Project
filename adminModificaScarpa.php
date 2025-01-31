@@ -50,7 +50,7 @@ if($connection->isAdmin($_SESSION["username"])){
             }
 
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                $immagine = 'assets/'.basename($_FILES["image"]["name"]);
+                $immagine = basename($_FILES["image"]["name"]);
             }else {
                 $info = '<p class="error_text" id="info" role="alert">Errore: aggiunta immagine non riuscita :(</p>';
             }
