@@ -7,7 +7,7 @@
         <li> Aggiungi scarpa </li>
     </ul>
 </nav>
-
+<main id="main-content">
 <div class="content">
     <h2>Aggiungi una nuova scarpa</h2>
     <div class="wrapper-admin-aggiungi">
@@ -50,14 +50,14 @@
             </div>
             <div class="input-add-scarpa">
                 <label for="image">Scegli una foto per la scarpa: </label>
-                <input type="file" name="image" id="image" accept="image/png, image/webp" required>
+                <input type="file" name="image" id="image" accept="image/png, image/webp" aria-label="bottone per caricare immagine" required>
             </div>
             <button class="button" type="submit" name="conferma-aggiungi">Aggiungi</button>
         </form>
         <form action="adminpage.php" class="form" method="POST">
             <button class="button-gray" type="submit" name="annulla">Annulla</button>
         </form>
-    </div>
-</div>
-
+    
 {info} 
+
+</main>

@@ -80,12 +80,12 @@ if (!empty($_SESSION['username'])) {
                                     <select class="select-review-profile" name="rating" id="rating' . $recensione['scarpa_id'] . '">';
                 for ($i = 1; $i <= 5; $i++) {
                     $selected = ($recensione['voto'] == $i) ? 'selected' : '';
-                    $content .= '<option value="' . $i . '" ' . $selected . '>' . $i . ' Stella' . ($i > 1 ? 'e' : '') . '</option>';
+                    $content .= '<option value="' . $i . '" ' . $selected . '>' . $i . ' Stell' . ($i > 1 ? 'e' : 'a') . '</option>';
                 }
                 $content .= '</select>
                                 </div>
                             </div>
-                            <textarea class="inputRecensione" name="newCommento">' . htmlspecialchars($recensione['commento']) . '</textarea>
+                            <textarea class="inputRecensione" name="newCommento" aria-label="testo della recensione della scarpa ' . htmlspecialchars($recensione['nome']) . '">' . htmlspecialchars($recensione['commento']) . '</textarea>
                         </div>
                         <div class="add-review-section">
                             <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) . '">
@@ -110,22 +110,8 @@ if (!empty($_SESSION['username'])) {
                            
                         </div>
                     </div>
-                    </div>
-                    <textarea class="inputRecensione" name="newCommento" aria-label="testo della recensione scarpa '. htmlspecialchars($recensione['nome']).'">' . htmlspecialchars($recensione['commento']) . '</textarea>
-                    
-                </div>
-            <div class="add-review-section">
-                <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                    <img src="assets/edit.svg" alt="modifica" class="icona-profilo" />
-                </button>
-                <button type="submit" id="elimina' . $recensione['scarpa_id'] . '" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
-                    <img src="assets/delete.svg" alt="elimina" class="icona-profilo" />
-                </button>
-            </div>   
-            </div>
-            </form>
-            
-            ';
+                </form>';
+            }
         }
     } else {
         $content .= '<p>Nessuna recensione disponibile.</p>';

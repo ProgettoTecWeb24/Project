@@ -88,11 +88,11 @@ if($connection->isAdmin($_SESSION["username"])){
                         <th scope="col" class="hide-mobile">Tipo</th>
                         <th scope="col" class="hide-mobile" lang="en">Feedback</th>
                         <th scope="col">Immagine</th>
-                        <th></th>
+                        <th scope="col">Comandi</th>
                     </tr>
                 </thead>
                 <tbody>
-        </div>
+        
         ';
     foreach($all_shoes as $shoe){
         $lista_scarpe .= '
@@ -102,7 +102,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         <td class="table hide-tablet">'.$shoe["descrizione"] .'</td>
                         <td class="table hide-mobile">'.$shoe["tipo"] .'</td>
                         <td class="table hide-mobile"><span lang="en">'.
-                            $shoe["feedback"].'</span></br>
+                            $shoe["feedback"].'</span><br>
                             <div class="review-stars">
                                 <img class="stars" src="assets/' . $shoe["votoexp"] . '.png" alt="immagine di ' . $shoe["votoexp"] . ' stelle su 5 per l\'esperto" />
                             </div>
@@ -135,7 +135,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     </tbody>
                 </table>
             </div>
-        </div>
+        
             '; 
 
     $HTMLpage = str_replace("{lista_scarpe}", $lista_scarpe, $HTMLpage);
