@@ -57,7 +57,6 @@ if (!empty($_POST['ordina'])) {
     $query = $query . "ORDER BY data_aggiunta DESC ";
 }
 
-//echo $query;
 
 if(isset($_POST['likePress'])){
     if (!empty($_SESSION['username'])) {
@@ -76,9 +75,6 @@ if(isset($_POST['likePress'])){
         die();
     }
 }
-
-//echo $query;
-
 
 
 $result = $connection->query($query);

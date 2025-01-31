@@ -47,27 +47,41 @@ CREATE TABLE LIKES (
 -- Dati per SCARPA
 INSERT INTO SCARPA (nome, marca, tipo, descrizione, votoexp, feedback, immagine, data_aggiunta)
 VALUES 
-('Pegasus Trail', 'Nike', 'trail', 'Scarpa versatile per trail running.', 3, 'Comoda e affidabile', 'pegasus_trail.webp', '2025-01-10'),
-('UltraBoost Light', 'Adidas', 'strada', 'Scarpa con un’ammortizzazione avanzata.', 5, 'Ottima per lunghe distanze', 'ultraboost_light.webp', '2025-01-12'),
-('Gel-Kayano', 'Asics', 'strada', 'Scarpa progettata per stabilità e supporto.', 4, 'Supporto eccellente', 'gel_kayano.webp', '2025-01-15'),
-('Speedgoat', 'Hoka', 'trail', 'Scarpa robusta per terreni tecnici.', 5, 'Aderenza incredibile', 'speedgoat.webp', '2025-01-17'),
-('Zoom Fly', 'Nike', 'pista', 'Scarpa leggera e reattiva.', 3, 'Ottima per principianti', 'zoom_fly.webp', '2025-01-20'),
-('Lone Peak', 'Altra', 'trail', 'Perfetta per escursioni lunghe.', 5, 'Ampio spazio per le dita', 'lone_peak.webp', '2025-01-22'),
-('Metaspeed Sky+', 'Asics', 'strada', 'Scarpa pensata per massimizzare la velocità.', 5, 'Ideale per record personali', 'metaspeed_sky_plus.webp', '2025-01-25'),
-('Ghost', 'Brooks', 'strada', 'Scarpa universale per corse quotidiane.', 4, 'Ottima per runner intermedi', 'ghost.webp', '2025-01-28'),
-('Endorphin Speed', 'Saucony', 'trail', 'Scarpa versatile e performante.', 5, 'Reattiva e performante', 'endorphin_speed.webp', '2025-01-30'),
-('Wave Rider', 'Mizuno', 'strada', 'Scarpa ammortizzata per lunghe distanze.', 4, 'Perfetta per runner quotidiani', 'wave_rider.webp', '2025-02-01'),
-('Fresh Foam 1080', 'New Balance', 'strada', 'Comfort eccezionale per ogni tipo di corsa.', 3, 'Comoda e versatile', '1080.webp', '2025-02-03'),
-('Vaporfly Next', 'Nike', 'pista', 'Scarpa ultra-leggera per competizioni.', 5, 'Top di gamma', 'vaporfly_next.webp', '2025-02-05'),
-('Adizero Adios Pro', 'Adidas', 'strada', 'Scarpa da gara per massima velocità.', 5, 'Massima performance', 'adios_pro.webp', '2025-02-07'),
-('Novablast', 'Asics', 'strada', 'Ammortizzazione energica per allenamenti intensi.', 4, 'Super rimbalzo', 'novablast.webp', '2025-02-09'),
-('Clifton', 'Hoka', 'pista', 'Scarpa morbida e ammortizzata.', 5, 'Comfort incredibile', 'clifton.webp', '2025-02-11'),
-('Rincon', 'Hoka', 'strada', 'Scarpa estremamente leggera.', 4, 'Design minimalista', 'rincon.webp', '2025-02-13'),
-('Mach', 'Hoka', 'trail', 'Reattività superiore per sentieri tecnici.', 5, 'Grande velocità', 'mach.webp', '2025-02-15'),
-('Terrex Agravic', 'Adidas', 'trail', 'Scarpa ultra-durevole per montagna.', 3, 'Molto resistenti', 'terrex_agravic.webp', '2025-02-17'),
-('Rebel', 'New Balance', 'strada', 'Scarpa veloce per allenamenti.', 5, 'Perfetta per allenamenti brevi', 'rebel.webp', '2025-02-19'),
-('Invincible Run', 'Nike', 'strada', 'Scarpa ammortizzata per chilometraggi elevati.', 5, 'Massimo supporto', 'invincible_run.webp', '2025-02-21'),
-('Solar Glide', 'Adidas', 'strada', 'Scarpa equilibrata per ogni corsa.', 4, 'Ottima versatilità', 'solar_glide.webp', '2025-02-23');
+("Pegasus Trail", "Nike", "trail", "Scarpa versatile per trail running. La Pegasus Trail offre un ottima combinazione di comfort e stabilità, ideale per affrontare terreni accidentati. La suola è progettata per garantire una trazione eccellente, mentre la tomaia traspirante mantiene i piedi freschi e asciutti.", 3, "Comoda e affidabile", "pegasus_trail.webp", "2025-01-10"),
+("UltraBoost Light", "Adidas", "strada", "Scarpa con un’ammortizzazione avanzata. L'UltraBoost Light è perfetta per lunghe distanze grazie alla sua intersuola Boost che offre un ritorno di energia eccezionale. La tomaia Primeknit avvolge il piede in un comfort senza pari, rendendo ogni passo leggero e reattivo.", 5, "Ottima per lunghe distanze", "ultraboost_light.webp", "2025-01-12"),
+("Gel-Kayano", "Asics", "strada", "Scarpa progettata per stabilità e supporto. La Gel-Kayano è una scelta eccellente per i runner che cercano un supporto extra durante la corsa. La tecnologia Gel nella suola assorbe gli urti, mentre il sistema di supporto Dynamic DuoMax offre una stabilità superiore, riducendo il rischio di infortuni.", 4, "Supporto eccellente", "gel_kayano.webp", "2025-01-15"),
+("Speedgoat", "Hoka", "trail", "Scarpa robusta per terreni tecnici. La Speedgoat è progettata per affrontare i sentieri più impegnativi con facilità. La suola Vibram garantisce una trazione eccezionale su superfici scivolose, mentre l'intersuola ammortizzata offre comfort e protezione per lunghe distanze.", 5, "Aderenza incredibile", "speedgoat.webp", "2025-01-17"),
+("Zoom Fly", "Nike", "pista", "Scarpa leggera e reattiva. La Zoom Fly è ideale per i runner che cercano velocità e performance. La piastra in fibra di carbonio nell'intersuola offre una spinta extra ad ogni passo, mentre la tomaia leggera e traspirante mantiene i piedi freschi durante le gare più intense.", 3, "Ottima per principianti", "zoom_fly.webp", "2025-01-20"),
+("Lone Peak", "Altra", "trail", "Perfetta per escursioni lunghe. La Lone Peak offre un ampio spazio per le dita, permettendo una naturale espansione del piede durante la corsa. La suola MaxTrac garantisce una trazione eccellente su terreni accidentati, mentre l'intersuola ammortizzata offre comfort per lunghe distanze.", 5, "Ampio spazio per le dita", "lone_peak.webp", "2025-01-22"),
+("Metaspeed Sky+", "Asics", "strada", "Scarpa pensata per massimizzare la velocità. La Metaspeed Sky+ è progettata per i runner che cercano di battere i propri record personali. La piastra in fibra di carbonio e l'intersuola FlyteFoam Blast offrono una combinazione di reattività e ammortizzazione, rendendo ogni passo esplosivo.", 5, "Ideale per record personali", "metaspeed_sky_plus.webp", "2025-01-25"),
+("Ghost", "Brooks", "strada", "Scarpa universale per corse quotidiane. La Ghost è una scelta affidabile per i runner di tutti i livelli. L'intersuola DNA Loft offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante garantisce comfort e supporto durante ogni corsa.", 4, "Ottima per runner intermedi", "ghost.webp", "2025-01-28"),
+("Endorphin Speed", "Saucony", "trail", "Scarpa versatile e performante. L'Endorphin Speed è progettata per offrire una corsa reattiva e fluida grazie alla tecnologia SpeedRoll. La piastra in nylon e l'intersuola PWRRUN PB offrono una combinazione di leggerezza e ammortizzazione, rendendo ogni passo energico.", 5, "Reattiva e performante", "endorphin_speed.webp", "2025-01-30"),
+("Wave Rider", "Mizuno", "strada", "Scarpa ammortizzata per lunghe distanze. La Wave Rider è ideale per i runner che cercano comfort e supporto durante le corse lunghe. La tecnologia Wave offre un'ammortizzazione equilibrata, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti.", 4, "Perfetta per runner quotidiani", "wave_rider.webp", "2025-02-01"),
+("Fresh Foam 1080", "New Balance", "strada", "Comfort eccezionale per ogni tipo di corsa. La Fresh Foam 1080 offre un'ammortizzazione morbida e reattiva grazie all'intersuola Fresh Foam. La tomaia in mesh traspirante avvolge il piede in un comfort senza pari, rendendo ogni corsa un'esperienza piacevole.", 3, "Comoda e versatile", "1080.webp", "2025-02-03"),
+("Vaporfly Next", "Nike", "pista", "Scarpa ultra-leggera per competizioni. La Vaporfly Next è progettata per i runner che cercano di massimizzare la loro velocità durante le gare. La piastra in fibra di carbonio e l'intersuola ZoomX offrono una combinazione di leggerezza e reattività, rendendo ogni passo esplosivo.", 5, "Top di gamma", "vaporfly_next.webp", "2025-02-05"),
+("Adizero Adios Pro", "Adidas", "strada", "Scarpa da gara per massima velocità. L'Adizero Adios Pro è progettata per i runner che cercano di battere i propri record personali. La piastra in fibra di carbonio e l'intersuola Lightstrike Pro offrono una combinazione di reattività e ammortizzazione, rendendo ogni passo esplosivo.", 5, "Massima performance", "adios_pro.webp", "2025-02-07"),
+("Novablast", "Asics", "strada", "Ammortizzazione energica per allenamenti intensi. La Novablast offre un'esperienza di corsa reattiva grazie all'intersuola FlyteFoam Blast. La tomaia in mesh traspirante avvolge il piede in un comfort senza pari, rendendo ogni corsa un'esperienza piacevole.", 4, "Super rimbalzo", "novablast.webp", "2025-02-09"),
+("Clifton", "Hoka", "pista", "Scarpa morbida e ammortizzata. La Clifton è ideale per i runner che cercano comfort e supporto durante le corse lunghe. L'intersuola in EVA offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti.", 5, "Comfort incredibile", "clifton.webp", "2025-02-11"),
+("Rincon", "Hoka", "strada", "Scarpa estremamente leggera. La Rincon è progettata per i runner che cercano velocità e performance. L'intersuola in EVA offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti.", 4, "Design minimalista", "rincon.webp", "2025-02-13"),
+("Mach", "Hoka", "trail", "Reattività superiore per sentieri tecnici. La Mach è progettata per affrontare i sentieri più impegnativi con facilità. La suola Vibram garantisce una trazione eccezionale su superfici scivolose, mentre l'intersuola ammortizzata offre comfort e protezione per lunghe distanze.", 5, "Grande velocità", "mach.webp", "2025-02-15"),
+("Terrex Agravic", "Adidas", "trail", "Scarpa ultra-durevole per montagna. La Terrex Agravic è progettata per affrontare i terreni più impegnativi con facilità. La suola Continental garantisce una trazione eccezionale su superfici scivolose, mentre l'intersuola ammortizzata offre comfort e protezione per lunghe distanze.", 3, "Molto resistenti", "terrex_agravic.webp", "2025-02-17"),
+("Rebel", "New Balance", "strada", "Scarpa veloce per allenamenti. La Rebel è progettata per i runner che cercano velocità e performance. L'intersuola FuelCell offre un'ammortizzazione reattiva, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti durante gli allenamenti più intensi.", 5, "Perfetta per allenamenti brevi", "rebel.webp", "2025-02-19"),
+("Invincible Run", "Nike", "strada", "Scarpa ammortizzata per chilometraggi elevati. La Invincible Run è ideale per i runner che cercano comfort e supporto durante le corse lunghe. L'intersuola ZoomX offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti.", 5, "Massimo supporto", "invincible_run.webp", "2025-02-21"),
+("Solar Glide", "Adidas", "strada", "Scarpa equilibrata per ogni corsa. La Solar Glide è una scelta affidabile per i runner di tutti i livelli. L'intersuola Boost offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante garantisce comfort e supporto durante ogni corsa.", 4, "Ottima versatilità", "solar_glide.webp", "2025-02-23");
+
+-- Dati per LIKES
+INSERT INTO LIKES (username, scarpa_id, data_aggiunta) VALUES
+('user', 1, '2025-01-11'),
+('user', 2, '2025-01-13'),
+('admin', 3, '2025-01-16'),
+('admin', 4, '2025-01-18'),
+('user', 5, '2025-01-20'),
+('admin', 6, '2025-01-22'),
+('user', 7, '2025-01-24'),
+('admin', 8, '2025-01-26'),
+('user', 9, '2025-01-28'),
+('admin', 10, '2025-01-30');
+
 
 -- Dati per UTENTE
 INSERT INTO UTENTE (username, pw, ruolo, admin) VALUES

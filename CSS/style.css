@@ -372,8 +372,15 @@ body {
   width: 100%;
 }
 
+#username {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 0.0625em solid var(--text-color);
+    border-radius: 0.25em;
+    font-size: 1em;
+  }
 
-input[type="username"],
 input[type="password"] {
   width: 100%;
   padding: 1em;
