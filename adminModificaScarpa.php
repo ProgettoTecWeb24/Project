@@ -99,7 +99,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="descrizione">Descrizione: </label>
-                            <input type="text" class="input-text-add-scarpa" name="descrizione" id="descrizione" maxlength="480" placeholder="Descrizione (opzionale)" value="'.$shoe["descrizione"].'"/>
+                            <textarea name="descrizione" id="descrizione" class="description-text admin" maxlength="480"></textarea>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="tipo">Tipo: </label>
