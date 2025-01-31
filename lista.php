@@ -96,7 +96,7 @@ if ($result) {
                     <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '" />
                 </div>
                     <div class="text-card">
-                        <h3>' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</h3>
+                        <h3><a id="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '">' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</a></h3>
                         <p class="feedback">Feedback: ' . htmlspecialchars($row['feedback']) . '</p>
                         <p class="tipo">Tipo: ' . htmlspecialchars($row['tipo']) . '</p>
                         <p class="tipo">Voto esperto: ' . htmlspecialchars($row['votoexp']) . '</p>

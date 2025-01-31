@@ -97,7 +97,7 @@ if (!empty($_SESSION['username'])) {
                         $content .='</select>
                     </div>
                     </div>
-                    <textarea class="inputRecensione" name="newCommento">' . htmlspecialchars($recensione['commento']) . '</textarea>
+                    <textarea class="inputRecensione" name="newCommento" aria-label="testo della recensione scarpa '. htmlspecialchars($recensione['nome']).'">' . htmlspecialchars($recensione['commento']) . '</textarea>
                     
                 </div>
             <div class="add-review-section">
