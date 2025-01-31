@@ -69,18 +69,6 @@ VALUES
 ("Invincible Run", "Nike", "strada", "Scarpa ammortizzata per chilometraggi elevati. La Invincible Run è ideale per i runner che cercano comfort e supporto durante le corse lunghe. L'intersuola ZoomX offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante mantiene i piedi freschi e asciutti.", 5, "Massimo supporto", "invincible_run.webp", "2025-02-21"),
 ("Solar Glide", "Adidas", "strada", "Scarpa equilibrata per ogni corsa. La Solar Glide è una scelta affidabile per i runner di tutti i livelli. L'intersuola Boost offre un'ammortizzazione morbida e reattiva, mentre la tomaia in mesh traspirante garantisce comfort e supporto durante ogni corsa.", 4, "Ottima versatilità", "solar_glide.webp", "2025-02-23");
 
--- Dati per LIKES
-INSERT INTO LIKES (username, scarpa_id, data_aggiunta) VALUES
-('user', 1, '2025-01-11'),
-('user', 2, '2025-01-13'),
-('admin', 3, '2025-01-16'),
-('admin', 4, '2025-01-18'),
-('user', 5, '2025-01-20'),
-('admin', 6, '2025-01-22'),
-('user', 7, '2025-01-24'),
-('admin', 8, '2025-01-26'),
-('user', 9, '2025-01-28'),
-('admin', 10, '2025-01-30');
 
 
 -- Dati per UTENTE
@@ -129,3 +117,16 @@ INSERT INTO RECENSIONE (username, scarpa_id, voto, commento, data_aggiunta) VALU
 ('federico', 15, 3, 'Nella media, nulla di speciale.', '2025-02-22'),
 ('giovanni', 2, 2, 'Poca ammortizzazione.', '2025-02-24'),
 ('marta', 12, 1, 'Materiali scadenti.', '2025-02-16');
+
+-- Dati per LIKES
+INSERT INTO LIKES (username, scarpa_id, data_aggiunta) VALUES
+('user', 1, '2025-01-11'),
+('user', 2, '2025-01-13'),
+('admin', 3, '2025-01-16'),
+('admin', 4, '2025-01-18'),
+('user', 5, '2025-01-20'),
+('admin', 6, '2025-01-22'),
+('user', 7, '2025-01-24'),
+('admin', 8, '2025-01-26'),
+('user', 9, '2025-01-28'),
+('admin', 10, '2025-01-30');
