@@ -86,7 +86,7 @@ if($connection->isAdmin($_SESSION["username"])){
                     <form action="adminModificaScarpa.php" class="form" method="POST" enctype="multipart/form-data">
                         <div class="input-add-scarpa">
                             <label for="image">Cambia foto della scarpa: </label>
-                            <input type="file" name="image" id="image" accept="image/png, image/webp" required>
+                            <input type="file" name="image" id="image" accept="image/png, image/webp">
                         </div>
                         <input type="hidden" name="idscarpa" id="idscarpa" value="'.$shoe["id"].'"/>
                         <div class="input-add-scarpa">
@@ -99,7 +99,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         </div>
                         <div class="input-add-scarpa">
                             <label for="descrizione">Descrizione: </label>
-                            <textarea name="descrizione" id="descrizione" class="description-text admin" maxlength="480"></textarea>
+                            <textarea name="descrizione" id="descrizione" class="description-text admin" maxlength="480">'.$shoe["descrizione"].'</textarea>
                         </div>
                         <div class="input-add-scarpa">
                             <label for="tipo">Tipo: </label>

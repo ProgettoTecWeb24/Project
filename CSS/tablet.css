@@ -39,6 +39,15 @@
   height: 4em;
 }
 
+#breadcrumb {
+  gap: 0.2em;
+}
+
+.inline-list{
+  gap: 0.1em;
+  padding: 0;
+}
+
 .wrapper {
   margin-top: 0em;
   margin-bottom: 0em;
