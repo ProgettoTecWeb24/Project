@@ -56,10 +56,11 @@ if(isset($_POST["submit"])){
 }else{
     $HTMLpage = str_replace("{error_text}","",$HTMLpage);
 }
-
+$connection->endDbConnection();
 echo $HTMLpage;
 include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: profilo.php");
 }
 ?>

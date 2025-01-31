@@ -77,6 +77,7 @@ if($connection->isAdmin($_SESSION["username"])){
     }else{
         $idScarpa = intval($_GET['mod']);
         $shoe = $connection->getShoe($idScarpa);
+        $connection->endDbConnection();
         if($shoe){
             $dettaglio_scarpa .= '
                 <div class="img-scarpa-modifica-div">
@@ -134,12 +135,15 @@ if($connection->isAdmin($_SESSION["username"])){
             ';
         }
     }
+    
     $HTMLpage = str_replace("{info}",$info, $HTMLpage);
     $HTMLpage = str_replace("{dettaglio_scarpa}",$dettaglio_scarpa, $HTMLpage);
+    echo $HTMLpage;
+    include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: HTML/error404.html");
 }
 
-echo $HTMLpage;
-include "footer.php";
+
 ?>

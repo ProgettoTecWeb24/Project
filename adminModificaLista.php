@@ -75,6 +75,7 @@ if($connection->isAdmin($_SESSION["username"])){
     }
 
     $all_shoes = $connection->query($query);
+    $connection->endDbConnection();
     $lista_scarpe .= '
         <div class="table-wrapper-admin">
             <p id="sum">Tabella che contiene tutte le scarpe presenti nel sito, sono presenti nome, marca, descrizione, tipo, <span lang="en">feedback</span> dell\'esperto e foto per ogni scarpa</p>
@@ -143,6 +144,7 @@ if($connection->isAdmin($_SESSION["username"])){
     echo $HTMLpage;
     include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: HTML/error404.html");
 }
 

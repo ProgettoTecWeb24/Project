@@ -73,6 +73,7 @@ if (!empty($_SESSION['username'])) {
     $connection->endDbConnection();
     include "footer.php";
 } else {
+    $connection->endDbConnection();
     header('Location: accedi.php');
     die();
 }

@@ -20,10 +20,11 @@ if($connection->isAdmin($_SESSION["username"])){
     $info = "";
     include "header.php";
     $HTMLpage = file_get_contents('HTML/adminpage.html');
-
+    $connection->endDbConnection();
     echo $HTMLpage;
     include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: error404.php");
 }
 ?>

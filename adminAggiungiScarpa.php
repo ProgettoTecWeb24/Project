@@ -15,10 +15,10 @@ $connection = new DbConnection();
 if (!$connection->startDbConnection()) {
     die("Connessione al database fallita.");
 }
-include "header.php";
-$HTMLpage = file_get_contents('HTML/adminAggiungiScarpa.html');
-if($connection->isAdmin($_SESSION["username"])){
 
+if($connection->isAdmin($_SESSION["username"])){
+    include "header.php";
+    $HTMLpage = file_get_contents('HTML/adminAggiungiScarpa.html');
     $info = "";
     $immagine = "";
     if(isset($_POST["conferma-aggiungi"])){
@@ -71,12 +71,16 @@ if($connection->isAdmin($_SESSION["username"])){
         }else{
             $info = '<p class="error_text" id="info" role="alert">Errore: aggiunta non riuscita :(</p>';
         }
+        
     }
+    $connection->endDbConnection();
     $HTMLpage = str_replace("{info}",$info, $HTMLpage);
+    echo $HTMLpage;
+    include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: HTML/error404.html");
 }
 
-echo $HTMLpage;
-include "footer.php";
+
 ?>

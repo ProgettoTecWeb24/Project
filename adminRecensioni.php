@@ -59,7 +59,7 @@ if($connection->isAdmin($_SESSION["username"])){
     
 
     $all_review = $connection->query($query);
-
+    $connection->endDbConnection();
     foreach($all_review as $review){
         $lista_recensioni .= '
                     <tr>
@@ -100,6 +100,7 @@ if($connection->isAdmin($_SESSION["username"])){
     echo $HTMLpage;
     include "footer.php";
 }else{
+    $connection->endDbConnection();
     header("Location: HTML/error404.html");
 }
 
