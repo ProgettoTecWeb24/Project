@@ -10,10 +10,15 @@
   background-color: var(--searchbar-bg-color);
 }
 
-.searchbar-acc> :nth-child(5) {
-  grid-column: span 2;
-  justify-self: center;
+.submit-filter {
+  width: 40em;
+  height: 4em;
 }
+.searchbar-acc> :nth-child(5) {
+    grid-column: span 2;
+    justify-self: center;
+}
+
 
 .searchbar-acc label {
   min-width: 3.5em;
@@ -34,9 +39,14 @@
   align-self: center;
 }
 
-.submit-filter {
-  width: 80%;
-  height: 4em;
+
+#breadcrumb {
+  gap: 0.2em;
+}
+
+.inline-list{
+  gap: 0.1em;
+  padding: 0;
 }
 
 .wrapper {

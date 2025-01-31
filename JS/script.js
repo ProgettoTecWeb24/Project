@@ -82,14 +82,6 @@ function checkPassword(str) {
 }
 
 
-//function checkComment(comment) {
-//    // Esegui una semplice validazione per i caratteri
-//    const regex = /^[a-zA-Z0-9\s.,!?()]*$/; // Permette lettere, numeri, spazi e punteggiatura base
-//    return regex.test(comment) && comment.length <= 1160;
-//}
-
-
-
 function validateLogin(){
     if (!validateUsernameLogin()){
       return false;
@@ -173,27 +165,23 @@ function validateUsername() {
     const errorClass = "error_text";
     const existingError = x.parentElement.querySelector(`.${errorClass}`);
     
-    // Rimuove il messaggio di errore esistente, se presente
     if (existingError) {
         x.parentElement.removeChild(existingError);
     }
 
-    // Crea il nodo del messaggio di errore
     const node = document.createElement("p");
 
     node.classList.add(errorClass);
     node.setAttribute("role", "alert");
 
-    // Controlla se il campo è vuoto
     if (x.value.trim() === "") {
         node.innerHTML = 'Il campo <span lang="en">username</span> non può essere vuoto.';
         x.parentElement.appendChild(node);
         return false;
     }
 
-    // Controlla la validità dello username
     if (!checkUsername(x.value)) {
-        node.innerHTML = '<span lang="en">Username</span> non valido.';
+        node.innerHTML = '<span lang="en">Username</span> non valido. Massimo 15 caratteri e accetta solo caratteri alfanumerici minuscoli, _ e .';
 
         x.parentElement.appendChild(node);
         return false;
@@ -283,11 +271,9 @@ function impostaIdEliminazione() {
             const deleteBtn = form.querySelector('.delete-button');
             deleteBtn.setAttribute('name', 'delete');
             if (deleteIdInput) {
-                // Imposta il nome del campo solo se non è già impostato
                 deleteIdInput.setAttribute('name', 'delete_id');
             }
             if (deleteUsername) {
-                // Imposta il nome del campo solo se non è già impostato
                 deleteUsername.setAttribute('name', 'username');
             }
         });
@@ -298,49 +284,3 @@ document.addEventListener('DOMContentLoaded', function () {
     impostaIdEliminazione();
 });
 
-
-/*
-function validateComment() {
-    console.log("validateComment");
-
-    var comment = document.getElementById("comment");
-    console.log("Comment element: ", comment); // Verifica se l'elemento è correttamente selezionato
-    console.log("Valore del commento: ", comment.value); // Mostra il valore del commento
-
-    var submitButton = document.getElementById("add_review_button");
-    const errorClass = "error_text";
-
-    const existingErrors = submitButton.parentElement.querySelectorAll(`.${errorClass}`);
-    existingErrors.forEach(function(error) {
-        error.remove(); // Rimuove tutti gli errori
-    });
-
-    const errorNode = document.createElement("p");
-    errorNode.classList.add(errorClass);
-    errorNode.setAttribute("role", "alert");
-
-    let errorMessage = "";
-
-    if (comment.value.trim() === "") {
-        console.log("Il commento è vuoto");
-        errorMessage += "Il commento della recensione non può essere vuoto. ";
-    }
-
-    if (!checkComment(comment.value)) {
-        console.log("Il commento non è valido");
-        errorMessage += "La recensione non è valida. Deve contenere al massimo 1160 caratteri e accettare solo caratteri alfanumerici e punteggiatura.";
-    }
-
-    if (errorMessage) {
-        errorNode.textContent = errorMessage.trim();
-        // Aggiunge l'errore sopra il bottone "Invia Recensione"
-        submitButton.parentElement.insertBefore(errorNode, submitButton);
-        return false;
-    }
-
-    console.log("Il commento è valido: ", comment.value);
-
-    return true;
-}
-
-*/

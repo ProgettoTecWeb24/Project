@@ -24,13 +24,19 @@ if (!empty($_SESSION['username'])) {
         exit();
     }
 
+    $error = "";
     // Salvataggio impostazioni profilo
     if(isset($_POST['salvaImpos'])){
         if(!empty($_POST['newUser'])){
-            $qSalva = "UPDATE UTENTE SET username = '" . $_POST['newUser'] . "', ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
-            $modifica = $connection->prepareAndExecute($qSalva, 's', $_POST['kmsett']);
-            $_SESSION['username'] = $_POST['newUser'];
-        }else{
+            $newUser = $_POST['newUser'];
+            if (preg_match('/^[a-z0-9_.]{1,15}$/', $newUser)) {
+                $qSalva = "UPDATE UTENTE SET username = '" . $newUser . "', ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
+                $modifica = $connection->prepareAndExecute($qSalva, 's', $_POST['kmsett']);
+                $_SESSION['username'] = $newUser;
+            } else {
+                $error= "Il nome utente non valido";
+            }
+        } else {
             $qSalva = "UPDATE UTENTE SET ruolo =? WHERE username ='" . $_SESSION['username'] . "'";
             $modifica = $connection->prepareAndExecute($qSalva, 's', $_POST['kmsett']);
         }
@@ -47,6 +53,7 @@ if (!empty($_SESSION['username'])) {
     
     include "header.php";
     $HTMLpage = file_get_contents('HTML/profilo.html');
+    $HTMLpage = str_replace("{error_text}", $error , $HTMLpage);
 
     $HTMLpage = str_replace("{user}", $_SESSION['username'], $HTMLpage);
 
