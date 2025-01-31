@@ -552,7 +552,7 @@ label {
 }
 
 #delete-account-modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -956,7 +956,7 @@ img.stars {
 #add-review-modal.modal,
 #edit-review-modal.modal,
 #delete-review-modal.modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -964,7 +964,7 @@ img.stars {
 }
 
 .delete-admin-modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
