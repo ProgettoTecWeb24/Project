@@ -982,7 +982,7 @@ img.stars {
 }
 
 .modal-content {
-  height: 38em;
+  height: 44em;
   width: 30em;
   background-color: white;
   padding: 20px;
@@ -995,7 +995,7 @@ img.stars {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 10em;
+  height: 12.5em;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
