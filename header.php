@@ -18,7 +18,7 @@ $DOM = str_replace('<meta name="description" content=""/>', '<meta name="descrip
 $DOM = str_replace('<meta name="keywords" content=""/>', '<meta name="keywords" content="' . $keywords . '" />', $DOM);
 
 $navbar_links .= '
-    <ul id="navbar-links" class="navbar-links">
+    <ul id="navbar-links" class="navbar-links" aria-label="lista navigazione">
         '.((basename($_SERVER['PHP_SELF']) == 'index.php') ? '<li class="navbar-current"><span lang="en">Home</span>' : '<li class="navbar-item"><a href="index.php"><span lang="en">Home</span></a>').'</li>
         '.((basename($_SERVER['PHP_SELF']) == 'lista.php') ? '<li class="navbar-current">Lista' : '<li class="navbar-item"><a href="lista.php">Lista</a>').'</li>
         '.((basename($_SERVER['PHP_SELF']) == 'chisiamo.php') ? '<li class="navbar-current">Chi siamo' : '<li class="navbar-item"><a href="chisiamo.php">Chi siamo</a>').'</li>';

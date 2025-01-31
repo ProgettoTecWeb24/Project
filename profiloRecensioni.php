@@ -110,8 +110,22 @@ if (!empty($_SESSION['username'])) {
                            
                         </div>
                     </div>
-                </form>';
-            }
+                    </div>
+                    <textarea class="inputRecensione" name="newCommento" aria-label="testo della recensione scarpa '. htmlspecialchars($recensione['nome']).'">' . htmlspecialchars($recensione['commento']) . '</textarea>
+                    
+                </div>
+            <div class="add-review-section">
+                <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
+                    <img src="assets/edit.svg" alt="modifica" class="icona-profilo" />
+                </button>
+                <button type="submit" id="elimina' . $recensione['scarpa_id'] . '" name="elimina" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) .'">
+                    <img src="assets/delete.svg" alt="elimina" class="icona-profilo" />
+                </button>
+            </div>   
+            </div>
+            </form>
+            
+            ';
         }
     } else {
         $content .= '<p>Nessuna recensione disponibile.</p>';
