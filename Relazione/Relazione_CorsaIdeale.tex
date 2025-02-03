@@ -1,0 +1,529 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{subcaption}
+\usepackage{tocloft}
+\usepackage[T1]{fontenc}
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm
+}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+\graphicspath{{images/}}
+
+% Indice
+\renewcommand{\contentsname}{Indice}
+
+\begin{document}
+
+% Pagina del titolo e sezioni
+\begin{titlepage}
+
+\begin{center}
+    \vspace*{0.5cm}
+    \Huge \textbf{Relazione Progetto di Tecnologie Web} \\
+    \vspace{0.5cm}
+    \Large Anno Accademico 2024-2025\\
+    \vspace{1cm}
+    \Huge Sito Web: \textit{CorsaIdeale} \\
+    \vspace{0.5cm} 
+
+    \includegraphics[width=0.2\textwidth]{logo.png}
+\end{center}
+
+% Componenti del Gruppo
+\section*{\centering Componenti del gruppo}
+\begin{center}
+    Marin Davide - 2068234\\
+    \vspace{0.2cm}
+    Pinarello Eddy - 2075535\\
+    \vspace{0.2cm}
+    Rubino Alfredo - 2076435\\
+    \vspace{0.2cm}
+    Salvò Giovanni - 2074010
+\end{center}
+
+% Informazioni Generali
+\section*{\centering Informazioni generali}
+    \begin{center}
+    \textbf{Indirizzo sito web}: \url{http://tecweb.studenti.math.unipd.it/epinarel}\\
+    \vspace{0.2cm}
+    \textbf{Email referente gruppo}: eddy.pinarello@studenti.unipd.it
+\end{center}
+
+\renewcommand{\arraystretch}{1.5} % Aumenta l'altezza delle righe del 50%
+
+% Credenziali Utenti
+\section*{\centering Credenziali utenti}
+\begin{center}
+\begin{longtable}{|l|l|l|}
+\hline
+\rowcolor[HTML]{094074}
+{\color[HTML]{FFFFFF} Ruolo} & {\color[HTML]{FFFFFF} Username} & {\color[HTML]{FFFFFF} Password}\\
+\hline
+Utente & user & user\\
+\hline
+Amministratore & admin & admin\\
+\hline
+\end{longtable}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+
+\begingroup
+\setlength{\baselineskip}{1.5\baselineskip} % Regola interlinea per l'indice
+\tableofcontents
+\endgroup
+
+\newpage
+
+\begin{justify}
+    
+
+\section{Introduzione}
+
+Il progetto \textbf{CorsaIdeale} nasce dall'idea di fornire una piattaforma online dedicata alle recensioni di scarpe da corsa e ai servizi per i runner. Il sito si basa sull'interazione tra appassionati, presentando schede dettagliate dei prodotti e permettendo agli utenti di valutare, recensire e salvare i modelli di maggior interesse.\\
+Ogni calzatura dispone di una pagina dedicata che include specifiche tecniche, recensioni con voto degli utenti registrati e il feedback di un esperto.\\
+Un aspetto distintivo del sito è il sistema di categorizzazione degli utenti, che assegna un ruolo basato sui chilometri corsi settimanalmente. Questa funzionalità, oltre a motivare gli utenti, contribuisce a creare una community più coinvolgente e orientata al miglioramento personale.\\ 
+L'obiettivo principale del sito è rendere piacevole l'esperienza degli utenti, guidandoli nella scelta delle scarpe ideali.
+
+
+\section{Analisi dei Requisiti}
+
+\subsection{Target di utenza}
+
+Il pubblico a cui si rivolge \textbf{CorsaIdeale} è molto ampio, partendo dai principianti fino ad arrivare agli atleti esperti. I runner meno esperti possono utilizzare la piattaforma per orientarsi nella scelta della prima scarpa, mentre gli utenti più avanzati possono esplorare modelli specializzati per migliorare le proprie prestazioni. Oltre alle funzionalità riservate agli utenti registrati, cioè la possibilità di recensire e salvare i modelli di scarpe, il sito prevede una dashboard amministrativa per la gestione del database e delle recensioni, accessibile esclusivamente agli amministratori.\\
+L'interfaccia è progettata per essere semplice e intuitiva, garantendo l'accessibilità a tutti gli utenti con disabilità e a chi utilizza dispositivi non all'avanguardia. Allo stesso tempo, la struttura del sito supporta anche funzionalità avanzate per chiunque desideri interagire attivamente con la piattaforma.\\
+La funzionalità di ricerca del sito è stata ideata cercando di ricoprire tutte le fasce di utenza definite dalla metafora della pesca:
+\begin{itemize}
+    \item \textbf{Tiro perfetto}: gli schemi organizzativi esatti consentono ad un utente deciso di raggiungere immediatamente la scarpa desiderata.
+    \item \textbf{Trappola per aragoste}: gli schemi organizzativi ambigui permettono all'utente di approfondire le conoscenze grazie alla possibilità di suddividere la lista in sottocategorie.
+    \item \textbf{Pesca con la rete}: il sito è navigabile con facilità anche da un utente che non vuole perdersi nulla, grazie alla divisione in macrosezioni.
+    \item \textbf{Boa di segnalazione}: la funzionalità che permette di salvare le scarpe preferite è perfetta per chi vuole ritrovarle in un secondo momento.
+\end{itemize}
+
+\subsection{Funzionalità del sito}
+
+Sono state implementate tre diverse tipologie di utente: utente generico, utente loggato e amministratore. Ogni categoria di utente ha a disposizione le funzionalità elencate, oltre a ereditare tutte quelle della categoria precedente.
+\begin{itemize}
+    \item \textbf{Utente generico}: un qualsiasi visitatore occasionale del sito, oppure un utente già registrato ma che non ha ancora effettuato il login.
+        \begin{itemize}
+            \item Visualizzazione della pagina Home;
+            \item Visualizzazione della pagina Lista Scarpe;
+            \item Visualizzazione della pagina Chi Siamo;
+            \item Visualizzazione delle informazioni della singola scarpa;
+            \item Visualizzazione delle recensioni degli utenti registrati;
+            \item Registrazione e conseguente assegnazione del ruolo;
+            \item Login.
+        \end{itemize}
+    \item \textbf{Utente registrato}: un utente che ha effettuato l'accesso con le sue credenziali e ha quindi accesso alla sua pagina personale.
+        \begin{itemize}
+            \item Possibilità di rilasciare recensioni con voto;
+            \item Salvataggio delle scarpe;
+            \item Gestione e modifica delle proprie recensioni;
+            \item Modifica dello username;
+            \item Modifica del ruolo assegnato;
+            \item Logout;
+            \item Eliminazione dell'account.
+        \end{itemize}
+    \item \textbf{Amministratore}: l'utente che gestisce il sito, ha la possibilità di moderare le recensioni e inserire o modificare le scarpe all'interno del database.
+        \begin{itemize}
+            \item Accesso alla Dashboard amministrativa;
+            \item Visualizzazione e moderazione delle recensioni di tutti gli utenti;
+            \item Gestione e modifica del database.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Possibili ricerche}
+Per trovare il sito \textbf{CorsaIdeale}, è possibile effettuare diverse tipologie di ricerche sui principali browser. Utilizzando parole chiave specifiche come "Corsa Ideale sito ufficiale" o "recensioni scarpe da corsa", il gruppo si propone di far individuare il sito nei portali desiderati.
+
+\section{Progettazione del sito}
+
+\subsection{Struttura del sito}
+
+La progettazione del sito web segue un'organizzazione strutturata per garantire un accesso rapido e intuitivo alle informazioni e ai servizi offerti. Lo schema organizzativo adottato è quello a task. La struttura è gerarchica ma progettata per mantenere un equilibrio ottimale tra ampiezza e profondità. La profondità, ossia il numero di livelli della gerarchia, è 4, quindi non viene superato il valore ottimale di 5. L'ampiezza invece risulta essere massima nella pagina Home, dove il menù presenta 4 opzioni per l'utente registrato e 5 per l'utente generico o l'amministratore, restando quindi al di sotto del valore ottimale, cioè 7. Questo approccio permette agli utenti di trovare rapidamente le informazioni desiderate senza subire gli effetti di un sovraccarico cognitivo o perdendosi in strutture troppo complesse.
+
+\subsection{Composizione}
+
+La composizione di una pagina tipo del sito è strutturata in quattro elementi principali: header, breadcrumb, contenuto e footer. Di seguito viene descritta ciascuna parte.
+
+\subsubsection{Header}
+
+L'header è una parte fondamentale del sito e viene aggiunto dinamicamente in tutte le pagine. Contiene:
+\begin{itemize}
+    \item \textbf{Logo}: situato nell'angolo in alto a sinistra e cliccabile per tornare alla homepage.
+    \item \textbf{Titolo}: il nome del sito scritto in un font particolare e con i colori che riprendono quelli del logo.
+    \item \textbf{Navbar}: tramite un menù a lista che rimanda alle altre pagine del sito, consente una navigazione semplice e intuitiva. Nella visualizzazione da tablet e da mobile la lista viene visualizzata tramite un \textit{hamburger menu} per esigenze di spazio.\\
+    La navbar cambia leggermente in base al tipo di utente:
+        \begin{itemize}
+            \item \textbf{Utente generico}: visualizza le seguenti voci: "Home", "Lista Scarpe", "Chi siamo", "Accedi" e "Registrati".
+            \item \textbf{Utente loggato}: al posto delle voci "Accedi" e "Registrati" dell'utente loggato, visualizza un'unica voce denominata "Il mio profilo".
+            \item \textbf{Amministratore}: presenta le voci dell'utente loggato, e in aggiunta la "Dashboard Admin" per accedere alle funzionalità di gestione.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Breadcrumb}
+
+Il breadcrumb è posizionato immediatamente sotto la navbar ed è fondamentale per aiutare l'utente a orientarsi all'interno del sito, sia da \textit{desktop} che da \textit{mobile}. Mostra il percorso gerarchico fino alla pagina corrente e permette un rapido accesso alle sezioni precedenti tramite link diretto. Per evitare i link circolari, la pagina attuale non è un link attivo.\\ 
+Ad esempio, per la pagina singola di un modello di scarpe, il breadcrumb potrebbe essere: \textit{Home > Lista Scarpe > Modello Scarpa}.
+
+\subsubsection{Contenuto}
+
+Il contenuto varia ovviamente a seconda della singola pagina. È stato progettato mettendo nella zona sicura (\textit{above the fold}) le informazioni fondamentali per dare una risposta alle tre domande che riguardano l'orientamento:
+\begin{enumerate}
+    \item \textbf{Dove sono?} Questa domanda trova risposta nel titolo della pagina oppure nel breadcrumb.
+    \item \textbf{Dove posso andare?} Le opzioni disponibili sono visibili nel menù o attraverso eventuali link testuali nel contenuto.
+    \item \textbf{Di cosa si tratta?} Il contenuto principale della pagina fornisce informazioni dettagliate sull'argomento trattato, tramite un titolo.
+\end{enumerate}
+
+\subsubsection{Footer}
+
+Il footer, come l'header, è aggiunto dinamicamente a tutte le pagine del sito e contiene:
+\begin{itemize}
+    \item \textbf{Logo}: situato nell'angolo in basso a sinistra, stavolta non cliccabile.
+    \item \textbf{Informazioni di contatto}: sono stati inseriti dei dati fittizi come un numero di telefono e un indirizzo email per contattare l'azienda, oltre all'indirizzo della sede principale (aula LUM250).
+    \item \textbf{Social network}: i link ai profili per seguire l'azienda.
+    \item \textbf{Badge}: icone di validazione del codice HTML e CSS.
+\end{itemize}
+
+\subsection{Descrizione delle pagine}
+
+Il contenuto presente nelle diverse pagine che compongono il sito è organizzato come segue:
+\begin{itemize}
+    \item \textbf{Homepage (index)}:
+        \begin{itemize}
+            \item Contiene una sezione dedicata alle ultime uscite, con immagini delle scarpe, dettagli come marca, modello e tipo;
+            \item Presenta un'introduzione per gli utenti ai servizi offerti;
+            \item Descrive la meccanica dei ruoli assegnati in base ai chilometri percorsi settimanalmente, utilizzando un'efficace CTA (\textit{call to action});
+            \item Include link al resto del sito tramite un menù di navigazione principale.
+        \end{itemize}
+    \item \textbf{Lista Scarpe (lista)}:
+        \begin{itemize}
+            \item Pagina che elenca tutte le scarpe disponibili in un formato a griglia;
+            \item Consente di riordinare le scarpe, applicare dei filtri o fare una ricerca diretta;
+            \item Ogni elemento è una \textit{card} che include immagine, dettagli principali (feedback, tipo, voto dell'esperto) e il pulsante \textit{like};
+            \item Cliccando sopra la \textit{card} si accede alla pagina di dettaglio della scarpa.
+        \end{itemize}
+    \item \textbf{Pagina Singola (paginaSingola)}:
+        \begin{itemize}
+            \item Mostra la descrizione e i dettagli completi di una scarpa selezionata;
+            \item Include il voto e il feedback di un esperto;
+            \item Da questa pagina, per ogni scarpa è possibile visualizzare le recensioni degli altri utenti, oltre a poter aggiungere e modificare la propria recensione.
+        \end{itemize}
+    \item \textbf{Chi Siamo (chisiamo)}:
+        \begin{itemize}
+            \item Pagina dedicata alla descrizione del progetto e ai valore dell'azienda;
+            \item Presenta una foto e breve descrizione dei membri del team.
+        \end{itemize}
+    \item \textbf{Profilo Utente (profilo)}:\\ 
+    Pagina personale accessibile solo agli utenti registrati, che consente di visualizzare e modificare le informazioni personali, come username e ruolo, oltre a permettere di effettuare il logout o l'eliminazione dell'account. Inoltre, offre accesso ad altre due pagine:
+        \begin{itemize}
+            \item \textbf{Recensioni Personali (profiloRecensioni)}: Interfaccia per gestire le recensioni rilasciate;
+            \item \textbf{Scarpe Salvate (profiloScarpe)}: Lista per visualizzare e gestire le scarpe segnate come preferite.
+        \end{itemize}
+    \item \textbf{Admin Page (adminpage)}:\\ 
+    Dashboard centrale per i soli amministratori, con accesso alle seguenti funzionalità:
+        \begin{itemize}
+            \item \textbf{Aggiunta Scarpe (adminAggiungiScarpa)}: Form per aggiungere nuove scarpe al catalogo;
+            \item \textbf{Modifica Lista Scarpe (adminModificaLista)}: Interfaccia per aggiornare o eliminare scarpe dalla lista generale;
+            \item \textbf{Modifica Singola Scarpa (adminModificaScarpa)}: Accessibile dalla pagina precedente, è una funzione dedicata all'aggiornamento di dettagli specifici di una scarpa;
+            \item \textbf{Gestione Recensioni (adminRecensioni)}: Lista di recensioni degli utenti da dove è possibile eventualmente eliminare quelle potenzialmente offensive.
+        \end{itemize}
+    \item \textbf{Pagine di Errore}:\\
+    Vengono mostrate in caso di errori di navigazione o di server; sono state sviluppate ponendo particolare attenzione all'\textit{emotional design} e presentano un titolo e un'immagine rassicuranti per l'utente.
+        \begin{itemize}
+            \item \textbf{Errore 404 (error404)}: Pagina mostrata quando una risorsa non viene trovata.
+            \item \textbf{Errore 500 (error500)}: Pagina mostrata nell'eventualità di errori del server.
+        \end{itemize}
+    \item \textbf{Accesso (accedi)}:
+        \begin{itemize}
+            \item Form per l'autenticazione degli utenti già registrati.
+        \end{itemize}
+    \item \textbf{Registrazione (registrati)}:
+        \begin{itemize}
+            \item Form per creare un nuovo account.
+        \end{itemize}
+\end{itemize}
+
+
+\section{Implementazione Frontend}
+
+\subsection{HTML}
+
+La struttura del sito è stata realizzata utilizzando il linguaggio HTML5, scelta motivata dall'obiettivo del gruppo di creare un sito web moderno e attuale.\\
+I principali elementi di HTML5 che sono stati utilizzati sono:
+\begin{itemize}
+    \item Tag \texttt{<nav>}: utilizzato per implementare sia la barra di navigazione principale che il breadcrumb, permettendo una chiara strutturazione del menù di navigazione;
+    \item Tag \texttt{<header>}: impiegato per la testata del sito, contenente il logo, il titolo fisso e il menù di navigazione;
+    \item Tag \texttt{<footer>}: utilizzato per la sezione in basso a tutte le pagine, contenente le informazioni di contatto e i link ai social media;
+    \item Tag \texttt{<main>}: usato per identificare il contenuto principale di ogni pagina;
+    \item Tag \texttt{<section>}: impiegato per dividere logicamente i contenuti in alcune pagine;
+    \item Tag \texttt{<address>}: utilizzato nel footer per la formattazione dell'indirizzo;
+    \item Attributo \texttt{required}: applicato ai campi dei form per garantire l'inserimento di dati obbligatori;
+    \item Attributo \texttt{type}: utilizzato nei campi di input per specificare il formato corretto, come \texttt{text}, \texttt{password} e altri.
+\end{itemize}
+
+\subsubsection{Accessibilità e User Experience}
+
+Il sito è stato sviluppato seguendo le linee guida del W3C, con particolare attenzione alla semantica e all'accessibilità, implementando:
+\begin{itemize}
+    \item Attributo \texttt{lang} per specificare le porzioni di testo in lingua inglese;
+    \item Attributo \texttt{aria-label} per migliorare la navigazione con screen reader;
+    \item Tag \texttt{<label>} associato correttamente ai campi nei form;
+    \item Attributo \texttt{alt} per fornire testi alternativi alle immagini, in caso non fossero disponibili;
+    \item Accessibilità migliorata nella tabella della pagina Modifica Lista Scarpe mediante:
+        \begin{itemize}
+            \item Attributo \texttt{scope} per definire correttamente l'associazione tra intestazioni e celle;
+            \item Attributo \texttt{aria-describedby} per fornire una descrizione della tabella e del suo contenuto;
+            \item Classi di visibilità (\texttt{hide-tablet}, \texttt{hide-mobile}) per ottimizzare la fruibilità della tabella su diversi dispositivi;
+            \item Attributo \texttt{aria-label} per i pulsanti di modifica ed eliminazione;
+        \end{itemize}
+    \item Uso del tag \texttt{<nav>} per il breadcrumb e altre indicazioni di navigazione, facilitando l'orientamento dell'utente;
+    \item Pulsante "Torna su" in fondo alla pagina, per agevolare la navigazione nelle pagine lunghe (ad es. Lista Scarpe);
+    \item Uso del tag \texttt{<abbr>} per definire le abbreviazioni, rendendo più comprensibile il contenuto;
+    \item Linguaggio semplice e intuitivo per rendere i contenuti accessibili ad un pubblico più ampio possibile, inclusi utenti con difficoltà cognitive e di qualsiasi età;
+    \item Form accessibili con il tag \texttt{<label>} e suggerimenti testuali per agevolare la compilazione.
+\end{itemize}
+
+\subsection{CSS}
+
+Per lo stile delle pagine del sito è stato utilizzato CSS3, volendo implementare un design responsivo e moderno. La presentazione risulta dunque completamente separata dalla struttura HTML, in modo da rispettare le \textit{best practice} per lo sviluppo web.\\ 
+Sono stati impostati due punti di controllo tramite \textit{media query}, e di conseguenza creati tre fogli di stile distinti per gestire i diversi contesti di visualizzazione dai dispositivi, oltre a quello dedicato al formato stampa:
+\begin{itemize}
+    \item \textbf{style.css}: caricato per tutti gli schermi come stile di base, definisce il layout per desktop;
+    \item \textbf{tablet.css}: applicato per viewport con larghezza massima di 1200px, contiene le regole per l'adattamento su tablet;
+    \item \textbf{mobile.css}: applicato per viewport con larghezza massima di 600px, gestisce il layout per i dispositivi mobili più piccoli, come gli smartphone;
+    \item \textbf{print.css}: ottimizza la visualizzazione per la stampa, rimuovendo il superfluo.
+\end{itemize}
+
+\subsubsection{Layout Principale}
+
+Il layout è stato realizzato utilizzando tecniche CSS come \textit{flexbox} e \textit{grid}, che permettono una disposizione flessibile e dinamica degli elementi.\\ Particolare attenzione è stata posta a:
+\begin{itemize}
+    \item Utilizzo di variabili CSS per la gestione consistente dei colori e delle proprietà ricorrenti;
+    \item Implementazione di una griglia responsiva per la visualizzazione delle scarpe;
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{desktop.png}
+    \caption{Screenshot della Home dal layout desktop}
+\end{figure}
+
+\subsubsection{Responsive Web Design}
+
+Il sito implementa un design completamente responsivo attraverso l'uso di unità di misura relative (\texttt{em}, \texttt{\%}) per garantire la scalabilità, e delle \textit{media query}, che modificano il layout in base alle dimensioni dello schermo.\\
+Nei dispositivi mobili è stato implementato un \textit{hamburger menu} per la navigazione, al fine di evitare disallineamenti dovuti alle troppe voci di menù affiancate nella navbar.\\
+Su \textit{tablet} il layout si adatta riducendo il numero di colonne nella griglia e modificando le dimensioni degli elementi, mentre su \textit{mobile} il layout diventa a singola colonna. Inoltre, gli elementi interattivi come pulsanti e campi di input vengono ingranditi per facilitare l'interazione tramite \textit{touch}.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.55\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{tablet.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{mobile.png}
+    \end{subfigure}
+    \caption{Adattamento del layout della Home su dispositivi \textit{tablet} e \textit{mobile}}
+\end{figure}
+
+\newpage
+\subsubsection{Accessibilità e User Experience}
+
+Anche nella parte di presentazione sono state implementate diverse soluzioni per migliorare l'accessibilità e l'esperienza utente:  
+\begin{itemize}
+    \item Contrasto adeguato tra testo e sfondo, per garantire una leggibilità ottimale anche agli utenti con difficoltà visive;
+    \item Focus visibili per la navigazione da tastiera, permettendo di individuare facilmente gli elementi selezionati;
+    \item Stati hover chiaramente distinguibili, per migliorare l'interazione e la comprensione di link e pulsanti;
+    \item Dimensioni del testo scalabili, consentendo agli utenti di regolare la leggibilità in base alle proprie esigenze;
+    \item Stile estetico coerente tra le diverse pagine, per offrire un'esperienza uniforme.
+\end{itemize}
+
+\subsubsection{Colori dei link}
+
+Nella scelta dei colori per i link, sono state rispettate le convenzioni standard per una navigazione più chiara: i link non visitati quindi sono stati lasciati in blu, mentre quelli visitati in viola. Questa decisione è stata presa dopo alcuni tentativi di trovare colori più adatti per il contrasto e all'estetica del sito, ma alla fine si è optato per mantenere le scelte convenzionali, che risultano più familiari agli utenti.\\
+Tuttavia, per i link nell'header e nel footer, si è scelto di utilizzare colori diversi, più in linea con la \textit{palette} cromatica del sito, in modo da differenziarli visivamente dai link nel contenuto principale. In particolare, i link non visitati risultano bianchi su sfondo blu, mentre quelli visitati diventano gialli. Si è deciso inoltre di contornare con un riquadro e un'evidenziazione il link della pagina corrente, per sapere a colpo d'occhio in che sezione ci si trova senza il bisogno di consultare il breadcrumb.
+
+\subsubsection{Layout Stampa}
+
+È stato progettato anche un foglio di stile ottimizzato per la stampa di tutte le pagine del sito: rispetto agli altri layout, sono stati rimossi gli elementi non essenziali (menù, footer, pulsanti interattivi) ed è stato adattato il formato pagina. Inoltre, si è scelto di utilizzare un font \textit{serif} (con grazie) per migliorare la leggibilità su carta e sono stati ottimizzati i colori per la stampa in bianco e nero.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{print.png}
+    \caption{Screenshot della Home dal layout stampa}
+\end{figure}
+
+\subsection{JavaScript}
+
+Il codice JavaScript si occupa dei seguenti tre aspetti fondamentali: la validazione dei form, la gestione delle finestre modali e il menù di navigazione responsivo.
+
+\subsubsection{Validazione dei form}
+
+La validazione dei form è stata implementata lato \textit{client} per offrire un feedback immediato agli utenti. I controlli verificano la correttezza di username e password attraverso espressioni regolari.\\
+In particolare:
+\begin{itemize}
+    \item \textbf{Username}: devono essere composti solo da caratteri alfanumerici minuscoli, underscore o punto, con un limite massimo di 15 caratteri.
+    \item \textbf{Password}: devono essere composte da almeno 5 caratteri, che includano almeno un numero.
+\end{itemize}
+Vengono inoltre mostrati messaggi specifici per i campi di input interessati in  caso di errore, permettendo agli utenti di correggere immediatamente i dati inseriti.
+
+\subsubsection{Gestione delle finestre modali}
+
+La gestione delle finestre modali è stata implementata per migliorare l'esperienza utente durante l'inserimento delle recensioni o altre interazioni. Quando viene aperta una finestra modale, viene anche creato un overlay scuro che copre il contenuto attorno, focalizzando l'attenzione dell'utente sul form attivo.
+
+\subsubsection{Menù di navigazione responsivo}
+
+Il menù di navigazione è stato reso responsivo per rendere il sito facilmente navigabile anche su dispositivi mobili. In particolare, la gestione JavaScript permette di alternare tra l'icona di \textit{hamburger menu} e l'icona \textit{X} di chiusura in base allo stato aperto o chiuso del menù.
+
+
+\section{Implementazione Backend}
+
+\subsection{PHP}
+
+L'idea alla base del sistema è la separazione tra struttura (HTML) e comportamento (PHP). Infatti, l'HTML è separato dal PHP per avere una stesura più chiara del codice, facilitando la lettura e la manutenzione. Per generare pagine dinamiche in PHP, si effettua il replace di specifiche stringhe, usate come \textit{placeholder} nel file HTML template che si desidera modificare, con il testo necessario per la corretta realizzazione della pagina.
+
+\subsubsection{Gestione del database}
+
+La gestione del database rappresenta uno dei componenti strategici dell'implementazione. Abbiamo progettato una classe statica \texttt{DbConnection} che gestisce in modo efficiente le connessione, chiudendola dopo che le varie operazioni sul database sono state effettuate, oltre all'esecuzione delle query.
+
+\subsubsection{Sistema di autenticazione}
+
+Il sistema di autenticazione sfrutta pienamente le sessioni native di PHP. Durante il login, vengono salvate variabili di sessione che identificano l'utente e il suo livello di accesso. La verifica dei permessi avviene mediante query dirette al database, consentendo un controllo granulare sugli accessi. Il logout utilizza le funzioni standard \texttt{session\_destroy()} e \texttt{session\_abort()} per garantire una cancellazione completa e sicura dei dati di sessione.
+
+\subsubsection{Sicurezza}
+
+Per quanto riguarda la sicurezza, ogni password viene preventivamente sottoposta a hashing con la funzione dedicata di PHP, prima della memorizzazione.\\
+Quando sono state adottate query parametriche, è stata utilizzata la funzione \texttt{prepare()} di MySQLi per prevenire attacchi di tipo SQL injection. Laddove non sono state utilizzate query parametriche, è invece stata implementata la funzione \texttt{sanitizeInput()} per difendersi dallo stesso tipo di attacchi. Ulteriore protezione contro i rischi di Cross-Site Scripting (XSS) è garantita dall'utilizzo sistematico di \texttt{htmlspecialchars()} per la sanificazione dell'output.
+
+\subsubsection{Gestione degli accessi}
+
+La gestione degli accessi avviene tramite un check nelle pagine PHP. Vengono in tal modo definite tre tipologie di pagine: accessibili a tutti, accessibili agli utenti registrati e accessibili solamente agli amministratori. Questo meccanismo garantisce un controllo stringente sui permessi, reindirizzando automaticamente gli utenti in base al loro stato di autenticazione.
+
+\subsection{Database}
+
+Il database è stato implementato tramite MySQL e costituisce l'infrastruttura centrale per la gestione dei dati della piattaforma.
+
+\subsubsection{Struttura e normalizzazione}
+
+Il database risulta in Terza Forma Normale (3NF), che assicura che i dati siano organizzati nel modo più efficiente possibile. Tale organizzazione rende più facile e sicuro aggiornare le informazioni e permette di mantenere i dati sempre coerenti tra loro.
+
+\subsubsection{Tabelle}
+
+Le tabelle che compongono il database sono:
+\begin{itemize}
+    \item \textbf{SCARPA} (`id', `nome', `marca', `tipo', `descrizione', `votoexp', `feedback', `immagine', `data\_aggiunta'): contiene le informazioni complete delle scarpe da corsa, inclusi dettagli tecnici, valutazioni e immagini;
+    \item \textbf{UTENTE} (`username', `pw', `ruolo', `admin'): gestisce le informazioni personali degli utenti registarti e il ruolo assegnato;
+    \item \textbf{RECENSIONE} (`username', `scarpa\_id', `voto', `commento', `data\_aggiunta'): contiene le recensioni testuali degli utenti, il voto e la data che permette di ordinarle sempre dalla più recente;
+    \item \textbf{LIKES} (`username', `scarpa\_id', `data\_aggiunta'): tiene traccia di che prodotti sono stati salvati e da quali utenti.
+\end{itemize}
+Per testare le funzionalità del sistema, il database è stato già popolato con un set di dati realistici.
+
+
+\section{Test e Validazione}
+
+Durante l'intero ciclo di sviluppo del sito, è stata posta particolare attenzione alla validazione del codice e all'accessibilità, seguendo rigorosamente gli standard WCAG 2.2.
+
+\subsection{Strumenti di testing}
+
+Per garantire la conformità agli standard sono stati utilizzati i seguenti strumenti:
+\begin{itemize}
+    \item \textbf{AudioEye, Multiple Colors Contrast Checker, Tanaguru}: siti utilizzati per testare i contrasti fra i colori;
+    \item \textbf{Silktide}: estensione di Google Chrome per la simulazione di disabilità;
+    \item \textbf{W3C Markup Validation Service}: per la validazione del codice HTML5;
+    \item \textbf{W3C CSS Validation Service}: per la verifica dei fogli di stile CSS;
+    \item \textbf{Lighthouse}: integrato in Google Chrome, utilizzato per test di performance e SEO;
+    \item \textbf{Total Validator Basic}: programma a pagamento utilizzato per la validazione del codice HTML.
+\end{itemize}
+
+\subsection{Ambienti di test}
+
+Il sito è stato testato approfonditamente su diverse piattaforme e browser. La compatibilità è stata verificata per i principali sistemi operativi (Linux, Windows e MacOS), utilizzando i seguenti browser: Firefox, Google Chrome, Microsoft Edge, Safari. Questa copertura completa ci ha permesso di assicurare una buona esperienza utente indipendentemente dalla piattaforma di accesso.
+
+\subsection{Ottimizzazioni e scelte tecniche}
+
+Durante lo sviluppo del sito, sono state adottate diverse strategie per garantire prestazioni elevate, accessibilità e una gestione efficiente delle risorse.
+\begin{itemize}
+    \item \textbf{Ottimizzazione delle immagini}: per le foto delle scarpe è stato scelto il formato \texttt{.webp} per avere un migliore rapporto qualità/compressione rispetto a \texttt{.png}, riducendo il peso delle immagini senza comprometterne la qualità visiva.
+    \item \textbf{Separazione del codice}: per garantire una struttura pulita e manutenibile non è stato incluso codice \textit{inline}, preservando la separazione tra struttura (HTML), presentazione (CSS) e comportamento (JavaScript e PHP).
+    \item \textbf{Gerarchia degli headings}: i titoli (\texttt{<h1>}, \texttt{<h2>}, \texttt{<h3>}, ecc.) sono stati strutturati correttamente seguendo una logica gerarchica, migliorando sia l’accessibilità che l’indicizzazione da parte dei motori di ricerca.
+    \item \textbf{Ottimizzazione dei tag}: il titolo (\texttt{<title>}), la descrizione (\texttt{<meta description>}) e le parole chiave (\texttt{<meta keywords>}) vengono generati dinamicamente in base al contenuto della pagina, al fine di migliorare l'indicizzazione sui motori di ricerca.
+    \item \textbf{Minimizzazione del codice}: i fogli di stile CSS e JavaScript sono stati minificati per ridurre i tempi di caricamento e migliorare la performance del sito.
+\end{itemize}
+
+
+\section{Organizzazione}  
+
+Il gruppo ha utilizzato una repository GitHub per la comunicazione e la condivisione dei file, sfruttando anche il sistema di \textit{Issue Tracking} per l'assegnazione e la suddivisione dei compiti. A ciascuna \textit{issue} sono state associate delle \textit{label} (HTML, CSS, PHP, SQL, JS, Accessibilità) per organizzare al meglio le diverse fasi di sviluppo.\\
+Nonostante questa suddivisione, ogni membro si è occupato autonomamente di intere sezioni del sito, sviluppandone struttura, comportamento e presentazione. Questo approccio ha dapprima favorito tutti i membri del gruppo con l'apprendimento di più linguaggi, ma ha reso più complesso uniformare esteticamente il progetto in un secondo momento. Di conseguenza, può capitare che alcune classi e ID risultino assegnati a elementi senza essere definiti nei fogli di stile, o viceversa definiti senza essere assegnati ad alcun elemento.
+
+\subsection{Suddivisione del lavoro}
+
+Per facilitare la gestione del progetto, il lavoro è stato suddiviso tra i membri del gruppo nel seguente modo:
+\begin{itemize}
+    \item \textbf{Davide Marin}: 
+        \begin{itemize}
+            \item Pagina Admin e derivate;
+            \item Pagine di Accesso e Registrazione;
+            \item Layout stampa;
+            \item Validazione del codice HTML;
+        \end{itemize}
+    \item \textbf{Eddy Pinarello}:
+        \begin{itemize}
+            \item Progettazione iniziale e idea del sito;
+            \item Pagina Singola;
+            \item Validazione dei form (JavaScript);
+            \item Testing accessibilità;
+            \item Validazione del codice HTML;
+            \item Gestione delle finestre modali (JavaScript);
+            \item Test SEO;
+        \end{itemize}
+    \item \textbf{Alfredo Rubino}:
+        \begin{itemize}
+            \item Scrittura della relazione;
+            \item Header e footer;
+            \item Pagine di errore;
+            \item Pagine Home e Chi Siamo;
+            \item Struttura e popolamento database;
+            \item Validazione del codice HTML e CSS;
+            \item Test SEO;
+        \end{itemize}
+    \item \textbf{Giovanni Salvò}:
+        \begin{itemize}
+            \item Pagina Lista Scarpe;
+            \item Struttura database;
+            \item Pagina Profilo e derivate; 
+            \item Validazione del codice HTML e CSS;
+            \item Menù di navigazione responsivo (JavaScript);
+            \item Revisione della relazione.
+        \end{itemize}
+\end{itemize}
+
+\section{Conclusioni e sviluppi futuri}
+Il progetto \textbf{CorsaIdeale} ha raggiunto con successo gli obiettivi prefissati, offrendo una piattaforma utile e innovativa per i runner. Alcuni aggiornamenti da implementare in futuro per migliorare il sito potrebbero essere:
+\begin{itemize}
+    \item Un sistema di notifiche per aggiornamenti sulle nuove scarpe;
+    \item Una sezione dedicata a eventi e raduni;
+    \item Funzionalità più avanzate per il monitoraggio delle performance.
+\end{itemize}
+
+
+\vspace{1cm}
+
+\end{justify}
+\end{document}
+
