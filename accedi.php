@@ -1,6 +1,6 @@
 <?php
 
-$title = "Accedi - CorsaIdeale"; 
+$title = "Accedi - CorsaIdeale";
 $description = "Accedi al sito CorsaIdeale per salvare le tue scarpe preferite e lasciare recensioni dettagliate.";
 $keywords = "login,accesso,utente,account,password,username,corsa,recensioni";
 
