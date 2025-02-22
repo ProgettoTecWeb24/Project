@@ -68,7 +68,7 @@ if (!empty($_SESSION['username'])) {
                 <form action="profiloRecensioni.php#review' . htmlspecialchars($recensione['scarpa_id']) . '" method="POST">
                     <div class="review-profile">
                         <div class="review-icon-shoes">
-                            <img src="assets/' . htmlspecialchars($recensione['immagine']) . '" alt="Immagine della scarpa ' . htmlspecialchars($recensione['nome']) . '" />
+                            <img src="assets/' . htmlspecialchars($recensione['immagine']) . '" alt="" />
                         </div>
                         <div class="review-info-profile">
                             <div class="review-header">
@@ -89,10 +89,10 @@ if (!empty($_SESSION['username'])) {
                         </div>
                         <div class="add-review-section">
                             <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) . '">
-                                <img src="assets/edit.svg" alt="modifica" class="icona-profilo  " />
+                                <img src="assets/edit.png" alt="modifica" class="icona-profilo  " />
                             </button>
                             <button type="button" aria-label="Elimina scarpa '.$recensione["nome"] .'" class="link-con-icona" name="delete-shoe-'.$recensione["scarpa_id"].'" onclick="openModal(\'delete-shoe-admin-modal-'.$recensione["scarpa_id"].'\')">
-                                    <img src="assets/delete.svg" alt="elimina" class="icona-profilo" />
+                                    <img src="assets/delete.png" alt="elimina" class="icona-profilo" />
                             </button>
                             <div id="delete-shoe-admin-modal-'.$recensione["scarpa_id"].'" class="delete-admin-modal hidden">
                                 <div class="modal-content-delete">

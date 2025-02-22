@@ -47,7 +47,7 @@ if ($result) {
         $cardsHTML .= '
         <div class="card" onclick="goToPage(\'paginaSingola.php?id=' . urlencode($row['id']) . '\')">
     <div class="img-card-container">
-        <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="immagine della scarpa ' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '" />
+        <img class="img-card" src="assets/' . htmlspecialchars($row['immagine'])  . '" alt="" />
     </div>
         <div class="text-card">
             <h3><a id="' . htmlspecialchars($row['id']) . '" href="paginaSingola.php?id=' . urlencode($row['id']) . '">' . htmlspecialchars($row['marca']) . ' ' . htmlspecialchars($row['nome']) . '</a></h3>

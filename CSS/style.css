@@ -72,22 +72,6 @@ body {
   display: block;
 }
 
-.navigationHelp-nav {
-  color: var(--menu-link-color);
-  position: absolute;
-  left: -999em;
-}
-
-.navigationHelp-nav:focus {
-  position: static;
-  display: block;
-}
-
-.navigationHelp-nav:visited {
-  color: var(--link-color);
-  position: static;
-  display: block;
-}
 
 .logo {
   width: 4.5em;
@@ -1238,7 +1222,6 @@ footer .footer-text address {
   color: var(--card-bg-color);
   margin: 0.2em 0;
   line-height: 1.4;
-  ;
 }
 
 footer .footer-text a {

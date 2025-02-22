@@ -21,7 +21,7 @@ $HTMLpage = file_get_contents('HTML/paginaSingola.html');
 $breadcrumb_scarpa ="Pagina scarpa";
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id == 0) {
-    header("Location: 404.php");
+    header("Location: error404.php");
 }
 
 $queryScarpa = "SELECT * FROM SCARPA WHERE id = ?";
@@ -29,7 +29,7 @@ $scarpaResult = $connection->prepareAndExecute($queryScarpa, 'i', $id);
 $scarpa = $scarpaResult[0] ?? null;
 
 if (!$scarpa) {
-    header("Location: 404.php");
+    header("Location: error404.php");
 }
 $queryRecensioni = "SELECT r.username, r.voto, r.commento, u.ruolo 
                     FROM RECENSIONE r 
@@ -49,8 +49,9 @@ include "header.php";
 
 $content = '
         <div class="shoe-main">
+
             <div class="shoe-image">
-                <img src="assets/' . htmlspecialchars($scarpa['immagine']) . '" alt="immagine della scarpa '. htmlspecialchars($scarpa['marca']) . '' . htmlspecialchars($scarpa['nome']) . '" />
+                <img src="assets/' . htmlspecialchars($scarpa['immagine']) . '" alt="" />
             </div>
 
             <div class="shoe-info">
@@ -62,24 +63,26 @@ $content = '
                         <li>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</li>
                         <li>
                             Valutazione Esperti: 
-                            <img class="stars" src="assets/' . $scarpa['votoexp'] . '.png" alt="immagine di ' . $scarpa['votoexp'] . ' stelle su 5 per gli Esperti" />
+                            <img class="stars" src="assets/' . $scarpa['votoexp'] . '.png" alt="" />
+                            <span>(' . number_format((float)$scarpa['votoexp'], 1, '.', '') . ')</span>
                         </li>
                         <li>Feedback: ' . htmlspecialchars($scarpa['feedback']) . '</li>
                     </ul>
                 </div>
-             
-        </div>
-    </div>
-    <div class="description-details"> 
-        <div class="description-section">
-            <h2>Descrizione</h2>
-            <textarea name="description" id="descriptionArea" readonly class="description-text">' . htmlspecialchars($scarpa['descrizione']) . '</textarea>
+            </div>
+
         </div>
 
-    </div>
-    <div class="reviews-wrapper">
-        <h2>Recensioni</h2>
-            <div class="reviews-section">';
+        <div class="description-details"> 
+            <div class="description-section">
+                <h2>Descrizione</h2>
+                <textarea name="description" id="descriptionArea" readonly class="description-text">' . htmlspecialchars($scarpa['descrizione']) . '</textarea>
+            </div>
+        </div>
+
+        <div class="reviews-wrapper">
+            <h2>Recensioni</h2>
+                <div class="reviews-section">';
 
 $hasUserReviewed = false;
 if (isset($_SESSION['username'])) {
@@ -97,14 +100,14 @@ if (isset($_SESSION['username'])) {
             <div class="rating-wrapper">
             <div class="rating-section">
                 <p>Valutazione Utenti</p>
-                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" /><p>('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="" /><p>('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</p>' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section">
                 <button type="button" id="modifica-btn" class="link-con-icona" onclick="openModal(\'edit-review-modal\')">
-                    <img src="assets/edit.svg" alt="modifica" class="icona-profilo" />
+                    <img src="assets/edit.png" alt="modifica" class="icona-profilo" />
                 </button>
                 <button type="button" id="elimina-btn" class="link-con-icona" onclick="openModal(\'delete-review-modal\')">
-                    <img src="assets/delete.svg" alt="elimina" class="icona-profilo" />
+                    <img src="assets/delete.png" alt="elimina" class="icona-profilo" />
                 </button>
             </div>
             </div>
@@ -114,7 +117,7 @@ if (isset($_SESSION['username'])) {
             <div class="rating-wrapper">
                 <div class="rating-section">
                     <h3>Valutazione Utenti ('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</h3>
-                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
+                    ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="" />' : '<p>Nessuna recensione disponibile.</p>') . '
                 </div>
                 <div class="add-review-section">
                 <span class="review-prompt">Lascia la tua Recensione!</span>
@@ -128,7 +131,7 @@ if (isset($_SESSION['username'])) {
         <div class="add-review-section">
             <div class="rating-section">
                 <h3>Valutazione Utenti ('. number_format((float)$mediaVotoUtenti, 1, '.', '') .')</h3>
-                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per gli Utenti" />' : '<p>Nessuna recensione disponibile.</p>') . '
+                ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section hidden">
                     <button id="add-review-btn" aria-label="bottone lascia recensione" onclick="openModal(\'add-review-modal\')">+</button>
@@ -209,7 +212,7 @@ if (!empty($recensioni)) {
         $content .= '
         <div class="review">
             <div class="review-icon">
-                <img src="assets/'. $recensione['ruolo'] .'-mini.png" alt="immagine di un '. $recensione['ruolo'] .'" />
+                <img src="assets/'. $recensione['ruolo'] .'-mini.png" alt="" />
             </div>
             <div class="review-info">
                 <div class="review-header">
@@ -217,7 +220,7 @@ if (!empty($recensioni)) {
                         <span class="review-user">' . htmlspecialchars($recensione['username']) . '</span>
                     </div>
                     <div class="review-stars">
-                        <img class="stars" src="assets/' . $recensione['voto'] . '.png" alt="immagine di ' . round($mediaVotoUtenti) . ' stelle su 5 per l\'utente" />
+                        <img class="stars" src="assets/' . $recensione['voto'] . '.png" alt="" />
                     </div>
                 </div>
                 <textarea class="review-text" readonly>' . htmlspecialchars($recensione['commento']) . '</textarea>
