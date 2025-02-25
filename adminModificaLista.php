@@ -102,13 +102,13 @@ if($connection->isAdmin($_SESSION["username"])){
                         <td class="table hide-tablet"  lang="en">'.$shoe["marca"] .'</td>
                         <td class="table hide-tablet">'.$shoe["descrizione"] .'</td>
                         <td class="table hide-mobile">'.$shoe["tipo"] .'</td>
-                        <td class="table hide-mobile"><span lang="en">'.
-                            $shoe["feedback"].'</span><br>
+                        <td class="table hide-mobile"><span lang="en">'.$shoe["feedback"].'</span><br>
                             <div class="review-stars">
-                                <img class="stars" src="assets/' . $shoe["votoexp"] . '.png" alt="" />
+                                <img class="stars" src="assets/' . $shoe["votoexp"] . '.png" alt="" />('.
+                                $shoe["votoexp"].')
                             </div>
                         </td>
-                        <td><img src="assets/'.$shoe["immagine"] .'" alt="" /></td>
+                        <td><img src="assets/'.$shoe["immagine"] .'" alt="" class="scarpa-admin"/></td>
                         <td>
                             <a class="link-con-icona" aria-label="Modifica scarpa '.$shoe["nome"] .'" href="adminModificaScarpa.php?mod=' . urlencode($shoe['id']) . '"><img src="assets/edit.png" alt="modifica" class="icona" /></a>
                             <button type="button" aria-label="Elimina scarpa '.$shoe["nome"] .'" class="link-con-icona" name="delete-shoe-'.$shoe['id'].'" onclick="openModal(\'delete-shoe-admin-modal-'.$shoe['id'].'\')">

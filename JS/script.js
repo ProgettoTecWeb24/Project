@@ -279,8 +279,18 @@ function impostaIdEliminazione() {
         });
     });
 }
+function impostaModifica() {
+    document.querySelectorAll('.link-con-icona-modifica').forEach(button => {
+        button.addEventListener('click', function () {
+            const form = this.closest('form');
+            const modifyBtn = form.querySelector('.link-con-icona-modifica');
+            modifyBtn.setAttribute('name', 'modifica');
+        });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     impostaIdEliminazione();
+    impostaModifica();
 });
 
