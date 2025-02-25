@@ -1,7 +1,7 @@
 <?php
 
 $description = "Scopri caratteristiche, dettagli e recensioni di questa scarpa da corsa.";
-$keywords = "scarpa,corsa,dettagli,recensioni,modello,valutazione,feedback,voto";
+$keywords = "scarpa,corsa,dettagli,recensioni,modello,valutazione,feedback,voto,"; 
 
 require_once('dbconnection.php');
 require_once('controls.php');
@@ -43,8 +43,10 @@ $queryMediaVoto = "SELECT AVG(r.voto) AS media_voto_utenti
 $mediaVotoResult = $connection->prepareAndExecute($queryMediaVoto, 'i', $id);
 $mediaVotoUtenti = $mediaVotoResult[0]['media_voto_utenti'] ?? 0;
 
+
 $title = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']) . ' - CorsaIdeale';
 $breadcrumb_scarpa = htmlspecialchars($scarpa['marca']).' '.htmlspecialchars($scarpa['nome']);
+$keywords .= htmlspecialchars($scarpa['marca']) . ',' . htmlspecialchars($scarpa['nome']) . ',';
 include "header.php";
 
 $content = '
@@ -57,7 +59,7 @@ $content = '
             <div class="shoe-info">
                 <div class="shoe-title">
                     <h2>' . htmlspecialchars($scarpa['marca']) . ' ' . htmlspecialchars($scarpa['nome']) . '</h2>
-                    <ul class="shoe-details">
+                    <ul class="shoe-details" aria-label="Dettagli della scarpa">
                         <li>Marca: ' . htmlspecialchars($scarpa['marca']) . '</li>
                         <li>Modello: ' . htmlspecialchars($scarpa['nome']) . '</li>
                         <li>Tipo: ' . htmlspecialchars($scarpa['tipo']) . '</li>
@@ -76,7 +78,8 @@ $content = '
         <div class="description-details"> 
             <div class="description-section">
                 <h2>Descrizione</h2>
-                <textarea name="description" id="descriptionArea" readonly class="description-text">' . htmlspecialchars($scarpa['descrizione']) . '</textarea>
+                <p id="textAreaDescription"> ' . htmlspecialchars($scarpa['descrizione']) . '</p>
+                <textarea aria-describedby="textAreaDescription" name="description" id="descriptionArea" readonly class="description-text">' . htmlspecialchars($scarpa['descrizione']) . '</textarea>
             </div>
         </div>
 
@@ -120,8 +123,8 @@ if (isset($_SESSION['username'])) {
                     ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="" />' : '<p>Nessuna recensione disponibile.</p>') . '
                 </div>
                 <div class="add-review-section">
+                <button id="add-review-btn" onclick="openModal(\'add-review-modal\')">+ <span class="visually-hidden">Aggiungi una recensione</span> </button>
                 <span class="review-prompt">Lascia la tua Recensione!</span>
-                    <button id="add-review-btn" onclick="openModal(\'add-review-modal\')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>  </button>
                 </div>
             </div>
         ';
@@ -134,7 +137,11 @@ if (isset($_SESSION['username'])) {
                 ' . (round($mediaVotoUtenti) > 0 ? '<img class="stars" src="assets/' . round($mediaVotoUtenti) . '.png" alt="" />' : '<p>Nessuna recensione disponibile.</p>') . '
             </div>
             <div class="add-review-section hidden">
-                    <button id="add-review-btn" aria-label="bottone lascia recensione" onclick="openModal(\'add-review-modal\')">+</button>
+            <button id="add-review-btn" 
+                    onclick="openModal(\'add-review-modal\')" 
+                    id="add-review-btn"> +
+                <span class="visually-hidden">Aggiungi una recensione</span>
+            </button>
                     <span class="review-prompt">Lascia la tua Recensione!</span>
                 </div>
         </div>
@@ -156,7 +163,7 @@ if (isset($_SESSION['username'])) {
 $content .= '
     <div id="edit-review-modal" class="modal hidden">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal(\'edit-review-modal\')">&times;</span>
+            <span class="close-btn" onclick="closeModal(\'delete-review-modal\')" aria-label="chiudi modale">&times;</span>
             <h2>Modifica la tua Recensione</h2>
             <form id="edit-review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
                 <input type="hidden" name="idscarpa" value="' . $id . '"/>
@@ -173,6 +180,7 @@ $content .= '
                 </div>
                 <div class="input-add-scarpa">
                     <label for="commentEdit">Recensione:</label>
+                    
                     <textarea name="commentEdit" id="commentEdit" rows="4" required>' . htmlspecialchars($utenteCommento) . '</textarea>
                 </div>
                 <button class="button" type="submit" name="edit">Modifica Recensione</button>
@@ -183,7 +191,7 @@ $content .= '
     <div id="delete-review-modal" class="modal hidden">
         <div class="modal-content-delete">
             <div class="modal-header">
-                <span class="close-btn" onclick="closeModal(\'delete-review-modal\')">&times;</span>
+                <span class="close-btn" onclick="closeModal(\'delete-review-modal\')" aria-label="chiudi modale">&times;</span>
                 <h2>Conferma Eliminazione</h2>
                 <p>Sei sicuro di voler eliminare questa recensione?</p>
             </div>
@@ -221,9 +229,11 @@ if (!empty($recensioni)) {
                     </div>
                     <div class="review-stars">
                         <img class="stars" src="assets/' . $recensione['voto'] . '.png" alt="" />
+                        <span class="review-rating">(' . number_format((float)$recensione['voto'], 1, '.', '') . ')</span>
                     </div>
                 </div>
-                <textarea class="review-text" readonly>' . htmlspecialchars($recensione['commento']) . '</textarea>
+                <p id="areaCommento"> ' . htmlspecialchars($recensione['commento']) . ' </p>
+                <textarea aria-describedby="areaCommento" class="review-text" readonly>' . htmlspecialchars($recensione['commento']) . '</textarea>
             </div>
         </div>';
     }
@@ -234,7 +244,7 @@ if (!empty($recensioni)) {
 $content .= '
     <div id="add-review-modal" class="modal hidden">
         <div class="modal-content">
-            <span class="close-btn"  onclick="closeAddReviewForm()">&times;</span>
+            <span class="close-btn" onclick="closeModal(\'delete-review-modal\')" aria-label="chiudi modale">&times;</span>
             <h2>Lascia una Recensione</h2>
             <form id="review-form" action="' . $_SERVER['PHP_SELF'] . '?id=' . $id . '" method="POST">
                 <input type="hidden" name="idscarpa" id="idscarpa" value="' . $id . '"/>
