@@ -67,7 +67,7 @@ if($connection->isAdmin($_SESSION["username"])){
                         <td class="table hide-mobile"  lang="en">'.$review["marca"] .' '.$review["nome"].'</td>
                         <td class=" hide-tablet">
                             <div class="review-stars">
-                                <img class="stars" src="assets/' . $review['voto'] . '.png" alt="" />
+                                <img class="stars" src="assets/' . $review['voto'] . '.png" alt="" />('.$review['voto'].')
                             </div>
                         </td>
                         <td class="table">'.$review["commento"] .'</td>

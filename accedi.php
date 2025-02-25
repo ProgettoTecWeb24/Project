@@ -28,10 +28,10 @@ if(isset($_POST["submit-login"])){
             if($userData && password_verify($password, $userData['pw'])){
                 $_SESSION['username'] = $userData['username'];
                 if($userData['admin']==1){
-                    header("Location: index.php");
+                    header("Location: adminpage.php");
                 }
                 if($userData['admin']==0){
-                    header("Location: index.php");
+                    header("Location: profilo.php");
                 }
             }else{
                 $error_text = '<p class="error_text" id="error_text" role="alert"><span lang="en">username</span> o <span lang="en">password</span> non corretti</p>';

@@ -154,7 +154,10 @@ ol {
 .profile-cards a:link:after,
 .profile-cards a:visited:after,
 .wrapper-card-admin a:link:after,
-.wrapper-card-admin a:visited:after {
+.wrapper-card-admin a:visited:after,
+.not-log a:link:after,
+.not-log a:visited:after
+{
   content: " [" attr(href) "] ";
   font-size: 90%;
   color: #000;
@@ -278,8 +281,7 @@ img.stars {
   margin-bottom: 1rem;
 }
 
-input[type="text"].input-text-add-scarpa,
-.sel-scarpa-admin,
+input[type="text"],
 input[type="username"],
 input[type="password"],
 .select-settings {

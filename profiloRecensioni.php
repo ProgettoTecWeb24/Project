@@ -88,11 +88,11 @@ if (!empty($_SESSION['username'])) {
                             <textarea class="inputRecensione" name="newCommento" aria-label="testo della recensione della scarpa ' . htmlspecialchars($recensione['nome']) . '">' . htmlspecialchars($recensione['commento']) . '</textarea>
                         </div>
                         <div class="add-review-section">
-                            <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" name="modifica" class="link-con-icona" value="' . htmlspecialchars($recensione['scarpa_id']) . '">
-                                <img src="assets/edit.png" alt="modifica" class="icona-profilo  " />
+                            <button type="submit" id="modifica' . $recensione['scarpa_id'] . '" class="link-con-icona-modifica" value="' . htmlspecialchars($recensione['scarpa_id']) . '">
+                                <img src="assets/edit.png" alt="modifica recensione scarpa '.$recensione["nome"] .'" class="icona-profilo  " />
                             </button>
                             <button type="button" aria-label="Elimina scarpa '.$recensione["nome"] .'" class="link-con-icona" name="delete-shoe-'.$recensione["scarpa_id"].'" onclick="openModal(\'delete-shoe-admin-modal-'.$recensione["scarpa_id"].'\')">
-                                    <img src="assets/delete.png" alt="elimina" class="icona-profilo" />
+                                    <img src="assets/delete.png" alt="elimina recensione scarpa '.$recensione["nome"] .'" class="icona-profilo" />
                             </button>
                             <div id="delete-shoe-admin-modal-'.$recensione["scarpa_id"].'" class="delete-admin-modal hidden">
                                 <div class="modal-content-delete">

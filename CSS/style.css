@@ -674,7 +674,7 @@ label {
   font-size: 1.2em;
 }
 
-.link-con-icona .icona-profilo {
+.link-con-icona .icona-profilo, .link-con-icona-modifica .icona-profilo{
   width: 3em;
   object-fit: cover;
 }
@@ -1389,17 +1389,17 @@ p.success_text {
   gap: 1em;
 }
 
-.link-con-icona {
+.link-con-icona, .link-con-icona-modifica {
   text-decoration: none;
 }
 
-.link-con-icona .icona {
+.link-con-icona .icona, .link-con-icona-modifica .icona{
   width: 24px;
   height: 24px;
   object-fit: cover;
 }
 
-button.link-con-icona {
+button.link-con-icona, button.link-con-icona-modifica {
   background-color: transparent;
   margin: 0;
   padding: 0;
@@ -1462,6 +1462,11 @@ p#sum, .table-admin-list caption {
   position: absolute;
   top: -9999px;
   left: -9999px;
+}
+
+.review-stars{
+  display: row;
+  gap: 1em;
 }
 
 
