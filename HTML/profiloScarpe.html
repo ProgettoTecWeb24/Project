@@ -1,0 +1,78 @@
+<nav id="breadcrumb" aria-label="Percorso">
+    <p>Ti trovi in:</p>
+    <ul class="inline-list">
+        <li><a href="index.php"><span lang="en"> Home </span></a></li>
+        <li><a href="profilo.php"> Il mio profilo </a></li>
+        <li> Scarpe salvate </li>
+    </ul>
+</nav>
+
+<main id="main-content">
+
+    <div class="content">
+        <form action="profiloScarpe.php#likes" method="POST">
+            <div class="profile-content">
+                <a id="likes">
+                    <h2>Scarpe salvate di {user}</h2>
+                </a>
+
+                <div class="searchbar-acc">
+                    <div>
+                        <input class="search-input" aria-label="Inserisci nome scarpa" name="nomescarpa" id="nomescarpa-id" type="text"
+                            placeholder="Cerca le scarpe..." value="" />
+
+                    </div>
+
+                    <div>
+                        <label for="ordina">Ordina:</label>
+                        <select name="ordina" id="ordina" class="select-filter">
+                            <option value="ordStand">Più recenti</option>
+                            <option value="ordNonStand">Meno recenti</option>
+                            <option value="nomeCres">Nome (A - Z)</option>
+                            <option value="nomeDesc">Nome (Z - A)</option>
+                            <option value="votoCres">Voto crescente</option>
+                            <option value="votoDesc">Voto decrescente</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="marca">Marca:</label>
+                        <select name="marca" id="marca" class="select-filter">
+                            <option value="all">Tutte le marche</option>
+                            <option value="Adidas" lang="en">Adidas</option>
+                            <option value="Altra" lang="en">Altra</option>
+                            <option value="Asics" lang="en">Asics</option>
+                            <option value="Brooks" lang="en">Brooks</option>
+                            <option value="Hoka" lang="en">Hoka</option>
+                            <option value="Mizuno" lang="en">Mizuno</option>
+                            <option value="New Balance" lang="en">New Balance</option>
+                            <option value="Nike" lang="en">Nike</option>
+                            <option value="Saucony" lang="en">Saucony</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="tipo">Tipo:</label>
+                        <select name="tipo" id="tipo" class="select-filter">
+                            <option value="all">Tutti i tipi</option>
+                            <option value="pista">Pista</option>
+                            <option value="strada">Strada</option>
+                            <option value="trail" lang="en">Trail</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="submit-filter">
+                            <img src="assets/search-icon.svg" alt="Avvia ricerca" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="cards">
+            {shoesliked}
+        </div>
+    </div>
+
+</main>

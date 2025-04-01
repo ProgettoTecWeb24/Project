@@ -1,0 +1,91 @@
+<nav id="breadcrumb" aria-label="Percorso">
+    <p>Ti trovi in:</p>
+    <ul class="inline-list">
+        <li><a href="index.php"><span lang="en"> Home </span></a></li>
+        <li> Il mio profilo </li>
+    </ul>
+</nav>
+
+<main id="main-content">
+
+<div class="content">
+    <h2>Gestione profilo di {user}</h2>
+    <div class="settings">
+        <form action="profilo.php"  method="POST">
+            <div class="update-settings">
+                <h3 class="title-admin">Impostazioni</h3>
+                <div class="div-column">
+                    <label for="username">Nuovo <span lang="en">username</span>:</label>
+                    <span class="validate_message">
+                        <input class="username-input" name="newUser" id="username" type="text" placeholder="Inserisci nuovo username..." />
+                    </span>
+                </div>
+                <div class="div-column">
+                    <label for="kmsett">Chilometri settimanali:</label>
+                    <select name="kmsett" id="kmsett" class="select-settings">
+                        <option value="tartaruga">Fino a 5 chilometri/settimana</option>
+                        <option value="lepre">Da 6 a 20 chilometri/settimana</option>
+                        <option value="lupo">Da 21 a 50 chilometri/settimana</option>
+                        <option value="ghepardo">Oltre 50 chilometri/settimana</option>
+                    </select>
+                </div>
+    
+                <div class="div-column">
+                    {error_text}
+                    <button type="submit" name="salvaImpos" class="submit-settings">
+                        Salva impostazioni
+                    </button>
+                </div>
+            </div>
+        </form>
+    
+        <div class="logout-deleteUser">
+            <form action="profilo.php" method="POST" name="logout">
+                <button type="submit" id="logout-settings" name="logout">
+                    <span lang="en">Logout</span>
+                </button>
+            </form>
+    
+            <button id="open-delete-modal" class="delete-button" onclick="openModal('delete-account-modal')">
+                Elimina <span lang="en">Account</span>
+            </button>
+        </div>
+    
+        <div id="delete-account-modal" class="modal hidden">
+            <div class="modal-content-delete">
+                <div class="modal-header">
+                    <span class="close-btn" onclick="closeModal('delete-account-modal')">&times;</span>
+                    <p>Sei sicuro di voler eliminare il tuo profilo?</p>
+                    <p>Questa azione è irreversibile</p>
+                </div>
+                <form action="profilo.php" method="POST">
+                    <button class="button" type="submit" name="deleteUser">Conferma</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h3 class="title-admin">Cosa desideri modificare?</h3>
+        <div class="profile-cards">
+            <a href="profiloScarpe.php" class="card-link">
+                <div class="card-admin">
+                    <div class="text-card-admin">
+                        <h4 class="title-admin">Scarpe salvate</h4>
+                    </div>
+                    <img class="admin-home-icon" src="assets/heart.png" alt="" />
+                </div>
+            </a>
+            <a href="profiloRecensioni.php" class="card-link">
+                <div class="card-admin">
+                    <div class="text-card-admin">
+                        <h4 class="title-admin">Recensioni personali</h4>
+                    </div>
+                    <img class="admin-home-icon" src="assets/review.png" alt="" />
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</main>
